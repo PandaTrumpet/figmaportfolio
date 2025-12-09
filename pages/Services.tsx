@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
-import { servicesNew, pricingTiers } from '../../data/newServices';
+import { servicesNew, pricingTiers } from '../data/newServices';
 import { ArrowRight, Check } from 'lucide-react';
 
 export function Services() {

@@ -3,7 +3,7 @@ import { motion, useInView } from 'motion/react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
-import { caseStudyData } from '../../data/caseStudies';
+import { caseStudyData } from '../data/caseStudies';
 import { ArrowRight, ExternalLink, Check } from 'lucide-react';
 
 export function CaseStudy() {

@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform, useInView } from 'motion/react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
-import { reviewsData } from '../../data/reviewsData';
+import { reviewsData } from '../data/reviewsData';
 import { 
   Star, 
   Quote, 

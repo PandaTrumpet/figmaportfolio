@@ -1,28 +1,28 @@
-import { useRef, useState } from 'react';
-import { motion, useScroll, useTransform, useInView } from 'motion/react';
-import { Navigation } from '../components/Navigation';
-import { Footer } from '../components/Footer';
-import { pricingData } from '../../data/pricingData';
-import { 
-  Check, 
-  X, 
-  ArrowRight, 
-  Shield, 
+"use client";
+import { useRef, useState } from "react";
+import { motion, useScroll, useTransform, useInView } from "motion/react";
+
+import { pricingData } from "../../src/data/pricingData";
+import {
+  Check,
+  X,
+  ArrowRight,
+  Shield,
   Sparkles,
   Plus,
   Minus,
   Zap,
   Star,
   TrendingUp,
-  ChevronDown
-} from 'lucide-react';
+  ChevronDown,
+} from "lucide-react";
 
-export function Pricing() {
-  const [billingPeriod, setBillingPeriod] = useState<'project' | 'monthly'>('project');
+export default function Pricing() {
+
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end end"]
+    offset: ["start start", "end end"],
   });
 
   const y1 = useTransform(scrollYProgress, [0, 1], [0, -200]);
@@ -30,8 +30,6 @@ export function Pricing() {
 
   return (
     <div ref={containerRef} className="min-h-screen bg-[#F5EFE7]">
-      <Navigation />
-
       {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Money Pattern */}
@@ -39,11 +37,12 @@ export function Pricing() {
           <motion.div
             className="w-full h-full"
             style={{
-              backgroundImage: 'radial-gradient(circle at 2px 2px, #050608 2px, transparent 0)',
-              backgroundSize: '60px 60px',
+              backgroundImage:
+                "radial-gradient(circle at 2px 2px, #050608 2px, transparent 0)",
+              backgroundSize: "60px 60px",
             }}
             animate={{
-              backgroundPosition: ['0px 0px', '60px 60px'],
+              backgroundPosition: ["0px 0px", "60px 60px"],
             }}
             transition={{
               duration: 40,
@@ -53,7 +52,7 @@ export function Pricing() {
           />
         </div>
 
-        <motion.div 
+        <motion.div
           className="relative z-10 max-w-[1400px] mx-auto w-full px-6 md:px-12 lg:px-20 text-center"
           style={{ opacity }}
         >
@@ -91,7 +90,9 @@ export function Pricing() {
               className="inline-flex items-center gap-3 px-6 py-3 border-2 border-[#050608] bg-white"
             >
               <Shield className="w-5 h-5" />
-              <span className="text-sm uppercase tracking-wider">{pricingData.hero.guarantee}</span>
+              <span className="text-sm uppercase tracking-wider">
+                {pricingData.hero.guarantee}
+              </span>
             </motion.div>
           </motion.div>
         </motion.div>
@@ -111,7 +112,7 @@ export function Pricing() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <motion.div 
+            <motion.div
               className="w-24 h-[3px] bg-[#050608] mb-12 mx-auto"
               initial={{ width: 0 }}
               whileInView={{ width: 96 }}
@@ -148,7 +149,7 @@ export function Pricing() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <motion.div 
+            <motion.div
               className="w-24 h-[3px] bg-[#050608] mb-12 mx-auto"
               initial={{ width: 0 }}
               whileInView={{ width: 96 }}
@@ -177,7 +178,7 @@ export function Pricing() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <motion.div 
+            <motion.div
               className="w-24 h-[3px] bg-[#050608] mb-12 mx-auto"
               initial={{ width: 0 }}
               whileInView={{ width: 96 }}
@@ -213,7 +214,7 @@ export function Pricing() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <motion.div 
+            <motion.div
               className="w-24 h-[3px] bg-[#050608] mb-12 mx-auto"
               initial={{ width: 0 }}
               whileInView={{ width: 96 }}
@@ -248,20 +249,29 @@ export function Pricing() {
             {/* Icons */}
             <div className="flex items-center justify-center gap-8 mb-12">
               <motion.div
-                animate={{ 
+                animate={{
                   y: [0, -20, 0],
-                  rotate: [0, 15, 0]
+                  rotate: [0, 15, 0],
                 }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               >
                 <Sparkles className="w-16 h-16 md:w-20 md:h-20" />
               </motion.div>
               <motion.div
-                animate={{ 
+                animate={{
                   y: [0, -15, 0],
-                  scale: [1, 1.2, 1]
+                  scale: [1, 1.2, 1],
                 }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.5,
+                }}
               >
                 <Star className="w-16 h-16 md:w-20 md:h-20" />
               </motion.div>
@@ -270,21 +280,24 @@ export function Pricing() {
             <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl mb-12 leading-[0.95]">
               {pricingData.cta.title}
             </h2>
-            
+
             <p className="text-xl md:text-2xl lg:text-3xl opacity-70 mb-16 max-w-3xl mx-auto leading-relaxed">
               {pricingData.cta.subtitle}
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <motion.a
                 href="#contact"
                 className="inline-flex items-center gap-4 px-12 py-6 md:px-16 md:py-8 bg-[#F5EFE7] text-[#050608] text-xl md:text-2xl group relative overflow-hidden"
-                whileHover={{ scale: 1.05, boxShadow: "0 0 60px rgba(245,239,231,0.4)" }}
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 0 60px rgba(245,239,231,0.4)",
+                }}
                 whileTap={{ scale: 0.95 }}
               >
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"
-                  animate={{ x: ['-200%', '200%'] }}
+                  className="absolute inset-0 bg-linear-to-r from-transparent via-white to-transparent opacity-30"
+                  animate={{ x: ["-200%", "200%"] }}
                   transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
                 />
                 <span className="relative z-10">{pricingData.cta.button}</span>
@@ -308,10 +321,11 @@ export function Pricing() {
           <motion.div
             className="w-full h-full"
             style={{
-              backgroundImage: 'repeating-linear-gradient(45deg, #F5EFE7 0px, #F5EFE7 2px, transparent 2px, transparent 40px)',
+              backgroundImage:
+                "repeating-linear-gradient(45deg, #F5EFE7 0px, #F5EFE7 2px, transparent 2px, transparent 40px)",
             }}
             animate={{
-              backgroundPosition: ['0px 0px', '40px 40px'],
+              backgroundPosition: ["0px 0px", "40px 40px"],
             }}
             transition={{
               duration: 30,
@@ -323,15 +337,19 @@ export function Pricing() {
 
         <FloatingShapes />
       </section>
-
-      <Footer />
     </div>
   );
 }
 
 // ============= COMPONENTS =============
 
-function PricingCard({ package: pkg, index }: { package: typeof pricingData.packages[0]; index: number }) {
+function PricingCard({
+  package: pkg,
+  index,
+}: {
+  package: (typeof pricingData.packages)[0];
+  index: number;
+}) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -341,7 +359,7 @@ function PricingCard({ package: pkg, index }: { package: typeof pricingData.pack
       initial={{ opacity: 0, y: 80 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, delay: index * 0.15 }}
-      className={`relative ${pkg.highlighted ? 'lg:-mt-8' : ''}`}
+      className={`relative ${pkg.highlighted ? "lg:-mt-8" : ""}`}
     >
       {/* Popular Badge */}
       {pkg.highlighted && (
@@ -360,11 +378,11 @@ function PricingCard({ package: pkg, index }: { package: typeof pricingData.pack
 
       <motion.div
         className={`border-4 border-[#050608] p-10 md:p-12 h-full flex flex-col relative overflow-hidden ${
-          pkg.highlighted ? 'bg-[#050608] text-[#F5EFE7]' : 'bg-[#F5EFE7]'
+          pkg.highlighted ? "bg-[#050608] text-[#F5EFE7]" : "bg-[#F5EFE7]"
         }`}
-        whileHover={{ 
-          boxShadow: pkg.highlighted 
-            ? "20px 20px 0px 0px rgba(5,6,8,0.8)" 
+        whileHover={{
+          boxShadow: pkg.highlighted
+            ? "20px 20px 0px 0px rgba(5,6,8,0.8)"
             : "20px 20px 0px 0px rgba(5,6,8,1)",
           x: -8,
           y: -8,
@@ -384,7 +402,9 @@ function PricingCard({ package: pkg, index }: { package: typeof pricingData.pack
         <div className="mb-8">
           <h3 className="text-3xl md:text-4xl lg:text-5xl mb-2">{pkg.name}</h3>
           {!pkg.highlighted && (
-            <p className="text-base opacity-60 uppercase tracking-wider">{pkg.tagline}</p>
+            <p className="text-base opacity-60 uppercase tracking-wider">
+              {pkg.tagline}
+            </p>
           )}
         </div>
 
@@ -393,11 +413,17 @@ function PricingCard({ package: pkg, index }: { package: typeof pricingData.pack
           <div className="flex items-baseline gap-2 mb-2">
             <span className="text-5xl md:text-6xl">{pkg.price}</span>
           </div>
-          <p className="text-sm opacity-60 uppercase tracking-wider">{pkg.period}</p>
+          <p className="text-sm opacity-60 uppercase tracking-wider">
+            {pkg.period}
+          </p>
         </div>
 
         {/* Description */}
-        <p className={`text-lg leading-relaxed mb-10 ${pkg.highlighted ? 'opacity-80' : 'opacity-70'}`}>
+        <p
+          className={`text-lg leading-relaxed mb-10 ${
+            pkg.highlighted ? "opacity-80" : "opacity-70"
+          }`}
+        >
           {pkg.description}
         </p>
 
@@ -405,9 +431,9 @@ function PricingCard({ package: pkg, index }: { package: typeof pricingData.pack
         <motion.a
           href="#contact"
           className={`w-full px-8 py-4 text-center text-lg mb-10 flex items-center justify-center gap-2 group ${
-            pkg.highlighted 
-              ? 'bg-[#F5EFE7] text-[#050608]' 
-              : 'bg-[#050608] text-[#F5EFE7]'
+            pkg.highlighted
+              ? "bg-[#F5EFE7] text-[#050608]"
+              : "bg-[#050608] text-[#F5EFE7]"
           }`}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
@@ -426,24 +452,50 @@ function PricingCard({ package: pkg, index }: { package: typeof pricingData.pack
               transition={{ duration: 0.5, delay: 0.3 + i * 0.05 }}
               className="flex items-start gap-3"
             >
-              <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${pkg.highlighted ? 'opacity-80' : 'opacity-50'}`} />
-              <span className={`text-base ${pkg.highlighted ? 'opacity-90' : 'opacity-70'}`}>{feature}</span>
+              <Check
+                className={`w-5 h-5 shrink-0 mt-0.5 ${
+                  pkg.highlighted ? "opacity-80" : "opacity-50"
+                }`}
+              />
+              <span
+                className={`text-base ${
+                  pkg.highlighted ? "opacity-90" : "opacity-70"
+                }`}
+              >
+                {feature}
+              </span>
             </motion.div>
           ))}
         </div>
 
         {/* Ideal For */}
-        <div className={`mt-auto pt-8 border-t-2 ${pkg.highlighted ? 'border-[#F5EFE7]' : 'border-[#050608]'} border-opacity-20`}>
-          <p className="text-sm uppercase tracking-wider opacity-50 mb-2">Идеально для:</p>
-          <p className={`text-base ${pkg.highlighted ? 'opacity-90' : 'opacity-70'}`}>{pkg.ideal}</p>
+        <div
+          className={`mt-auto pt-8 border-t-2 ${
+            pkg.highlighted ? "border-[#F5EFE7]" : "border-[#050608]"
+          } border-opacity-20`}
+        >
+          <p className="text-sm uppercase tracking-wider opacity-50 mb-2">
+            Идеально для:
+          </p>
+          <p
+            className={`text-base ${
+              pkg.highlighted ? "opacity-90" : "opacity-70"
+            }`}
+          >
+            {pkg.ideal}
+          </p>
         </div>
 
         {/* Background Pattern */}
         {pkg.highlighted && (
           <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-            <div className="w-full h-full" style={{
-              backgroundImage: 'repeating-linear-gradient(45deg, #F5EFE7 0px, #F5EFE7 1px, transparent 1px, transparent 30px)',
-            }} />
+            <div
+              className="w-full h-full"
+              style={{
+                backgroundImage:
+                  "repeating-linear-gradient(45deg, #F5EFE7 0px, #F5EFE7 1px, transparent 1px, transparent 30px)",
+              }}
+            />
           </div>
         )}
       </motion.div>
@@ -498,7 +550,7 @@ function ComparisonTable() {
 }
 
 function renderFeatureValue(value: boolean | string) {
-  if (typeof value === 'boolean') {
+  if (typeof value === "boolean") {
     return value ? (
       <Check className="w-6 h-6 mx-auto" />
     ) : (
@@ -508,7 +560,13 @@ function renderFeatureValue(value: boolean | string) {
   return <span className="text-sm md:text-base opacity-70">{value}</span>;
 }
 
-function AddOnCard({ addon, index }: { addon: typeof pricingData.addons.items[0]; index: number }) {
+function AddOnCard({
+  addon,
+  index,
+}: {
+  addon: (typeof pricingData.addons.items)[0];
+  index: number;
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 60 }}
@@ -519,7 +577,7 @@ function AddOnCard({ addon, index }: { addon: typeof pricingData.addons.items[0]
     >
       <motion.div
         className="border-2 border-[#050608] p-8 md:p-10 bg-[#F5EFE7] h-full hover:bg-white transition-colors flex flex-col"
-        whileHover={{ 
+        whileHover={{
           boxShadow: "16px 16px 0px 0px rgba(5,6,8,1)",
           x: -5,
           y: -5,
@@ -543,13 +601,15 @@ function AddOnCard({ addon, index }: { addon: typeof pricingData.addons.items[0]
         <h3 className="text-2xl md:text-3xl mb-4">{addon.name}</h3>
 
         {/* Description */}
-        <p className="text-base md:text-lg opacity-70 leading-relaxed mb-6">{addon.description}</p>
+        <p className="text-base md:text-lg opacity-70 leading-relaxed mb-6">
+          {addon.description}
+        </p>
 
         {/* Features */}
         <div className="space-y-2 mt-auto">
           {addon.features.map((feature, i) => (
             <div key={i} className="flex items-start gap-2">
-              <Check className="w-4 h-4 flex-shrink-0 mt-1 opacity-50" />
+              <Check className="w-4 h-4 shrink-0 mt-1 opacity-50" />
               <span className="text-sm opacity-70">{feature}</span>
             </div>
           ))}
@@ -569,7 +629,13 @@ function AddOnCard({ addon, index }: { addon: typeof pricingData.addons.items[0]
   );
 }
 
-function FAQItem({ item, index }: { item: typeof pricingData.faq.items[0]; index: number }) {
+function FAQItem({
+  item,
+  index,
+}: {
+  item: (typeof pricingData.faq.items)[0];
+  index: number;
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -584,27 +650,31 @@ function FAQItem({ item, index }: { item: typeof pricingData.faq.items[0]; index
         onClick={() => setIsOpen(!isOpen)}
         className="w-full p-6 md:p-8 flex items-center justify-between gap-4 text-left hover:bg-[#F5EFE7] transition-colors"
       >
-        <span className="text-lg md:text-xl lg:text-2xl pr-4">{item.question}</span>
+        <span className="text-lg md:text-xl lg:text-2xl pr-4">
+          {item.question}
+        </span>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3 }}
-          className="flex-shrink-0"
+          className="shrink-0"
         >
           <ChevronDown className="w-6 h-6" />
         </motion.div>
       </button>
-      
+
       <motion.div
         initial={false}
         animate={{
-          height: isOpen ? 'auto' : 0,
+          height: isOpen ? "auto" : 0,
           opacity: isOpen ? 1 : 0,
         }}
         transition={{ duration: 0.3 }}
         className="overflow-hidden"
       >
         <div className="p-6 md:p-8 pt-0 border-t-2 border-[#050608] border-opacity-10">
-          <p className="text-base md:text-lg opacity-70 leading-relaxed">{item.answer}</p>
+          <p className="text-base md:text-lg opacity-70 leading-relaxed">
+            {item.answer}
+          </p>
         </div>
       </motion.div>
     </motion.div>
@@ -613,10 +683,13 @@ function FAQItem({ item, index }: { item: typeof pricingData.faq.items[0]; index
 
 function TrustSignals() {
   const signals = [
-    { icon: <Shield className="w-8 h-8" />, text: '30-Day Money Back Guarantee' },
-    { icon: <Zap className="w-8 h-8" />, text: 'Lightning-Fast Delivery' },
-    { icon: <Star className="w-8 h-8" />, text: '4.9/5 Client Satisfaction' },
-    { icon: <TrendingUp className="w-8 h-8" />, text: 'Proven ROI Results' },
+    {
+      icon: <Shield className="w-8 h-8" />,
+      text: "30-Day Money Back Guarantee",
+    },
+    { icon: <Zap className="w-8 h-8" />, text: "Lightning-Fast Delivery" },
+    { icon: <Star className="w-8 h-8" />, text: "4.9/5 Client Satisfaction" },
+    { icon: <TrendingUp className="w-8 h-8" />, text: "Proven ROI Results" },
   ];
 
   return (
@@ -633,7 +706,12 @@ function TrustSignals() {
           <motion.div
             className="mb-4"
             animate={{ y: [0, -5, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: index * 0.2 }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: index * 0.2,
+            }}
           >
             {signal.icon}
           </motion.div>

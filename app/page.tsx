@@ -1,9 +1,9 @@
 import { CasePreview } from "@/src/components/CasePreview";
 import { FinalCTA } from "@/src/components/FinalCTA";
 import { FocusSection } from "@/src/components/FocusSection";
-import { Footer } from "@/src/components/Footer";
+
 import { Hero } from "@/src/components/Hero";
-import { Navigation } from "@/src/components/Navigation";
+
 import { ProcessSection } from "@/src/components/ProcessSection";
 import { TestimonialsSection } from "@/src/components/TestimonialsSection";
 import { WhyUsSection } from "@/src/components/WhyUsSection";

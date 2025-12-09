@@ -3,7 +3,7 @@ import { motion, useInView } from 'motion/react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
-import { projects, industries, types } from '../../data/portfolio';
+import { projects, industries, types } from '../data/portfolio';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 
 export function Portfolio() {

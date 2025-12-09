@@ -3,7 +3,7 @@ import { motion, useInView, useScroll, useTransform, useSpring } from 'motion/re
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
-import { caseStudyData } from '../../data/caseStudies';
+import { caseStudyData } from '../data/caseStudies';
 import { ArrowRight, ExternalLink, Check, Play, Sparkles, TrendingUp, Zap, Award } from 'lucide-react';
 
 export function CaseStudyPremium() {

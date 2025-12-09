@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
-import { contactData } from '../../data/contactData';
+import { contactData } from '../data/contactData';
 import { 
   Send, 
   MapPin, 

@@ -1,26 +1,32 @@
-import { useRef, useState } from 'react';
-import { motion, useScroll, useTransform, useInView } from 'motion/react';
-import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import { Navigation } from '../components/Navigation';
-import { Footer } from '../components/Footer';
-import { processData } from '../../data/processData';
-import { 
-  ArrowRight, 
-  Check, 
-  Clock, 
-  Package, 
+"use client";
+import {  useRef, useState } from "react";
+import { motion, useScroll, useTransform, useInView } from "motion/react";
+
+import { processData } from "../../src/data/processData";
+import {
+  ArrowRight,
+  Check,
+  Clock,
+  Package,
   Shield,
   ChevronDown,
   Sparkles,
   Zap,
-  Target
-} from 'lucide-react';
+  Target,
+} from "lucide-react";
+import { ImageWithFallback } from "@/src/components/figma/ImageWithFallback";
+import dynamic from "next/dynamic";
 
-export function Process() {
+const ParticlesBackground = dynamic(
+  () => import("../../src/components/ParticlesBackground").then((m) => m.ParticlesBackground),
+  { ssr: false }
+);
+
+export  default function Process() {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end end"]
+    offset: ["start start", "end end"],
   });
 
   const y1 = useTransform(scrollYProgress, [0, 1], [0, -150]);
@@ -28,8 +34,6 @@ export function Process() {
 
   return (
     <div ref={containerRef} className="min-h-screen bg-[#F5EFE7]">
-      <Navigation />
-
       {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background Grid */}
@@ -37,11 +41,12 @@ export function Process() {
           <motion.div
             className="w-full h-full"
             style={{
-              backgroundImage: 'linear-gradient(#050608 1px, transparent 1px), linear-gradient(90deg, #050608 1px, transparent 1px)',
-              backgroundSize: '80px 80px',
+              backgroundImage:
+                "linear-gradient(#050608 1px, transparent 1px), linear-gradient(90deg, #050608 1px, transparent 1px)",
+              backgroundSize: "80px 80px",
             }}
             animate={{
-              backgroundPosition: ['0px 0px', '80px 80px'],
+              backgroundPosition: ["0px 0px", "80px 80px"],
             }}
             transition={{
               duration: 30,
@@ -51,7 +56,7 @@ export function Process() {
           />
         </div>
 
-        <motion.div 
+        <motion.div
           className="relative z-10 max-w-[1400px] mx-auto w-full px-6 md:px-12 lg:px-20 text-center"
           style={{ opacity }}
         >
@@ -88,7 +93,9 @@ export function Process() {
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             >
               <ChevronDown className="w-8 h-8 opacity-50" />
-              <p className="text-sm uppercase tracking-wider opacity-50">Explore Process</p>
+              <p className="text-sm uppercase tracking-wider opacity-50">
+                Explore Process
+              </p>
             </motion.div>
           </motion.div>
         </motion.div>
@@ -108,7 +115,7 @@ export function Process() {
             viewport={{ once: true }}
             className="text-center mb-32"
           >
-            <motion.div 
+            <motion.div
               className="w-24 h-[3px] bg-[#050608] mb-12 mx-auto"
               initial={{ width: 0 }}
               whileInView={{ width: 96 }}
@@ -142,7 +149,7 @@ export function Process() {
             viewport={{ once: true }}
             className="text-center mb-24"
           >
-            <motion.div 
+            <motion.div
               className="w-24 h-[3px] bg-[#F5EFE7] mb-12 mx-auto"
               initial={{ width: 0 }}
               whileInView={{ width: 96 }}
@@ -172,7 +179,7 @@ export function Process() {
             viewport={{ once: true }}
             className="text-center mb-24"
           >
-            <motion.div 
+            <motion.div
               className="w-24 h-[3px] bg-[#050608] mb-12 mx-auto"
               initial={{ width: 0 }}
               whileInView={{ width: 96 }}
@@ -211,9 +218,13 @@ export function Process() {
           >
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-[0.02]">
-              <div className="w-full h-full" style={{
-                backgroundImage: 'repeating-linear-gradient(45deg, #050608 0px, #050608 2px, transparent 2px, transparent 20px)',
-              }} />
+              <div
+                className="w-full h-full"
+                style={{
+                  backgroundImage:
+                    "repeating-linear-gradient(45deg, #050608 0px, #050608 2px, transparent 2px, transparent 20px)",
+                }}
+              />
             </div>
 
             <div className="relative z-10">
@@ -240,7 +251,7 @@ export function Process() {
                     viewport={{ once: true }}
                     className="flex items-start gap-4"
                   >
-                    <Check className="w-6 h-6 flex-shrink-0 mt-1" />
+                    <Check className="w-6 h-6 shrink-0 mt-1" />
                     <p className="text-lg md:text-xl">{point}</p>
                   </motion.div>
                 ))}
@@ -262,29 +273,43 @@ export function Process() {
             {/* Animated Icons */}
             <div className="flex items-center justify-center gap-8 mb-12">
               <motion.div
-                animate={{ 
+                animate={{
                   y: [0, -20, 0],
-                  rotate: [0, 10, 0]
+                  rotate: [0, 10, 0],
                 }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               >
                 <Target className="w-16 h-16 md:w-20 md:h-20" />
               </motion.div>
               <motion.div
-                animate={{ 
+                animate={{
                   y: [0, -15, 0],
-                  rotate: [0, -10, 0]
+                  rotate: [0, -10, 0],
                 }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.5,
+                }}
               >
                 <Zap className="w-16 h-16 md:w-20 md:h-20" />
               </motion.div>
               <motion.div
-                animate={{ 
+                animate={{
                   y: [0, -25, 0],
-                  rotate: [0, 15, 0]
+                  rotate: [0, 15, 0],
                 }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1,
+                }}
               >
                 <Sparkles className="w-16 h-16 md:w-20 md:h-20" />
               </motion.div>
@@ -295,22 +320,25 @@ export function Process() {
               <br />
               работу?
             </h2>
-            
+
             <p className="text-xl md:text-2xl lg:text-3xl opacity-70 mb-16 max-w-3xl mx-auto leading-relaxed">
-              Запишитесь на бесплатную консультацию.
-              Обсудим ваш проект и составим индивидуальный план.
+              Запишитесь на бесплатную консультацию. Обсудим ваш проект и
+              составим индивидуальный план.
             </p>
-            
+
             <motion.a
               href="#contact"
               className="inline-flex items-center gap-4 px-12 py-6 md:px-16 md:py-8 bg-[#F5EFE7] text-[#050608] text-xl md:text-2xl group relative overflow-hidden"
-              whileHover={{ scale: 1.05, boxShadow: "0 0 60px rgba(245,239,231,0.4)" }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 0 60px rgba(245,239,231,0.4)",
+              }}
               whileTap={{ scale: 0.95 }}
             >
               {/* Shimmer Effect */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"
-                animate={{ x: ['-200%', '200%'] }}
+                className="absolute inset-0 bg-linear-to-r from-transparent via-white to-transparent opacity-30"
+                animate={{ x: ["-200%", "200%"] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
               />
               <span className="relative z-10">Начать проект</span>
@@ -334,15 +362,19 @@ export function Process() {
           transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
         />
       </section>
-
-      <Footer />
     </div>
   );
 }
 
 // ============= COMPONENTS =============
 
-function ProcessStep({ step, index }: { step: typeof processData.steps[0]; index: number }) {
+function ProcessStep({
+  step,
+  index,
+}: {
+  step: (typeof processData.steps)[0];
+  index: number;
+}) {
   const [isExpanded, setIsExpanded] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -351,7 +383,7 @@ function ProcessStep({ step, index }: { step: typeof processData.steps[0]; index
     <div
       ref={ref}
       className={`grid lg:grid-cols-[1fr,1.2fr] gap-12 lg:gap-16 items-center ${
-        index % 2 === 1 ? 'lg:grid-flow-dense' : ''
+        index % 2 === 1 ? "lg:grid-flow-dense" : ""
       }`}
     >
       {/* Image with Hologram Effect */}
@@ -359,11 +391,11 @@ function ProcessStep({ step, index }: { step: typeof processData.steps[0]; index
         initial={{ opacity: 0, x: index % 2 === 0 ? -80 : 80 }}
         animate={isInView ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 1 }}
-        className={`relative ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}
+        className={`relative ${index % 2 === 1 ? "lg:col-start-2" : ""}`}
       >
         <motion.div
-          className="relative aspect-[4/5] border-4 border-[#050608] overflow-hidden group"
-          whileHover={{ 
+          className="relative aspect-4/5 border-4 border-[#050608] overflow-hidden group"
+          whileHover={{
             boxShadow: "24px 24px 0px 0px rgba(5,6,8,1)",
             x: -10,
             y: -10,
@@ -372,9 +404,9 @@ function ProcessStep({ step, index }: { step: typeof processData.steps[0]; index
         >
           {/* Hologram Overlay */}
           <motion.div
-            className="absolute inset-0 bg-gradient-to-b from-transparent via-[#F5EFE7]/20 to-transparent opacity-0 group-hover:opacity-100 z-10"
+            className="absolute inset-0 bg-linear-to-b from-transparent via-[#F5EFE7]/20 to-transparent opacity-0 group-hover:opacity-100 z-10"
             animate={{
-              backgroundPosition: ['0% 0%', '0% 100%'],
+              backgroundPosition: ["0% 0%", "0% 100%"],
             }}
             transition={{
               duration: 2,
@@ -413,7 +445,7 @@ function ProcessStep({ step, index }: { step: typeof processData.steps[0]; index
         initial={{ opacity: 0, x: index % 2 === 0 ? 80 : -80 }}
         animate={isInView ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 1, delay: 0.2 }}
-        className={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}
+        className={index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""}
       >
         {/* Icon & Duration */}
         <div className="flex items-center gap-6 mb-8">
@@ -426,7 +458,9 @@ function ProcessStep({ step, index }: { step: typeof processData.steps[0]; index
           </motion.div>
           <div className="flex items-center gap-2 px-4 py-2 border-2 border-[#050608] bg-white">
             <Clock className="w-5 h-5" />
-            <span className="text-sm uppercase tracking-wider">{step.duration}</span>
+            <span className="text-sm uppercase tracking-wider">
+              {step.duration}
+            </span>
           </div>
         </div>
 
@@ -448,18 +482,20 @@ function ProcessStep({ step, index }: { step: typeof processData.steps[0]; index
             Deliverables:
           </h4>
           <div className="space-y-2">
-            {step.deliverables.slice(0, isExpanded ? undefined : 3).map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -20 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
-                className="flex items-start gap-3"
-              >
-                <Check className="w-5 h-5 flex-shrink-0 mt-1 opacity-50" />
-                <span className="text-lg opacity-70">{item}</span>
-              </motion.div>
-            ))}
+            {step.deliverables
+              .slice(0, isExpanded ? undefined : 3)
+              .map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
+                  className="flex items-start gap-3"
+                >
+                  <Check className="w-5 h-5 shrink-0 mt-1 opacity-50" />
+                  <span className="text-lg opacity-70">{item}</span>
+                </motion.div>
+              ))}
           </div>
 
           {/* Expand Button */}
@@ -469,7 +505,11 @@ function ProcessStep({ step, index }: { step: typeof processData.steps[0]; index
               className="mt-4 flex items-center gap-2 text-base opacity-60 hover:opacity-100 transition-opacity"
               whileHover={{ x: 5 }}
             >
-              <span>{isExpanded ? 'Show less' : `+${step.deliverables.length - 3} more`}</span>
+              <span>
+                {isExpanded
+                  ? "Show less"
+                  : `+${step.deliverables.length - 3} more`}
+              </span>
               <motion.div
                 animate={{ rotate: isExpanded ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
@@ -491,7 +531,9 @@ function ProcessStep({ step, index }: { step: typeof processData.steps[0]; index
               className="border-2 border-[#050608] p-4 bg-white hover:bg-[#F5EFE7] transition-colors"
             >
               <h5 className="text-base mb-2">{detail.title}</h5>
-              <p className="text-sm opacity-60 leading-relaxed">{detail.description}</p>
+              <p className="text-sm opacity-60 leading-relaxed">
+                {detail.description}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -500,11 +542,15 @@ function ProcessStep({ step, index }: { step: typeof processData.steps[0]; index
   );
 }
 
-function TimelineFlow({ phases }: { phases: typeof processData.timeline.phases }) {
+function TimelineFlow({
+  phases,
+}: {
+  phases: typeof processData.timeline.phases;
+}) {
   return (
     <div className="relative">
       {/* Connection Line */}
-      <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-[2px] bg-[#F5EFE7] opacity-20" />
+      <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-[#F5EFE7] opacity-20" />
 
       <div className="grid md:grid-cols-5 gap-8 relative z-10">
         {phases.map((phase, index) => (
@@ -519,17 +565,17 @@ function TimelineFlow({ phases }: { phases: typeof processData.timeline.phases }
             {/* Node */}
             <motion.div
               className="w-full aspect-square border-2 border-[#F5EFE7] bg-[#050608] p-6 md:p-8 flex flex-col items-center justify-center text-center mb-6 relative overflow-hidden group"
-              whileHover={{ 
+              whileHover={{
                 scale: 1.05,
-                borderColor: '#F5EFE7',
+                borderColor: "#F5EFE7",
                 boxShadow: "0 0 40px rgba(245,239,231,0.3)",
               }}
             >
               {/* Hologram Effect */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-br from-[#F5EFE7]/10 to-transparent opacity-0 group-hover:opacity-100"
+                className="absolute inset-0 bg-linear-to-br from-[#F5EFE7]/10 to-transparent opacity-0 group-hover:opacity-100"
                 animate={{
-                  backgroundPosition: ['0% 0%', '100% 100%'],
+                  backgroundPosition: ["0% 0%", "100% 100%"],
                 }}
                 transition={{
                   duration: 3,
@@ -539,8 +585,12 @@ function TimelineFlow({ phases }: { phases: typeof processData.timeline.phases }
               />
 
               <div className="relative z-10">
-                <p className="text-5xl md:text-6xl mb-2 opacity-30">0{index + 1}</p>
-                <p className="text-lg md:text-xl uppercase tracking-wider">{phase.name}</p>
+                <p className="text-5xl md:text-6xl mb-2 opacity-30">
+                  0{index + 1}
+                </p>
+                <p className="text-lg md:text-xl uppercase tracking-wider">
+                  {phase.name}
+                </p>
               </div>
             </motion.div>
 
@@ -555,7 +605,11 @@ function TimelineFlow({ phases }: { phases: typeof processData.timeline.phases }
               <motion.div
                 className="hidden lg:block absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2"
                 animate={{ x: [0, 10, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               >
                 <ArrowRight className="w-6 h-6 opacity-30" />
               </motion.div>
@@ -567,7 +621,13 @@ function TimelineFlow({ phases }: { phases: typeof processData.timeline.phases }
   );
 }
 
-function DeliverableCard({ category, index }: { category: typeof processData.deliverables.items[0]; index: number }) {
+function DeliverableCard({
+  category,
+  index,
+}: {
+  category: (typeof processData.deliverables.items)[0];
+  index: number;
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 60 }}
@@ -578,7 +638,7 @@ function DeliverableCard({ category, index }: { category: typeof processData.del
     >
       <motion.div
         className="border-2 border-[#050608] p-10 md:p-12 bg-[#F5EFE7] h-full hover:bg-white transition-colors"
-        whileHover={{ 
+        whileHover={{
           boxShadow: "16px 16px 0px 0px rgba(5,6,8,1)",
           x: -5,
           y: -5,
@@ -593,14 +653,16 @@ function DeliverableCard({ category, index }: { category: typeof processData.del
           >
             {category.icon}
           </motion.div>
-          <h3 className="text-2xl md:text-3xl lg:text-4xl">{category.category}</h3>
+          <h3 className="text-2xl md:text-3xl lg:text-4xl">
+            {category.category}
+          </h3>
         </div>
 
         {/* Items */}
         <div className="space-y-3">
           {category.items.map((item, i) => (
             <div key={i} className="flex items-start gap-3">
-              <Check className="w-5 h-5 flex-shrink-0 mt-1" />
+              <Check className="w-5 h-5 shrink-0 mt-1" />
               <p className="text-lg opacity-70">{item}</p>
             </div>
           ))}
@@ -644,10 +706,11 @@ function HolographicGrid() {
       <motion.div
         className="w-full h-full"
         style={{
-          backgroundImage: 'repeating-linear-gradient(0deg, #F5EFE7 0px, #F5EFE7 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, #F5EFE7 0px, #F5EFE7 1px, transparent 1px, transparent 40px)',
+          backgroundImage:
+            "repeating-linear-gradient(0deg, #F5EFE7 0px, #F5EFE7 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, #F5EFE7 0px, #F5EFE7 1px, transparent 1px, transparent 40px)",
         }}
         animate={{
-          backgroundPosition: ['0px 0px', '40px 40px'],
+          backgroundPosition: ["0px 0px", "40px 40px"],
         }}
         transition={{
           duration: 20,
@@ -659,28 +722,28 @@ function HolographicGrid() {
   );
 }
 
-function ParticlesBackground() {
-  return (
-    <div className="absolute inset-0 opacity-10 pointer-events-none">
-      {[...Array(30)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-1 h-1 bg-[#F5EFE7] rounded-full"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-          }}
-          animate={{
-            y: [0, -30, 0],
-            opacity: [0, 1, 0],
-          }}
-          transition={{
-            duration: 3 + Math.random() * 3,
-            repeat: Infinity,
-            delay: Math.random() * 3,
-          }}
-        />
-      ))}
-    </div>
-  );
-}
+// function ParticlesBackground() {
+//   return (
+//     <div className="absolute inset-0 opacity-10 pointer-events-none">
+//       {[...Array(30)].map((_, i) => (
+//         <motion.div
+//           key={i}
+//           className="absolute w-1 h-1 bg-[#F5EFE7] rounded-full"
+//           style={{
+//             left: `${Math.random() * 100}%`,
+//             top: `${Math.random() * 100}%`,
+//           }}
+//           animate={{
+//             y: [0, -30, 0],
+//             opacity: [0, 1, 0],
+//           }}
+//           transition={{
+//             duration: 3 + Math.random() * 3,
+//             repeat: Infinity,
+//             delay: Math.random() * 3,
+//           }}
+//         />
+//       ))}
+//     </div>
+//   );
+// }

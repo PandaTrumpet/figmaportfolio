@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform, useInView } from 'motion/react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
-import { aboutData } from '../../data/aboutData';
+import { aboutData } from '../data/aboutData';
 import { ArrowRight, Linkedin, Award, TrendingUp, Users, Heart, Sparkles } from 'lucide-react';
 
 export function About() {
