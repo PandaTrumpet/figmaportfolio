@@ -191,3 +191,57 @@
 html {
   font-size: var(--font-size);
 }
+
+
+
+/* Neon glitch + slide-in from right for mobile nav links */
+@keyframes neon-glitch-in {
+  0% {
+    opacity: 0;
+    transform: translateX(32px);
+    text-shadow: none;
+  }
+
+  20% {
+    opacity: 1;
+    transform: translateX(0);
+    text-shadow:
+      0 0 8px rgba(76, 194, 255, 0.9),
+      2px 0 rgba(59, 130, 246, 0.7),
+      -2px 0 rgba(139, 92, 246, 0.7);
+  }
+
+  30% {
+    transform: translateX(-3px);
+  }
+
+  40% {
+    transform: translateX(2px);
+  }
+
+  50% {
+    transform: translateX(0);
+    text-shadow:
+      0 0 14px rgba(76, 194, 255, 1),
+      0 0 24px rgba(59, 130, 246, 0.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    text-shadow:
+      0 0 10px rgba(76, 194, 255, 0.8),
+      0 0 22px rgba(37, 99, 235, 0.9);
+  }
+}
+
+/* базовое состояние — скрыты и смещены вправо */
+.mobile-nav-link {
+  opacity: 0;
+  transform: translateX(32px);
+}
+
+/* активная анимация */
+.mobile-nav-link-animate {
+  animation: neon-glitch-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
