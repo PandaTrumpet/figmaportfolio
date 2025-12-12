@@ -108,6 +108,205 @@
 
 
 
+// "use client";
+
+// import { useState } from "react";
+// import { ImageWithFallback } from "./figma/ImageWithFallback";
+// import { CaseStudyDetail } from "./CaseStudyDetail";
+// import { caseStudies } from "../data/caseStudies";
+
+// export function CasePreview() {
+//   const [hoveredCase, setHoveredCase] = useState<number | null>(null);
+//   const [selectedCaseIndex, setSelectedCaseIndex] = useState<number | null>(
+//     null
+//   );
+
+//   const handleNext = () => {
+//     if (selectedCaseIndex !== null) {
+//       setSelectedCaseIndex((selectedCaseIndex + 1) % caseStudies.length);
+//     }
+//   };
+
+//   const handlePrev = () => {
+//     if (selectedCaseIndex !== null) {
+//       setSelectedCaseIndex(
+//         selectedCaseIndex === 0 ? caseStudies.length - 1 : selectedCaseIndex - 1
+//       );
+//     }
+//   };
+
+//   return (
+//     <section
+//       id="cases"
+//       className="
+//         relative
+//         px-6 md:px-12 lg:px-20
+//         py-32 md:py-40
+//         bg-[#050608]
+//         bg-gradient-to-b from-[#050608] via-[#050814] to-[#050608]
+//         overflow-hidden
+//       "
+//     >
+//       {/* Tel-Aviv Night Waves glows */}
+//       <div className="pointer-events-none absolute inset-0 opacity-60">
+//         <div className="absolute -top-40 left-1/3 w-[520px] h-[520px] rounded-full bg-[#2EE6FF] blur-[180px] opacity-25" />
+//         <div className="absolute bottom-[-200px] right-1/4 w-[600px] h-[600px] rounded-full bg-[#4CC2FF] blur-[200px] opacity-20" />
+//         <div className="absolute top-1/3 -left-40 w-[440px] h-[440px] rounded-full bg-[#A5B4FC] blur-[200px] opacity-15" />
+//       </div>
+
+//       <div className="relative z-10 max-w-[1600px] mx-auto">
+//         {/* Section Header */}
+//         <div className="mb-20 md:mb-24">
+//           <div className="w-24 h-[2px] bg-[#2EE6FF] mb-8 opacity-90 shadow-[0_0_18px_rgba(46,230,255,1)]" />
+
+//           <h2
+//             className="
+//               text-4xl md:text-5xl lg:text-6xl xl:text-7xl
+//               leading-tight tracking-tight text-white
+//             "
+//           >
+//             Recent Work
+//           </h2>
+
+//           <p className="text-base md:text-lg lg:text-xl text-white/70 mt-6 max-w-2xl">
+//             Real results for real businesses — brought to life through premium
+//             UI, strategy, and cinematic Tel-Aviv night aesthetics.
+//           </p>
+//         </div>
+
+//         {/* Case Cards */}
+//         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+//           {caseStudies.map((caseItem, index) => (
+//             <button
+//               type="button"
+//               key={caseItem.id}
+//               className={`
+//                 group relative text-left rounded-2xl overflow-hidden
+//                 cursor-pointer transition-all duration-700
+//                 backdrop-blur-xl bg-white/5 border border-white/10
+//                 shadow-[0_20px_60px_rgba(0,0,0,0.55)]
+//                 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2EE6FF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#050608]
+//                 ${hoveredCase === index ? "-translate-y-3 scale-[1.02]" : ""}
+//               `}
+//               onMouseEnter={() => setHoveredCase(index)}
+//               onMouseLeave={() => setHoveredCase(null)}
+//               onClick={() => setSelectedCaseIndex(index)}
+//             >
+//               {/* Neon border on hover */}
+//               <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+//                 <div className="absolute inset-0 border border-[#2EE6FF]/80 rounded-2xl mix-blend-screen shadow-[0_0_25px_#2EE6FF]" />
+//               </div>
+
+//               {/* Screenshot */}
+//               {/* <div className="relative aspect-[3/4] overflow-hidden">
+//                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#050608]/75" />
+
+//                 <ImageWithFallback
+//                   src={caseItem.heroImage}
+//                   alt={caseItem.title}
+//                   className="
+//                     w-full h-full object-cover
+//                     transition-all duration-[900ms]
+//                     group-hover:scale-[1.12]
+//                     group-hover:brightness-[1.15]
+//                     group-hover:saturate-150
+//                   "
+//                 />
+//               </div> */}
+//               {/* Screenshot */}
+//               <div className="relative aspect-[3/4] overflow-hidden">
+//                 {/* Holographic reflection */}
+//                 <div
+//                   className="
+//       pointer-events-none
+//       absolute inset-0 z-20
+//       opacity-0 group-hover:opacity-100
+//       transition-opacity duration-700
+//     "
+//                 >
+//                   <div
+//                     className="
+//         absolute inset-0
+//         bg-[linear-gradient(120deg,rgba(255,255,255,0)_0%,rgba(255,255,255,0.35)_35%,rgba(255,255,255,0)_70%)]
+//         mix-blend-screen
+//         blur-[18px]
+//         translate-x-[-120%]
+//         group-hover:translate-x-[120%]
+//         transition-transform duration-[1300ms] ease-out
+//       "
+//                   />
+//                   {/* Subtle holographic iridescent tint */}
+//                   <div
+//                     className="
+//         absolute inset-0
+//         bg-[radial-gradient(circle_at_30%_20%,rgba(46,230,255,0.35),transparent_70%)]
+//         opacity-50
+//         mix-blend-overlay
+//       "
+//                   />
+//                 </div>
+
+//                 {/* Dark gradient at the bottom */}
+//                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#050608]/75 pointer-events-none" />
+
+//                 {/* Image */}
+//                 <ImageWithFallback
+//                   src={caseItem.heroImage}
+//                   alt={caseItem.title}
+//                   className="
+//       w-full h-full object-cover
+//       transition-all duration-[900ms]
+//       group-hover:scale-[1.12]
+//       group-hover:brightness-[1.15]
+//       group-hover:saturate-150
+//     "
+//                 />
+//               </div>
+
+//               {/* Text */}
+//               <div className="p-6 space-y-3 text-white">
+//                 <p className="text-[11px] md:text-xs uppercase tracking-[0.22em] text-white/55">
+//                   {caseItem.industry} • {caseItem.year}
+//                 </p>
+
+//                 <p className="text-lg md:text-xl leading-snug">
+//                   {caseItem.tagline}
+//                 </p>
+
+//                 <div className="w-10 h-[1px] bg-white/15" />
+//               </div>
+//             </button>
+//           ))}
+//         </div>
+
+//         {/* Footer note */}
+//         <div className="mt-20 text-center">
+//           <p className="text-xs md:text-sm uppercase tracking-[0.35em] text-white/40 mb-3">
+//             tap any project
+//           </p>
+//           <p className="text-sm md:text-base text-white/70">
+//             to open the full case study with metrics, process, visuals & UX
+//             decisions.
+//           </p>
+//         </div>
+//       </div>
+
+//       {/* Modal */}
+//       {selectedCaseIndex !== null && (
+//         <CaseStudyDetail
+//           key={caseStudies[selectedCaseIndex].id}
+//           caseStudy={caseStudies[selectedCaseIndex]}
+//           onClose={() => setSelectedCaseIndex(null)}
+//           onNext={handleNext}
+//           onPrev={handlePrev}
+//         />
+//       )}
+//     </section>
+//   );
+// }
+
+
+
 "use client";
 
 import { useState } from "react";
@@ -199,8 +398,40 @@ export function CasePreview() {
 
               {/* Screenshot */}
               {/* <div className="relative aspect-[3/4] overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#050608]/75" />
+              
+                <div
+                  className="
+                    pointer-events-none
+                    absolute inset-0 z-20
+                    opacity-0 group-hover:opacity-100
+                    transition-opacity duration-700
+                  "
+                >
+                  <div
+                    className="
+                      absolute inset-0
+                      bg-[linear-gradient(120deg,rgba(255,255,255,0)_0%,rgba(255,255,255,0.35)_35%,rgba(255,255,255,0)_70%)]
+                      mix-blend-screen
+                      blur-[18px]
+                      translate-x-[-120%]
+                      group-hover:translate-x-[120%]
+                      transition-transform duration-[1300ms] ease-out
+                    "
+                  />
+                 
+                  <div
+                    className="
+                      absolute inset-0
+                      bg-[radial-gradient(circle_at_30%_20%,rgba(46,230,255,0.35),transparent_70%)]
+                      opacity-50
+                      mix-blend-overlay
+                    "
+                  />
+                </div>
 
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#050608]/75 pointer-events-none" />
+
+             
                 <ImageWithFallback
                   src={caseItem.heroImage}
                   alt={caseItem.title}
@@ -212,10 +443,46 @@ export function CasePreview() {
                     group-hover:saturate-150
                   "
                 />
+
+               
+                <div className="pointer-events-none absolute inset-x-0 bottom-12 flex justify-center">
+                  <div
+                    className="
+                      translate-y-6 opacity-0
+                      group-hover:translate-y-0 group-hover:opacity-100
+                      transition-all duration-400 ease-out
+                    "
+                  >
+                    <div
+                      className="
+                        inline-flex items-center
+                        rounded-full
+                        bg-gradient-to-r from-[#2EE6FF] via-[#4CC2FF] to-[#F472B6]
+                        px-[3px] py-[3px]
+                        shadow-[0_0_22px_rgba(46,230,255,0.85)]
+                      "
+                    >
+                      <div
+                        className="
+                          rounded-full
+                          bg-black/85 backdrop-blur-xl
+                          px-6 py-3
+                          flex items-center gap-2
+                        "
+                      >
+                        <span className="text-[11px] md:text-xs font-medium uppercase tracking-[0.22em] text-white/90">
+                          Посмотреть
+                        </span>
+                        <span className="inline-block text-sm text-[#2EE6FF] translate-y-[0.5px]">
+                          ↗
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div> */}
-              {/* Screenshot */}
               <div className="relative aspect-[3/4] overflow-hidden">
-                {/* Holographic reflection */}
+                {/* HOLOGRAPHIC REFLECTION (always above image, below CTA) */}
                 <div
                   className="
       pointer-events-none
@@ -235,21 +502,17 @@ export function CasePreview() {
         transition-transform duration-[1300ms] ease-out
       "
                   />
-                  {/* Subtle holographic iridescent tint */}
+
                   <div
                     className="
         absolute inset-0
         bg-[radial-gradient(circle_at_30%_20%,rgba(46,230,255,0.35),transparent_70%)]
-        opacity-50
-        mix-blend-overlay
+        opacity-50 mix-blend-overlay
       "
                   />
                 </div>
 
-                {/* Dark gradient at the bottom */}
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#050608]/75 pointer-events-none" />
-
-                {/* Image */}
+                {/* IMAGE */}
                 <ImageWithFallback
                   src={caseItem.heroImage}
                   alt={caseItem.title}
@@ -261,9 +524,118 @@ export function CasePreview() {
       group-hover:saturate-150
     "
                 />
+
+                {/* GRADIENT DARKEN BOTTOM */}
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#050608]/75 pointer-events-none z-30" />
+
+                {/* CTA BUTTON — now ABOVE reflection */}
+                {/* CTA BUTTON — independent hover animation */}
+                {/* <div className="pointer-events-none absolute inset-x-0 bottom-12 flex justify-center z-40">
+                  <div
+                    className="
+      translate-y-6 opacity-0
+      group-hover:translate-y-0 group-hover:opacity-100
+      transition-all duration-400 ease-out
+      pointer-events-auto
+    "
+                  >
+                    <button
+                      className="
+        relative
+        inline-flex items-center gap-2
+        rounded-full
+        px-7 py-3.5
+        bg-black/70 backdrop-blur-xl
+        text-white font-medium uppercase tracking-[0.22em]
+        transition-all duration-300 ease-out
+        shadow-[0_0_0px_rgba(46,230,255,0)]
+        hover:shadow-[0_0_22px_rgba(46,230,255,0.7)]
+        hover:bg-black/85
+        hover:scale-[1.06]
+      "
+                    >
+                    
+                      <span
+                        className="
+          absolute inset-0
+          rounded-full
+          bg-gradient-to-r from-[#2EE6FF] via-[#4CC2FF] to-[#F472B6]
+          opacity-0 hover:opacity-100
+          blur-[10px]
+          transition-opacity duration-400
+          -z-10
+        "
+                      />
+
+                      <span className="text-[11px] md:text-xs tracking-[0.22em]">
+                        Посмотреть
+                      </span>
+                      <span className="text-[#2EE6FF] text-sm translate-y-[0.5px]">
+                        ↗
+                      </span>
+                    </button>
+                  </div>
+                </div> */}
+                <div className="absolute inset-x-0 bottom-12 flex justify-center z-40">
+                  <div
+                    className="
+      translate-y-6 opacity-0
+      group-hover:translate-y-0 group-hover:opacity-100
+      transition-all duration-400 ease-out
+      pointer-events-auto
+    "
+                  >
+                    <button
+                      className="
+        relative
+        inline-flex items-center gap-2
+        rounded-full
+        px-7 py-3.5
+        bg-black/70 backdrop-blur-xl
+        text-white font-medium uppercase tracking-[0.22em]
+        transition-all duration-300 ease-out
+        shadow-[0_0_0px_rgba(46,230,255,0)] cursor-pointer
+        hover:shadow-[0_0_22px_rgba(46,230,255,0.7)]
+        hover:bg-black/85
+        hover:scale-[1.06]
+      "
+                    >
+                      {/* Neon gradient ring */}
+                      {/* <span
+                        className="
+          absolute inset-0
+          rounded-full
+          bg-gradient-to-r from-[#2EE6FF] via-[#4CC2FF] to-[#F472B6]
+          opacity-0
+          group-hover:opacity-100
+          blur-[10px]
+          transition-opacity duration-400
+          -z-10
+        "
+                      /> */}
+                      <span
+                        className="
+    absolute inset-0
+    rounded-full
+    bg-gradient-to-r from-[#2EE6FF] via-[#4CC2FF] to-[#A5B4FC]
+    opacity-0
+    group-hover:opacity-100
+    blur-[14px]
+    transition-opacity duration-500
+    -z-10
+  "
+                      />
+                      <span className="text-[11px] md:text-xs tracking-[0.22em]">
+                        Посмотреть
+                      </span>
+                      {/* <span className="text-[#2EE6FF] text-sm translate-y-[0.5px]">
+                        ↗
+                      </span> */}
+                    </button>
+                  </div>
+                </div>
               </div>
 
-              {/* Text */}
               <div className="p-6 space-y-3 text-white">
                 <p className="text-[11px] md:text-xs uppercase tracking-[0.22em] text-white/55">
                   {caseItem.industry} • {caseItem.year}
@@ -273,7 +645,7 @@ export function CasePreview() {
                   {caseItem.tagline}
                 </p>
 
-                <div className="w-10 h-[1px] bg-white/15" />
+                <div className="w-10 h-[1px] bg.white/15" />
               </div>
             </button>
           ))}
