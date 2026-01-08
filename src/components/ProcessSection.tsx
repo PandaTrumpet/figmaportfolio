@@ -1,97 +1,833 @@
+
+// "use client";
+
+// import * as React from "react";
+// import { motion, useReducedMotion } from "motion/react";
+// import {
+//   ArrowRight,
+//   Workflow,
+//   Sparkles,
+//   Palette,
+//   Cpu,
+//   Zap,
+// } from "lucide-react";
+
+// const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
+// const steps = [
+//   {
+//     number: "01",
+//     title: "Discovery",
+//     icon: Workflow,
+//     description:
+//       "Понимаем цель сайта, аудиторию и где именно вы теряете заявки. Быстро фиксируем KPI и ограничения.",
+//     bullets: ["Цели и оффер", "Аудит конкурентов", "Карта боли клиента"],
+//   },
+//   {
+//     number: "02",
+//     title: "Strategy",
+//     icon: Sparkles,
+//     description:
+//       "Строим структуру, которая продаёт, и сразу проектируем автоматизацию: что происходит после заявки.",
+//     bullets: [
+//       "Сценарий конверсии",
+//       "Make/Zapier логика",
+//       "CRM/Calendar события",
+//     ],
+//   },
+//   {
+//     number: "03",
+//     title: "Design",
+//     icon: Palette,
+//     description:
+//       "Премиальный UI в стиле Tel-Aviv Night Waves: стекло, неон, depth. Всё читаемо и конверсионно.",
+//     bullets: ["UI-система", "Premium hover", "Mobile-first"],
+//   },
+//   {
+//     number: "04",
+//     title: "Development",
+//     icon: Cpu,
+//     description:
+//       "Собираем на Next.js: быстрый, чистый, масштабируемый код + интеграции (боты, CRM, аналитика).",
+//     bullets: ["Next.js + Tailwind", "WhatsApp/Telegram", "Tracking & events"],
+//   },
+// ];
+
+// export function ProcessSection() {
+//   const reduce = useReducedMotion();
+
+//   const container = {
+//     hidden: { opacity: 0 },
+//     show: {
+//       opacity: 1,
+//       transition: { staggerChildren: 0.1, delayChildren: 0.05 },
+//     },
+//   };
+
+//   const item = {
+//     hidden: { opacity: 0, y: 18, filter: "blur(10px)" },
+//     show: {
+//       opacity: 1,
+//       y: 0,
+//       filter: "blur(0px)",
+//       transition: { duration: 0.75, ease: EASE },
+//     },
+//   };
+
+//   return (
+//     <section
+//       id="process"
+//       className="
+//         relative overflow-hidden
+//         px-6 md:px-12 lg:px-20 py-24 md:py-32
+//         bg-linear-to-b from-[#050814] via-[#050818] to-[#020410]
+//         text-slate-100
+//       "
+//       aria-labelledby="process-title"
+//     >
+//       {/* Neon waves — same language as Hero */}
+//       <div
+//         className="pointer-events-none absolute -top-40 right-[-10%] h-96 w-96 rounded-full opacity-60 blur-3xl"
+//         style={{
+//           background:
+//             "radial-gradient(circle, rgba(76,194,255,0.9), transparent 60%)",
+//         }}
+//       />
+//       <div
+//         className="pointer-events-none absolute bottom-[-20%] left-[-10%] h-[26rem] w-[26rem] rounded-full opacity-60 blur-3xl"
+//         style={{
+//           background:
+//             "radial-gradient(circle, rgba(58,123,255,0.85), transparent 55%)",
+//         }}
+//       />
+
+//       <div className="relative z-10 max-w-[1400px] mx-auto">
+//         {/* Header */}
+//         <motion.div
+//           variants={container}
+//           initial={reduce ? "show" : "hidden"}
+//           whileInView="show"
+//           viewport={{ once: true, amount: 0.35 }}
+//           className="mb-16 md:mb-24"
+//         >
+//           <motion.div
+//             variants={item}
+//             className="w-16 h-0.5 mb-8 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-transparent"
+//           />
+
+//           <motion.h2
+//             id="process-title"
+//             variants={item}
+//             className="text-4xl md:text-5xl lg:text-6xl leading-[1.05] max-w-3xl text-slate-100"
+//           >
+//             Стратегия → Дизайн → Автоматизация
+//           </motion.h2>
+
+//           <motion.p
+//             variants={item}
+//             className="text-lg md:text-xl text-slate-300/90 mt-6 max-w-2xl leading-relaxed"
+//           >
+//             Мы убираем «угадайку»: делаем сайт, который{" "}
+//             <span className="text-slate-100">продаёт</span>, и сразу подключаем
+//             логику автоматизации — чтобы заявки{" "}
+//             <span className="text-slate-100">не терялись</span>.
+//           </motion.p>
+
+//           <motion.div
+//             variants={item}
+//             className="mt-8 inline-flex flex-wrap gap-3"
+//           >
+//             <span className="px-4 py-2 rounded-full border border-cyan-400/40 bg-[#0A0F1E]/55 backdrop-blur-xl text-sm text-slate-200">
+//               form → WhatsApp/Telegram
+//             </span>
+//             <span className="px-4 py-2 rounded-full border border-cyan-400/40 bg-[#0A0F1E]/55 backdrop-blur-xl text-sm text-slate-200">
+//               CRM → Calendar
+//             </span>
+//             <span className="px-4 py-2 rounded-full border border-cyan-400/40 bg-[#0A0F1E]/55 backdrop-blur-xl text-sm text-slate-200">
+//               analytics → follow-ups
+//             </span>
+//           </motion.div>
+//         </motion.div>
+
+//         {/* Steps */}
+//         <div className="relative">
+//           {/* Desktop connecting line */}
+//           <div className="hidden lg:block absolute top-12 left-0 right-0 h-[2px] bg-cyan-300/10" />
+
+//           <motion.div
+//             variants={container}
+//             initial={reduce ? "show" : "hidden"}
+//             whileInView="show"
+//             viewport={{ once: true, amount: 0.25 }}
+//             className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8"
+//           >
+//             {steps.map((step, index) => {
+//               const Icon = step.icon;
+//               return (
+//                 <motion.div
+//                   key={step.number}
+//                   variants={item}
+//                   className="relative"
+//                 >
+                
+//                   <div className="hidden lg:block absolute top-12 left-0 w-3 h-3 rounded-full transform -translate-y-1/2">
+//                     <div className="w-3 h-3 rounded-full bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#63E5FF] shadow-[0_0_30px_rgba(76,194,255,0.65)]" />
+//                   </div>
+
+//                   <div
+//                     className="
+//                       group relative rounded-3xl overflow-hidden
+//                       border border-cyan-400/30 bg-[#0A0F1E]/70 backdrop-blur-xl
+//                       shadow-[0_0_60px_rgba(59,130,246,0.18)]
+//                       p-6 md:p-7
+//                       transition-transform
+//                     "
+//                   >
+                   
+//                     <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+//                       <div
+//                         className="absolute -top-16 -right-16 h-52 w-52 rounded-full blur-3xl opacity-70"
+//                         style={{
+//                           background:
+//                             "radial-gradient(circle, rgba(76,194,255,0.55), transparent 60%)",
+//                         }}
+//                       />
+//                       <div
+//                         className="absolute -bottom-20 -left-20 h-56 w-56 rounded-full blur-3xl opacity-60"
+//                         style={{
+//                           background:
+//                             "radial-gradient(circle, rgba(58,123,255,0.45), transparent 60%)",
+//                         }}
+//                       />
+//                     </div>
+
+               
+//                     <div className="relative z-10 text-[3.6rem] leading-none font-semibold text-slate-100/10">
+//                       {step.number}
+//                     </div>
+
+//                     <div className="relative z-10 mt-3 flex items-start gap-3">
+//                       <div
+//                         className="
+//                           mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl
+//                           border border-cyan-400/35 bg-[#0B1020]/70
+//                           shadow-[0_0_30px_rgba(76,194,255,0.25)]
+//                         "
+//                       >
+//                         <Icon className="h-5 w-5 text-cyan-200/90" />
+//                       </div>
+
+//                       <div>
+//                         <h3 className="text-xl md:text-2xl font-semibold text-slate-100">
+//                           {step.title}
+//                         </h3>
+//                         <p className="mt-2 text-sm md:text-base leading-relaxed text-slate-300/90">
+//                           {step.description}
+//                         </p>
+//                       </div>
+//                     </div>
+
+                   
+//                     <ul className="relative z-10 mt-5 space-y-2 text-sm text-slate-200/80">
+//                       {step.bullets.map((b) => (
+//                         <li key={b} className="flex gap-2">
+//                           <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-cyan-300/60" />
+//                           <span>{b}</span>
+//                         </li>
+//                       ))}
+//                     </ul>
+
+                 
+//                     {index < steps.length - 1 && (
+//                       <div className="lg:hidden w-[2px] h-10 bg-cyan-300/10 mt-6 ml-2" />
+//                     )}
+//                   </div>
+//                 </motion.div>
+//               );
+//             })}
+//           </motion.div>
+//         </div>
+
+     
+//         <motion.div
+//           initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 22 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           viewport={{ once: true, amount: 0.25 }}
+//           transition={{ duration: 0.8, ease: EASE }}
+//           className="
+//             mt-20 md:mt-28 relative overflow-hidden rounded-3xl
+//             border border-cyan-400/30 bg-[#0A0F1E]/70 backdrop-blur-xl
+//             shadow-[0_0_70px_rgba(76,194,255,0.18)]
+//           "
+//         >
+       
+//           <div className="pointer-events-none absolute inset-0 opacity-[0.10]">
+//             <div
+//               className="h-full w-full"
+//               style={{
+//                 backgroundImage:
+//                   "linear-gradient(rgba(51,65,85,0.28) 1px, transparent 1px), linear-gradient(90deg, rgba(51,65,85,0.28) 1px, transparent 1px)",
+//                 backgroundSize: "80px 80px",
+//               }}
+//             />
+//           </div>
+
+//           <div className="relative z-10 p-10 md:p-14">
+//             <div className="flex items-center gap-2 text-slate-200/80 text-xs tracking-widest uppercase">
+//               <Zap className="h-4 w-4 text-cyan-200/90" />
+//               <span>Premium • Fast • Measurable</span>
+//             </div>
+
+//             <h3 className="mt-4 text-3xl md:text-4xl leading-tight text-slate-100 max-w-3xl">
+//               Хотите демо, где заявка{" "}
+//               <span className="text-slate-100">сразу</span> уходит в WhatsApp и
+//               CRM?
+//             </h3>
+
+//             <p className="mt-4 text-lg text-slate-300/90 max-w-2xl leading-relaxed">
+//               Покажем сценарий под ваш бизнес (клиника, салон, сервис). Вы
+//               увидите не «красивый макет», а реальный поток: форма → сообщение →
+//               запись/CRM → аналитика.
+//             </p>
+
+//             <div className="mt-8 flex flex-col sm:flex-row gap-4">
+           
+//               <motion.a
+//                 href="#contact"
+//                 className="
+//                   relative group inline-flex items-center justify-center gap-3
+//                   px-8 py-5 rounded-full font-medium
+//                   bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#63E5FF]
+//                   text-slate-900
+//                   shadow-[0_0_40px_rgba(76,194,255,0.55)]
+//                   hover:shadow-[0_0_60px_rgba(76,194,255,0.8)]
+//                   transition-all
+//                 "
+//                 whileHover={{ scale: 1.03 }}
+//                 whileTap={{ scale: 0.97 }}
+//               >
+//                 <span className="relative z-10">Start Your Project</span>
+//                 <ArrowRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1" />
+//                 <div className="pointer-events-none absolute inset-0 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+//               </motion.a>
+
+          
+//               <motion.a
+//                 href="#cases"
+//                 className="
+//                   group px-8 py-5 rounded-full inline-flex items-center justify-center gap-3
+//                   border border-cyan-400/60 text-slate-100
+//                   hover:bg-cyan-500/5 hover:shadow-[0_0_30px_rgba(56,189,248,0.45)]
+//                   transition-all
+//                 "
+//                 whileHover={{ scale: 1.03 }}
+//                 whileTap={{ scale: 0.97 }}
+//               >
+//                 <span>View Our Work</span>
+//               </motion.a>
+//             </div>
+
+//             <p className="mt-6 text-xs text-slate-200/70">
+//               Быстрый старт: 1–2 дня на стратегию + прототип, дальше — дизайн и
+//               сборка.
+//             </p>
+//           </div>
+//         </motion.div>
+//       </div>
+//     </section>
+//   );
+// }
+
+
+"use client";
+
+import * as React from "react";
+import { motion, useReducedMotion } from "motion/react";
+import {
+  ArrowRight,
+  Workflow,
+  Sparkles,
+  Palette,
+  Cpu,
+  Zap,
+} from "lucide-react";
+
+const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
 const steps = [
   {
-    number: '01',
-    title: 'Discovery',
-    description: 'Understanding your goals, audience, and market position',
+    number: "01",
+    title: "Discovery",
+    icon: Workflow,
+    description:
+      "Понимаем цель сайта, аудиторию и где именно вы теряете заявки. Быстро фиксируем KPI и ограничения.",
+    bullets: ["Цели и оффер", "Аудит конкурентов", "Карта боли клиента"],
   },
   {
-    number: '02',
-    title: 'Strategy',
-    description: 'Crafting a roadmap that aligns design with business objectives',
+    number: "02",
+    title: "Strategy",
+    icon: Sparkles,
+    description:
+      "Строим структуру, которая продаёт, и сразу проектируем автоматизацию: что происходит после заявки.",
+    bullets: [
+      "Сценарий конверсии",
+      "Make/Zapier логика",
+      "CRM/Calendar события",
+    ],
   },
   {
-    number: '03',
-    title: 'Design',
-    description: 'Building visual systems that communicate and convert',
+    number: "03",
+    title: "Design",
+    icon: Palette,
+    description:
+      "Премиальный UI в стиле Tel-Aviv Night Waves: стекло, неон, depth. Всё читаемо и конверсионно.",
+    bullets: ["UI-система", "Premium hover", "Mobile-first"],
   },
   {
-    number: '04',
-    title: 'Development',
-    description: 'Bringing ideas to life with clean, scalable code',
+    number: "04",
+    title: "Development",
+    icon: Cpu,
+    description:
+      "Собираем на Next.js: быстрый, чистый, масштабируемый код + интеграции (боты, CRM, аналитика).",
+    bullets: ["Next.js + Tailwind", "WhatsApp/Telegram", "Tracking & events"],
   },
 ];
 
 export function ProcessSection() {
+  const reduce = useReducedMotion();
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1, delayChildren: 0.05 },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 18, filter: "blur(10px)" },
+    show: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      transition: { duration: 0.75, ease: EASE },
+    },
+  };
+
   return (
-    <section id="process" className="px-6 md:px-12 lg:px-20 py-24 md:py-32 bg-white">
-      <div className="max-w-[1400px] mx-auto">
-        {/* Section Header */}
-        <div className="mb-16 md:mb-24">
-          <div className="w-16 h-[2px] bg-[#050608] mb-8" />
-          <h2 className="text-4xl md:text-5xl lg:text-6xl leading-tight max-w-3xl">
-            Strategy First, Pixels Second
-          </h2>
-          <p className="text-lg md:text-xl opacity-70 mt-6 max-w-2xl">
-            Our process is designed to eliminate guesswork and deliver results that matter.
-          </p>
-        </div>
+    <section
+      id="process"
+      className="
+        relative overflow-hidden
+        px-6 md:px-12 lg:px-20 py-24 md:py-32
+        bg-linear-to-b from-[#050814] via-[#050818] to-[#020410]
+        text-slate-100
+      "
+      aria-labelledby="process-title"
+    >
+      {/* Neon waves — same language as Hero */}
+      <div
+        className="pointer-events-none absolute -top-40 right-[-10%] h-96 w-96 rounded-full opacity-60 blur-3xl"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(76,194,255,0.9), transparent 60%)",
+        }}
+      />
+      <div
+        className="pointer-events-none absolute bottom-[-20%] left-[-10%] h-[26rem] w-[26rem] rounded-full opacity-60 blur-3xl"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(58,123,255,0.85), transparent 55%)",
+        }}
+      />
 
-        {/* Steps - Desktop: Horizontal, Mobile: Vertical */}
+      <div className="relative z-10 max-w-[1400px] mx-auto">
+        {/* Header */}
+        <motion.div
+          variants={container}
+          initial={reduce ? "show" : "hidden"}
+          whileInView="show"
+          viewport={{ once: true, amount: 0.35 }}
+          className="mb-16 md:mb-24"
+        >
+          <motion.div
+            variants={item}
+            className="w-16 h-0.5 mb-8 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-transparent"
+          />
+
+          <motion.h2
+            id="process-title"
+            variants={item}
+            className="text-4xl md:text-5xl lg:text-6xl leading-[1.05] max-w-3xl text-slate-100"
+          >
+            Стратегия → Дизайн → Автоматизация
+          </motion.h2>
+
+          <motion.p
+            variants={item}
+            className="text-lg md:text-xl text-slate-300/90 mt-6 max-w-2xl leading-relaxed"
+          >
+            Мы убираем «угадайку»: делаем сайт, который{" "}
+            <span className="text-slate-100">продаёт</span>, и сразу подключаем
+            логику автоматизации — чтобы заявки{" "}
+            <span className="text-slate-100">не терялись</span>.
+          </motion.p>
+
+          <motion.div
+            variants={item}
+            className="mt-8 inline-flex flex-wrap gap-3"
+          >
+            <span className="px-4 py-2 rounded-full border border-cyan-400/40 bg-[#0A0F1E]/55 backdrop-blur-xl text-sm text-slate-200">
+              form → WhatsApp/Telegram
+            </span>
+            <span className="px-4 py-2 rounded-full border border-cyan-400/40 bg-[#0A0F1E]/55 backdrop-blur-xl text-sm text-slate-200">
+              CRM → Calendar
+            </span>
+            <span className="px-4 py-2 rounded-full border border-cyan-400/40 bg-[#0A0F1E]/55 backdrop-blur-xl text-sm text-slate-200">
+              analytics → follow-ups
+            </span>
+          </motion.div>
+        </motion.div>
+
+        {/* Steps */}
         <div className="relative">
-          {/* Connecting line - Desktop */}
-          <div className="hidden lg:block absolute top-12 left-0 right-0 h-[2px] bg-[#050608] opacity-10" />
+          {/* Desktop connecting line */}
+          <div className="hidden lg:block absolute top-12 left-0 right-0 h-[2px] bg-cyan-300/10" />
 
-          {/* Steps Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
-            {steps.map((step, index) => (
-              <div key={index} className="relative">
-                {/* Connecting dot */}
-                <div className="hidden lg:block absolute top-12 left-0 w-3 h-3 bg-[#050608] rounded-full transform -translate-y-1/2" />
+          <motion.div
+            variants={container}
+            initial={reduce ? "show" : "hidden"}
+            whileInView="show"
+            viewport={{ once: true, amount: 0.25 }}
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8"
+          >
+            {steps.map((step, index) => {
+              const Icon = step.icon;
 
-                {/* Step Number */}
-                <div className="text-[4rem] leading-none opacity-15 mb-4">
-                  {step.number}
-                </div>
+              return (
+                <motion.div
+                  key={step.number}
+                  variants={item}
+                  className="relative"
+                >
+                  {/* dot */}
+                  <div className="hidden lg:block absolute top-12 left-0 w-3 h-3 rounded-full transform -translate-y-1/2">
+                    <div className="w-3 h-3 rounded-full bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#63E5FF] shadow-[0_0_30px_rgba(76,194,255,0.65)]" />
+                  </div>
 
-                {/* Title */}
-                <h3 className="text-2xl md:text-3xl mb-3">
-                  {step.title}
-                </h3>
+                  {/* CARD with premium hover */}
+                  {/* <motion.div
+                    whileHover={
+                      reduce
+                        ? undefined
+                        : {
+                            y: -6,
+                            rotateX: 3,
+                            rotateY: -3,
+                            scale: 1.02,
+                          }
+                    }
+                    whileTap={reduce ? undefined : { scale: 0.99 }}
+                    transition={{ duration: 0.35, ease: EASE }}
+                    style={{
+                      transformStyle: "preserve-3d",
+                      willChange: "transform",
+                    }}
+                    className="
+                      group relative rounded-3xl overflow-hidden
+                      border border-cyan-400/30 bg-[#0A0F1E]/70 backdrop-blur-xl
+                      shadow-[0_0_60px_rgba(59,130,246,0.18)]
+                      p-6 md:p-7
+                    "
+                  >
+                   
+                    <div className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <div className="absolute inset-0 rounded-3xl border border-cyan-300/35" />
+                    </div>
 
-                {/* Description */}
-                <p className="opacity-70 leading-relaxed text-sm md:text-base">
-                  {step.description}
-                </p>
+                 
+                    <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <div
+                        className="absolute -top-16 -right-16 h-52 w-52 rounded-full blur-3xl opacity-70"
+                        style={{
+                          background:
+                            "radial-gradient(circle, rgba(76,194,255,0.62), transparent 60%)",
+                        }}
+                      />
+                      <div
+                        className="absolute -bottom-20 -left-20 h-56 w-56 rounded-full blur-3xl opacity-55"
+                        style={{
+                          background:
+                            "radial-gradient(circle, rgba(58,123,255,0.5), transparent 60%)",
+                        }}
+                      />
+                    </div>
 
-                {/* Mobile connector line */}
-                {index < steps.length - 1 && (
-                  <div className="lg:hidden w-[2px] h-12 bg-[#050608] opacity-10 mt-8 ml-6" />
-                )}
-              </div>
-            ))}
-          </div>
+                   
+                    <div
+                      className="
+                        pointer-events-none absolute -inset-16 opacity-0 group-hover:opacity-100
+                        transition-opacity duration-500
+                        [transform:translateX(-30%)_translateY(-10%)_rotate(18deg)]
+                      "
+                    >
+                      <div className="h-24 w-[140%] bg-gradient-to-r from-transparent via-white/12 to-transparent blur-[1px]" />
+                    </div>
+
+                    
+                    <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <div className="absolute inset-0 bg-gradient-to-b from-cyan-400/10 via-transparent to-indigo-400/10" />
+                    </div>
+
+                    
+                    <div
+                      className="relative z-10"
+                      style={{ transform: "translateZ(18px)" }}
+                    >
+                    
+                      <div className="text-[3.6rem] leading-none font-semibold text-slate-100/10">
+                        {step.number}
+                      </div>
+
+                     
+                      <div className="mt-3 flex items-start gap-3">
+                        <div
+                          className="
+                            mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl
+                            border border-cyan-400/35 bg-[#0B1020]/70
+                            shadow-[0_0_30px_rgba(76,194,255,0.25)]
+                            transition-transform duration-500
+                            group-hover:shadow-[0_0_46px_rgba(76,194,255,0.45)]
+                          "
+                          style={{ transform: "translateZ(28px)" }}
+                        >
+                          <Icon className="h-5 w-5 text-cyan-200/90" />
+                        </div>
+
+                        <div>
+                          <h3 className="text-xl md:text-2xl font-semibold text-slate-100">
+                            {step.title}
+                          </h3>
+                          <p className="mt-2 text-sm md:text-base leading-relaxed text-slate-300/90">
+                            {step.description}
+                          </p>
+                        </div>
+                      </div>
+
+                      
+                      <ul className="mt-5 space-y-2 text-sm text-slate-200/80">
+                        {step.bullets.map((b) => (
+                          <li key={b} className="flex gap-2">
+                            <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-cyan-300/60" />
+                            <span>{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      
+                      {index < steps.length - 1 && (
+                        <div className="lg:hidden w-[2px] h-10 bg-cyan-300/10 mt-6 ml-2" />
+                      )}
+                    </div>
+                  </motion.div> */}
+
+                  {/* CARD with premium hover — SAFE for text */}
+                  <motion.div
+                    whileHover={
+                      reduce
+                        ? undefined
+                        : {
+                            y: -6,
+                            scale: 1.02,
+                          }
+                    }
+                    whileTap={reduce ? undefined : { scale: 0.99 }}
+                    transition={{ duration: 0.35, ease: EASE }}
+                    style={{
+                      willChange: "transform",
+                      transform: "translateZ(0)",
+                    }}
+                    className="
+    group relative rounded-3xl overflow-hidden
+    border border-cyan-400/30 bg-[#0A0F1E]/70 backdrop-blur-xl
+    shadow-[0_0_60px_rgba(59,130,246,0.18)]
+    p-6 md:p-7
+  "
+                  >
+                    {/* premium border highlight */}
+                    <div className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <div className="absolute inset-0 rounded-3xl border border-cyan-300/35" />
+                    </div>
+
+                    {/* neon glow wash */}
+                    <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <div
+                        className="absolute -top-16 -right-16 h-52 w-52 rounded-full blur-3xl opacity-70"
+                        style={{
+                          background:
+                            "radial-gradient(circle, rgba(76,194,255,0.6), transparent 60%)",
+                        }}
+                      />
+                      <div
+                        className="absolute -bottom-20 -left-20 h-56 w-56 rounded-full blur-3xl opacity-55"
+                        style={{
+                          background:
+                            "radial-gradient(circle, rgba(58,123,255,0.5), transparent 60%)",
+                        }}
+                      />
+                    </div>
+
+                    {/* sheen sweep */}
+                    <div
+                      className="
+      pointer-events-none absolute -inset-16 opacity-0 group-hover:opacity-100
+      transition-opacity duration-500
+      [transform:translateX(-30%)_translateY(-10%)_rotate(18deg)]
+    "
+                    >
+                      <div className="h-24 w-[140%] bg-gradient-to-r from-transparent via-white/12 to-transparent blur-[1px]" />
+                    </div>
+
+                    {/* subtle depth gradient */}
+                    <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <div className="absolute inset-0 bg-gradient-to-b from-cyan-400/10 via-transparent to-indigo-400/10" />
+                    </div>
+
+                    {/* CONTENT — strictly 2D (no blur) */}
+                    <div className="relative z-10 [backface-visibility:hidden] [transform:translateZ(0)]">
+                      {/* Step number */}
+                      <div className="text-[3.6rem] leading-none font-semibold text-slate-100/10">
+                        {step.number}
+                      </div>
+
+                      {/* Title + icon */}
+                      <div className="mt-3 flex items-start gap-3">
+                        <div
+                          className="
+          mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl
+          border border-cyan-400/35 bg-[#0B1020]/70
+          shadow-[0_0_30px_rgba(76,194,255,0.25)]
+          transition-shadow duration-500
+          group-hover:shadow-[0_0_46px_rgba(76,194,255,0.45)]
+        "
+                        >
+                          <Icon className="h-5 w-5 text-cyan-200/90" />
+                        </div>
+
+                        <div>
+                          <h3 className="text-xl md:text-2xl font-semibold text-slate-100">
+                            {step.title}
+                          </h3>
+                          <p className="mt-2 text-sm md:text-base leading-relaxed text-slate-300/90">
+                            {step.description}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Bullets */}
+                      <ul className="mt-5 space-y-2 text-sm text-slate-200/80">
+                        {step.bullets.map((b) => (
+                          <li key={b} className="flex gap-2">
+                            <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-cyan-300/60" />
+                            <span>{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      {/* Mobile connector */}
+                      {index < steps.length - 1 && (
+                        <div className="lg:hidden w-[2px] h-10 bg-cyan-300/10 mt-6 ml-2" />
+                      )}
+                    </div>
+                  </motion.div>
+                </motion.div>
+              );
+            })}
+          </motion.div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-20 md:mt-28 p-12 md:p-16 border-2 border-[#050608] relative overflow-hidden">
-          {/* Subtle pattern */}
-          <div className="absolute inset-0 opacity-[0.02]" style={{
-            backgroundImage: 'repeating-linear-gradient(45deg, #050608 0, #050608 1px, transparent 0, transparent 50%)',
-            backgroundSize: '10px 10px'
-          }} />
+        {/* CTA */}
+        <motion.div
+          initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 22 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.8, ease: EASE }}
+          className="
+            mt-20 md:mt-28 relative overflow-hidden rounded-3xl
+            border border-cyan-400/30 bg-[#0A0F1E]/70 backdrop-blur-xl
+            shadow-[0_0_70px_rgba(76,194,255,0.18)]
+          "
+        >
+          <div className="pointer-events-none absolute inset-0 opacity-[0.10]">
+            <div
+              className="h-full w-full"
+              style={{
+                backgroundImage:
+                  "linear-gradient(rgba(51,65,85,0.28) 1px, transparent 1px), linear-gradient(90deg, rgba(51,65,85,0.28) 1px, transparent 1px)",
+                backgroundSize: "80px 80px",
+              }}
+            />
+          </div>
 
-          <div className="relative z-10 max-w-2xl">
-            <h3 className="text-3xl md:text-4xl mb-6">
-              Every project is different. Our process adapts to you.
+          <div className="relative z-10 p-10 md:p-14">
+            <div className="flex items-center gap-2 text-slate-200/80 text-xs tracking-widest uppercase">
+              <Zap className="h-4 w-4 text-cyan-200/90" />
+              <span>Premium • Fast • Measurable</span>
+            </div>
+
+            <h3 className="mt-4 text-3xl md:text-4xl leading-tight text-slate-100 max-w-3xl">
+              Хотите демо, где заявка{" "}
+              <span className="text-slate-100">сразу</span> уходит в WhatsApp и
+              CRM?
             </h3>
-            <p className="text-lg opacity-70 mb-8">
-              Let&apos;s talk about what you&apos;re building and how we can help bring it to life.
+
+            <p className="mt-4 text-lg text-slate-300/90 max-w-2xl leading-relaxed">
+              Покажем сценарий под ваш бизнес (клиника, салон, сервис). Вы
+              увидите не «красивый макет», а реальный поток: форма → сообщение →
+              запись/CRM → аналитика.
             </p>
-            <button className="px-8 py-4 bg-[#050608] text-[#F5EFE7] transition-all hover:scale-[1.02] hover:shadow-lg">
-              Schedule a Discovery Call
-            </button>
+
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <motion.a
+                href="#contact"
+                className="
+                  relative group inline-flex items-center justify-center gap-3
+                  px-8 py-5 rounded-full font-medium
+                  bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#63E5FF]
+                  text-slate-900
+                  shadow-[0_0_40px_rgba(76,194,255,0.55)]
+                  hover:shadow-[0_0_60px_rgba(76,194,255,0.8)]
+                  transition-all
+                "
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                <span className="relative z-10">Start Your Project</span>
+                <ArrowRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1" />
+                <div className="pointer-events-none absolute inset-0 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </motion.a>
+
+              <motion.a
+                href="#cases"
+                className="
+                  group px-8 py-5 rounded-full inline-flex items-center justify-center gap-3
+                  border border-cyan-400/60 text-slate-100
+                  hover:bg-cyan-500/5 hover:shadow-[0_0_30px_rgba(56,189,248,0.45)]
+                  transition-all
+                "
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                <span>View Our Work</span>
+              </motion.a>
+            </div>
+
+            <p className="mt-6 text-xs text-slate-200/70">
+              Быстрый старт: 1–2 дня на стратегию + прототип, дальше — дизайн и
+              сборка.
+            </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
