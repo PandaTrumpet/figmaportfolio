@@ -1,79 +1,423 @@
+
+
+// "use client";
+
+// import { motion, useReducedMotion } from "motion/react";
+// import { Heart, ArrowUpRight } from "lucide-react";
+// import { ImageWithFallback } from "@/src/components/figma/ImageWithFallback";
+
+// type MissionData = { title: string; description: string; image: string };
+
+// const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
+// export function MissionSection({ data }: { data: MissionData }) {
+//   const reduce = useReducedMotion();
+
+//   return (
+//     <section className="relative overflow-hidden bg-[#050816] px-6 md:px-12 lg:px-20 py-24 md:py-32">
+//       {/* background spots */}
+//       <div className="pointer-events-none absolute inset-0 opacity-60">
+//         <div className="absolute -top-44 -left-40 h-96 w-96 bg-[radial-gradient(circle_at_center,_#3A7BFF55,_transparent_70%)] blur-3xl" />
+//         <div className="absolute -bottom-52 -right-24 h-[520px] w-[520px] bg-[radial-gradient(circle_at_center,_#4CC2FF55,_transparent_70%)] blur-3xl" />
+//       </div>
+
+//       {/* grid overlay */}
+//       <div className="pointer-events-none absolute inset-0 opacity-[0.10] [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:64px_64px]" />
+
+//       <div className="relative z-10 max-w-[1400px] mx-auto">
+//         <div className="grid lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center">
+//           {/* Text */}
+//           <motion.div
+//             initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, x: -40 }}
+//             whileInView={{ opacity: 1, x: 0 }}
+//             transition={{ duration: 0.75, ease: EASE }}
+//             viewport={{ once: true, margin: "-120px" }}
+//             className="text-[#F5EFE7]"
+//           >
+//             {/* accent line */}
+//             <motion.div
+//               className="mb-7 h-[2px] w-20 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]"
+//               initial={{ width: 0 }}
+//               whileInView={{ width: 80 }}
+//               transition={{ duration: 0.9, delay: 0.15, ease: EASE }}
+//               viewport={{ once: true }}
+//             />
+
+//             <h2 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight leading-tight mb-6 md:mb-8">
+//               {/* {data.title} */}
+//               Мы убираем потери заявок
+//             </h2>
+
+//             <p className="text-base md:text-xl lg:text-2xl text-[#C7CEDF] leading-relaxed mb-10 max-w-xl">
+//               Большинство сайтов выглядят нормально, но не работают. Люди
+//               заходят — и уходят.
+//               <br />
+//               <br />
+//               Мы делаем сайты как инструмент продаж: понятный оффер, простой UX
+//               и WhatsApp вместо «оставьте заявку».
+//             </p>
+
+//             {/* маленький honest-proof (без "в Тель-Авиве") */}
+//             <motion.div
+//               className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 backdrop-blur-md px-5 py-3 text-sm md:text-base text-[#E8ECF4] shadow-[0_18px_60px_rgba(0,0,0,0.35)]"
+//               whileHover={reduce ? undefined : { x: 8 }}
+//               transition={{ duration: 0.25, ease: "easeOut" }}
+//             >
+//               <span className="inline-flex h-9 w-9 items-center justify-center rounded-2xl border border-white/15 bg-[radial-gradient(circle_at_top,_#3A7BFF3b,_#050816)] shadow-[0_0_40px_rgba(58,123,255,0.55)]">
+//                 <Heart className="h-5 w-5 text-[#E8F2FF]" />
+//               </span>
+//               <span className="opacity-85">Прямо. Быстро. По делу.</span>
+//             </motion.div>
+
+//             {/* optional CTA (если хочешь) */}
+//             <motion.a
+//               href="#contact"
+//               className="mt-8 inline-flex items-center gap-2 text-sm md:text-base text-white/80 hover:text-white transition"
+//               whileHover={reduce ? undefined : { x: 6 }}
+//               transition={{ duration: 0.25, ease: "easeOut" }}
+//             >
+//               Обсудить задачу
+//               <ArrowUpRight className="h-4 w-4" />
+//             </motion.a>
+//           </motion.div>
+
+//           {/* Image */}
+//           <motion.div
+//             initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, x: 40 }}
+//             whileInView={{ opacity: 1, x: 0 }}
+//             transition={{ duration: 0.75, delay: 0.08, ease: EASE }}
+//             viewport={{ once: true, margin: "-120px" }}
+//             className="relative"
+//           >
+//             {/* glow under image card */}
+//             <motion.div
+//               className="absolute -inset-[14px] rounded-[34px] bg-[radial-gradient(circle_at_top,_rgba(58,123,255,0.55),_transparent_70%)] blur-2xl -z-20"
+//               animate={{ opacity: 0.45, scale: 1 }}
+//               transition={{ duration: 0.35, ease: "easeOut" }}
+//               aria-hidden="true"
+//             />
+
+//             <motion.div
+//               className="
+//                 relative aspect-[4/5] rounded-3xl
+//                 border border-white/10
+//                 bg-gradient-to-b from-[#060A13] via-[#050816] to-[#02030A]
+//                 shadow-[0_26px_80px_rgba(0,0,0,0.85)]
+//                 backdrop-blur-xl overflow-hidden
+//               "
+//               whileHover={
+//                 reduce
+//                   ? undefined
+//                   : { y: -12, boxShadow: "0 32px 120px rgba(0,0,0,1)" }
+//               }
+//               transition={{ duration: 0.3, ease: "easeOut" }}
+//             >
+//               {/* inner glow */}
+//               <motion.div
+//                 className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-[#3A7BFF22] via-transparent to-[#4CC2FF22] -z-10"
+//                 initial={{ opacity: 0.35 }}
+//                 whileHover={{ opacity: 0.85 }}
+//                 transition={{ duration: 0.3 }}
+//                 aria-hidden="true"
+//               />
+
+//               {/* sheen */}
+//               <motion.div
+//                 className="pointer-events-none absolute -inset-10 bg-[linear-gradient(115deg,_transparent_0%,_rgba(255,255,255,0.22)_30%,_transparent_60%)] mix-blend-screen -z-10"
+//                 initial={{ x: "-140%" }}
+//                 whileHover={reduce ? undefined : { x: "140%" }}
+//                 transition={{ duration: 0.9, ease: "easeInOut" }}
+//                 aria-hidden="true"
+//               />
+
+//               {/* neon outline frame */}
+//               <motion.div
+//                 className="pointer-events-none absolute inset-0 rounded-3xl border border-transparent z-10"
+//                 initial={{
+//                   boxShadow: "0 0 0 1px rgba(255,255,255,0.06)",
+//                 }}
+//                 whileHover={{
+//                   boxShadow:
+//                     "0 0 0 1px rgba(76,194,255,0.7), 0 0 42px rgba(76,194,255,1)",
+//                 }}
+//                 transition={{ duration: 0.25 }}
+//                 style={{
+//                   background:
+//                     "linear-gradient(135deg, #3A7BFF, #4CC2FF, #9B5DFF)",
+//                   WebkitMask:
+//                     "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
+//                   WebkitMaskComposite: "xor",
+//                   maskComposite: "exclude",
+//                   padding: "1px",
+//                 }}
+//                 aria-hidden="true"
+//               />
+
+//               <ImageWithFallback
+//                 src={data.image}
+//                 alt="Our mission"
+//                 className="absolute inset-0 w-full h-full object-cover"
+//               />
+
+//               <div className="absolute inset-0 bg-gradient-to-t from-[#050816]/70 via-transparent to-transparent" />
+//             </motion.div>
+
+//             {/* floating element */}
+//             <motion.div
+//               className="pointer-events-none absolute -bottom-8 -right-8 h-28 w-28 rounded-3xl border border-[#3A7BFF33] bg-[radial-gradient(circle_at_top,_#3A7BFF33,_transparent_70%)] opacity-60 -z-10 hidden md:block"
+//               animate={
+//                 reduce ? undefined : { rotate: 360, scale: [1, 1.08, 1] }
+//               }
+//               transition={
+//                 reduce
+//                   ? undefined
+//                   : {
+//                       rotate: {
+//                         duration: 30,
+//                         repeat: Infinity,
+//                         ease: "linear",
+//                       },
+//                       scale: {
+//                         duration: 4,
+//                         repeat: Infinity,
+//                         ease: "easeInOut",
+//                       },
+//                     }
+//               }
+//               aria-hidden="true"
+//             />
+//           </motion.div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
+
 "use client";
 
-import { motion } from "motion/react";
-import { Heart } from "lucide-react";
+import { motion, useReducedMotion } from "motion/react";
+import { Heart, ArrowUpRight } from "lucide-react";
 import { ImageWithFallback } from "@/src/components/figma/ImageWithFallback";
 
 type MissionData = { title: string; description: string; image: string };
 
+const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
 export function MissionSection({ data }: { data: MissionData }) {
+  const reduce = useReducedMotion();
+
   return (
-    <section className="px-6 md:px-12 lg:px-20 py-32 md:py-40 relative overflow-hidden">
-      <div className="max-w-[1400px] mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+    <section className="relative overflow-hidden bg-[#050816] px-6 md:px-12 lg:px-20 py-24 md:py-32">
+      {/* background spots */}
+      <div className="pointer-events-none absolute inset-0 opacity-60">
+        <div className="absolute -top-44 -left-40 h-96 w-96 bg-[radial-gradient(circle_at_center,_#3A7BFF55,_transparent_70%)] blur-3xl" />
+        <div className="absolute -bottom-52 -right-24 h-[520px] w-[520px] bg-[radial-gradient(circle_at_center,_#4CC2FF55,_transparent_70%)] blur-3xl" />
+      </div>
+
+      {/* grid overlay */}
+      <div className="pointer-events-none absolute inset-0 opacity-[0.10] [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:64px_64px]" />
+
+      <div className="relative z-10 max-w-[1400px] mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center">
           {/* Text */}
           <motion.div
-            initial={{ opacity: 0, x: -60 }}
+            initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.75, ease: EASE }}
+            viewport={{ once: true, margin: "-120px" }}
+            className="text-[#F5EFE7]"
           >
+            {/* accent line */}
             <motion.div
-              className="w-24 h-[3px] bg-[#050608] mb-12"
+              className="mb-7 h-[2px] w-20 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]"
               initial={{ width: 0 }}
-              whileInView={{ width: 96 }}
-              transition={{ duration: 1 }}
+              whileInView={{ width: 80 }}
+              transition={{ duration: 0.9, delay: 0.15, ease: EASE }}
               viewport={{ once: true }}
             />
 
-            <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-10 leading-tight">
-              {data.title}
+            <h2 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight leading-tight mb-6 md:mb-8">
+              Мы убираем потери заявок
             </h2>
 
-            <p className="text-xl md:text-2xl lg:text-3xl opacity-70 leading-relaxed mb-12">
-              {data.description}
+            <p className="text-base md:text-xl lg:text-2xl text-[#C7CEDF] leading-relaxed mb-10 max-w-xl">
+              Большинство сайтов выглядят нормально, но не работают. Люди
+              заходят — и уходят.
+              <br />
+              <br />
+              Мы делаем сайты как инструмент продаж: понятный оффер, простой UX
+              и WhatsApp вместо «оставьте заявку».
             </p>
 
-            <motion.div
-              className="flex items-center gap-4"
-              whileHover={{ x: 10 }}
-            >
-              <Heart className="w-8 h-8" />
-              <p className="text-lg md:text-xl opacity-60">
-                Сделано с любовью в Тель-Авиве
-              </p>
-            </motion.div>
+            {/* honest-proof + primary CTA */}
+            <div className="mt-2 flex flex-col items-start gap-4">
+              <motion.div
+                className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 backdrop-blur-md px-5 py-3 text-sm md:text-base text-[#E8ECF4] shadow-[0_18px_60px_rgba(0,0,0,0.35)]"
+                whileHover={reduce ? undefined : { x: 8 }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
+              >
+                <span className="inline-flex h-9 w-9 items-center justify-center rounded-2xl border border-white/15 bg-[radial-gradient(circle_at_top,_#3A7BFF3b,_#050816)] shadow-[0_0_40px_rgba(58,123,255,0.55)]">
+                  <Heart className="h-5 w-5 text-[#E8F2FF]" />
+                </span>
+                <span className="opacity-85">Прямо. Быстро. По делу.</span>
+              </motion.div>
+
+              <div className="flex flex-col items-start gap-2">
+                {/* Primary CTA — выделенная кнопка */}
+                <motion.a
+                  href="#contact"
+                  className="
+                    relative inline-flex items-center justify-center gap-2
+                    overflow-hidden rounded-full
+                    px-8 py-3.5 md:px-10 md:py-4
+                    text-sm md:text-base font-medium
+                    text-[#050816]
+                    shadow-[0_0_40px_rgba(76,194,255,0.65)]
+                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4CC2FF]/70 focus-visible:ring-offset-0
+                  "
+                  whileHover={reduce ? undefined : { scale: 1.03 }}
+                  whileTap={reduce ? undefined : { scale: 0.97 }}
+                  transition={{ duration: 0.22, ease: "easeOut" }}
+                  aria-label="Обсудить задачу — перейти к контактам"
+                >
+                  {/* gradient base */}
+                  <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
+
+                  {/* sheen */}
+                  <motion.span
+                    className="absolute inset-0 bg-[linear-gradient(120deg,_transparent_0%,_white_22%,_transparent_45%)] opacity-0"
+                    initial={{ x: "-110%" }}
+                    whileHover={
+                      reduce ? undefined : { x: "110%", opacity: 0.55 }
+                    }
+                    transition={{ duration: 0.7, ease: "easeInOut" }}
+                    aria-hidden="true"
+                  />
+
+                  {/* inner glow */}
+                  <span
+                    className="absolute -inset-6 opacity-50 blur-2xl
+                    bg-[radial-gradient(circle_at_center,_rgba(76,194,255,0.55),_transparent_60%)]"
+                    aria-hidden="true"
+                  />
+
+                  <span className="relative z-10">Обсудить задачу</span>
+                  <ArrowUpRight className="relative z-10 h-4 w-4" />
+                </motion.a>
+
+                {/* micro-promise (честное, без "24/7") */}
+                <p className="text-xs md:text-sm text-white/55">
+                  Обычно отвечаем в WhatsApp в течение дня.
+                </p>
+              </div>
+            </div>
           </motion.div>
 
           {/* Image */}
           <motion.div
-            initial={{ opacity: 0, x: 60 }}
+            initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.75, delay: 0.08, ease: EASE }}
+            viewport={{ once: true, margin: "-120px" }}
             className="relative"
           >
+            {/* glow under image card */}
             <motion.div
-              className="aspect-4/5 border-4 border-[#050608] overflow-hidden relative"
-              whileHover={{
-                boxShadow: "24px 24px 0px 0px rgba(5,6,8,1)",
-                x: -10,
-                y: -10,
-              }}
-              transition={{ duration: 0.3 }}
+              className="absolute -inset-[14px] rounded-[34px] bg-[radial-gradient(circle_at_top,_rgba(58,123,255,0.55),_transparent_70%)] blur-2xl -z-20"
+              animate={{ opacity: 0.45, scale: 1 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+              aria-hidden="true"
+            />
+
+            <motion.div
+              className="
+                relative aspect-[4/5] rounded-3xl
+                border border-white/10
+                bg-gradient-to-b from-[#060A13] via-[#050816] to-[#02030A]
+                shadow-[0_26px_80px_rgba(0,0,0,0.85)]
+                backdrop-blur-xl overflow-hidden
+              "
+              whileHover={
+                reduce
+                  ? undefined
+                  : { y: -12, boxShadow: "0 32px 120px rgba(0,0,0,1)" }
+              }
+              transition={{ duration: 0.3, ease: "easeOut" }}
             >
+              {/* inner glow */}
+              <motion.div
+                className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-[#3A7BFF22] via-transparent to-[#4CC2FF22] -z-10"
+                initial={{ opacity: 0.35 }}
+                whileHover={{ opacity: 0.85 }}
+                transition={{ duration: 0.3 }}
+                aria-hidden="true"
+              />
+
+              {/* sheen */}
+              <motion.div
+                className="pointer-events-none absolute -inset-10 bg-[linear-gradient(115deg,_transparent_0%,_rgba(255,255,255,0.22)_30%,_transparent_60%)] mix-blend-screen -z-10"
+                initial={{ x: "-140%" }}
+                whileHover={reduce ? undefined : { x: "140%" }}
+                transition={{ duration: 0.9, ease: "easeInOut" }}
+                aria-hidden="true"
+              />
+
+              {/* neon outline frame */}
+              <motion.div
+                className="pointer-events-none absolute inset-0 rounded-3xl border border-transparent z-10"
+                initial={{
+                  boxShadow: "0 0 0 1px rgba(255,255,255,0.06)",
+                }}
+                whileHover={{
+                  boxShadow:
+                    "0 0 0 1px rgba(76,194,255,0.7), 0 0 42px rgba(76,194,255,1)",
+                }}
+                transition={{ duration: 0.25 }}
+                style={{
+                  background:
+                    "linear-gradient(135deg, #3A7BFF, #4CC2FF, #9B5DFF)",
+                  WebkitMask:
+                    "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
+                  WebkitMaskComposite: "xor",
+                  maskComposite: "exclude",
+                  padding: "1px",
+                }}
+                aria-hidden="true"
+              />
+
               <ImageWithFallback
                 src={data.image}
                 alt="Our mission"
-                className="w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-[#050608]/30 to-transparent" />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050816]/70 via-transparent to-transparent" />
             </motion.div>
 
+            {/* floating element */}
             <motion.div
-              className="absolute -bottom-8 -right-8 w-32 h-32 border-2 border-[#050608] opacity-20 -z-10"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+              className="pointer-events-none absolute -bottom-8 -right-8 h-28 w-28 rounded-3xl border border-[#3A7BFF33] bg-[radial-gradient(circle_at_top,_#3A7BFF33,_transparent_70%)] opacity-60 -z-10 hidden md:block"
+              animate={
+                reduce ? undefined : { rotate: 360, scale: [1, 1.08, 1] }
+              }
+              transition={
+                reduce
+                  ? undefined
+                  : {
+                      rotate: {
+                        duration: 30,
+                        repeat: Infinity,
+                        ease: "linear",
+                      },
+                      scale: {
+                        duration: 4,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      },
+                    }
+              }
+              aria-hidden="true"
             />
           </motion.div>
         </div>
