@@ -61,12 +61,13 @@ export const aboutData: AboutData = {
     title: 'Создаём цифровые продукты, которые работают',
     subtitle: 'Мы — команда дизайнеров и разработчиков из Тель-Авива, специализирующаяся на премиум веб-решениях для амбициозных брендов.',
     image: 'https://images.unsplash.com/photo-1519205196298-7fc29cb73b3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMHN0dWRpbyUyMHdvcmtzcGFjZXxlbnwxfHx8fDE3NjUyMDYxMTl8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    stats: [
-      { label: 'Проектов запущено', value: '120+' },
-      { label: 'Лет на рынке', value: '8' },
-      { label: 'Стран-клиентов', value: '15' },
-      { label: 'Рост клиентов', value: '250%' },
-    ],
+
+stats: [
+  { label: "Рынки", value: "Израиль и ЕС" },
+  { label: "Коммуникация", value: "WhatsApp-first" },
+  { label: "Запуск MVP", value: "2–4 недели" },
+  { label: "Автоматизация заявок", value: "С первого дня" },
+]
   },
   
   mission: {
