@@ -236,13 +236,14 @@ export function Hero() {
 
           {/* Title */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] mb-8 text-slate-100">
-            Сайты, Которые Работают На Ваш Бизнес
+            Сайты и автоматизация, которые приводят клиентов
           </h1>
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-slate-300/90 mb-12 leading-relaxed max-w-xl">
-            Создаём лендинги, корпоративные сайты и интернет-магазины, которые
-            привлекают клиентов и увеличивают продажи.
+            Мы создаём сайты с интеграцией WhatsApp, CRM и AI-инструментов,
+            чтобы ваш бизнес получал заявки, отвечал быстрее и тратил меньше
+            времени на рутину.
           </p>
 
           {/* Buttons */}
@@ -260,7 +261,7 @@ export function Hero() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
-              <span className="relative z-10">Start Your Project</span>
+              <span className="relative z-10">Get a Free Demo</span>
               <ArrowRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1" />
 
               {/* shine layer */}
@@ -279,7 +280,7 @@ export function Hero() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
-              <span>View Our Work</span>
+              <span>See Real Results</span>
             </motion.a>
           </div>
         </motion.div>

@@ -143,41 +143,82 @@ import { useEffect, useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
+// const reasons = [
+//   {
+//     subtitle: "We Understand Local Context",
+//     description:
+//       "Built for the Israeli market, we know what resonates with your audience and how to communicate authentically.",
+//     image:
+//       "https://images.unsplash.com/photo-1753162658596-2ccba5e4246a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+//     imageAlt: "Creative team collaboration",
+//     reverse: false,
+//   },
+//   {
+//     subtitle: "Strategy Before Design",
+//     description:
+//       "Every pixel serves a purpose. We start with your business goals and build experiences that deliver results.",
+//     image:
+//       "https://images.unsplash.com/photo-1650978813673-df28319b04f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+//     imageAlt: "Hands working on laptop",
+//     reverse: true,
+//   },
+//   {
+//     subtitle: "Built to Scale",
+//     description:
+//       "Our systems grow with you. Clean code, thoughtful architecture, and sustainable design practices.",
+//     image:
+//       "https://images.unsplash.com/photo-1623679072629-3aaa0192a391?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+//     imageAlt: "Modern workspace",
+//     reverse: false,
+//   },
+//   {
+//     subtitle: "Premium Without Pretense",
+//     description:
+//       "Elegant solutions that feel accessible. We create premium experiences that welcome everyone.",
+//     image:
+//       "https://images.unsplash.com/photo-1633286382418-4181cb81a6d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+//     imageAlt: "Minimalist office space",
+//     reverse: true,
+//   },
+// ];
+
+
+
 const reasons = [
   {
-    subtitle: "We Understand Local Context",
+    subtitle: "Понимаем рынок Израиля и поведение клиентов",
     description:
-      "Built for the Israeli market, we know what resonates with your audience and how to communicate authentically.",
+      "Мы делаем сайты и автоматизацию под реальный израильский SMB: быстрые решения, ясный оффер, WhatsApp как главный канал и доверие с первого экрана.",
     image:
       "https://images.unsplash.com/photo-1753162658596-2ccba5e4246a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-    imageAlt: "Creative team collaboration",
+    imageAlt: "Команда обсуждает проект",
     reverse: false,
   },
   {
-    subtitle: "Strategy Before Design",
+    subtitle: "Сначала результат, потом дизайн",
     description:
-      "Every pixel serves a purpose. We start with your business goals and build experiences that deliver results.",
+      "Каждый блок на сайте работает на заявки: структура, сообщения, формы и WhatsApp-бот. Дизайн — это упаковка, но цель всегда одна: больше клиентов и меньше рутины.",
     image:
       "https://images.unsplash.com/photo-1650978813673-df28319b04f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-    imageAlt: "Hands working on laptop",
+    imageAlt: "Работа за ноутбуком",
     reverse: true,
   },
   {
-    subtitle: "Built to Scale",
+    subtitle: "Автоматизация и чат-боты, которые экономят время",
     description:
-      "Our systems grow with you. Clean code, thoughtful architecture, and sustainable design practices.",
+      "Подключаем WhatsApp-бота, CRM (Notion/Airtable/HubSpot) и автоматические сценарии: ответы на частые вопросы, сбор заявок, уведомления и фиксация клиента в системе.",
     image:
       "https://images.unsplash.com/photo-1623679072629-3aaa0192a391?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-    imageAlt: "Modern workspace",
+    imageAlt: "Современное рабочее пространство",
     reverse: false,
   },
   {
-    subtitle: "Premium Without Pretense",
+    subtitle: "Премиум без лишнего пафоса",
     description:
-      "Elegant solutions that feel accessible. We create premium experiences that welcome everyone.",
+      "Делаем современный, дорогой визуальный уровень — но без сложностей для клиента. Всё должно быть понятно, быстро и удобно: вам и вашим пользователям.",
     image:
       "https://images.unsplash.com/photo-1633286382418-4181cb81a6d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-    imageAlt: "Minimalist office space",
+    imageAlt: "Минималистичный офис",
     reverse: true,
   },
 ];
@@ -248,7 +289,7 @@ function Block({
         >
           <div className="w-12 h-px bg-gradient-to-r from-cyan-400 via-sky-500 to-fuchsia-500" />
           <span className="text-xs uppercase tracking-[0.2em] text-cyan-200/70">
-            Tel-Aviv focused
+            Фокус на рынке Израиля
           </span>
         </motion.div>
 
@@ -381,7 +422,7 @@ export function WhyUsSection() {
           >
             <div className="w-16 h-px bg-gradient-to-r from-cyan-400 via-sky-500 to-fuchsia-500" />
             <span className="text-xs md:text-sm uppercase tracking-[0.28em] text-cyan-100/70">
-              Why Israeli companies choose us
+              Почему израильский бизнес выбирает нас
             </span>
           </motion.div>
 
@@ -392,7 +433,7 @@ export function WhyUsSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.75 }}
           >
-            Why Israeli Companies Choose Us
+            Почему израильский бизнес выбирает нас
           </motion.h2>
         </motion.div>
 

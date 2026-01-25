@@ -223,28 +223,36 @@ const services = [
     icon: Zap,
     title: "Лендинги",
     description:
-      "Продающие одностраничники, которые превращают посетителей в клиентов. Быстрая загрузка, яркий дизайн, чёткие призывы к действию.",
+      "Лендинг, который приводит заявки в WhatsApp и не теряет клиентов. Быстрый запуск, чёткий оффер, аналитика и конверсионная структура.",
     features: [
-      "Готово за 2–3 недели",
-      "Адаптивный дизайн",
-      "Высокая конверсия",
+      "Готово за 10–14 дней",
+      "WhatsApp lead capture + tracking",
+      "А/В-готовность и аналитика",
     ],
     gradient: "from-[#3A7BFF33] via-[#4CC2FF22] to-transparent",
   },
   {
     icon: Smartphone,
-    title: "Сайты для бизнеса",
+    title: "Сайт + автоматизация",
     description:
-      "Корпоративные сайты, которые представляют ваш бизнес в лучшем свете и генерируют заявки круглосуточно.",
-    features: ["Удобная CMS", "SEO-оптимизация", "Интеграции"],
+      "Сайт, который работает как “менеджер 24/7”: объясняет ценность, принимает заявки через WhatsApp-бота и направляет их в CRM, чтобы вы не теряли клиентов.",
+    features: [
+      "WhatsApp-бот для заявок и первичных вопросов",
+      "CRM (Notion / Airtable / HubSpot) по необходимости",
+      "Формы, бот и заявки → в одну систему",
+    ],
     gradient: "from-[#4CC2FF33] via-[#9B5DFF22] to-transparent",
   },
   {
     icon: ShoppingCart,
     title: "Интернет-магазины",
     description:
-      "Полнофункциональные магазины для онлайн-торговли. Каталог, корзина, оплата — всё, что нужно для продаж.",
-    features: ["Каталог товаров", "Онлайн-оплата", "Управление заказами"],
+      "Магазин, который продаёт: удобный каталог, оплата, автоматические статусы заказов и сообщения клиенту в WhatsApp.",
+    features: [
+      "Оплата и доставка (по вашему стеку)",
+      "Авто-уведомления в WhatsApp/SMS",
+      "Панель управления заказами",
+    ],
     gradient: "from-[#9B5DFF33] via-[#3A7BFF22] to-transparent",
   },
 ];
@@ -410,6 +418,9 @@ const glitchSecondary = {
 //     </motion.div>
 //   );
 // }
+
+
+
 function ServiceCard({
   service,
   index,
@@ -605,14 +616,14 @@ export function FocusSection() {
               initial="initial"
               whileHover="hover"
             >
-              <span className="relative z-10">Наши услуги</span>
+              <span className="relative z-10">Решения для роста бизнеса</span>
 
               <motion.span
                 className="pointer-events-none absolute left-0 top-0 z-0 text-[#4CC2FF] mix-blend-screen"
                 variants={glitchPrimary}
                 aria-hidden="true"
               >
-                Наши услуги
+                Решения для роста бизнеса
               </motion.span>
 
               <motion.span
@@ -620,15 +631,15 @@ export function FocusSection() {
                 variants={glitchSecondary}
                 aria-hidden="true"
               >
-                Наши услуги
+                Решения для роста бизнеса
               </motion.span>
             </motion.span>
           </motion.h2>
 
           <p className="text-base md:text-xl opacity-80 max-w-3xl leading-relaxed">
-            От точных лендингов до комплексных интернет-магазинов — создаём
-            сайты, которые работают как инструмент продаж и усиливают доверие к
-            вашему бизнесу.
+            От быстрого лендинга до полноценного e-commerce — строим систему,
+            которая приводит заявки, подключает WhatsApp, автоматизирует ответы
+            и фиксирует клиентов в CRM.
           </p>
         </motion.div>
 
@@ -652,7 +663,8 @@ export function FocusSection() {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <p className="mb-5 text-sm md:text-lg text-[#C7CEDF]">
-            Готовы обсудить ваш проект?
+            Покажем примеры сайтов с WhatsApp и автоматизацией — без сложных
+            обсуждений.
           </p>
           <motion.a
             href="#contact"
@@ -667,7 +679,7 @@ export function FocusSection() {
               whileHover={{ x: "100%", opacity: 0.5 }}
               transition={{ duration: 0.7, ease: "easeInOut" }}
             />
-            <span className="relative z-10">Получить консультацию</span>
+            <span className="relative z-10">Запросить демо</span>
           </motion.a>
         </motion.div>
       </div>

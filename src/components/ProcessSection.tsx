@@ -354,44 +354,101 @@ import {
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
+// const steps = [
+//   {
+//     number: "01",
+//     title: "Discovery",
+//     icon: Workflow,
+//     description:
+//       "Понимаем цель сайта, аудиторию и где именно вы теряете заявки. Быстро фиксируем KPI и ограничения.",
+//     bullets: ["Цели и оффер", "Аудит конкурентов", "Карта боли клиента"],
+//   },
+//   {
+//     number: "02",
+//     title: "Strategy",
+//     icon: Sparkles,
+//     description:
+//       "Строим структуру, которая продаёт, и сразу проектируем автоматизацию: что происходит после заявки.",
+//     bullets: [
+//       "Сценарий конверсии",
+//       "Make/Zapier логика",
+//       "CRM/Calendar события",
+//     ],
+//   },
+//   {
+//     number: "03",
+//     title: "Design",
+//     icon: Palette,
+//     description:
+//       "Премиальный UI в стиле Tel-Aviv Night Waves: стекло, неон, depth. Всё читаемо и конверсионно.",
+//     bullets: ["UI-система", "Premium hover", "Mobile-first"],
+//   },
+//   {
+//     number: "04",
+//     title: "Development",
+//     icon: Cpu,
+//     description:
+//       "Собираем на Next.js: быстрый, чистый, масштабируемый код + интеграции (боты, CRM, аналитика).",
+//     bullets: ["Next.js + Tailwind", "WhatsApp/Telegram", "Tracking & events"],
+//   },
+// ];
+
+
+
+
+
+
 const steps = [
   {
     number: "01",
-    title: "Discovery",
+    title: "Понимаем задачу",
     icon: Workflow,
     description:
-      "Понимаем цель сайта, аудиторию и где именно вы теряете заявки. Быстро фиксируем KPI и ограничения.",
-    bullets: ["Цели и оффер", "Аудит конкурентов", "Карта боли клиента"],
+      "Коротко уточняем, что вы продаёте, кому и как сейчас приходят заявки. Сразу фиксируем, что должно измениться после запуска сайта.",
+    bullets: ["Цель сайта и оффер", "Какие заявки нужны", "Что мешает сейчас"],
   },
   {
     number: "02",
-    title: "Strategy",
+    title: "Проектируем путь клиента",
     icon: Sparkles,
     description:
-      "Строим структуру, которая продаёт, и сразу проектируем автоматизацию: что происходит после заявки.",
+      "Делаем структуру, которая ведёт к заявке, и заранее продумываем, что происходит дальше: сообщение в WhatsApp, бот, запись, CRM.",
     bullets: [
-      "Сценарий конверсии",
-      "Make/Zapier логика",
-      "CRM/Calendar события",
+      "Структура и тексты",
+      "Сценарий: сайт → WhatsApp",
+      "CRM/календарь/уведомления",
     ],
   },
   {
     number: "03",
-    title: "Design",
+    title: "Дизайн",
     icon: Palette,
     description:
-      "Премиальный UI в стиле Tel-Aviv Night Waves: стекло, неон, depth. Всё читаемо и конверсионно.",
-    bullets: ["UI-система", "Premium hover", "Mobile-first"],
+      "Создаём современный премиальный дизайн под ваш бренд: аккуратно, понятно, удобно на телефоне и с фокусом на заявку.",
+    bullets: [
+      "Дизайн под ваш бренд",
+      "Премиум эффекты и hover",
+      "Mobile-first",
+    ],
   },
   {
     number: "04",
-    title: "Development",
+    title: "Разработка и запуск",
     icon: Cpu,
     description:
-      "Собираем на Next.js: быстрый, чистый, масштабируемый код + интеграции (боты, CRM, аналитика).",
-    bullets: ["Next.js + Tailwind", "WhatsApp/Telegram", "Tracking & events"],
+      "Собираем быстрый сайт, подключаем интеграции и аналитику. После запуска всё тестируем, чтобы заявки приходили стабильно.",
+    bullets: [
+      "Быстрая загрузка",
+      "WhatsApp/бот/CRM (если нужно)",
+      "Аналитика заявок",
+    ],
   },
 ];
+
+
+
+
+
 
 export function ProcessSection() {
   const reduce = useReducedMotion();
@@ -460,7 +517,7 @@ export function ProcessSection() {
             variants={item}
             className="text-4xl md:text-5xl lg:text-6xl leading-[1.05] max-w-3xl text-slate-100"
           >
-            Стратегия → Дизайн → Автоматизация
+            Сайт → заявки → автоматизация
           </motion.h2>
 
           <motion.p
@@ -468,8 +525,8 @@ export function ProcessSection() {
             className="text-lg md:text-xl text-slate-300/90 mt-6 max-w-2xl leading-relaxed"
           >
             Мы убираем «угадайку»: делаем сайт, который{" "}
-            <span className="text-slate-100">продаёт</span>, и сразу подключаем
-            логику автоматизации — чтобы заявки{" "}
+            <span className="text-slate-100">приводит заявки</span>, и сразу
+            подключаем автоматизацию — чтобы обращения{" "}
             <span className="text-slate-100">не терялись</span>.
           </motion.p>
 
@@ -478,13 +535,13 @@ export function ProcessSection() {
             className="mt-8 inline-flex flex-wrap gap-3"
           >
             <span className="px-4 py-2 rounded-full border border-cyan-400/40 bg-[#0A0F1E]/55 backdrop-blur-xl text-sm text-slate-200">
-              form → WhatsApp/Telegram
+              форма → WhatsApp/Telegram
             </span>
             <span className="px-4 py-2 rounded-full border border-cyan-400/40 bg-[#0A0F1E]/55 backdrop-blur-xl text-sm text-slate-200">
-              CRM → Calendar
+              CRM → календарь
             </span>
             <span className="px-4 py-2 rounded-full border border-cyan-400/40 bg-[#0A0F1E]/55 backdrop-blur-xl text-sm text-slate-200">
-              analytics → follow-ups
+              аналитика → догоняющие сообщения
             </span>
           </motion.div>
         </motion.div>
@@ -515,121 +572,7 @@ export function ProcessSection() {
                     <div className="w-3 h-3 rounded-full bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#63E5FF] shadow-[0_0_30px_rgba(76,194,255,0.65)]" />
                   </div>
 
-                  {/* CARD with premium hover */}
-                  {/* <motion.div
-                    whileHover={
-                      reduce
-                        ? undefined
-                        : {
-                            y: -6,
-                            rotateX: 3,
-                            rotateY: -3,
-                            scale: 1.02,
-                          }
-                    }
-                    whileTap={reduce ? undefined : { scale: 0.99 }}
-                    transition={{ duration: 0.35, ease: EASE }}
-                    style={{
-                      transformStyle: "preserve-3d",
-                      willChange: "transform",
-                    }}
-                    className="
-                      group relative rounded-3xl overflow-hidden
-                      border border-cyan-400/30 bg-[#0A0F1E]/70 backdrop-blur-xl
-                      shadow-[0_0_60px_rgba(59,130,246,0.18)]
-                      p-6 md:p-7
-                    "
-                  >
-                   
-                    <div className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <div className="absolute inset-0 rounded-3xl border border-cyan-300/35" />
-                    </div>
-
-                 
-                    <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <div
-                        className="absolute -top-16 -right-16 h-52 w-52 rounded-full blur-3xl opacity-70"
-                        style={{
-                          background:
-                            "radial-gradient(circle, rgba(76,194,255,0.62), transparent 60%)",
-                        }}
-                      />
-                      <div
-                        className="absolute -bottom-20 -left-20 h-56 w-56 rounded-full blur-3xl opacity-55"
-                        style={{
-                          background:
-                            "radial-gradient(circle, rgba(58,123,255,0.5), transparent 60%)",
-                        }}
-                      />
-                    </div>
-
-                   
-                    <div
-                      className="
-                        pointer-events-none absolute -inset-16 opacity-0 group-hover:opacity-100
-                        transition-opacity duration-500
-                        [transform:translateX(-30%)_translateY(-10%)_rotate(18deg)]
-                      "
-                    >
-                      <div className="h-24 w-[140%] bg-gradient-to-r from-transparent via-white/12 to-transparent blur-[1px]" />
-                    </div>
-
-                    
-                    <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <div className="absolute inset-0 bg-gradient-to-b from-cyan-400/10 via-transparent to-indigo-400/10" />
-                    </div>
-
-                    
-                    <div
-                      className="relative z-10"
-                      style={{ transform: "translateZ(18px)" }}
-                    >
-                    
-                      <div className="text-[3.6rem] leading-none font-semibold text-slate-100/10">
-                        {step.number}
-                      </div>
-
-                     
-                      <div className="mt-3 flex items-start gap-3">
-                        <div
-                          className="
-                            mt-1 inline-flex h-10 w-10 items-center justify-center rounded-2xl
-                            border border-cyan-400/35 bg-[#0B1020]/70
-                            shadow-[0_0_30px_rgba(76,194,255,0.25)]
-                            transition-transform duration-500
-                            group-hover:shadow-[0_0_46px_rgba(76,194,255,0.45)]
-                          "
-                          style={{ transform: "translateZ(28px)" }}
-                        >
-                          <Icon className="h-5 w-5 text-cyan-200/90" />
-                        </div>
-
-                        <div>
-                          <h3 className="text-xl md:text-2xl font-semibold text-slate-100">
-                            {step.title}
-                          </h3>
-                          <p className="mt-2 text-sm md:text-base leading-relaxed text-slate-300/90">
-                            {step.description}
-                          </p>
-                        </div>
-                      </div>
-
-                      
-                      <ul className="mt-5 space-y-2 text-sm text-slate-200/80">
-                        {step.bullets.map((b) => (
-                          <li key={b} className="flex gap-2">
-                            <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-cyan-300/60" />
-                            <span>{b}</span>
-                          </li>
-                        ))}
-                      </ul>
-
-                      
-                      {index < steps.length - 1 && (
-                        <div className="lg:hidden w-[2px] h-10 bg-cyan-300/10 mt-6 ml-2" />
-                      )}
-                    </div>
-                  </motion.div> */}
+          
 
                   {/* CARD with premium hover — SAFE for text */}
                   <motion.div
@@ -772,7 +715,7 @@ export function ProcessSection() {
           <div className="relative z-10 p-10 md:p-14">
             <div className="flex items-center gap-2 text-slate-200/80 text-xs tracking-widest uppercase">
               <Zap className="h-4 w-4 text-cyan-200/90" />
-              <span>Premium • Fast • Measurable</span>
+              <span>Премиум • Быстро • Измеримо</span>
             </div>
 
             <h3 className="mt-4 text-3xl md:text-4xl leading-tight text-slate-100 max-w-3xl">
@@ -782,9 +725,9 @@ export function ProcessSection() {
             </h3>
 
             <p className="mt-4 text-lg text-slate-300/90 max-w-2xl leading-relaxed">
-              Покажем сценарий под ваш бизнес (клиника, салон, сервис). Вы
-              увидите не «красивый макет», а реальный поток: форма → сообщение →
-              запись/CRM → аналитика.
+              Покажем, как это работает на примере вашей ниши (клиника, салон,
+              сервис). Вы увидите не «красивый макет», а понятный поток: форма →
+              сообщение → запись/CRM → аналитика.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -802,7 +745,7 @@ export function ProcessSection() {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
               >
-                <span className="relative z-10">Start Your Project</span>
+                <span className="relative z-10">Запросить демо</span>
                 <ArrowRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1" />
                 <div className="pointer-events-none absolute inset-0 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
               </motion.a>
@@ -818,13 +761,13 @@ export function ProcessSection() {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
               >
-                <span>View Our Work</span>
+                <span>Посмотреть кейсы</span>
               </motion.a>
             </div>
 
             <p className="mt-6 text-xs text-slate-200/70">
-              Быстрый старт: 1–2 дня на стратегию + прототип, дальше — дизайн и
-              сборка.
+              Быстрый старт: демо-созвон и понятный план работ. Дальше — дизайн,
+              разработка и интеграции.
             </p>
           </div>
         </motion.div>
