@@ -134,7 +134,7 @@ export function FinalCTA() {
           transition={{ duration: 0.85, ease: EASE }}
           className="text-[clamp(2.2rem,5.8vw,5.2rem)] leading-[1.05] mb-6 max-w-4xl mx-auto text-slate-100"
         >
-          Let&apos;s Build Something That Represents You
+          Сделаем сайт и автоматизацию, которые работают на ваш бизнес
         </motion.h2>
 
         {/* Subheading */}
@@ -149,8 +149,8 @@ export function FinalCTA() {
           transition={{ duration: 0.85, delay: 0.08, ease: EASE }}
           className="text-lg md:text-2xl text-slate-300/90 mb-10 max-w-2xl mx-auto leading-relaxed"
         >
-          Your business deserves a digital presence as thoughtful as the work
-          you do.
+          Покажем, как сайт может приводить клиентов в WhatsApp, фиксировать
+          заявки и снижать ручную рутину — без сложных слов и лишних этапов.
         </motion.p>
 
         {/* Buttons */}
@@ -177,7 +177,7 @@ export function FinalCTA() {
             whileTap={reduce ? undefined : { scale: 0.97 }}
           >
             <Mail className="w-5 h-5" />
-            <span className="relative z-10">Get in Touch</span>
+            <span className="relative z-10">Запросить демо</span>
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             {/* shine */}
             <span className="pointer-events-none absolute inset-0 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -196,7 +196,7 @@ export function FinalCTA() {
             whileHover={reduce ? undefined : { scale: 1.03 }}
             whileTap={reduce ? undefined : { scale: 0.97 }}
           >
-            View Pricing
+            Посмотреть цены
           </motion.a>
         </motion.div>
 
@@ -208,7 +208,7 @@ export function FinalCTA() {
           transition={{ duration: 0.7, delay: 0.18, ease: EASE }}
           className="text-xs md:text-sm text-slate-200/60 uppercase tracking-widest"
         >
-          Typical projects start at ₪15,000 • Response within 24 hours
+          Ответим в течение 24 часов • Можно начать с демо
         </motion.p>
 
         {/* Decorative bottom element */}
@@ -221,7 +221,7 @@ export function FinalCTA() {
         {/* Footer note */}
         <div className="mt-14 pt-10 border-t border-cyan-200/10">
           <p className="text-slate-200/55 text-sm">
-            Based in Tel Aviv, serving businesses across Israel and beyond.
+            Базируемся в Израиле, работаем с бизнесом по всему миру.
           </p>
         </div>
       </div>

@@ -224,16 +224,20 @@ export function Footer() {
 
   const footerLinks = {
     services: [
-      { label: "Websites (Landing / Multi-page)", href: "#", isPage: false },
-      { label: "Automation (WhatsApp / CRM)", href: "#", isPage: false },
-      { label: "UI/UX & Brand Visuals", href: "#", isPage: false },
-      { label: "AI Assistants & Chatbots", href: "#", isPage: false },
+      { label: "Сайты (лендинг / многостраничный)", href: "#", isPage: false },
+      {
+        label: "Автоматизация (WhatsApp / учёт заявок)",
+        href: "#",
+        isPage: false,
+      },
+      { label: "UI/UX дизайн (под ваш бренд)", href: "#", isPage: false },
+      { label: "AI-боты и чат-боты", href: "#", isPage: false },
     ],
     company: [
-      { label: "Process", href: "#process" },
-      { label: "Case Studies", href: "#cases" },
-      { label: "Testimonials", href: "#testimonials" },
-      { label: "Contact", href: "#contact" },
+      { label: "Процесс", href: "#process" },
+      { label: "Кейсы", href: "#cases" },
+      { label: "Отзывы", href: "#testimonials" },
+      { label: "Контакты", href: "#contact" },
     ],
     social: [
       { label: "Instagram", href: "#" },
@@ -319,8 +323,8 @@ export function Footer() {
             </div>
 
             <p className="text-lg text-slate-300/85 leading-relaxed mb-7 max-w-md">
-              Premium websites + automation for Israeli businesses who refuse to
-              blend in. Strategy first, pixels second.
+              Премиальные сайты и автоматизация для бизнеса в Израиле: заявки в
+              WhatsApp, учёт клиентов и меньше ручной рутины.
             </p>
 
             <div className="space-y-3">
@@ -346,7 +350,7 @@ export function Footer() {
               </a>
 
               <p className="text-sm text-slate-200/55">
-                Tel Aviv • Israel & beyond
+                Работаем по всему Израилю и за его пределами.
               </p>
             </div>
           </div>
@@ -461,10 +465,11 @@ export function Footer() {
           <div className="relative z-10 grid md:grid-cols-2 gap-7 items-center">
             <div>
               <h3 className="text-2xl md:text-3xl text-slate-100 mb-2">
-                Stay in the Loop
+                Хотите увидеть демо под вашу нишу?
               </h3>
               <p className="text-slate-300/85">
-                Practical insights on websites, automation, and conversion.
+                Покажем на примере вашего бизнеса: сайт → WhatsApp → учёт заявок
+                → уведомления и аналитика.
               </p>
             </div>
 
@@ -501,7 +506,7 @@ export function Footer() {
                   transition-all
                 "
               >
-                Subscribe
+                Запросить демо
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 <span className="pointer-events-none absolute inset-0 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
               </button>

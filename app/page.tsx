@@ -17,7 +17,7 @@ export default function Home() {
       <Hero />
       <FocusSection />
       <WhyUsSection />
-      <CasePreview />
+      {/* <CasePreview /> */}
       <ProcessSection />
       <TestimonialsSection />
       <FinalCTA />

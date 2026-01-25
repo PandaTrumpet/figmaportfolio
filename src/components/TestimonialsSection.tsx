@@ -140,33 +140,64 @@
 import { useEffect, useRef, useState } from "react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
+// const testimonials = [
+//   {
+//     story:
+//       "«Команда не просто создала сайт — они создали работающий инструмент продаж. Количество заявок выросло вдвое за первый месяц после запуска.»",
+//     name: "Рахель Коэн",
+//     role: "Владелица студии йоги",
+//     image:
+//       "https://images.unsplash.com/photo-1747830280502-f33d7305a714?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMHdhcm18ZW58MXx8fHwxNzY1MjkzNTgxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+//     imageAlt: "Professional portrait",
+//   },
+//   {
+//     story:
+//       "«Меня впечатлил стратегический подход. Задавали правильные вопросы, вникали в бизнес и создали платформу, которая масштабируется вместе с нами.»",
+//     name: "Давид Леви",
+//     role: "Бизнес-консультант",
+//     image:
+//       "https://images.unsplash.com/photo-1533723522262-1c3e074d3dac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHBvcnRyYWl0JTIwbmF0dXJhbHxlbnwxfHx8fDE3NjUyOTM1ODF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+//     imageAlt: "Business portrait",
+//   },
+//   {
+//     story:
+//       "«Наконец-то digital-присутствие, которое соответствует качеству наших услуг. Понимали наш рынок, клиентов и создали сайт, который поднял бренд на новый уровень.»",
+//     name: "Майя Шапира",
+//     role: "Основательница кафе",
+//     image:
+//       "https://images.unsplash.com/photo-1747830280502-f33d7305a714?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMHdhcm18ZW58MXx8fHwxNzY1MjkzNTgxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+//     imageAlt: "Professional portrait warm",
+//   },
+// ];
+
+
 const testimonials = [
   {
     story:
-      "«Команда не просто создала сайт — они создали работающий инструмент продаж. Количество заявок выросло вдвое за первый месяц после запуска.»",
+      "«Сайт получился не просто красивым — он реально приводит заявки. После запуска стало больше обращений, и главное — клиенты сразу пишут в WhatsApp, ничего не теряется.»",
     name: "Рахель Коэн",
     role: "Владелица студии йоги",
     image:
-      "https://images.unsplash.com/photo-1747830280502-f33d7305a714?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMHdhcm18ZW58MXx8fHwxNzY1MjkzNTgxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    imageAlt: "Professional portrait",
+      "https://images.unsplash.com/photo-1747830280502-f33d7305a714?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    imageAlt: "Портрет клиента",
   },
   {
     story:
-      "«Меня впечатлил стратегический подход. Задавали правильные вопросы, вникали в бизнес и создали платформу, которая масштабируется вместе с нами.»",
+      "«Сделали всё быстро и аккуратно: структура понятная, сайт загружается быстро, заявки приходят стабильно. Плюс подключили уведомления — стало проще обрабатывать клиентов.»",
     name: "Давид Леви",
-    role: "Бизнес-консультант",
+    role: "Владелец сервисного бизнеса",
     image:
-      "https://images.unsplash.com/photo-1533723522262-1c3e074d3dac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHBvcnRyYWl0JTIwbmF0dXJhbHxlbnwxfHx8fDE3NjUyOTM1ODF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    imageAlt: "Business portrait",
+      "https://images.unsplash.com/photo-1533723522262-1c3e074d3dac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    imageAlt: "Портрет клиента бизнес",
   },
   {
     story:
-      "«Наконец-то digital-присутствие, которое соответствует качеству наших услуг. Понимали наш рынок, клиентов и создали сайт, который поднял бренд на новый уровень.»",
+      "«Наконец-то онлайн-присутствие выглядит достойно и работает на бренд. Сайт стал понятнее для клиентов, а через WhatsApp стало легче отвечать и записывать людей.»",
     name: "Майя Шапира",
     role: "Основательница кафе",
     image:
-      "https://images.unsplash.com/photo-1747830280502-f33d7305a714?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMHdhcm18ZW58MXx8fHwxNzY1MjkzNTgxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    imageAlt: "Professional portrait warm",
+      "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    imageAlt: "Портрет клиента тёплый",
   },
 ];
 
@@ -237,123 +268,85 @@ function Testimonial({
             <div className="h-24 w-[140%] bg-gradient-to-r from-transparent via-white/12 to-transparent blur-[1px]" />
           </div>
         </div>
-{/* Сакв */}
-        {/* <div className="grid md:grid-cols-[220px,1fr] gap-6 md:gap-10 items-start relative z-10">
-          
-          <div className="relative">
+        {/* Сакв */}
+
+        <div className="relative z-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start">
+          {/* Left: Avatar + identity */}
+          <div className="flex items-center gap-4 shrink-0 min-w-[220px]">
+            {/* Avatar */}
             <div
               className="
-                aspect-square overflow-hidden rounded-2xl
-                border border-cyan-400/30 bg-[#0B1020]/70
-                shadow-[0_0_40px_rgba(59,130,246,0.18)]
-              "
-            >
-              <ImageWithFallback
-                src={testimonial.image}
-                alt={testimonial.imageAlt}
-                className="w-full h-full object-cover opacity-90 mix-blend-screen"
-              />
-            </div>
-
-          
-            <div className="mt-4">
-              <p className="text-xs uppercase tracking-[0.22em] text-slate-200/55 mb-2">
-                {testimonial.role}
-              </p>
-              <p className="text-base text-slate-100">{testimonial.name}</p>
-
-              
-              <div className="mt-3 h-0.5 w-14 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-transparent opacity-90" />
-            </div>
-          </div>
-
-        
-          <div className="flex items-center">
-            <blockquote className="text-lg md:text-2xl leading-relaxed text-slate-100/90">
-              <span className="text-slate-100">{testimonial.story}</span>
-            </blockquote>
-          </div>
-        </div> */}
-<div className="relative z-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start">
-  {/* Left: Avatar + identity */}
-  <div className="flex items-center gap-4 shrink-0 min-w-[220px]">
-    {/* Avatar */}
-    <div
-      className="
         relative
         h-14 w-14 md:h-16 md:w-16
         rounded-xl overflow-hidden
         border border-cyan-400/30 bg-[#0B1020]/70
         shadow-[0_0_26px_rgba(76,194,255,0.18)]
       "
-    >
-      <ImageWithFallback
-        src={testimonial.image}
-        alt={testimonial.imageAlt}
-        className="w-full h-full object-cover opacity-90 mix-blend-screen"
-      />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent" />
-    </div>
+            >
+              <ImageWithFallback
+                src={testimonial.image}
+                alt={testimonial.imageAlt}
+                className="w-full h-full object-cover opacity-90 mix-blend-screen"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent" />
+            </div>
 
-    {/* Name / role */}
-    <div className="min-w-0">
-      <p className="text-[15px] font-medium text-slate-100 leading-tight truncate">
-        {testimonial.name}
-      </p>
-      <p className="text-xs uppercase tracking-[0.22em] text-slate-300/60 mt-1">
-        {testimonial.role}
-      </p>
-    </div>
-  </div>
+            {/* Name / role */}
+            <div className="min-w-0">
+              <p className="text-[15px] font-medium text-slate-100 leading-tight truncate">
+                {testimonial.name}
+              </p>
+              <p className="text-xs uppercase tracking-[0.22em] text-slate-300/60 mt-1">
+                {testimonial.role}
+              </p>
+            </div>
+          </div>
 
-  {/* Center: Story */}
-  <div className="flex-1">
-    <blockquote className="text-lg md:text-xl leading-relaxed text-slate-100/90">
-      {testimonial.story}
-    </blockquote>
+          {/* Center: Story */}
+          <div className="flex-1">
+            <blockquote className="text-lg md:text-xl leading-relaxed text-slate-100/90">
+              {testimonial.story}
+            </blockquote>
 
-    {/* Metrics */}
-    <div className="mt-5 flex flex-wrap gap-3">
-      <span
-        className="
+            {/* Metrics */}
+            <div className="mt-5 flex flex-wrap gap-3">
+              <span
+                className="
           inline-flex items-center gap-2
           px-3 py-1.5 rounded-full
           border border-cyan-400/30 bg-[#0A0F1E]/70
           text-xs text-slate-200
           shadow-[0_0_20px_rgba(76,194,255,0.15)]
         "
-      >
-        <span className="h-1.5 w-1.5 rounded-full bg-cyan-300 shadow-[0_0_10px_rgba(76,194,255,0.6)]" />
-        +2× leads
-      </span>
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-cyan-300 shadow-[0_0_10px_rgba(76,194,255,0.6)]" />
+                Заявок стало больше
+              </span>
 
-      <span
-        className="
+              <span
+                className="
           inline-flex items-center gap-2
           px-3 py-1.5 rounded-full
           border border-cyan-400/30 bg-[#0A0F1E]/70
           text-xs text-slate-200
         "
-      >
-        WhatsApp automation
-      </span>
+              >
+                WhatsApp-автоматизация
+              </span>
 
-      <span
-        className="
+              <span
+                className="
           inline-flex items-center gap-2
           px-3 py-1.5 rounded-full
           border border-cyan-400/30 bg-[#0A0F1E]/70
           text-xs text-slate-200
         "
-      >
-        CRM connected
-      </span>
-    </div>
-  </div>
-</div>
-
-
-
+              >
+                Учёт заявок (CRM/таблица)
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -407,11 +400,11 @@ export function TestimonialsSection() {
             id="testimonials-title"
             className="text-3xl md:text-4xl lg:text-5xl leading-tight max-w-3xl text-slate-100"
           >
-            Отзывы клиентов
+            Отзывы и результаты
           </h2>
           <p className="text-base md:text-lg text-slate-300/90 mt-4 max-w-2xl leading-relaxed">
-            Реальные истории от реальных людей, которые развивают свой бизнес —
-            и получают результат после запуска.
+            Коротко о том, что меняется после запуска: заявки не теряются,
+            клиенты быстрее получают ответ, а обработка становится проще.
           </p>
         </div>
 
