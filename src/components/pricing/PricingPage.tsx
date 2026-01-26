@@ -25,9 +25,9 @@ export default function PricingPage() {
       <PricingHero />
       <PricingPackagesSection />
       <PricingComparisonSection />
-      {/* <PricingAddonsSection /> */}
-      {/* <PricingFAQSection /> */}
-      {/* <PricingFinalCTA /> */}
+      <PricingAddonsSection />
+      <PricingFAQSection />
+      <PricingFinalCTA />
     </div>
   );
 }
