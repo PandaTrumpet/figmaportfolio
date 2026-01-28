@@ -10,8 +10,9 @@ import { ReviewsHero } from "./ReviewsHero";
 import { ClientStoriesSection } from "./ClientStoriesSection";
 import { VideoTestimonialsSection } from "./VideoTestimonialsSection";
 import { ReviewsSliderSection } from "./ReviewsSliderSection";
-import { PlatformRatingsSection } from "./PlatformRatingsSection";
+
 import { ReviewsFinalCTA } from "./ReviewsFinalCTA";
+import { ProofMetricsSection } from "./ProofMetricsSection";
 
 const ParticlesBackground = dynamic(
   () =>
@@ -37,11 +38,12 @@ export default function ReviewsPage() {
 
       <ClientStoriesSection stories={reviewsData.clientStories} />
 
-      <VideoTestimonialsSection videos={reviewsData.videoTestimonials} />
+      {/* <VideoTestimonialsSection videos={reviewsData.videoTestimonials} /> */}
 
-      <ReviewsSliderSection reviews={reviewsData.reviews} />
+      {/* <ReviewsSliderSection reviews={reviewsData.reviews} /> */}
 
-      <PlatformRatingsSection platforms={reviewsData.platforms} />
+      {/* <PlatformRatingsSection platforms={reviewsData.platforms} /> */}
+      <ProofMetricsSection/>
 
       <ReviewsFinalCTA cta={reviewsData.cta} Particles={ParticlesBackground} />
     </div>
