@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { useScroll, useTransform } from "motion/react";
+
 import dynamic from "next/dynamic";
 
 import { reviewsData } from "@/src/data/reviewsData";
@@ -25,16 +25,12 @@ const ParticlesBackground = dynamic(
 export default function ReviewsPage() {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+
 
   return (
     <div ref={containerRef} className="min-h-screen bg-[#F5EFE7]">
-      <ReviewsHero data={reviewsData.hero} opacity={opacity} />
+      <ReviewsHero data={reviewsData.hero}  />
 
       <ClientStoriesSection stories={reviewsData.clientStories} />
 

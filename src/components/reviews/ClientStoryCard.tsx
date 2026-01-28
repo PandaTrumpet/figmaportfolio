@@ -514,8 +514,12 @@ export function ClientStoryCard({
                   key={i}
                   className="rounded-2xl border border-white/10 bg-white/5 p-5"
                 >
-                  <p className="text-2xl md:text-3xl font-semibold text-[#F2F4FA] mb-1">
+                  {/* <p className="text-2xl md:text-3xl font-semibold text-[#F2F4FA] mb-1">
                     {result.value}
+                  </p> */}
+                  <p className="text-lg md:text-xl font-medium normal-case tracking-normal text-[#F2F4FA] mb-1">
+                    {result.value.charAt(0).toUpperCase() +
+                      result.value.slice(1)}
                   </p>
                   <p className="text-[10px] md:text-xs uppercase tracking-[0.24em] text-[#C7CEDF]/70">
                     {result.metric}

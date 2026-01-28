@@ -84,78 +84,154 @@ export const reviewsData: ReviewsData = {
     ],
   },
 
+  // clientStories: [
+  //   {
+  //     name: "Яэль Коэн",
+  //     role: "CEO & Founder",
+  //     company: "GreenTech Israel",
+  //     avatar:
+  //       "https://images.unsplash.com/photo-1581065178047-8ee15951ede6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHByb2Zlc3Npb25hbCUyMHBvcnRyYWl0fGVufDF8fHx8MTc2NTIyOTE0Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+  //     story:
+  //       "Мы искали агентство, которое понимает технологический стартап и может создать сайт, отражающий нашу инновационность. После месяцев поисков нашли STUDIO.",
+  //     challenge:
+  //       "Старый сайт не конвертировал посетителей. Bounce rate был 78%, среднее время на сайте — 20 секунд. Инвесторы жаловались, что сайт не отражает масштаб компании.",
+  //     solution:
+  //       "STUDIO разработали премиум веб-приложение с 3D анимациями, интерактивными графиками и personalized UX. Интеграция с CRM и email automation. Полная редизайн brand identity.",
+  //     results: [
+  //       { metric: "Конверсия лидов", value: "+340%" },
+  //       { metric: "Время на сайте", value: "+520%" },
+  //       { metric: "Bounce rate", value: "-62%" },
+  //       { metric: "Инвестиции (Series A)", value: "$2.5M" },
+  //     ],
+  //     quote:
+  //       "STUDIO не просто создали сайт — они создали инструмент, который помог нам закрыть Series A. Каждый investor meeting теперь начинается с восхищения нашим сайтом.",
+  //     rating: 5,
+  //     projectType: "Премиум веб-приложение",
+  //     industry: "GreenTech",
+  //   },
+  //   {
+  //     name: "Давид Леви",
+  //     role: "Marketing Director",
+  //     company: "TLV Fashion House",
+  //     avatar:
+  //       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+  //     story:
+  //       "Фэшн-бренд с 15-летней историей в офлайне. Хотели зайти в онлайн, но боялись потерять премиум-позиционирование.",
+  //     challenge:
+  //       'Как перенести luxury experience в digital? Конкуренты с дешевыми шаблонными сайтами размывали рынок. Нужен был e-commerce, который кричит "премиум".',
+  //     solution:
+  //       "STUDIO создали brutalist e-commerce с cinematic product pages, плавными анимациями и custom checkout. Интеграция с inventory management и персональным styling AI.",
+  //     results: [
+  //       { metric: "Онлайн продажи (первый квартал)", value: "₪890K" },
+  //       { metric: "Average order value", value: "+180%" },
+  //       { metric: "Customer retention", value: "67%" },
+  //       { metric: "Social media engagement", value: "+420%" },
+  //     ],
+  //     quote:
+  //       "Сайт превзошёл наш флагманский магазин на Dizengoff. Клиенты говорят, что покупать онлайн даже приятнее. This is the future of fashion retail.",
+  //     rating: 5,
+  //     projectType: "E-commerce платформа",
+  //     industry: "Fashion & Retail",
+  //   },
+  //   {
+  //     name: "Михаэль Розенберг",
+  //     role: "Co-Founder",
+  //     company: "HealthTech Solutions",
+  //     avatar:
+  //       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400",
+  //     story:
+  //       "Медицинский стартап с революционной технологией, но никто не понимал, что мы делаем.",
+  //     challenge:
+  //       "Объяснить сложную медицинскую технологию простым языком. Compliance требования. Нужна была доверительность для B2B клиентов (больницы, клиники).",
+  //     solution:
+  //       "STUDIO разработали образовательный сайт с интерактивными демо, видео-анимациями процессов и case studies. Multilingual support (Hebrew, English, Arabic). HIPAA-compliant формы.",
+  //     results: [
+  //       { metric: "B2B лиды (первые 3 месяца)", value: "47" },
+  //       { metric: "Контракты закрыты", value: "12" },
+  //       { metric: "Revenue from website", value: "₪1.2M" },
+  //       { metric: "Media mentions", value: "18" },
+  //     ],
+  //     quote:
+  //       "До STUDIO мы тратили часы, объясняя нашу технологию на встречах. Теперь мы просто отправляем ссылку на сайт. Половина клиентов приходит уже готовыми подписать контракт.",
+  //     rating: 5,
+  //     projectType: "B2B платформа",
+  //     industry: "HealthTech",
+  //   },
+  // ],
   clientStories: [
     {
       name: "Яэль Коэн",
-      role: "CEO & Founder",
+      role: "Владелец бизнеса",
       company: "GreenTech Israel",
       avatar:
-        "https://images.unsplash.com/photo-1581065178047-8ee15951ede6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHByb2Zlc3Npb25hbCUyMHBvcnRyYWl0fGVufDF8fHx8MTc2NTIyOTE0Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+        "https://images.unsplash.com/photo-1581065178047-8ee15951ede6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
       story:
-        "Мы искали агентство, которое понимает технологический стартап и может создать сайт, отражающий нашу инновационность. После месяцев поисков нашли STUDIO.",
+        "Мы небольшой технологический бизнес и долго откладывали обновление сайта. Старый сайт был сделан много лет назад и перестал помогать в продажах.",
       challenge:
-        "Старый сайт не конвертировал посетителей. Bounce rate был 78%, среднее время на сайте — 20 секунд. Инвесторы жаловались, что сайт не отражает масштаб компании.",
+        "Сайт выглядел устаревшим, не объяснял, чем мы занимаемся, и не приводил заявок. Большинство клиентов писали напрямую или приходили по рекомендациям.",
       solution:
-        "STUDIO разработали премиум веб-приложение с 3D анимациями, интерактивными графиками и personalized UX. Интеграция с CRM и email automation. Полная редизайн brand identity.",
+        "Мы получили понятный сайт с чёткой структурой, акцентом на услугах и простой связью через WhatsApp. Процесс был спокойным и без лишней сложности.",
       results: [
-        { metric: "Конверсия лидов", value: "+340%" },
-        { metric: "Время на сайте", value: "+520%" },
-        { metric: "Bounce rate", value: "-62%" },
-        { metric: "Инвестиции (Series A)", value: "$2.5M" },
+        { metric: "Заявки с сайта", value: "стали регулярными" },
+        { metric: "Время ответа клиентам", value: "сократилось" },
+        { metric: "Понимание услуг", value: "стало проще" },
+        { metric: "Использование сайта", value: "в ежедневной работе" },
       ],
       quote:
-        "STUDIO не просто создали сайт — они создали инструмент, который помог нам закрыть Series A. Каждый investor meeting теперь начинается с восхищения нашим сайтом.",
+        "Сайт наконец-то стал рабочим инструментом, а не просто визиткой. Нам стало проще объяснять, чем мы занимаемся, и принимать обращения.",
       rating: 5,
-      projectType: "Премиум веб-приложение",
-      industry: "GreenTech",
+      projectType: "Корпоративный сайт",
+      industry: "Technology",
     },
+
     {
       name: "Давид Леви",
-      role: "Marketing Director",
+      role: "Управляющий",
       company: "TLV Fashion House",
       avatar:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
       story:
-        "Фэшн-бренд с 15-летней историей в офлайне. Хотели зайти в онлайн, но боялись потерять премиум-позиционирование.",
+        "У нас офлайн-бизнес и постоянные клиенты, но мы понимали, что без нормального сайта теряем новые заказы.",
       challenge:
-        'Как перенести luxury experience в digital? Конкуренты с дешевыми шаблонными сайтами размывали рынок. Нужен был e-commerce, который кричит "премиум".',
+        "Хотелось сайт, который выглядит аккуратно и современно, но без перегруженного дизайна и сложных систем.",
       solution:
-        "STUDIO создали brutalist e-commerce с cinematic product pages, плавными анимациями и custom checkout. Интеграция с inventory management и персональным styling AI.",
+        "Сайт сделали с фокусом на коллекции, примеры работ и быстрый контакт через WhatsApp. Без лишних функций, но с понятной логикой.",
       results: [
-        { metric: "Онлайн продажи (первый квартал)", value: "₪890K" },
-        { metric: "Average order value", value: "+180%" },
-        { metric: "Customer retention", value: "67%" },
-        { metric: "Social media engagement", value: "+420%" },
+        { metric: "Запросы от новых клиентов", value: "появились" },
+        { metric: "Онлайн-контакт", value: "стал удобнее" },
+        { metric: "Доверие к бренду", value: "выросло" },
+        { metric: "Вовлечённость", value: "стала выше" },
       ],
       quote:
-        "Сайт превзошёл наш флагманский магазин на Dizengoff. Клиенты говорят, что покупать онлайн даже приятнее. This is the future of fashion retail.",
+        "Нам не обещали чудес — просто сделали аккуратный сайт, который действительно помогает в работе.",
       rating: 5,
-      projectType: "E-commerce платформа",
+      projectType: "Сайт-каталог",
       industry: "Fashion & Retail",
     },
+
     {
       name: "Михаэль Розенберг",
-      role: "Co-Founder",
+      role: "Сооснователь",
       company: "HealthTech Solutions",
       avatar:
         "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400",
       story:
-        "Медицинский стартап с революционной технологией, но никто не понимал, что мы делаем.",
+        "Мы работаем в медицинской сфере и для нас особенно важно доверие и понятное объяснение услуг.",
       challenge:
-        "Объяснить сложную медицинскую технологию простым языком. Compliance требования. Нужна была доверительность для B2B клиентов (больницы, клиники).",
+        "Сложно объяснить технические и медицинские процессы простым языком. Клиенты часто задавали одни и те же вопросы.",
       solution:
-        "STUDIO разработали образовательный сайт с интерактивными демо, видео-анимациями процессов и case studies. Multilingual support (Hebrew, English, Arabic). HIPAA-compliant формы.",
+        "Сайт помог структурировать информацию, показать процесс работы и собрать основные вопросы в одном месте. Также добавили удобную форму связи.",
       results: [
-        { metric: "B2B лиды (первые 3 месяца)", value: "47" },
-        { metric: "Контракты закрыты", value: "12" },
-        { metric: "Revenue from website", value: "₪1.2M" },
-        { metric: "Media mentions", value: "18" },
+        { metric: "Первичные обращения", value: "стали качественнее" },
+        { metric: "Количество вопросов", value: "уменьшилось" },
+        { metric: "Подготовка клиентов", value: "стала лучше" },
+        { metric: "Использование сайта", value: "в продажах" },
       ],
       quote:
-        "До STUDIO мы тратили часы, объясняя нашу технологию на встречах. Теперь мы просто отправляем ссылку на сайт. Половина клиентов приходит уже готовыми подписать контракт.",
+        "Теперь сайт действительно помогает в переговорах. Клиенты приходят более подготовленными.",
       rating: 5,
-      projectType: "B2B платформа",
-      industry: "HealthTech",
+      projectType: "Информационный сайт",
+      industry: "Healthcare",
     },
   ],
 

@@ -138,7 +138,7 @@ export function PricingHero() {
     offset: ["start start", "end start"],
   });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0.22]);
+
   const y = useTransform(scrollYProgress, [0, 1], [0, -120]);
 
   return (
@@ -181,7 +181,7 @@ export function PricingHero() {
       <motion.div
         className="relative z-10 mx-auto flex min-h-screen max-w-[1400px] items-center justify-center px-6 md:px-12 lg:px-20 text-center text-[#F5EFE7]"
         style={{
-          opacity: reduce ? 1 : opacity,
+         
           y: reduce ? 0 : y,
         }}
       >
