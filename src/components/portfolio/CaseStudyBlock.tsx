@@ -1,133 +1,220 @@
+
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView } from "motion/react";
-import { ArrowRight } from "lucide-react";
+import { motion, useInView, AnimatePresence } from "motion/react";
+import { ArrowRight  } from "lucide-react";
 import { ImageWithFallback } from "@/src/components/figma/ImageWithFallback";
-
+interface Project {
+  id: string;
+  title: string;
+  client: string;
+  description: string;
+  image: string;
+  industry: string[];
+  type: string[];
+  link?: string;
+  year: string;
+  featured?: boolean;
+  caseStudy?: {
+    challenge: string;
+    solution: string;
+    results: string[];
+    images: string[];
+  };
+}
 export function CaseStudyBlock({
   project,
   index,
 }: {
-  project: any;
+  project: Project;
   index: number;
 }) {
   const sectionRef = useRef<HTMLDivElement | null>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-150px" });
+  const isInView = useInView(sectionRef, { once: true, margin: "-120px" });
 
-  if (!project.caseStudy) return null;
+  if (!project?.caseStudy) return null;
+
+  const number = String(index + 1).padStart(2, "0");
 
   return (
-    <div ref={sectionRef}>
-      <motion.div
-        initial={{ opacity: 0, y: 60 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="mb-12">
-          <div className="flex items-center gap-6 mb-6">
-            <span className="text-7xl opacity-10">0{index + 1}</span>
-            <div>
-              <h3 className="text-4xl md:text-5xl lg:text-6xl mb-2">
-                {project.title}
-              </h3>
-              <p className="text-xl md:text-2xl opacity-60">{project.client}</p>
+    <motion.div
+      ref={sectionRef}
+      initial={{ opacity: 0, y: 28 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+      className="relative"
+    >
+      {/* compact card */}
+      <div className="relative rounded-3xl border border-white/10 bg-gradient-to-b from-[#060A13] via-[#050816] to-[#02030A] shadow-[0_22px_70px_rgba(0,0,0,0.75)] overflow-hidden">
+        {/* soft inner glow */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#3A7BFF22] via-transparent to-transparent opacity-70" />
+
+        <div className="p-6 md:p-8">
+          {/* header row */}
+          <div className="flex items-start justify-between gap-6">
+            <div className="flex items-start gap-4 min-w-0">
+              <span className="text-4xl md:text-5xl font-semibold text-white/10 leading-none select-none">
+                {number}
+              </span>
+
+              <div className="min-w-0">
+                <h3 className="text-2xl md:text-3xl font-semibold tracking-tight text-[#F2F4FA] leading-tight">
+                  {project.title}
+                </h3>
+                <p className="mt-1 text-sm md:text-base text-[#C7CEDF] opacity-80">
+                  {project.client}
+                </p>
+
+                {/* tags (compact) */}
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {project.industry?.slice(0, 1).map((ind: string) => (
+                    <span
+                      key={ind}
+                      className="text-xs px-3 py-1 rounded-full border border-white/10 bg-white/5 text-[#D5DBE6]"
+                    >
+                      {ind}
+                    </span>
+                  ))}
+                  {project.type?.slice(0, 2).map((t: string) => (
+                    <span
+                      key={t}
+                      className="text-xs px-3 py-1 rounded-full border border-white/10 bg-gradient-to-r from-[#3A7BFF33] via-[#4CC2FF22] to-transparent text-[#E8F2FF]"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="aspect-21/9 mb-12 border-2 border-[#050608] overflow-hidden">
-          <ImageWithFallback
-            src={project.image}
-            alt={project.title}
-            className="w-full h-full object-cover"
-          />
-        </div>
+          {/* media + results */}
+          <div className="mt-6 grid lg:grid-cols-12 gap-6 items-start">
+            {/* image */}
+            <div className="lg:col-span-7">
+              <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/20">
+                <div className="aspect-[16/9]">
+                  <ImageWithFallback
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-12">
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="border-2 border-[#050608] p-8 bg-[#F5EFE7]"
-          >
-            <h4 className="text-2xl mb-4 uppercase tracking-wider">
-              Challenge
-            </h4>
-            <p className="text-lg opacity-70 leading-relaxed">
-              {project.caseStudy.challenge}
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="border-2 border-[#050608] p-8 bg-[#050608] text-[#F5EFE7]"
-          >
-            <h4 className="text-2xl mb-4 uppercase tracking-wider">Solution</h4>
-            <p className="text-lg opacity-90 leading-relaxed">
-              {project.caseStudy.solution}
-            </p>
-          </motion.div>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mb-12"
-        >
-          <h4 className="text-3xl md:text-4xl mb-8">Results</h4>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {project.caseStudy.results.map((result: string, i: number) => (
-              <div
-                key={i}
-                className="border-2 border-[#050608] p-6 bg-white hover:bg-[#050608] hover:text-[#F5EFE7] transition-all group"
-              >
-                <p className="text-xl md:text-2xl leading-tight">{result}</p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        {project.caseStudy.images?.length > 0 && (
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="grid md:grid-cols-2 gap-8"
-          >
-            {project.caseStudy.images.map((img: string, i: number) => (
-              <div
-                key={i}
-                className="aspect-[16/10] border-2 border-[#050608] overflow-hidden"
-              >
-                <ImageWithFallback
-                  src={img}
-                  alt={`${project.title} detail ${i + 1}`}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                {/* subtle outline */}
+                <div
+                  className="pointer-events-none absolute inset-0 rounded-2xl border border-transparent"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #3A7BFF, #4CC2FF, #9B5DFF)",
+                    WebkitMask:
+                      "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
+                    WebkitMaskComposite: "xor",
+                    maskComposite: "exclude",
+                    padding: "1px",
+                    opacity: 0.35,
+                  }}
                 />
               </div>
-            ))}
-          </motion.div>
-        )}
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-12 text-center"
-        >
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-3 px-8 py-4 border-2 border-[#050608] hover:bg-[#050608] hover:text-[#F5EFE7] transition-all group"
-          >
-            <span className="text-lg">Обсудить Подобный Проект</span>
-            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2" />
-          </a>
-        </motion.div>
-      </motion.div>
-    </div>
+              {/* optional extra images: показываем только если open */}
+              <AnimatePresence initial={false}>
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.35, ease: "easeOut" }}
+                  className="mt-4 grid sm:grid-cols-2 gap-4 overflow-hidden"
+                >
+                  {project.caseStudy.images
+                    .slice(0, 2)
+                    .map((img: string, i: number) => (
+                      <div
+                        key={i}
+                        className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/20"
+                      >
+                        <div className="aspect-[16/10]">
+                          <ImageWithFallback
+                            src={img}
+                            alt={`${project.title} деталь ${i + 1}`}
+                            className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-500"
+                          />
+                        </div>
+                      </div>
+                    ))}
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* results */}
+            <div className="lg:col-span-5">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6 backdrop-blur-xl">
+                <h4 className="text-sm uppercase tracking-[0.22em] text-[#C7CEDF] mb-4">
+                  Результат
+                </h4>
+
+                <div className="space-y-3">
+                  {project.caseStudy.results
+                    .slice(0, 4)
+                    .map((r: string, i: number) => (
+                      <div
+                        key={i}
+                        className="rounded-xl border border-white/10 bg-gradient-to-br from-[#9B5DFF18] via-transparent to-transparent p-4"
+                      >
+                        <p className="text-sm md:text-base text-[#E8ECF4] opacity-85 leading-relaxed">
+                          {r}
+                        </p>
+                      </div>
+                    ))}
+                </div>
+
+                {/* CTA compact */}
+                <div className="mt-5">
+                  <a
+                    href="#contact"
+                    className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm md:text-base text-[#F2F4FA] hover:bg-white/10 transition"
+                  >
+                    <span>Обсудить похожий проект</span>
+                    <ArrowRight className="w-5 h-5 opacity-90" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* details (challenge/solution) */}
+          <AnimatePresence initial={false}>
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+              className="mt-6 overflow-hidden"
+            >
+              <div className="grid lg:grid-cols-2 gap-4">
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6 backdrop-blur-xl">
+                  <h5 className="text-xs uppercase tracking-[0.22em] text-[#C7CEDF] mb-3">
+                    Задача
+                  </h5>
+                  <p className="text-sm md:text-base text-[#E8ECF4] opacity-85 leading-relaxed">
+                    {project.caseStudy.challenge}
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-[#060A13] via-[#050816] to-[#02030A] p-5 md:p-6">
+                  <h5 className="text-xs uppercase tracking-[0.22em] text-[#C7CEDF] mb-3">
+                    Решение
+                  </h5>
+                  <p className="text-sm md:text-base text-[#F2F4FA] opacity-90 leading-relaxed">
+                    {project.caseStudy.solution}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </div>
+    </motion.div>
   );
 }
