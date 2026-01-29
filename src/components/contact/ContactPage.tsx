@@ -33,12 +33,9 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
+ 
 
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -67,7 +64,7 @@ export default function ContactPage() {
 
   return (
     <div ref={containerRef} className="min-h-screen bg-[#F5EFE7]">
-      <ContactHero data={contactData.hero} opacity={opacity} />
+      <ContactHero data={contactData.hero}  />
       <ContactMain
         data={contactData}
         formData={formData}
