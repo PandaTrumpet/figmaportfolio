@@ -475,9 +475,9 @@ export function ProcessSection() {
     <section
       id="process"
       className="
-        relative overflow-hidden
-        px-6 md:px-12 lg:px-20 py-24 md:py-32
-        bg-linear-to-b from-[#050814] via-[#050818] to-[#020410]
+        relative min-h-screen flex items-center 
+        px-6 md:px-12 lg:px-20 py-32 overflow-visible
+        
         text-slate-100
       "
       aria-labelledby="process-title"
@@ -571,8 +571,6 @@ export function ProcessSection() {
                   <div className="hidden lg:block absolute top-12 left-0 w-3 h-3 rounded-full transform -translate-y-1/2">
                     <div className="w-3 h-3 rounded-full bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#63E5FF] shadow-[0_0_30px_rgba(76,194,255,0.65)]" />
                   </div>
-
-          
 
                   {/* CARD with premium hover — SAFE for text */}
                   <motion.div

@@ -1,4 +1,5 @@
 
+
 // "use client";
 
 // import { motion, useReducedMotion } from "motion/react";
@@ -18,28 +19,30 @@
 
 // const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
-
-
 // export function DifferenceSection({ data }: { data: DifferenceData }) {
 //   const reduce = useReducedMotion();
 
 //   return (
-//     <section className="relative bg-[#050816]">
-//       {/* CLIP WRAPPER — режет фон, не контент */}
-//       <div className="relative overflow-hidden">
-//         {/* background spots */}
-//         <div className="pointer-events-none absolute inset-0 opacity-60">
+//     <section
+//       className="
+//         relative min-h-screen flex items-center
+//         px-6 md:px-12 lg:px-20 py-32 overflow-visible
+        
+//         text-slate-100
+//       "
+//     >
+//       {/* фон + клип (имеет высоту секции) */}
+//       <div className="pointer-events-none absolute inset-0 overflow-hidden">
+//         <div className="absolute inset-0 opacity-60">
 //           <div className="absolute -top-44 -left-40 h-96 w-96 bg-[radial-gradient(circle_at_center,_#3A7BFF55,_transparent_70%)] blur-3xl" />
 //           <div className="absolute -bottom-52 -right-24 h-[520px] w-[520px] bg-[radial-gradient(circle_at_center,_#4CC2FF55,_transparent_70%)] blur-3xl" />
 //         </div>
 
-//         {/* grid overlay */}
-//         <div className="pointer-events-none absolute inset-0 opacity-[0.10] [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:64px_64px]" />
+//         <div className="absolute inset-0 opacity-[0.10] [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:64px_64px]" />
 //       </div>
 
 //       {/* CONTENT */}
 //       <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12 lg:px-20 py-20 md:py-28">
-//         {/* Header */}
 //         <motion.div
 //           initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
 //           whileInView={{ opacity: 1, y: 0 }}
@@ -103,25 +106,22 @@ export function DifferenceSection({ data }: { data: DifferenceData }) {
   const reduce = useReducedMotion();
 
   return (
-    <section
-      className="
-        relative bg-[#050816]
-        overflow-x-clip
-        [contain:paint]
-      "
-    >
-      {/* фон + клип (имеет высоту секции) */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+    <section className="relative overflow-visible px-6 py-24 md:px-12 md:py-32 lg:px-20 text-slate-100">
+      {/* BACKGROUND (clip only background) */}
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute inset-0 opacity-60">
           <div className="absolute -top-44 -left-40 h-96 w-96 bg-[radial-gradient(circle_at_center,_#3A7BFF55,_transparent_70%)] blur-3xl" />
           <div className="absolute -bottom-52 -right-24 h-[520px] w-[520px] bg-[radial-gradient(circle_at_center,_#4CC2FF55,_transparent_70%)] blur-3xl" />
         </div>
 
-        <div className="absolute inset-0 opacity-[0.10] [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:64px_64px]" />
+        <div className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:64px_64px]" />
+
+        {/* gentle fade so the section never “cuts” */}
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-44 bg-gradient-to-b from-transparent to-[#020410]" />
       </div>
 
       {/* CONTENT */}
-      <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12 lg:px-20 py-20 md:py-28">
+      <div className="relative z-10 mx-auto max-w-[1400px]">
         <motion.div
           initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -137,11 +137,11 @@ export function DifferenceSection({ data }: { data: DifferenceData }) {
             viewport={{ once: true }}
           />
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight text-[#F5EFE7] mb-4 md:mb-6">
+          <h2 className="mb-4 text-3xl font-semibold tracking-tight text-[#F5EFE7] sm:text-4xl md:mb-6 md:text-5xl lg:text-6xl xl:text-7xl">
             Почему с нами проще
           </h2>
 
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#C7CEDF] max-w-3xl leading-relaxed">
+          <p className="max-w-3xl text-base leading-relaxed text-[#C7CEDF] sm:text-lg md:text-xl lg:text-2xl">
             Не “красивая студия”, а команда, которая отвечает за результат:
             понятный UX, скорость, автоматизация и контроль метрик.
           </p>
@@ -160,3 +160,4 @@ export function DifferenceSection({ data }: { data: DifferenceData }) {
     </section>
   );
 }
+

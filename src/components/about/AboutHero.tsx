@@ -40,7 +40,7 @@ export function AboutHero({ data }: { data: HeroData }) {
     <section
       ref={sectionRef}
       className="
-    relative overflow-hidden bg-[#020410]
+   relative overflow-visible
     min-h-[100svh]
     grid place-items-center
     px-4 sm:px-6 md:px-12 lg:px-20
@@ -51,7 +51,7 @@ export function AboutHero({ data }: { data: HeroData }) {
       {/* Parallax Background */}
       {/* Parallax Background (FIXED) */}
       <div
-        className="absolute inset-0 z-0 pointer-events-none"
+        className="absolute inset-0 z-0 pointer-events-none overflow-hidden"
         aria-hidden="true"
       >
         {/* двигаем ТОЛЬКО изображение, а не весь контейнер */}
@@ -74,7 +74,7 @@ export function AboutHero({ data }: { data: HeroData }) {
         <div className="absolute inset-0 opacity-[0.10] [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:64px_64px]" />
 
         {/* fade снизу (теперь он на месте и всегда перекрывает стык) */}
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-b from-transparent to-[#050816]" />
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-b from-transparent to-[#020410]" />
       </div>
 
       {/* Content */}

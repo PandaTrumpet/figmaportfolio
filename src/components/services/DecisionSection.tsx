@@ -1,73 +1,3 @@
-// "use client";
-
-// import { motion } from "motion/react";
-// import { ArrowRight } from "lucide-react";
-
-// const options = [
-//   {
-//     title: "Нужны заявки уже сейчас",
-//     result: "Лендинг + WhatsApp",
-//     description:
-//       "Идеально, если вам нужно быстро протестировать спрос и начать получать обращения без сложной системы.",
-//   },
-//   {
-//     title: "Клиенты теряются и нет порядка",
-//     result: "Сайт + автоматизация",
-//     description:
-//       "Подключаем WhatsApp-бота, формы и CRM, чтобы заявки не терялись и бизнес работал системно.",
-//   },
-//   {
-//     title: "Есть продукты или каталог",
-//     result: "E-commerce / платформа",
-//     description:
-//       "Интернет-магазин или сервис с оплатой, статусами заказов и автоматическими уведомлениями.",
-//   },
-// ];
-
-// export function DecisionSection() {
-//   return (
-//     <section className="bg-[#050608] px-6 md:px-12 lg:px-20 py-24 md:py-32">
-//       <div className="max-w-[1200px] mx-auto">
-//         <h2 className="text-2xl md:text-4xl font-semibold text-[#F5EFE7] mb-12">
-//           С чего стоит начать именно вам
-//         </h2>
-
-//         <div className="grid gap-6">
-//           {options.map((o, i) => (
-//             <motion.div
-//               key={o.title}
-//               initial={{ opacity: 0, y: 30 }}
-//               whileInView={{ opacity: 1, y: 0 }}
-//               transition={{ delay: i * 0.08 }}
-//               viewport={{ once: true }}
-//               className="group rounded-3xl border border-white/10 bg-gradient-to-b from-[#060A13] to-[#02030A] p-6 md:p-7 hover:border-[#4CC2FF55] transition"
-//             >
-//               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-//                 <div>
-//                   <p className="text-sm uppercase tracking-wider text-[#C7CEDF] opacity-70 mb-2">
-//                     Если
-//                   </p>
-//                   <h3 className="text-lg md:text-2xl text-[#F5EFE7] font-semibold mb-2">
-//                     {o.title}
-//                   </h3>
-//                   <p className="text-[#C7CEDF] text-sm md:text-base">
-//                     {o.description}
-//                   </p>
-//                 </div>
-
-//                 <div className="flex items-center gap-3 text-[#4CC2FF] font-medium">
-//                   {o.result}
-//                   <ArrowRight className="w-5 h-5" />
-//                 </div>
-//               </div>
-//             </motion.div>
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
 
 "use client";
 
@@ -108,23 +38,34 @@ export function DecisionSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-[#050816] px-6 md:px-12 lg:px-20 py-24 md:py-32"
+      className="
+        relative isolate
+        px-6 md:px-12 lg:px-20
+        py-24 md:py-32
+        overflow-visible
+      "
     >
-      {/* premium background */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-44 -left-40 h-[520px] w-[520px] bg-[radial-gradient(circle_at_center,_#3A7BFF55,_transparent_70%)] blur-3xl" />
-        <div className="absolute top-1/2 -right-44 h-[640px] w-[640px] bg-[radial-gradient(circle_at_center,_#4CC2FF44,_transparent_70%)] blur-3xl" />
-        <div className="absolute -bottom-56 left-1/3 h-[720px] w-[720px] bg-[radial-gradient(circle_at_center,_#9B5DFF33,_transparent_70%)] blur-[170px]" />
-      </div>
+      {/* CLIP WRAPPER — режет фон, но не контент */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden -z-10">
+        {/* premium background */}
+        <div className="absolute inset-0">
+          <div className="absolute -top-44 -left-40 h-[520px] w-[520px] bg-[radial-gradient(circle_at_center,_#3A7BFF55,_transparent_70%)] blur-3xl" />
+          <div className="absolute top-1/2 -right-44 h-[640px] w-[640px] bg-[radial-gradient(circle_at_center,_#4CC2FF44,_transparent_70%)] blur-3xl" />
+          <div className="absolute -bottom-56 left-1/3 h-[720px] w-[720px] bg-[radial-gradient(circle_at_center,_#9B5DFF33,_transparent_70%)] blur-[170px]" />
+        </div>
 
-      {/* subtle mesh */}
-      <div className="pointer-events-none absolute inset-0 opacity-[0.16] mix-blend-soft-light">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,_rgba(255,255,255,0.10),_transparent_35%),radial-gradient(circle_at_80%_30%,_rgba(255,255,255,0.08),_transparent_40%),radial-gradient(circle_at_30%_90%,_rgba(255,255,255,0.06),_transparent_45%)]" />
-      </div>
+        {/* subtle mesh */}
+        <div className="absolute inset-0 opacity-[0.16] mix-blend-soft-light">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,_rgba(255,255,255,0.10),_transparent_35%),radial-gradient(circle_at_80%_30%,_rgba(255,255,255,0.08),_transparent_40%),radial-gradient(circle_at_30%_90%,_rgba(255,255,255,0.06),_transparent_45%)]" />
+        </div>
 
-      {/* fades */}
-      <div className="pointer-events-none absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-[#050816] to-transparent" />
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#050816] to-transparent" />
+        {/* fades — под общий фон страницы (без “швов”) */}
+        <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-[#020410] to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#020410] to-transparent" />
+
+        {/* subtle divider */}
+        {/* <div className="absolute left-0 right-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" /> */}
+      </div>
 
       <div className="relative z-10 max-w-[1200px] mx-auto">
         {/* header */}
@@ -160,7 +101,15 @@ export function DecisionSection() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.55, delay: i * 0.1, ease: EASE }}
               whileHover={{ y: -8 }}
-              className="group relative overflow-hidden rounded-[34px] border border-white/10 bg-gradient-to-b from-[#060A13] via-[#050816] to-[#02030A] p-6 md:p-7 shadow-[0_26px_80px_rgba(0,0,0,0.85)] backdrop-blur-xl"
+              className="
+                group relative overflow-hidden
+                rounded-[34px]
+                border border-white/10
+                bg-gradient-to-b from-[#060A13] via-[#050816] to-[#02030A]
+                p-6 md:p-7
+                shadow-[0_26px_80px_rgba(0,0,0,0.85)]
+                backdrop-blur-xl
+              "
             >
               {/* aura */}
               <motion.div
@@ -256,8 +205,6 @@ export function DecisionSection() {
           ))}
         </div>
       </div>
-
-      <div className="pointer-events-none absolute left-0 right-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
     </section>
   );
 }

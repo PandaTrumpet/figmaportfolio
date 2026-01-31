@@ -76,9 +76,9 @@ export function FinalCTA() {
     <section
       id="contact"
       className="
-        relative overflow-hidden
-        px-6 md:px-12 lg:px-20 py-28 md:py-36
-        bg-linear-to-b from-[#050814] via-[#050818] to-[#020410]
+        relative min-h-screen flex items-center 
+        px-6 md:px-12 lg:px-20 py-32 overflow-visible
+        
         text-slate-100
       "
       aria-labelledby="final-cta-title"

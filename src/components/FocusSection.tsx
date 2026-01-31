@@ -235,10 +235,10 @@ export function FocusSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative px-6 md:px-12 lg:px-20 py-24 md:py-32 overflow-hidden bg-[#050816]"
+      className="relative px-6 md:px-12 lg:px-20 py-24 md:py-32 overflow-visible"
     >
       {/* фоновые споты */}
-      <div className="pointer-events-none absolute inset-0 opacity-60">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-60 -z-10">
         <div className="absolute -top-40 -left-32 h-80 w-80 bg-[radial-gradient(circle_at_center,_#3A7BFF55,_transparent_70%)] blur-3xl" />
         <div className="absolute -bottom-40 -right-10 h-96 w-96 bg-[radial-gradient(circle_at_center,_#4CC2FF55,_transparent_70%)] blur-3xl" />
       </div>

@@ -380,7 +380,12 @@ export function WhyUsSection() {
     <section
       id="why-us"
       ref={sectionRef}
-      className="relative overflow-hidden px-6 md:px-10 lg:px-20 py-24 md:py-32 bg-[#050814]"
+      className="
+        relative min-h-screen flex items-center 
+        px-6 md:px-12 lg:px-20 py-32 overflow-visible
+        
+        text-slate-100
+      "
     >
       {/* Background gradients */}
       <div className="pointer-events-none absolute inset-0 -z-20">
