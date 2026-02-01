@@ -1,36 +1,9 @@
 
 
-// "use client";
-
-// import ServicesHero from "@/src/components/services/ServicesHero";
-// import ServicesListSection from "@/src/components/services/ServicesListSection";
-// // import PricingOverviewSection from "@/src/components/services/PricingOverviewSection";
-
-// import PricingBridgeSection from "@/src/components/services/PricingBridgeSection";
-// import { DecisionSection } from "@/src/components/services/DecisionSection";
-// import { DifferenceSection } from "@/src/components/services/DifferenceSection";
-// import { ServicesCTA } from "@/src/components/services/ServicesCTA";
-
-// export default function Services() {
-//   return (
-//     <div className="min-h-screen bg-[#F5EFE7]">
-//       <ServicesHero />
-//       <DecisionSection />
-//       <DifferenceSection/>
-//       {/* <ServicesListSection /> */}
-//       {/* <PricingOverviewSection /> */}
-//       <PricingBridgeSection />
-//       <ServicesCTA />
-//     </div>
-//   );
-// }
-
-
 "use client";
 
 import ServicesHero from "@/src/components/services/ServicesHero";
-// import ServicesListSection from "@/src/components/services/ServicesListSection";
-// import PricingOverviewSection from "@/src/components/services/PricingOverviewSection";
+
 
 import PricingBridgeSection from "@/src/components/services/PricingBridgeSection";
 import { DecisionSection } from "@/src/components/services/DecisionSection";
