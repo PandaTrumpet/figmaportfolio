@@ -2,7 +2,7 @@
 
 // "use client";
 
-// import { motion, MotionValue, useReducedMotion } from "motion/react";
+// import { motion, useReducedMotion } from "motion/react";
 // import { Star } from "lucide-react";
 // import type { LucideIcon } from "lucide-react";
 
@@ -19,37 +19,24 @@
 
 // const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
-// export function ReviewsHero({
-//   data,
-//   opacity,
-// }: {
-//   data: HeroData;
-//   opacity: MotionValue<number>;
-// }) {
+// export function ReviewsHero({ data }: { data: HeroData }) {
 //   const reduce = useReducedMotion();
 
 //   return (
 //     <section className="relative min-h-[92vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-[#050816]">
 //       {/* Night Waves background */}
 //       <div className="pointer-events-none absolute inset-0">
-//         {/* Deep base gradient */}
 //         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(58,123,255,0.18),_transparent_55%),radial-gradient(circle_at_bottom_right,_rgba(76,194,255,0.16),_transparent_60%),radial-gradient(circle_at_bottom_left,_rgba(155,93,255,0.12),_transparent_55%)]" />
 
-//         {/* Soft grid overlay */}
 //         <div className="absolute inset-0 opacity-[0.14] [mask-image:radial-gradient(circle_at_center,black_55%,transparent_78%)]">
 //           <div className="h-full w-full bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:54px_54px]" />
 //         </div>
 
-
-//         {/* vignette */}
 //         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(0,0,0,0.55)_100%)]" />
 //       </div>
 
 //       {/* Content */}
-//       <motion.div
-//         className="relative z-10 max-w-[1400px] mx-auto w-full px-6 md:px-12 lg:px-20 text-center text-[#F5EFE7]"
-//         style={{ opacity }}
-//       >
+//       <div className="relative z-10 max-w-[1400px] mx-auto w-full px-6 md:px-12 lg:px-20 text-center text-[#F5EFE7]">
 //         <motion.div
 //           initial={{ opacity: 0, y: 60 }}
 //           animate={{ opacity: 1, y: 0 }}
@@ -87,71 +74,6 @@
 //           </p>
 
 //           {/* Stats */}
-//           {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-//             {data.stats.map((stat, index) => (
-//               <motion.div
-//                 key={`${stat.label}-${index}`}
-//                 initial={{ opacity: 0, y: 26 }}
-//                 animate={{ opacity: 1, y: 0 }}
-//                 transition={{
-//                   duration: 0.6,
-//                   delay: 0.45 + index * 0.08,
-//                   ease: EASE,
-//                 }}
-//                 className="group relative rounded-3xl border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] backdrop-blur-xl p-5 md:p-6 shadow-[0_22px_80px_rgba(0,0,0,0.75)] overflow-hidden"
-//               >
-             
-//                 <div className="pointer-events-none absolute -inset-10 opacity-30 blur-2xl bg-[radial-gradient(circle_at_top,rgba(58,123,255,0.55),transparent_60%)]" />
-
-             
-//                 <motion.div
-//                   className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-//                   style={{
-//                     background:
-//                       "radial-gradient(circle_at_center, rgba(76,194,255,0.25), transparent 60%)",
-//                   }}
-//                 />
-
-             
-//                 <motion.div
-//                   className="pointer-events-none absolute -inset-10 opacity-0 group-hover:opacity-100"
-//                   style={{
-//                     background:
-//                       "linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.20) 30%, transparent 60%)",
-//                     mixBlendMode: "screen",
-//                   }}
-//                   initial={{ x: "-140%" }}
-//                   whileHover={{ x: "140%" }}
-//                   transition={{ duration: 0.9, ease: "easeInOut" }}
-//                 />
-
-             
-//                 <div className="relative z-10 transform-none will-change-auto">
-//                   <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-[#F2F4FA] mb-1">
-//                     {stat.value}
-//                   </p>
-//                   <p className="text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.22em] text-[#C7CEDF]/75">
-//                     {stat.label}
-//                   </p>
-//                 </div>
-
-          
-//                 <div
-//                   className="pointer-events-none absolute inset-0 rounded-3xl border border-transparent"
-//                   style={{
-//                     background:
-//                       "linear-gradient(135deg, rgba(58,123,255,0.85), rgba(76,194,255,0.85), rgba(155,93,255,0.7))",
-//                     WebkitMask:
-//                       "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
-//                     WebkitMaskComposite: "xor",
-//                     maskComposite: "exclude",
-//                     padding: "1px",
-//                     opacity: 0.28,
-//                   }}
-//                 />
-//               </motion.div>
-//             ))}
-//           </div> */}
 //           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
 //             {data.stats.map((stat, index) => {
 //               const Icon = stat.icon;
@@ -167,10 +89,8 @@
 //                   }}
 //                   className="group relative rounded-3xl border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] backdrop-blur-xl p-5 md:p-6 shadow-[0_22px_80px_rgba(0,0,0,0.75)] overflow-hidden"
 //                 >
-//                   {/* deep glow under card */}
 //                   <div className="pointer-events-none absolute -inset-10 opacity-30 blur-2xl bg-[radial-gradient(circle_at_top,rgba(58,123,255,0.55),transparent_60%)]" />
 
-//                   {/* hover aura */}
 //                   <motion.div
 //                     className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
 //                     style={{
@@ -179,7 +99,6 @@
 //                     }}
 //                   />
 
-//                   {/* sheen */}
 //                   <motion.div
 //                     className="pointer-events-none absolute -inset-10 opacity-0 group-hover:opacity-100"
 //                     style={{
@@ -192,13 +111,10 @@
 //                     transition={{ duration: 0.9, ease: "easeInOut" }}
 //                   />
 
-//                   {/* content */}
 //                   <div className="relative z-10 transform-none will-change-auto">
 //                     <div className="flex items-center gap-3 mb-3">
 //                       <div className="relative flex h-10 w-10 items-center justify-center rounded-2xl border border-white/15 bg-[radial-gradient(circle_at_top,_#3A7BFF3b,_#050816)] overflow-hidden shadow-[0_0_36px_rgba(58,123,255,0.55)]">
-//                         {Icon ? (
-//                           <Icon className="relative z-10 h-5 w-5 text-[#E8F2FF]" />
-//                         ) : null}
+//                         <Icon className="relative z-10 h-5 w-5 text-[#E8F2FF]" />
 //                         <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[#3A7BFF66] to-[#4CC2FF66] opacity-40" />
 //                       </div>
 
@@ -212,7 +128,6 @@
 //                     </p>
 //                   </div>
 
-//                   {/* border accent (subtle) */}
 //                   <div
 //                     className="pointer-events-none absolute inset-0 rounded-3xl border border-transparent"
 //                     style={{
@@ -231,10 +146,11 @@
 //             })}
 //           </div>
 //         </motion.div>
-//       </motion.div>
+//       </div>
 //     </section>
 //   );
 // }
+
 
 "use client";
 
@@ -259,16 +175,26 @@ export function ReviewsHero({ data }: { data: HeroData }) {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative min-h-[92vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-[#050816]">
-      {/* Night Waves background */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(58,123,255,0.18),_transparent_55%),radial-gradient(circle_at_bottom_right,_rgba(76,194,255,0.16),_transparent_60%),radial-gradient(circle_at_bottom_left,_rgba(155,93,255,0.12),_transparent_55%)]" />
+    <section className="relative min-h-[92vh] md:min-h-screen flex items-center justify-center overflow-visible">
+      {/* CLIP WRAPPER — режем только фон/оверлеи */}
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        {/* local soft waves (без своего bg!) */}
+        <div className="absolute inset-0 opacity-70">
+          <div className="absolute -top-44 -left-48 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle_at_center,_rgba(58,123,255,0.26),_transparent_70%)] blur-3xl" />
+          <div className="absolute -bottom-52 -right-28 h-[620px] w-[620px] rounded-full bg-[radial-gradient(circle_at_center,_rgba(76,194,255,0.22),_transparent_72%)] blur-3xl" />
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 h-[520px] w-[820px] rounded-full bg-[radial-gradient(circle_at_center,_rgba(155,93,255,0.16),_transparent_70%)] blur-3xl" />
+        </div>
 
-        <div className="absolute inset-0 opacity-[0.14] [mask-image:radial-gradient(circle_at_center,black_55%,transparent_78%)]">
+        {/* subtle grid mask */}
+        <div className="absolute inset-0 opacity-[0.10] [mask-image:radial-gradient(circle_at_center,black_55%,transparent_78%)]">
           <div className="h-full w-full bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:54px_54px]" />
         </div>
 
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(0,0,0,0.55)_100%)]" />
+        {/* gentle vignette */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(0,0,0,0.38)_100%)]" />
+
+        {/* IMPORTANT: мягкий fade вниз, чтобы убить стык */}
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-b from-transparent to-[#020410]" />
       </div>
 
       {/* Content */}
@@ -298,7 +224,7 @@ export function ReviewsHero({ data }: { data: HeroData }) {
           </motion.div>
 
           {/* Title */}
-          <h1 className="font-semibold tracking-tight leading-[0.92] mb-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+          <h1 className=" tracking-tight  mb-8  text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95]">
             <span className="bg-clip-text text-transparent bg-[linear-gradient(90deg,#F5EFE7_0%,#E8F2FF_25%,#4CC2FF_55%,#9B5DFF_100%)]">
               {data.title}
             </span>

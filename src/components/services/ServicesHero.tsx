@@ -113,7 +113,7 @@ export default function ServicesHero() {
         >
           <div className="mb-6 h-[2px] w-20 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
 
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-[#F5EFE7] mb-6 leading-tight">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] tracking-tight text-[#F5EFE7] mb-6 ">
             Вы не выбираете сайт.
             <br />
             <span className="opacity-90">Вы выбираете систему роста.</span>

@@ -114,7 +114,7 @@ export function AboutHero({ data }: { data: HeroData }) {
             <div className="relative transform-none will-change-auto">
               <h1
                 className="
-                  text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl
+                 text-5xl md:text-6xl lg:text-7xl xl:text-8xl
                   leading-[0.95] mb-6 sm:mb-8
                   max-w-5xl mx-auto break-words
                   tracking-tight

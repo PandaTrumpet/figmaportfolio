@@ -54,21 +54,14 @@ export function Footer() {
   return (
     <footer
       className="
-        relative overflow-hidden
+      
         px-6 md:px-12 lg:px-20 py-16 md:py-24
-        bg-linear-to-b from-[#050814] via-[#050818] to-[#020410]
+       bg-[#020410]
         text-slate-100
       "
       aria-label="Footer"
     >
-      {/* Neon waves */}
-      <div
-        className="pointer-events-none absolute -top-40 right-[-10%] h-96 w-96 rounded-full opacity-55 blur-3xl"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(76,194,255,0.85), transparent 60%)",
-        }}
-      />
+   
       <div
         className="pointer-events-none absolute bottom-[-25%] left-[-10%] h-[26rem] w-[26rem] rounded-full opacity-55 blur-3xl"
         style={{
