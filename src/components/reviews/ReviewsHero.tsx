@@ -23,16 +23,26 @@
 //   const reduce = useReducedMotion();
 
 //   return (
-//     <section className="relative min-h-[92vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-[#050816]">
-//       {/* Night Waves background */}
-//       <div className="pointer-events-none absolute inset-0">
-//         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(58,123,255,0.18),_transparent_55%),radial-gradient(circle_at_bottom_right,_rgba(76,194,255,0.16),_transparent_60%),radial-gradient(circle_at_bottom_left,_rgba(155,93,255,0.12),_transparent_55%)]" />
+//     <section className="relative min-h-[92vh] md:min-h-screen flex items-center justify-center overflow-visible">
+//       {/* CLIP WRAPPER — режем только фон/оверлеи */}
+//       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+//         {/* local soft waves (без своего bg!) */}
+//         <div className="absolute inset-0 opacity-70">
+//           <div className="absolute -top-44 -left-48 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle_at_center,_rgba(58,123,255,0.26),_transparent_70%)] blur-3xl" />
+//           <div className="absolute -bottom-52 -right-28 h-[620px] w-[620px] rounded-full bg-[radial-gradient(circle_at_center,_rgba(76,194,255,0.22),_transparent_72%)] blur-3xl" />
+//           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 h-[520px] w-[820px] rounded-full bg-[radial-gradient(circle_at_center,_rgba(155,93,255,0.16),_transparent_70%)] blur-3xl" />
+//         </div>
 
-//         <div className="absolute inset-0 opacity-[0.14] [mask-image:radial-gradient(circle_at_center,black_55%,transparent_78%)]">
+//         {/* subtle grid mask */}
+//         <div className="absolute inset-0 opacity-[0.10] [mask-image:radial-gradient(circle_at_center,black_55%,transparent_78%)]">
 //           <div className="h-full w-full bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:54px_54px]" />
 //         </div>
 
-//         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(0,0,0,0.55)_100%)]" />
+//         {/* gentle vignette */}
+//         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(0,0,0,0.38)_100%)]" />
+
+//         {/* IMPORTANT: мягкий fade вниз, чтобы убить стык */}
+//         <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-b from-transparent to-[#020410]" />
 //       </div>
 
 //       {/* Content */}
@@ -62,7 +72,7 @@
 //           </motion.div>
 
 //           {/* Title */}
-//           <h1 className="font-semibold tracking-tight leading-[0.92] mb-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+//           <h1 className=" tracking-tight  mb-8  text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95]">
 //             <span className="bg-clip-text text-transparent bg-[linear-gradient(90deg,#F5EFE7_0%,#E8F2FF_25%,#4CC2FF_55%,#9B5DFF_100%)]">
 //               {data.title}
 //             </span>
@@ -157,6 +167,8 @@
 import { motion, useReducedMotion } from "motion/react";
 import { Star } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { PageContainer } from "../Layout/PageContainer";
+
 
 type HeroData = {
   badge: string;
@@ -197,10 +209,9 @@ export function ReviewsHero({ data }: { data: HeroData }) {
         <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-b from-transparent to-[#020410]" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-[1400px] mx-auto w-full px-6 md:px-12 lg:px-20 text-center text-[#F5EFE7]">
+      <PageContainer className="relative z-10 w-full text-center text-[#F5EFE7]">
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
+          initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.15, ease: EASE }}
         >
@@ -224,7 +235,7 @@ export function ReviewsHero({ data }: { data: HeroData }) {
           </motion.div>
 
           {/* Title */}
-          <h1 className=" tracking-tight  mb-8  text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95]">
+          <h1 className="tracking-tight mb-8 text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95]">
             <span className="bg-clip-text text-transparent bg-[linear-gradient(90deg,#F5EFE7_0%,#E8F2FF_25%,#4CC2FF_55%,#9B5DFF_100%)]">
               {data.title}
             </span>
@@ -236,13 +247,16 @@ export function ReviewsHero({ data }: { data: HeroData }) {
           </p>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-[1400px] mx-auto">
             {data.stats.map((stat, index) => {
               const Icon = stat.icon;
+
               return (
                 <motion.div
                   key={`${stat.label}-${index}`}
-                  initial={{ opacity: 0, y: 26 }}
+                  initial={
+                    reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 26 }
+                  }
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
                     duration: 0.6,
@@ -268,8 +282,8 @@ export function ReviewsHero({ data }: { data: HeroData }) {
                         "linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.20) 30%, transparent 60%)",
                       mixBlendMode: "screen",
                     }}
-                    initial={{ x: "-140%" }}
-                    whileHover={{ x: "140%" }}
+                    initial={reduce ? false : { x: "-140%" }}
+                    whileHover={reduce ? undefined : { x: "140%" }}
                     transition={{ duration: 0.9, ease: "easeInOut" }}
                   />
 
@@ -308,7 +322,7 @@ export function ReviewsHero({ data }: { data: HeroData }) {
             })}
           </div>
         </motion.div>
-      </div>
+      </PageContainer>
     </section>
   );
 }

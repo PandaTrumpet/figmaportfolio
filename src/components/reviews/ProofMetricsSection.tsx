@@ -1,7 +1,8 @@
+
 // "use client";
 
 // import { useRef } from "react";
-// import { motion, useInView } from "motion/react";
+// import { motion, useInView, useReducedMotion } from "motion/react";
 // import { ShieldCheck, Timer, Workflow, Sparkles } from "lucide-react";
 
 // type ProofItem = {
@@ -10,11 +11,10 @@
 //   description: string;
 //   metric: string;
 //   metricLabel: string;
-//   gradient: string; // tailwind gradient tokens like in ServiceCard
+//   gradient: string;
 // };
 
-
-// const proofItems = [
+// const proofItems: ProofItem[] = [
 //   {
 //     icon: Workflow,
 //     title: "Понятный и управляемый процесс",
@@ -52,6 +52,7 @@
 //     gradient: "from-[#3A7BFF33] via-[#9B5DFF22] to-transparent",
 //   },
 // ];
+
 // const glitchPrimary = {
 //   initial: { x: 0, y: 0, opacity: 0 },
 //   hover: {
@@ -78,10 +79,12 @@
 //   item,
 //   index,
 //   isInView,
+//   reduce,
 // }: {
 //   item: ProofItem;
 //   index: number;
 //   isInView: boolean;
+//   reduce: boolean;
 // }) {
 //   const Icon = item.icon;
 
@@ -90,29 +93,45 @@
 //       className="relative"
 //       initial={{ opacity: 0, y: 34 }}
 //       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 34 }}
-//       transition={{
-//         duration: 0.6,
-//         delay: index * 0.12,
-//         ease: EASE,
-//       }}
+//       transition={{ duration: 0.6, delay: index * 0.12, ease: EASE }}
 //     >
-//       {/* базовый глубокий glow под карточкой */}
+//       {/* base glow */}
 //       <motion.div
 //         className="absolute -inset-[12px] rounded-[34px] bg-[radial-gradient(circle_at_top,_rgba(58,123,255,0.55),_transparent_70%)] blur-2xl -z-20"
-//         animate={{ opacity: 0.35, scale: 1 }}
-//         transition={{ duration: 0.35, ease: "easeOut" }}
+//         animate={reduce ? undefined : { opacity: [0.22, 0.36, 0.22] }}
+//         transition={
+//           reduce
+//             ? undefined
+//             : { duration: 5.5, repeat: Infinity, ease: "easeInOut" }
+//         }
 //       />
 
-//       <motion.div className="relative h-full rounded-3xl border border-white/10 bg-gradient-to-b from-[#060A13] via-[#050816] to-[#02030A] p-7 md:p-8 shadow-[0_26px_80px_rgba(0,0,0,0.85)] backdrop-blur-xl overflow-hidden">
-//         {/* inner glow */}
-//         <motion.div
+//       <motion.div
+//         className="group relative h-full rounded-3xl border border-white/10
+//                    bg-gradient-to-b from-[#060A13] via-[#050816] to-[#02030A]
+//                    p-7 md:p-8 shadow-[0_26px_80px_rgba(0,0,0,0.85)] backdrop-blur-xl overflow-hidden"
+//         whileHover={reduce ? undefined : { y: -6 }}
+//         transition={{ duration: 0.25, ease: "easeOut" }}
+//       >
+//         {/* inner gradient wash */}
+//         <div
 //           className={`pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br ${item.gradient} -z-10 opacity-45`}
 //         />
 
-//         {/* shine */}
+//         {/* hover aura (adds depth) */}
+//         <motion.div
+//           className="pointer-events-none absolute inset-0 rounded-3xl -z-10 opacity-0 group-hover:opacity-100"
+//           style={{
+//             background:
+//               "radial-gradient(circle_at_center, rgba(76,194,255,0.18), transparent 60%)",
+//           }}
+//           transition={{ duration: 0.25 }}
+//         />
+
+//         {/* sheen */}
 //         <motion.div
 //           className="pointer-events-none absolute -inset-10 bg-[linear-gradient(115deg,_transparent_0%,_rgba(255,255,255,0.22)_30%,_transparent_60%)] mix-blend-screen -z-10 opacity-0"
-//           whileHover={{ opacity: 1, x: "140%" }}
+//           whileHover={reduce ? undefined : { opacity: 1, x: "140%" }}
 //           initial={{ x: "-140%" }}
 //           transition={{ duration: 0.9, ease: "easeInOut" }}
 //         />
@@ -132,14 +151,12 @@
 //         />
 
 //         <div className="relative z-30">
-//           {/* Icon */}
 //           <div className="mb-6 flex items-center justify-between gap-4">
 //             <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-white/15 bg-[radial-gradient(circle_at_top,_#3A7BFF3b,_#050816)] overflow-hidden shadow-[0_0_40px_rgba(58,123,255,0.7)]">
 //               <Icon className="relative z-20 h-7 w-7 text-[#E8F2FF]" />
 //               <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[#3A7BFF66] to-[#4CC2FF66] opacity-40" />
 //             </div>
 
-//             {/* Metric pill */}
 //             <div className="text-right">
 //               <p className="text-2xl md:text-3xl font-semibold text-[#F2F4FA] leading-none">
 //                 {item.metric}
@@ -159,7 +176,6 @@
 //           </p>
 //         </div>
 
-//         {/* Decorative corner */}
 //         <div className="pointer-events-none absolute bottom-4 right-4 h-8 w-8 opacity-40 z-20">
 //           <div className="h-full w-full rounded-br-3xl border-b border-r border-[#4CC2FF77]" />
 //         </div>
@@ -171,16 +187,29 @@
 // export function ProofMetricsSection() {
 //   const sectionRef = useRef<HTMLElement | null>(null);
 //   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+//   const reduce = useReducedMotion();
 
 //   return (
 //     <section
 //       ref={sectionRef}
-//       className="relative px-6 md:px-12 lg:px-20 py-24 md:py-32 overflow-hidden bg-[#050816]"
+//       className="relative overflow-visible px-6 md:px-12 lg:px-20 py-24 md:py-32"
 //     >
-//       {/* фоновые споты */}
-//       <div className="pointer-events-none absolute inset-0 opacity-60">
-//         <div className="absolute -top-40 -left-32 h-80 w-80 bg-[radial-gradient(circle_at_center,_#3A7BFF55,_transparent_70%)] blur-3xl" />
-//         <div className="absolute -bottom-40 -right-10 h-96 w-96 bg-[radial-gradient(circle_at_center,_#4CC2FF55,_transparent_70%)] blur-3xl" />
+//       {/* BACKGROUND: clip wrapper (no seam) */}
+//       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+//         {/* spots */}
+//         <div className="absolute inset-0 opacity-60">
+//           <div className="absolute -top-40 -left-32 h-80 w-80 bg-[radial-gradient(circle_at_center,_#3A7BFF55,_transparent_70%)] blur-3xl" />
+//           <div className="absolute -bottom-40 -right-10 h-96 w-96 bg-[radial-gradient(circle_at_center,_#4CC2FF55,_transparent_70%)] blur-3xl" />
+//         </div>
+
+//         {/* super subtle grid */}
+//         <div className="absolute inset-0 opacity-[0.06] [mask-image:radial-gradient(circle_at_center,black_55%,transparent_78%)]">
+//           <div className="h-full w-full bg-[linear-gradient(to_right,rgba(255,255,255,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.07)_1px,transparent_1px)] bg-[size:84px_84px]" />
+//         </div>
+
+//         {/* fades to kill seams */}
+//         <div className="pointer-events-none absolute top-0 left-0 right-0 h-20 bg-gradient-to-t from-transparent to-[#020410]" />
+//         <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-b from-transparent to-[#020410]" />
 //       </div>
 
 //       <div className="relative z-10 max-w-[1400px] mx-auto text-[#F5EFE7]">
@@ -198,20 +227,23 @@
 //             transition={{ duration: 0.8, delay: 0.2 }}
 //           />
 
+//           {/* Я бы сделал заголовок по-русски, чтобы быть консистентным */}
 //           <motion.h2 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-4 md:mb-6">
 //             <motion.span
 //               className="relative inline-block"
 //               initial="initial"
 //               whileHover="hover"
 //             >
-//               <span className="relative z-10">Proof by process + metrics</span>
+//               <span className="relative z-10">
+//                 Доказательства в процессе и цифрах
+//               </span>
 
 //               <motion.span
 //                 className="pointer-events-none absolute left-0 top-0 z-0 text-[#4CC2FF] mix-blend-screen"
 //                 variants={glitchPrimary}
 //                 aria-hidden="true"
 //               >
-//                 Proof by process + metrics
+//                 Доказательства в процессе и цифрах
 //               </motion.span>
 
 //               <motion.span
@@ -219,15 +251,15 @@
 //                 variants={glitchSecondary}
 //                 aria-hidden="true"
 //               >
-//                 Proof by process + metrics
+//                 Доказательства в процессе и цифрах
 //               </motion.span>
 //             </motion.span>
 //           </motion.h2>
 
 //           <p className="text-base md:text-xl opacity-80 max-w-3xl mx-auto leading-relaxed text-[#C7CEDF]">
-//             Мы делаем акцент не на наградах, а на результате. Понятный процесс,
-//             быстрый запуск и метрики, которые напрямую влияют на заявки и
-//             продажи.
+//             Мы делаем акцент не на “наградах”, а на результате: понятный
+//             процесс, быстрый запуск и метрики, которые напрямую влияют на заявки
+//             и продажи.
 //           </p>
 //         </motion.div>
 
@@ -239,35 +271,39 @@
 //               item={item}
 //               index={index}
 //               isInView={isInView}
+//               reduce={!!reduce}
 //             />
 //           ))}
 //         </div>
 //       </div>
 
-//       {/* floating decor */}
+//       {/* floating decor (ок) */}
 //       <motion.div
 //         className="pointer-events-none absolute top-16 right-4 md:right-10 h-20 w-20 rounded-3xl border border-[#3A7BFF33] bg-[radial-gradient(circle_at_top,_#3A7BFF33,_transparent_70%)] opacity-50"
-//         animate={{
-//           rotate: 360,
-//           scale: [1, 1.08, 1],
-//         }}
-//         transition={{
-//           rotate: { duration: 26, repeat: Infinity, ease: "linear" },
-//           scale: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-//         }}
+//         animate={reduce ? undefined : { rotate: 360, scale: [1, 1.08, 1] }}
+//         transition={
+//           reduce
+//             ? undefined
+//             : {
+//                 rotate: { duration: 26, repeat: Infinity, ease: "linear" },
+//                 scale: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+//               }
+//         }
 //       />
 //     </section>
 //   );
 // }
+
 
 "use client";
 
 import { useRef } from "react";
 import { motion, useInView, useReducedMotion } from "motion/react";
 import { ShieldCheck, Timer, Workflow, Sparkles } from "lucide-react";
-
+import { PageContainer } from "../Layout/PageContainer";
+import type { LucideIcon } from "lucide-react";
 type ProofItem = {
-  icon: any;
+  icon: LucideIcon;
   title: string;
   description: string;
   metric: string;
@@ -352,9 +388,13 @@ function ProofCard({
   return (
     <motion.div
       className="relative"
-      initial={{ opacity: 0, y: 34 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 34 }}
-      transition={{ duration: 0.6, delay: index * 0.12, ease: EASE }}
+      initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 34 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{
+        duration: 0.6,
+        delay: reduce ? 0 : index * 0.12,
+        ease: EASE,
+      }}
     >
       {/* base glow */}
       <motion.div
@@ -365,18 +405,24 @@ function ProofCard({
             ? undefined
             : { duration: 5.5, repeat: Infinity, ease: "easeInOut" }
         }
+        aria-hidden="true"
       />
 
       <motion.div
-        className="group relative h-full rounded-3xl border border-white/10
-                   bg-gradient-to-b from-[#060A13] via-[#050816] to-[#02030A]
-                   p-7 md:p-8 shadow-[0_26px_80px_rgba(0,0,0,0.85)] backdrop-blur-xl overflow-hidden"
+        className="
+          group relative h-full rounded-3xl border border-white/10
+          bg-gradient-to-b from-[#060A13] via-[#050816] to-[#02030A]
+          p-7 md:p-8
+          shadow-[0_26px_80px_rgba(0,0,0,0.85)]
+          backdrop-blur-xl overflow-hidden
+        "
         whileHover={reduce ? undefined : { y: -6 }}
         transition={{ duration: 0.25, ease: "easeOut" }}
       >
         {/* inner gradient wash */}
         <div
           className={`pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br ${item.gradient} -z-10 opacity-45`}
+          aria-hidden="true"
         />
 
         {/* hover aura (adds depth) */}
@@ -387,6 +433,7 @@ function ProofCard({
               "radial-gradient(circle_at_center, rgba(76,194,255,0.18), transparent 60%)",
           }}
           transition={{ duration: 0.25 }}
+          aria-hidden="true"
         />
 
         {/* sheen */}
@@ -395,6 +442,7 @@ function ProofCard({
           whileHover={reduce ? undefined : { opacity: 1, x: "140%" }}
           initial={{ x: "-140%" }}
           transition={{ duration: 0.9, ease: "easeInOut" }}
+          aria-hidden="true"
         />
 
         {/* contour */}
@@ -409,6 +457,7 @@ function ProofCard({
             padding: "1px",
             opacity: 0.18,
           }}
+          aria-hidden="true"
         />
 
         <div className="relative z-30">
@@ -437,7 +486,10 @@ function ProofCard({
           </p>
         </div>
 
-        <div className="pointer-events-none absolute bottom-4 right-4 h-8 w-8 opacity-40 z-20">
+        <div
+          className="pointer-events-none absolute bottom-4 right-4 h-8 w-8 opacity-40 z-20"
+          aria-hidden="true"
+        >
           <div className="h-full w-full rounded-br-3xl border-b border-r border-[#4CC2FF77]" />
         </div>
       </motion.div>
@@ -453,7 +505,7 @@ export function ProofMetricsSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-visible px-6 md:px-12 lg:px-20 py-24 md:py-32"
+      className="relative overflow-visible py-24 md:py-32"
     >
       {/* BACKGROUND: clip wrapper (no seam) */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
@@ -469,31 +521,30 @@ export function ProofMetricsSection() {
         </div>
 
         {/* fades to kill seams */}
-        <div className="pointer-events-none absolute top-0 left-0 right-0 h-20 bg-gradient-to-t from-transparent to-[#020410]" />
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-b from-transparent to-[#020410]" />
+        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-t from-transparent to-[#020410]" />
+        <div className="absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-b from-transparent to-[#020410]" />
       </div>
 
-      <div className="relative z-10 max-w-[1400px] mx-auto text-[#F5EFE7]">
+      <PageContainer className="relative z-10 text-[#F5EFE7]">
         {/* Header */}
         <motion.div
           className="mb-16 md:mb-20 text-center"
-          initial={{ opacity: 0, y: 40 }}
+          initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, ease: EASE }}
         >
           <motion.div
             className="mb-6 h-[2px] w-20 mx-auto bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]"
             initial={{ width: 0 }}
             animate={isInView ? { width: 80 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.15, ease: EASE }}
           />
 
-          {/* Я бы сделал заголовок по-русски, чтобы быть консистентным */}
           <motion.h2 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-4 md:mb-6">
             <motion.span
               className="relative inline-block"
               initial="initial"
-              whileHover="hover"
+              whileHover={reduce ? undefined : "hover"}
             >
               <span className="relative z-10">
                 Доказательства в процессе и цифрах
@@ -532,13 +583,13 @@ export function ProofMetricsSection() {
               item={item}
               index={index}
               isInView={isInView}
-              reduce={!!reduce}
+              reduce={reduce}
             />
           ))}
         </div>
-      </div>
+      </PageContainer>
 
-      {/* floating decor (ок) */}
+      {/* floating decor */}
       <motion.div
         className="pointer-events-none absolute top-16 right-4 md:right-10 h-20 w-20 rounded-3xl border border-[#3A7BFF33] bg-[radial-gradient(circle_at_top,_#3A7BFF33,_transparent_70%)] opacity-50"
         animate={reduce ? undefined : { rotate: 360, scale: [1, 1.08, 1] }}

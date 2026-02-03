@@ -1,50 +1,4 @@
-// "use client";
 
-// import { useRef } from "react";
-
-// import dynamic from "next/dynamic";
-
-// import { reviewsData } from "@/src/data/reviewsData";
-
-// import { ReviewsHero } from "./ReviewsHero";
-// import { ClientStoriesSection } from "./ClientStoriesSection";
-// import { VideoTestimonialsSection } from "./VideoTestimonialsSection";
-// import { ReviewsSliderSection } from "./ReviewsSliderSection";
-
-// import { ReviewsFinalCTA } from "./ReviewsFinalCTA";
-// import { ProofMetricsSection } from "./ProofMetricsSection";
-
-// const ParticlesBackground = dynamic(
-//   () =>
-//     import("../../components/ParticlesBackground").then(
-//       (m) => m.ParticlesBackground
-//     ),
-//   { ssr: false }
-// );
-
-// export default function ReviewsPage() {
-//   const containerRef = useRef<HTMLDivElement | null>(null);
-
-
-
-
-//   return (
-//     <div ref={containerRef} className="min-h-screen bg-[#F5EFE7]">
-//       <ReviewsHero data={reviewsData.hero}  />
-
-//       <ClientStoriesSection stories={reviewsData.clientStories} />
-
-//       {/* <VideoTestimonialsSection videos={reviewsData.videoTestimonials} /> */}
-
-//       {/* <ReviewsSliderSection reviews={reviewsData.reviews} /> */}
-
-//       {/* <PlatformRatingsSection platforms={reviewsData.platforms} /> */}
-//       <ProofMetricsSection/>
-
-//       <ReviewsFinalCTA cta={reviewsData.cta} Particles={ParticlesBackground} />
-//     </div>
-//   );
-// }
 "use client";
 
 import { useRef } from "react";
@@ -54,8 +8,8 @@ import { reviewsData } from "@/src/data/reviewsData";
 
 import { ReviewsHero } from "./ReviewsHero";
 import { ClientStoriesSection } from "./ClientStoriesSection";
-import { VideoTestimonialsSection } from "./VideoTestimonialsSection";
-import { ReviewsSliderSection } from "./ReviewsSliderSection";
+// import { VideoTestimonialsSection } from "./VideoTestimonialsSection";
+// import { ReviewsSliderSection } from "./ReviewsSliderSection";
 import { ReviewsFinalCTA } from "./ReviewsFinalCTA";
 import { ProofMetricsSection } from "./ProofMetricsSection";
 
@@ -89,12 +43,7 @@ export default function ReviewsPage() {
           className="absolute top-[34%] left-[-22%] h-[640px] w-[640px] rounded-full blur-3xl opacity-50
                      bg-[radial-gradient(circle,rgba(58,123,255,0.75),transparent_60%)]"
         />
-        {/* <div
-          className="absolute bottom-[-30%] right-[-10%] h-[760px] w-[760px] rounded-full blur-3xl opacity-40
-                     bg-[radial-gradient(circle,rgba(155,93,255,0.55),transparent_60%)]"
-        /> */}
-
-        {/* global grid */}
+ 
         <div
           className="absolute inset-0 opacity-[0.10]"
           style={{
@@ -110,9 +59,7 @@ export default function ReviewsPage() {
 
       <ClientStoriesSection stories={reviewsData.clientStories} />
 
-      {/* <VideoTestimonialsSection videos={reviewsData.videoTestimonials} /> */}
-      {/* <ReviewsSliderSection reviews={reviewsData.reviews} /> */}
-      {/* <PlatformRatingsSection platforms={reviewsData.platforms} /> */}
+
 
       <ProofMetricsSection />
 

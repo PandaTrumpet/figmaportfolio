@@ -1,12 +1,11 @@
 
-
 // "use client";
 
 // import { motion } from "motion/react";
 
 // export function ServicesCTA() {
 //   return (
-//     <section className="bg-[#050608] px-6 md:px-12 lg:px-20 py-28 text-center">
+//     <section className="relative overflow-hidden px-6 md:px-12 lg:px-20 py-28 text-center">
 //       <motion.div
 //         initial={{ opacity: 0, y: 30 }}
 //         whileInView={{ opacity: 1, y: 0 }}
@@ -28,41 +27,86 @@
 //           Запросить консультацию
 //         </a>
 //       </motion.div>
+
+//       {/* anti-seam fades (под общий фон страницы) */}
+//       <div className="pointer-events-none absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-[#020410] to-transparent" />
+//       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#020410] to-transparent" />
 //     </section>
 //   );
 // }
+
+
+
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
+import { PageContainer } from "../Layout/PageContainer";
 
 export function ServicesCTA() {
+  const reduce = useReducedMotion();
+
   return (
-    <section className="relative overflow-hidden px-6 md:px-12 lg:px-20 py-28 text-center">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="max-w-[800px] mx-auto"
-      >
-        <h2 className="text-3xl md:text-5xl font-semibold text-[#F5EFE7] mb-6">
-          Не уверены, что выбрать?
-        </h2>
-        <p className="text-[#C7CEDF] text-base md:text-xl mb-10">
-          Мы подскажем оптимальный формат под ваш бизнес за 15 минут — без
-          обязательств и “продажных” разговоров.
-        </p>
+    <section className="relative overflow-visible py-28 text-center">
+      {/* BACKGROUND (full-bleed, без “шва”) */}
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        {/* subtle glows */}
+        <div className="absolute inset-0 opacity-70">
+          <div className="absolute -top-40 -left-40 h-[560px] w-[560px] bg-[radial-gradient(circle_at_center,_#3A7BFF44,_transparent_70%)] blur-3xl" />
+          <div className="absolute -bottom-52 -right-44 h-[680px] w-[680px] bg-[radial-gradient(circle_at_center,_#4CC2FF33,_transparent_70%)] blur-3xl" />
+        </div>
 
-        <a
-          href="#contact"
-          className="inline-flex items-center justify-center rounded-full px-10 py-4 text-[#050816] font-medium bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF] shadow-[0_0_40px_rgba(76,194,255,0.6)]"
+        {/* soft grid (очень нежно) */}
+        <div className="absolute inset-0 opacity-[0.07] [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:80px_80px]" />
+
+        {/* anti-seam fades (под общий фон страницы) */}
+        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-[#020410] to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#020410] to-transparent" />
+      </div>
+
+      <PageContainer className="relative z-10">
+        <motion.div
+          initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-120px" }}
+          transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-[800px] mx-auto"
         >
-          Запросить консультацию
-        </a>
-      </motion.div>
+          <h2 className="text-3xl md:text-5xl font-semibold text-[#F5EFE7] mb-6">
+            Не уверены, что выбрать?
+          </h2>
 
-      {/* anti-seam fades (под общий фон страницы) */}
-      <div className="pointer-events-none absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-[#020410] to-transparent" />
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#020410] to-transparent" />
+          <p className="text-[#C7CEDF] text-base md:text-xl mb-10 leading-relaxed">
+            Мы подскажем оптимальный формат под ваш бизнес за 15 минут — без
+            обязательств и “продажных” разговоров.
+          </p>
+
+          <motion.a
+            href="#contact"
+            className="
+              relative inline-flex items-center justify-center
+              overflow-hidden rounded-full
+              px-10 py-4
+              text-[#050816] font-medium
+              shadow-[0_0_40px_rgba(76,194,255,0.6)]
+              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4CC2FF]/70
+            "
+            whileHover={reduce ? undefined : { scale: 1.03 }}
+            whileTap={reduce ? undefined : { scale: 0.98 }}
+            transition={{ duration: 0.22, ease: "easeOut" }}
+            aria-label="Запросить консультацию — перейти к контактам"
+          >
+            <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
+            <motion.span
+              className="absolute inset-0 bg-[linear-gradient(120deg,_transparent_0%,_white_22%,_transparent_45%)] opacity-0"
+              initial={reduce ? false : { x: "-120%" }}
+              whileHover={reduce ? undefined : { x: "120%", opacity: 0.55 }}
+              transition={{ duration: 0.75, ease: "easeInOut" }}
+              aria-hidden="true"
+            />
+            <span className="relative z-10">Запросить консультацию</span>
+          </motion.a>
+        </motion.div>
+      </PageContainer>
     </section>
   );
 }

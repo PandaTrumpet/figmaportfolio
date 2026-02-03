@@ -12,7 +12,8 @@ import { ServicesCTA } from "@/src/components/services/ServicesCTA";
 
 export default function Services() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#020410] text-slate-100">
+    // <main className="relative min-h-screen overflow-hidden bg-[#020410] text-slate-100">
+    <main className="relative min-h-screen overflow-x-clip bg-[#020410] text-slate-100">
       {/* GLOBAL BACKGROUND */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         {/* base gradient */}
