@@ -1,5 +1,4 @@
 
-
 // "use client";
 
 // import { motion, useReducedMotion } from "motion/react";
@@ -14,18 +13,24 @@
 //   const reduce = useReducedMotion();
 
 //   return (
-//     <section className="relative overflow-hidden bg-[#050816] px-6 md:px-12 lg:px-20 py-24 md:py-32">
-//       {/* background spots */}
-//       <div className="pointer-events-none absolute inset-0 opacity-60">
-//         <div className="absolute -top-44 -left-40 h-96 w-96 bg-[radial-gradient(circle_at_center,_#3A7BFF55,_transparent_70%)] blur-3xl" />
-//         <div className="absolute -bottom-52 -right-24 h-[520px] w-[520px] bg-[radial-gradient(circle_at_center,_#4CC2FF55,_transparent_70%)] blur-3xl" />
+//     <section className="relative overflow-visible px-6 py-24 md:px-12 md:py-32 lg:px-20">
+//       {/* BACKGROUND (clip only background, not the whole section) */}
+//       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+//         {/* background spots */}
+//         <div className="absolute inset-0 opacity-60">
+//           <div className="absolute -top-44 -left-40 h-96 w-96 bg-[radial-gradient(circle_at_center,_#3A7BFF55,_transparent_70%)] blur-3xl" />
+//           <div className="absolute -bottom-52 -right-24 h-[520px] w-[520px] bg-[radial-gradient(circle_at_center,_#4CC2FF55,_transparent_70%)] blur-3xl" />
+//         </div>
+
+//         {/* grid overlay (local, softer) */}
+//         <div className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:64px_64px]" />
+
+//         {/* gentle fade to avoid any “hard edge” */}
+//         <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-[#020410]" />
 //       </div>
 
-//       {/* grid overlay */}
-//       <div className="pointer-events-none absolute inset-0 opacity-[0.10] [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:64px_64px]" />
-
-//       <div className="relative z-10 max-w-[1400px] mx-auto">
-//         <div className="grid lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center">
+//       <div className="relative z-10 mx-auto max-w-[1400px]">
+//         <div className="grid items-center gap-12 md:gap-16 lg:grid-cols-2 lg:gap-20">
 //           {/* Text */}
 //           <motion.div
 //             initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, x: -40 }}
@@ -43,11 +48,11 @@
 //               viewport={{ once: true }}
 //             />
 
-//             <h2 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight leading-tight mb-6 md:mb-8">
+//             <h2 className="mb-6 text-3xl font-semibold tracking-tight leading-tight md:mb-8 md:text-5xl lg:text-6xl xl:text-7xl">
 //               Мы убираем потери заявок
 //             </h2>
 
-//             <p className="text-base md:text-xl lg:text-2xl text-[#C7CEDF] leading-relaxed mb-10 max-w-xl">
+//             <p className="mb-10 max-w-xl text-base leading-relaxed text-[#C7CEDF] md:text-xl lg:text-2xl">
 //               Большинство сайтов выглядят нормально, но не работают. Люди
 //               заходят — и уходят.
 //               <br />
@@ -59,7 +64,7 @@
 //             {/* honest-proof + primary CTA */}
 //             <div className="mt-2 flex flex-col items-start gap-4">
 //               <motion.div
-//                 className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 backdrop-blur-md px-5 py-3 text-sm md:text-base text-[#E8ECF4] shadow-[0_18px_60px_rgba(0,0,0,0.35)]"
+//                 className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm text-[#E8ECF4] shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur-md md:text-base"
 //                 whileHover={reduce ? undefined : { x: 8 }}
 //                 transition={{ duration: 0.25, ease: "easeOut" }}
 //               >
@@ -70,14 +75,14 @@
 //               </motion.div>
 
 //               <div className="flex flex-col items-start gap-2">
-//                 {/* Primary CTA — выделенная кнопка */}
+//                 {/* Primary CTA */}
 //                 <motion.a
 //                   href="#contact"
 //                   className="
 //                     relative inline-flex items-center justify-center gap-2
 //                     overflow-hidden rounded-full
 //                     px-8 py-3.5 md:px-10 md:py-4
-//                     text-sm md:text-base font-medium
+//                     text-sm font-medium md:text-base
 //                     text-[#050816]
 //                     shadow-[0_0_40px_rgba(76,194,255,0.65)]
 //                     focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4CC2FF]/70 focus-visible:ring-offset-0
@@ -112,8 +117,7 @@
 //                   <ArrowUpRight className="relative z-10 h-4 w-4" />
 //                 </motion.a>
 
-//                 {/* micro-promise (честное, без "24/7") */}
-//                 <p className="text-xs md:text-sm text-white/55">
+//                 <p className="text-xs text-white/55 md:text-sm">
 //                   Обычно отвечаем в WhatsApp в течение дня.
 //                 </p>
 //               </div>
@@ -130,7 +134,7 @@
 //           >
 //             {/* glow under image card */}
 //             <motion.div
-//               className="absolute -inset-[14px] rounded-[34px] bg-[radial-gradient(circle_at_top,_rgba(58,123,255,0.55),_transparent_70%)] blur-2xl -z-20"
+//               className="absolute -inset-[14px] -z-20 rounded-[34px] bg-[radial-gradient(circle_at_top,_rgba(58,123,255,0.55),_transparent_70%)] blur-2xl"
 //               animate={{ opacity: 0.45, scale: 1 }}
 //               transition={{ duration: 0.35, ease: "easeOut" }}
 //               aria-hidden="true"
@@ -153,7 +157,7 @@
 //             >
 //               {/* inner glow */}
 //               <motion.div
-//                 className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-[#3A7BFF22] via-transparent to-[#4CC2FF22] -z-10"
+//                 className="pointer-events-none absolute inset-0 -z-10 rounded-3xl bg-gradient-to-br from-[#3A7BFF22] via-transparent to-[#4CC2FF22]"
 //                 initial={{ opacity: 0.35 }}
 //                 whileHover={{ opacity: 0.85 }}
 //                 transition={{ duration: 0.3 }}
@@ -162,7 +166,7 @@
 
 //               {/* sheen */}
 //               <motion.div
-//                 className="pointer-events-none absolute -inset-10 bg-[linear-gradient(115deg,_transparent_0%,_rgba(255,255,255,0.22)_30%,_transparent_60%)] mix-blend-screen -z-10"
+//                 className="pointer-events-none absolute -inset-10 -z-10 bg-[linear-gradient(115deg,_transparent_0%,_rgba(255,255,255,0.22)_30%,_transparent_60%)] mix-blend-screen"
 //                 initial={{ x: "-140%" }}
 //                 whileHover={reduce ? undefined : { x: "140%" }}
 //                 transition={{ duration: 0.9, ease: "easeInOut" }}
@@ -171,10 +175,8 @@
 
 //               {/* neon outline frame */}
 //               <motion.div
-//                 className="pointer-events-none absolute inset-0 rounded-3xl border border-transparent z-10"
-//                 initial={{
-//                   boxShadow: "0 0 0 1px rgba(255,255,255,0.06)",
-//                 }}
+//                 className="pointer-events-none absolute inset-0 z-10 rounded-3xl border border-transparent"
+//                 initial={{ boxShadow: "0 0 0 1px rgba(255,255,255,0.06)" }}
 //                 whileHover={{
 //                   boxShadow:
 //                     "0 0 0 1px rgba(76,194,255,0.7), 0 0 42px rgba(76,194,255,1)",
@@ -195,7 +197,7 @@
 //               <ImageWithFallback
 //                 src={data.image}
 //                 alt="Our mission"
-//                 className="absolute inset-0 w-full h-full object-cover"
+//                 className="absolute inset-0 h-full w-full object-cover"
 //               />
 
 //               <div className="absolute inset-0 bg-gradient-to-t from-[#050816]/70 via-transparent to-transparent" />
@@ -203,7 +205,7 @@
 
 //             {/* floating element */}
 //             <motion.div
-//               className="pointer-events-none absolute -bottom-8 -right-8 h-28 w-28 rounded-3xl border border-[#3A7BFF33] bg-[radial-gradient(circle_at_top,_#3A7BFF33,_transparent_70%)] opacity-60 -z-10 hidden md:block"
+//               className="pointer-events-none absolute -bottom-8 -right-8 -z-10 hidden h-28 w-28 rounded-3xl border border-[#3A7BFF33] bg-[radial-gradient(circle_at_top,_#3A7BFF33,_transparent_70%)] opacity-60 md:block"
 //               animate={
 //                 reduce ? undefined : { rotate: 360, scale: [1, 1.08, 1] }
 //               }
@@ -231,11 +233,15 @@
 //     </section>
 //   );
 // }
+
+
+
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
 import { Heart, ArrowUpRight } from "lucide-react";
 import { ImageWithFallback } from "@/src/components/figma/ImageWithFallback";
+import { PageContainer } from "../Layout/PageContainer";
 
 type MissionData = { title: string; description: string; image: string };
 
@@ -245,8 +251,8 @@ export function MissionSection({ data }: { data: MissionData }) {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative overflow-visible px-6 py-24 md:px-12 md:py-32 lg:px-20">
-      {/* BACKGROUND (clip only background, not the whole section) */}
+    <section className="relative overflow-visible py-24 md:py-32">
+      {/* BACKGROUND (full-bleed, clip only background) */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         {/* background spots */}
         <div className="absolute inset-0 opacity-60">
@@ -261,7 +267,7 @@ export function MissionSection({ data }: { data: MissionData }) {
         <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-[#020410]" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-[1400px]">
+      <PageContainer className="relative z-10">
         <div className="grid items-center gap-12 md:gap-16 lg:grid-cols-2 lg:gap-20">
           {/* Text */}
           <motion.div
@@ -461,7 +467,7 @@ export function MissionSection({ data }: { data: MissionData }) {
             />
           </motion.div>
         </div>
-      </div>
+      </PageContainer>
     </section>
   );
 }

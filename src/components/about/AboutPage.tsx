@@ -11,23 +11,6 @@ import { CtaSection } from "./CtaSection";
 
 
 
-// export default function AboutPage() {
-//   return (
-//     <div className="min-h-screen bg-[#F5EFE7]">
-//       <AboutHero data={aboutData.hero} />
-//       <MissionSection data={aboutData.mission} />
-//       <ValuesSection values={aboutData.values} />
-//       <DifferenceSection data={aboutData.difference} />
-//       {/* <TeamSection team={aboutData.team} /> */}
-//       <AchievementsSection
-//         achievements={aboutData.achievements}
-//         recognition={aboutData.recognition}
-//       />
-//       <CtaSection />
-//     </div>
-//   );
-// }
-
 
 export default function AboutPage() {
   return (
