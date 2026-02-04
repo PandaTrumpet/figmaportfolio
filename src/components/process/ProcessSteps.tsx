@@ -106,7 +106,7 @@ export function ProcessSteps({ steps }: { steps: any[] }) {
         />
       </div>
 
-      <PageContainer className="max-w-[1600px]">
+      <PageContainer className="max-w-[1200px]">
         <div className="relative z-10 text-[#F5EFE7]">
           <motion.div
             initial={{ opacity: 0, y: 40 }}

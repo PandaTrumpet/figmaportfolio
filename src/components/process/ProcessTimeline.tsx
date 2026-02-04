@@ -118,7 +118,7 @@ export function ProcessTimeline({ timeline }: { timeline: any }) {
         aria-hidden="true"
       />
 
-      <PageContainer>
+      <PageContainer className="max-w-[1200px]">
         <div className="relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 26 }}

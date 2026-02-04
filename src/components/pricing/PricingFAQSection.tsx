@@ -1,6 +1,5 @@
 
 
-
 // "use client";
 
 // import { motion } from "motion/react";
@@ -13,13 +12,26 @@
 //   return (
 //     <section
 //       id="faq"
-//       className="relative px-6 md:px-12 lg:px-20 py-24 md:py-32 overflow-hidden bg-[#050816]"
+//       className="relative px-6 md:px-12 lg:px-20 py-24 md:py-32 overflow-visible"
 //     >
-//       {/* background spots */}
-//       <div className="pointer-events-none absolute inset-0 opacity-60">
-//         <div className="absolute -top-40 -left-32 h-80 w-80 bg-[radial-gradient(circle_at_center,_#3A7BFF55,_transparent_70%)] blur-3xl" />
-//         <div className="absolute -bottom-44 -right-12 h-96 w-96 bg-[radial-gradient(circle_at_center,_#4CC2FF55,_transparent_70%)] blur-3xl" />
-//         <div className="absolute top-1/2 left-1/2 h-[22rem] w-[22rem] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle_at_center,_#9B5DFF33,_transparent_70%)] blur-3xl" />
+//       {/* LOCAL FX (clip only background, not content) */}
+//       <div
+//         className="
+//           pointer-events-none absolute inset-0 -z-10 overflow-hidden
+//           [mask-image:linear-gradient(to_bottom,transparent_0%,black_14%,black_88%,transparent_100%)]
+//           [-webkit-mask-image:linear-gradient(to_bottom,transparent_0%,black_14%,black_88%,transparent_100%)]
+//         "
+//         aria-hidden="true"
+//       >
+//         {/* background spots */}
+//         <div className="absolute inset-0 opacity-60">
+//           <div className="absolute -top-40 -left-32 h-80 w-80 bg-[radial-gradient(circle_at_center,_#3A7BFF55,_transparent_70%)] blur-3xl" />
+//           <div className="absolute -bottom-44 -right-12 h-96 w-96 bg-[radial-gradient(circle_at_center,_#4CC2FF55,_transparent_70%)] blur-3xl" />
+//           <div className="absolute top-1/2 left-1/2 h-[22rem] w-[22rem] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle_at_center,_#9B5DFF33,_transparent_70%)] blur-3xl" />
+//         </div>
+
+//         {/* safety fade */}
+//         <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-b from-transparent to-[#020410]" />
 //       </div>
 
 //       <div className="relative z-10 max-w-[980px] mx-auto text-[#F5EFE7]">
@@ -54,33 +66,34 @@
 //         </div>
 //       </div>
 
-//       {/* decorative */}
+//       {/* decorative (keep, but don't clip) */}
 //       <motion.div
-//         className="pointer-events-none absolute top-14 right-4 md:right-10 h-20 w-20 rounded-3xl border border-[#3A7BFF33] bg-[radial-gradient(circle_at_top,_#3A7BFF33,_transparent_70%)] opacity-50"
+//         className="pointer-events-none absolute top-14 right-4 md:right-10 z-0 h-20 w-20 rounded-3xl border border-[#3A7BFF33] bg-[radial-gradient(circle_at_top,_#3A7BFF33,_transparent_70%)] opacity-50"
 //         animate={{ rotate: 360, scale: [1, 1.08, 1] }}
 //         transition={{
 //           rotate: { duration: 26, repeat: Infinity, ease: "linear" },
 //           scale: { duration: 4, repeat: Infinity, ease: "easeInOut" },
 //         }}
+//         aria-hidden="true"
 //       />
 //     </section>
 //   );
 // }
+
+
 
 "use client";
 
 import { motion } from "motion/react";
 import { pricingData } from "@/src/data/pricingData";
 import { FAQItem } from "@/src/components/pricing/FAQItem";
+import { PageContainer } from "../Layout/PageContainer";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 export function PricingFAQSection() {
   return (
-    <section
-      id="faq"
-      className="relative px-6 md:px-12 lg:px-20 py-24 md:py-32 overflow-visible"
-    >
+    <section id="faq" className="relative py-24 md:py-32 overflow-visible">
       {/* LOCAL FX (clip only background, not content) */}
       <div
         className="
@@ -101,7 +114,7 @@ export function PricingFAQSection() {
         <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-b from-transparent to-[#020410]" />
       </div>
 
-      <div className="relative z-10 max-w-[980px] mx-auto text-[#F5EFE7]">
+      <PageContainer className="relative z-10 max-w-[980px] text-[#F5EFE7]">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -131,7 +144,7 @@ export function PricingFAQSection() {
             <FAQItem key={index} item={item} index={index} />
           ))}
         </div>
-      </div>
+      </PageContainer>
 
       {/* decorative (keep, but don't clip) */}
       <motion.div

@@ -144,7 +144,7 @@ export function DeliverablesSection({ deliverables }: { deliverables: any }) {
         </div>
       </div>
 
-      <PageContainer>
+      <PageContainer className="max-w-[1200px]">
         <div className="relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 26 }}

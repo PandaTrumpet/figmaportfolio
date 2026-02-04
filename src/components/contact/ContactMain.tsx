@@ -1,4 +1,5 @@
 
+
 // "use client";
 
 // import * as React from "react";
@@ -31,22 +32,26 @@
 //   const reduce = useReducedMotion();
 
 //   return (
-//     <section className="relative px-6 md:px-12 lg:px-20 py-20 md:py-32 bg-[#050816] overflow-hidden">
-//       {/* background spots */}
-//       <div className="pointer-events-none absolute inset-0 opacity-65">
-//         <div className="absolute -top-40 -left-32 h-80 w-80 bg-[radial-gradient(circle_at_center,_rgba(58,123,255,0.55),_transparent_70%)] blur-3xl" />
-//         <div className="absolute -bottom-44 -right-12 h-96 w-96 bg-[radial-gradient(circle_at_center,_rgba(76,194,255,0.55),_transparent_70%)] blur-3xl" />
-//       </div>
-
-//       {/* subtle grid */}
-//       <div className="pointer-events-none absolute inset-0 opacity-[0.06]">
+//     <section className="relative px-6 md:px-12 lg:px-20 py-20 md:py-32 bg-transparent overflow-visible">
+//       {/* ultra-subtle local texture (masked) — doesn’t create seams */}
+//       <div className="pointer-events-none absolute inset-0 opacity-[0.05]">
 //         <div
 //           className="h-full w-full"
 //           style={{
 //             backgroundImage:
-//               "repeating-linear-gradient(0deg, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 1px, transparent 1px, transparent 84px), repeating-linear-gradient(90deg, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 1px, transparent 1px, transparent 84px)",
+//               "repeating-linear-gradient(0deg, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 1px, transparent 1px, transparent 92px), repeating-linear-gradient(90deg, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 1px, transparent 1px, transparent 92px)",
+//             maskImage:
+//               "radial-gradient(circle at 50% 40%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0) 78%)",
+//             WebkitMaskImage:
+//               "radial-gradient(circle at 50% 40%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0) 78%)",
 //           }}
 //         />
+//       </div>
+
+//       {/* tiny accents (soft) — local only */}
+//       <div className="pointer-events-none absolute inset-0 opacity-35">
+//         <div className="absolute -top-24 left-[10%] h-64 w-64 rounded-full bg-[radial-gradient(circle_at_center,_rgba(58,123,255,0.14),_transparent_70%)] blur-3xl" />
+//         <div className="absolute -bottom-24 right-[8%] h-72 w-72 rounded-full bg-[radial-gradient(circle_at_center,_rgba(76,194,255,0.12),_transparent_70%)] blur-3xl" />
 //       </div>
 
 //       <div className="relative z-10 max-w-[1400px] mx-auto">
@@ -62,8 +67,8 @@
 //             viewport={{ once: true, margin: "-120px" }}
 //             className="relative"
 //           >
-//             {/* deep glow under form */}
-//             <div className="pointer-events-none absolute -inset-[14px] rounded-[34px] bg-[radial-gradient(circle_at_top,_rgba(58,123,255,0.55),_transparent_70%)] blur-2xl opacity-40" />
+//             {/* deep glow under form (card-only, safe) */}
+//             <div className="pointer-events-none absolute -inset-[14px] rounded-[34px] bg-[radial-gradient(circle_at_top,_rgba(58,123,255,0.55),_transparent_70%)] blur-2xl opacity-35" />
 
 //             {/* glass shell */}
 //             <div className="relative rounded-3xl border border-white/10 bg-gradient-to-b from-white/8 via-white/5 to-transparent p-6 md:p-8 shadow-[0_26px_80px_rgba(0,0,0,0.85)] backdrop-blur-xl overflow-hidden">
@@ -101,6 +106,7 @@
 //                   WebkitMaskComposite: "xor",
 //                   maskComposite: "exclude",
 //                   padding: "1px",
+//                   opacity: 0.95,
 //                 }}
 //               />
 //             </div>
@@ -126,14 +132,16 @@
 //   );
 // }
 
-
 "use client";
 
 import * as React from "react";
 import { motion, useReducedMotion } from "motion/react";
+
+
 import { ContactForm } from "./ContactForm";
 import { ContactInfoPanel } from "./ContactInfoPanel";
 import type { ContactFormState } from "./ContactPage";
+import { PageContainer } from "../Layout/PageContainer";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -159,8 +167,8 @@ export function ContactMain({
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative px-6 md:px-12 lg:px-20 py-20 md:py-32 bg-transparent overflow-visible">
-      {/* ultra-subtle local texture (masked) — doesn’t create seams */}
+    <section className="relative py-20 md:py-32 bg-transparent overflow-visible">
+      {/* ultra-subtle local texture (masked) */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.05]">
         <div
           className="h-full w-full"
@@ -175,15 +183,15 @@ export function ContactMain({
         />
       </div>
 
-      {/* tiny accents (soft) — local only */}
+      {/* tiny local accents */}
       <div className="pointer-events-none absolute inset-0 opacity-35">
         <div className="absolute -top-24 left-[10%] h-64 w-64 rounded-full bg-[radial-gradient(circle_at_center,_rgba(58,123,255,0.14),_transparent_70%)] blur-3xl" />
         <div className="absolute -bottom-24 right-[8%] h-72 w-72 rounded-full bg-[radial-gradient(circle_at_center,_rgba(76,194,255,0.12),_transparent_70%)] blur-3xl" />
       </div>
 
-      <div className="relative z-10 max-w-[1400px] mx-auto">
+      <PageContainer className="relative z-10">
         <div className="grid lg:grid-cols-[1.5fr,1fr] gap-12 lg:gap-20 items-start">
-          {/* LEFT: FORM WRAPPER */}
+          {/* LEFT: FORM */}
           <motion.div
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -194,7 +202,7 @@ export function ContactMain({
             viewport={{ once: true, margin: "-120px" }}
             className="relative"
           >
-            {/* deep glow under form (card-only, safe) */}
+            {/* glow */}
             <div className="pointer-events-none absolute -inset-[14px] rounded-[34px] bg-[radial-gradient(circle_at_top,_rgba(58,123,255,0.55),_transparent_70%)] blur-2xl opacity-35" />
 
             {/* glass shell */}
@@ -210,7 +218,6 @@ export function ContactMain({
                 transition={{ duration: 0.9, ease: "easeInOut" }}
               />
 
-              {/* content */}
               <div className="relative z-10">
                 <ContactForm
                   form={data.form}
@@ -239,7 +246,7 @@ export function ContactMain({
             </div>
           </motion.div>
 
-          {/* RIGHT: INFO PANEL */}
+          {/* RIGHT: INFO */}
           <motion.div
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -254,7 +261,7 @@ export function ContactMain({
             <ContactInfoPanel contacts={data.contacts} office={data.office} />
           </motion.div>
         </div>
-      </div>
+      </PageContainer>
     </section>
   );
 }

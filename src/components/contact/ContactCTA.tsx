@@ -11,23 +11,27 @@
 //   const reduce = useReducedMotion();
 
 //   return (
-//     <section className="relative px-6 md:px-12 lg:px-20 py-28 md:py-36 lg:py-44 bg-[#050816] text-[#F5EFE7] overflow-hidden">
-//       {/* background grid */}
-//       <div className="pointer-events-none absolute inset-0 opacity-[0.07]">
+//     <section className="relative px-6 md:px-12 lg:px-20 py-28 md:py-36 lg:py-44 bg-transparent text-[#F5EFE7] overflow-visible">
+//       {/* ultra-subtle local texture (masked) — no seams */}
+//       <div className="pointer-events-none absolute inset-0 opacity-[0.05]">
 //         <div
 //           className="h-full w-full"
 //           style={{
 //             backgroundImage:
-//               "repeating-linear-gradient(0deg, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 1px, transparent 1px, transparent 84px), repeating-linear-gradient(90deg, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 1px, transparent 1px, transparent 84px)",
+//               "repeating-linear-gradient(0deg, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 1px, transparent 1px, transparent 92px), repeating-linear-gradient(90deg, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 1px, transparent 1px, transparent 92px)",
+//             maskImage:
+//               "radial-gradient(circle at 50% 45%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 42%, rgba(0,0,0,0) 80%)",
+//             WebkitMaskImage:
+//               "radial-gradient(circle at 50% 45%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 42%, rgba(0,0,0,0) 80%)",
 //           }}
 //         />
 //       </div>
 
-//       {/* ambient glows */}
-//       <div className="pointer-events-none absolute inset-0 opacity-70">
-//         <div className="absolute -top-44 -left-40 h-[520px] w-[520px] bg-[radial-gradient(circle_at_center,_rgba(58,123,255,0.55),_transparent_70%)] blur-3xl" />
-//         <div className="absolute -bottom-56 -right-28 h-[620px] w-[620px] bg-[radial-gradient(circle_at_center,_rgba(76,194,255,0.55),_transparent_70%)] blur-3xl" />
-//         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 h-[520px] w-[520px] bg-[radial-gradient(circle_at_center,_rgba(155,93,255,0.32),_transparent_70%)] blur-3xl opacity-50" />
+//       {/* tiny local accents (soft) */}
+//       <div className="pointer-events-none absolute inset-0 opacity-30">
+//         <div className="absolute -top-24 left-[8%] h-64 w-64 rounded-full bg-[radial-gradient(circle_at_center,_rgba(58,123,255,0.14),_transparent_70%)] blur-3xl" />
+//         <div className="absolute -bottom-28 right-[10%] h-72 w-72 rounded-full bg-[radial-gradient(circle_at_center,_rgba(76,194,255,0.12),_transparent_70%)] blur-3xl" />
+//         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-72 w-72 rounded-full bg-[radial-gradient(circle_at_center,_rgba(155,93,255,0.10),_transparent_70%)] blur-3xl" />
 //       </div>
 
 //       <div className="relative z-10 max-w-[1200px] mx-auto">
@@ -37,7 +41,9 @@
 //           whileInView={{ opacity: 1, y: 0 }}
 //           transition={{ duration: reduce ? 0 : 1, ease: EASE }}
 //           viewport={{ once: true, margin: "-120px" }}
-//           className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-[#060A13] via-[#050816] to-[#02030A] p-8 md:p-12 lg:p-14 shadow-[0_26px_90px_rgba(0,0,0,0.92)] backdrop-blur-xl"
+//           className="relative overflow-hidden rounded-3xl border border-white/10
+//                      bg-gradient-to-b from-[#060A13] via-[#050816] to-[#02030A]
+//                      p-8 md:p-12 lg:p-14 shadow-[0_26px_90px_rgba(0,0,0,0.92)] backdrop-blur-xl"
 //         >
 //           {/* inner glow */}
 //           <motion.div
@@ -91,7 +97,9 @@
 //             {/* single action */}
 //             <motion.a
 //               href={data.cta?.href || "#contact"}
-//               className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-full px-10 py-4 md:px-12 md:py-4.5 text-sm md:text-base font-medium text-[#050816] shadow-[0_0_44px_rgba(76,194,255,0.55)]"
+//               className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-full
+//                          px-10 py-4 md:px-12 md:py-4.5 text-sm md:text-base font-medium
+//                          text-[#050816] shadow-[0_0_44px_rgba(76,194,255,0.55)]"
 //               whileHover={reduce ? undefined : { scale: 1.03 }}
 //               whileTap={reduce ? undefined : { scale: 0.98 }}
 //               transition={{ duration: 0.2, ease: "easeOut" }}
@@ -111,7 +119,7 @@
 //               </span>
 //             </motion.a>
 
-//             {/* stats — без портфолио, только доверие/операционка */}
+//             {/* stats */}
 //             {Array.isArray(data.stats) && data.stats.length > 0 && (
 //               <div className="mt-12 grid md:grid-cols-3 gap-6 md:gap-8">
 //                 {data.stats.map((stat: any, index: number) => (
@@ -150,6 +158,7 @@
 
 import { motion, useReducedMotion } from "motion/react";
 import { ArrowRight, MessageCircle } from "lucide-react";
+import { PageContainer } from "../Layout/PageContainer";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -157,7 +166,7 @@ export function ContactCTA({ data }: { data: any }) {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative px-6 md:px-12 lg:px-20 py-28 md:py-36 lg:py-44 bg-transparent text-[#F5EFE7] overflow-visible">
+    <section className="relative py-28 md:py-36 lg:py-44 bg-transparent text-[#F5EFE7] overflow-visible">
       {/* ultra-subtle local texture (masked) — no seams */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.05]">
         <div
@@ -180,7 +189,7 @@ export function ContactCTA({ data }: { data: any }) {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-72 w-72 rounded-full bg-[radial-gradient(circle_at_center,_rgba(155,93,255,0.10),_transparent_70%)] blur-3xl" />
       </div>
 
-      <div className="relative z-10 max-w-[1200px] mx-auto">
+      <PageContainer className="relative z-10 max-w-[1200px]">
         {/* main card */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
@@ -294,7 +303,7 @@ export function ContactCTA({ data }: { data: any }) {
             )}
           </div>
         </motion.div>
-      </div>
+      </PageContainer>
     </section>
   );
 }
