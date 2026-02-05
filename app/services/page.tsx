@@ -28,10 +28,7 @@ export default function Services() {
           className="absolute top-[34%] left-[-22%] h-[640px] w-[640px] rounded-full blur-3xl opacity-50
                      bg-[radial-gradient(circle,rgba(58,123,255,0.75),transparent_60%)]"
         />
-        <div
-          className="absolute bottom-[-30%] right-[-10%] h-[760px] w-[760px] rounded-full blur-3xl opacity-40
-                     bg-[radial-gradient(circle,rgba(155,93,255,0.55),transparent_60%)]"
-        />
+    
 
         {/* global grid */}
         <div
