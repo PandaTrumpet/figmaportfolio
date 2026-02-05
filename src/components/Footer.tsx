@@ -610,7 +610,7 @@ export function Footer() {
                   focus:ring-2 focus:ring-cyan-300/40
                 "
               />
-              <button
+              {/* <button
                 type="submit"
                 className="
                   relative group inline-flex items-center justify-center gap-2
@@ -625,7 +625,39 @@ export function Footer() {
                 Запросить демо
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 <span className="pointer-events-none absolute inset-0 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </button>
+              </button> */}
+              <motion.button
+                type="submit"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+                className=" cursor-pointer
+    relative group inline-flex items-center justify-center gap-2
+    overflow-hidden rounded-full
+    px-7 py-4 font-medium whitespace-nowrap
+    text-[#050816]
+
+    shadow-[0_0_34px_rgba(76,194,255,0.45)]
+    hover:shadow-[0_0_55px_rgba(76,194,255,0.75)]
+    transition-shadow
+  "
+              >
+                {/* gradient background */}
+                <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
+
+                {/* hover overlay */}
+                <span
+                  className="
+      pointer-events-none absolute inset-0 rounded-full
+      bg-white/10 opacity-0
+      group-hover:opacity-100 transition-opacity
+    "
+                  aria-hidden="true"
+                />
+
+                <span className="relative z-10">Запросить демо</span>
+                <ArrowRight className="relative z-10 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </motion.button>
             </form>
           </div>
         </div>

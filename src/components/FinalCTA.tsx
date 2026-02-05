@@ -265,7 +265,7 @@ export function FinalCTA() {
             className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center mb-8"
           >
             {/* Primary */}
-            <motion.a
+            {/* <motion.a
               href="#contact-form"
               className="
                 relative group inline-flex items-center justify-center gap-3
@@ -283,6 +283,50 @@ export function FinalCTA() {
               <span className="relative z-10">Запросить демо</span>
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               <span className="pointer-events-none absolute inset-0 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+            </motion.a> */}
+
+            <motion.a
+              href="#contact-form"
+              className="
+    relative group inline-flex items-center justify-center gap-3
+    overflow-hidden rounded-full
+    px-9 py-5
+    text-base md:text-lg font-medium
+    text-[#050816]
+
+    shadow-[0_0_40px_rgba(76,194,255,0.55)]
+    hover:shadow-[0_0_65px_rgba(76,194,255,0.85)]
+    transition-shadow
+  "
+              whileHover={reduce ? undefined : { scale: 1.03 }}
+              whileTap={reduce ? undefined : { scale: 0.97 }}
+            >
+              {/* Main gradient — fixed palette */}
+              <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
+
+              {/* Depth / glass layer */}
+              <span
+                className="
+      pointer-events-none absolute inset-0
+      [background:linear-gradient(to_bottom,rgba(255,255,255,0.28),rgba(255,255,255,0.06)_45%,rgba(0,0,0,0.12))]
+      mix-blend-overlay
+    "
+                aria-hidden
+              />
+
+              {/* Hover soft highlight — unified */}
+              <span
+                className="
+      pointer-events-none absolute inset-0 rounded-full
+      bg-white/10 opacity-0
+      group-hover:opacity-100 transition-opacity
+    "
+                aria-hidden
+              />
+
+              <Mail className="relative z-10 h-5 w-5" />
+              <span className="relative z-10">Запросить демо</span>
+              <ArrowRight className="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </motion.a>
 
             {/* Secondary */}

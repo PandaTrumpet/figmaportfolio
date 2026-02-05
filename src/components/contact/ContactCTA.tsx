@@ -250,7 +250,7 @@ export function ContactCTA({ data }: { data: any }) {
             </p>
 
             {/* single action */}
-            <motion.a
+            {/* <motion.a
               href={data.cta?.href || "#contact"}
               className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-full
                          px-10 py-4 md:px-12 md:py-4.5 text-sm md:text-base font-medium
@@ -267,6 +267,43 @@ export function ContactCTA({ data }: { data: any }) {
                 whileHover={reduce ? undefined : { x: "100%", opacity: 0.5 }}
                 transition={{ duration: 0.7, ease: "easeInOut" }}
               />
+              <span className="relative z-10 inline-flex items-center gap-3">
+                <MessageCircle className="h-5 w-5" />
+                <span>{data.cta?.label || "Написать в WhatsApp"}</span>
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </span>
+            </motion.a> */}
+            <motion.a
+              href={data.cta?.href || "#contact"}
+              className="
+    group relative inline-flex items-center justify-center gap-3
+    overflow-hidden rounded-full
+    px-10 py-4 md:px-12 md:py-4.5
+    text-sm md:text-base font-medium
+    text-[#050816]
+
+    shadow-[0_0_40px_rgba(76,194,255,0.55)]
+    hover:shadow-[0_0_65px_rgba(76,194,255,0.85)]
+    transition-shadow
+  "
+              whileHover={reduce ? undefined : { scale: 1.03 }}
+              whileTap={reduce ? undefined : { scale: 0.98 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              aria-label={data.cta?.label || "Связаться"}
+            >
+              {/* Unified gradient palette */}
+              <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
+
+              {/* Unified hover highlight */}
+              <span
+                className="
+      pointer-events-none absolute inset-0 rounded-full
+      bg-white/10 opacity-0
+      group-hover:opacity-100 transition-opacity
+    "
+                aria-hidden="true"
+              />
+
               <span className="relative z-10 inline-flex items-center gap-3">
                 <MessageCircle className="h-5 w-5" />
                 <span>{data.cta?.label || "Написать в WhatsApp"}</span>

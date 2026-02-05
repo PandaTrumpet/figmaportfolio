@@ -352,7 +352,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { motion, useInView } from "motion/react";
+import { motion, useInView, useReducedMotion } from "motion/react";
 import { Zap, Smartphone, ShoppingCart } from "lucide-react";
 import { PageContainer } from "./Layout/PageContainer";
 
@@ -579,7 +579,7 @@ function ServiceCard({
 export function FocusSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
-
+  const reduce = useReducedMotion();
   return (
     <section
       ref={sectionRef}
@@ -663,7 +663,7 @@ export function FocusSection() {
               Покажем примеры сайтов с WhatsApp и автоматизацией — без сложных
               обсуждений.
             </p>
-            <motion.a
+            {/* <motion.a
               href="#contact"
               className="relative inline-flex items-center justify-center overflow-hidden rounded-full px-10 py-3.5 md:px-12 md:py-4 text-sm md:text-base font-medium text-[#050816] shadow-[0_0_40px_rgba(76,194,255,0.65)]"
               whileHover={{ scale: 1.03 }}
@@ -676,6 +676,47 @@ export function FocusSection() {
                 whileHover={{ x: "100%", opacity: 0.5 }}
                 transition={{ duration: 0.7, ease: "easeInOut" }}
               />
+              <span className="relative z-10">Запросить демо</span>
+            </motion.a> */}
+
+            <motion.a
+              href="#contact"
+              className="
+    relative group inline-flex items-center justify-center
+    overflow-hidden rounded-full
+    px-10 py-3.5 md:px-12 md:py-4
+    text-sm md:text-base font-medium
+    text-[#050816]
+    shadow-[0_0_40px_rgba(76,194,255,0.55)]
+    hover:shadow-[0_0_65px_rgba(76,194,255,0.85)]
+    transition-shadow
+  "
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              {/* Main gradient (fixed palette) */}
+              <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
+
+              {/* Depth / glass layer (premium) */}
+              <span
+                className="
+      pointer-events-none absolute inset-0
+      [background:linear-gradient(to_bottom,rgba(255,255,255,0.28),rgba(255,255,255,0.06)_45%,rgba(0,0,0,0.12))]
+      mix-blend-overlay
+    "
+                aria-hidden
+              />
+
+              {/* Hover soft highlight (your hover style) */}
+              <span
+                className="
+      pointer-events-none absolute inset-0 rounded-full
+      bg-white/10 opacity-0
+      group-hover:opacity-100 transition-opacity
+    "
+                aria-hidden
+              />
+
               <span className="relative z-10">Запросить демо</span>
             </motion.a>
           </motion.div>

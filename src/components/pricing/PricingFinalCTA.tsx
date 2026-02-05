@@ -300,7 +300,7 @@ export function PricingFinalCTA() {
 
           {/* CTAs */}
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <motion.a
+            {/* <motion.a
               href="#contact-form"
               className="relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-full px-8 py-4 md:px-10 md:py-5 text-sm md:text-base font-semibold text-[#050816] shadow-[0_0_40px_rgba(76,194,255,0.55)]"
               whileHover={reduce ? undefined : { scale: 1.03 }}
@@ -309,6 +309,38 @@ export function PricingFinalCTA() {
               <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
               <span className="relative z-10">{pricingData.cta.button}</span>
               <ArrowRight className="relative z-10 h-5 w-5" />
+            </motion.a> */}
+            <motion.a
+              href="#contact-form"
+              className="
+    relative group inline-flex items-center justify-center gap-3
+    overflow-hidden rounded-full
+    px-8 py-4 md:px-10 md:py-5
+    text-sm md:text-base font-semibold
+    text-[#050816]
+
+    shadow-[0_0_40px_rgba(76,194,255,0.55)]
+    hover:shadow-[0_0_65px_rgba(76,194,255,0.85)]
+    transition-shadow
+  "
+              whileHover={reduce ? undefined : { scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              {/* Unified gradient palette */}
+              <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
+
+              {/* Unified hover highlight */}
+              <span
+                className="
+      pointer-events-none absolute inset-0 rounded-full
+      bg-white/10 opacity-0
+      group-hover:opacity-100 transition-opacity
+    "
+                aria-hidden="true"
+              />
+
+              <span className="relative z-10">{pricingData.cta.button}</span>
+              <ArrowRight className="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </motion.a>
 
             <motion.a

@@ -147,7 +147,7 @@ export function Navigation() {
 
             {/* DESKTOP CTA */}
             <div className="hidden lg:block">
-              <button
+              {/* <button
                 type="button"
                 onClick={() => scrollToSection("#contact")}
                 className="
@@ -160,6 +160,35 @@ export function Navigation() {
                   transition-transform duration-200 hover:scale-[1.03]
                 "
               >
+                <span className="relative z-10">Get Started</span>
+              </button> */}
+              <button
+                type="button"
+                onClick={() => scrollToSection("#contact")}
+                className=" cursor-pointer
+    group relative inline-flex items-center overflow-hidden rounded-full
+    px-6 py-3
+    text-[11px] font-semibold tracking-[0.22em] uppercase
+    text-[#050816]
+
+    shadow-[0_0_40px_rgba(76,194,255,0.55)]
+    hover:shadow-[0_0_65px_rgba(76,194,255,0.85)]
+    transition-transform duration-200 hover:scale-[1.03]
+  "
+              >
+                {/* Unified gradient palette */}
+                <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
+
+                {/* Unified hover highlight */}
+                <span
+                  className="
+      pointer-events-none absolute inset-0 rounded-full
+      bg-white/10 opacity-0
+      group-hover:opacity-100 transition-opacity
+    "
+                  aria-hidden="true"
+                />
+
                 <span className="relative z-10">Get Started</span>
               </button>
             </div>
@@ -345,7 +374,7 @@ export function Navigation() {
             })}
 
             <div className="pt-6 border-t border-slate-700/60">
-              <button
+              {/* <button
                 type="button"
                 onClick={() => scrollToSection("#contact")}
                 className="
@@ -358,6 +387,35 @@ export function Navigation() {
                 "
               >
                 Get Started
+              </button> */}
+              <button
+                type="button"
+                onClick={() => scrollToSection("#contact")}
+                className=" cursor-pointer
+    group relative block w-full overflow-hidden rounded-full
+    px-6 py-4
+    text-center text-sm font-semibold tracking-[0.18em] uppercase
+    text-[#050816]
+
+    shadow-[0_0_40px_rgba(76,194,255,0.55)]
+    hover:shadow-[0_0_65px_rgba(76,194,255,0.85)]
+    transition-shadow
+  "
+              >
+                {/* Unified gradient palette */}
+                <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
+
+                {/* Unified hover highlight */}
+                <span
+                  className="
+      pointer-events-none absolute inset-0 rounded-full
+      bg-white/10 opacity-0
+      group-hover:opacity-100 transition-opacity
+    "
+                  aria-hidden="true"
+                />
+
+                <span className="relative z-10">Get Started</span>
               </button>
             </div>
           </div>

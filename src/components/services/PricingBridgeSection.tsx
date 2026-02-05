@@ -191,7 +191,7 @@ export default function PricingBridgeSection() {
               </p>
             </div>
 
-            <motion.a
+            {/* <motion.a
               href="/pricing"
               className="
                 relative inline-flex items-center justify-center
@@ -217,6 +217,55 @@ export default function PricingBridgeSection() {
               <span className="relative z-10 flex items-center gap-2">
                 Перейти к Pricing
                 <ArrowRight className="h-5 w-5" />
+              </span>
+            </motion.a> */}
+            <motion.a
+              href="/pricing"
+              className="
+    relative group inline-flex items-center justify-center
+    overflow-hidden rounded-full
+    px-10 py-3.5 md:px-12 md:py-4
+    text-sm md:text-base font-medium
+    text-[#050816]
+
+    shadow-[0_0_40px_rgba(76,194,255,0.55)]
+    hover:shadow-[0_0_65px_rgba(76,194,255,0.85)]
+    transition-shadow
+
+    focus-visible:outline-none
+    focus-visible:ring-2 focus-visible:ring-[#4CC2FF]/70
+    focus-visible:ring-offset-0
+  "
+              whileHover={reduce ? undefined : { scale: 1.03 }}
+              whileTap={reduce ? undefined : { scale: 0.97 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+            >
+              {/* Main gradient — fixed palette */}
+              <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
+
+              {/* Depth / glass layer */}
+              <span
+                className="
+      pointer-events-none absolute inset-0
+      [background:linear-gradient(to_bottom,rgba(255,255,255,0.28),rgba(255,255,255,0.06)_45%,rgba(0,0,0,0.12))]
+      mix-blend-overlay
+    "
+                aria-hidden="true"
+              />
+
+              {/* Hover soft highlight — unified */}
+              <span
+                className="
+      pointer-events-none absolute inset-0 rounded-full
+      bg-white/10 opacity-0
+      group-hover:opacity-100 transition-opacity
+    "
+                aria-hidden="true"
+              />
+
+              <span className="relative z-10 flex items-center gap-2">
+                Перейти к Pricing
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </span>
             </motion.a>
           </div>

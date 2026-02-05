@@ -549,21 +549,72 @@ function TelAvivSubmitButton({
   reduce: boolean;
 }) {
   return (
+    // <motion.button
+    //   type="submit"
+    //   disabled={isSubmitting}
+    //   className="group relative w-full overflow-hidden rounded-2xl px-7 py-4 md:py-4.5 font-medium text-[#050816] shadow-[0_0_44px_rgba(76,194,255,0.55)] disabled:opacity-60 disabled:cursor-not-allowed"
+    //   whileHover={reduce ? undefined : { scale: isSubmitting ? 1 : 1.02 }}
+    //   whileTap={reduce ? undefined : { scale: isSubmitting ? 1 : 0.98 }}
+    //   transition={{ duration: 0.2, ease: "easeOut" }}
+    // >
+    //   <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
+    //   <motion.span
+    //     className="absolute inset-0 bg-[linear-gradient(120deg,_transparent_0%,_white_20%,_transparent_40%)] opacity-0"
+    //     initial={{ x: "-100%" }}
+    //     whileHover={reduce ? undefined : { x: "100%", opacity: 0.5 }}
+    //     transition={{ duration: 0.7, ease: "easeInOut" }}
+    //   />
+    //   <span className="relative z-10 inline-flex items-center justify-center gap-3 text-base md:text-lg">
+    //     {isSubmitting ? (
+    //       <>
+    //         <motion.span
+    //           aria-hidden="true"
+    //           animate={reduce ? undefined : { rotate: 360 }}
+    //           transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+    //           className="h-5 w-5 rounded-full border-2 border-[#050816] border-t-transparent"
+    //         />
+    //         <span>Отправка…</span>
+    //       </>
+    //     ) : (
+    //       <>
+    //         <span>{label}</span>
+    //         <Send className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+    //       </>
+    //     )}
+    //   </span>
+    // </motion.button>
+
     <motion.button
       type="submit"
       disabled={isSubmitting}
-      className="group relative w-full overflow-hidden rounded-2xl px-7 py-4 md:py-4.5 font-medium text-[#050816] shadow-[0_0_44px_rgba(76,194,255,0.55)] disabled:opacity-60 disabled:cursor-not-allowed"
-      whileHover={reduce ? undefined : { scale: isSubmitting ? 1 : 1.02 }}
-      whileTap={reduce ? undefined : { scale: isSubmitting ? 1 : 0.98 }}
+      className=" cursor-pointer
+    group relative w-full overflow-hidden rounded-2xl
+    px-7 py-4 md:py-4.5
+    font-medium text-[#050816]
+
+    shadow-[0_0_40px_rgba(76,194,255,0.55)]
+    hover:shadow-[0_0_65px_rgba(76,194,255,0.85)]
+    transition-shadow
+
+    disabled:opacity-60 disabled:cursor-not-allowed
+  "
+      whileHover={reduce ? undefined : { scale: isSubmitting ? 1 : 1.03 }}
+      whileTap={reduce ? undefined : { scale: isSubmitting ? 1 : 0.97 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
     >
+      {/* Unified gradient palette */}
       <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
-      <motion.span
-        className="absolute inset-0 bg-[linear-gradient(120deg,_transparent_0%,_white_20%,_transparent_40%)] opacity-0"
-        initial={{ x: "-100%" }}
-        whileHover={reduce ? undefined : { x: "100%", opacity: 0.5 }}
-        transition={{ duration: 0.7, ease: "easeInOut" }}
+
+      {/* Unified hover highlight */}
+      <span
+        className="
+      pointer-events-none absolute inset-0 rounded-2xl
+      bg-white/10 opacity-0
+      group-hover:opacity-100 transition-opacity
+    "
+        aria-hidden="true"
       />
+
       <span className="relative z-10 inline-flex items-center justify-center gap-3 text-base md:text-lg">
         {isSubmitting ? (
           <>
