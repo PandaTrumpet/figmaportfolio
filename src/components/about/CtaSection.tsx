@@ -155,7 +155,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
-import { ArrowUpRight, ArrowRight, Sparkles } from "lucide-react";
+import {  ArrowRight, Sparkles } from "lucide-react";
 import { PageContainer } from "../Layout/PageContainer";
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
@@ -302,11 +302,11 @@ export function CtaSection() {
               />
 
               <span className="relative z-10">Обсудить задачу</span>
-              <ArrowUpRight className="relative z-10 h-4 w-4" />
+              <ArrowRight className="relative z-10 h-4 w-4 opacity-90 transition-transform group-hover:translate-x-1" />
             </motion.a>
 
             {/* Secondary CTA */}
-            <motion.a
+            {/* <motion.a
               href="#cases"
               className="
                 inline-flex items-center gap-2
@@ -326,6 +326,56 @@ export function CtaSection() {
             >
               <span>Посмотреть кейсы</span>
               <ArrowRight className="h-4 w-4 opacity-90" />
+            </motion.a> */}
+
+            <motion.a
+              href="#cases"
+              className="
+    relative group inline-flex items-center gap-2
+    rounded-full
+    px-6 py-3 md:px-7 md:py-4
+    text-sm md:text-base font-medium
+    text-[#F5EFE7]
+    backdrop-blur-sm
+    transition-all
+    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/25
+  "
+              whileHover={reduce ? undefined : { y: -2 }}
+              transition={{ duration: 0.22, ease: "easeOut" }}
+              aria-label="Посмотреть кейсы"
+            >
+              {/* Gradient border */}
+              <span
+                className="
+      pointer-events-none absolute inset-0 rounded-full p-[1px]
+      bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]
+    "
+              >
+                <span className="block h-full w-full rounded-full bg-[#050608]" />
+              </span>
+
+              {/* Soft inner glow */}
+              <span
+                className="
+      pointer-events-none absolute inset-0 rounded-full
+      bg-[radial-gradient(circle_at_center,rgba(76,194,255,0.25),transparent_60%)]
+      opacity-0 group-hover:opacity-100
+      transition-opacity
+    "
+              />
+
+              {/* Outer neon glow */}
+              <span
+                className="
+      pointer-events-none absolute inset-0 rounded-full
+      opacity-0 group-hover:opacity-100
+      transition-opacity
+      shadow-[0_0_34px_rgba(76,194,255,0.45)]
+    "
+              />
+
+              <span className="relative z-10">Посмотреть кейсы</span>
+              {/* <ArrowRight className="relative z-10 h-4 w-4 opacity-90 transition-transform group-hover:translate-x-1" /> */}
             </motion.a>
           </div>
 

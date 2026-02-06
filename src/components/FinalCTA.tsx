@@ -330,7 +330,7 @@ export function FinalCTA() {
             </motion.a>
 
             {/* Secondary */}
-            <motion.a
+            {/* <motion.a
               href="#pricing"
               className="
                 group inline-flex items-center justify-center
@@ -343,6 +343,50 @@ export function FinalCTA() {
               whileTap={reduce ? undefined : { scale: 0.97 }}
             >
               Посмотреть цены
+            </motion.a> */}
+            <motion.a
+              href="#pricing"
+              className="
+    relative group inline-flex items-center justify-center
+    px-9 py-5 rounded-full text-base md:text-lg font-medium
+    text-[#F5EFE7]
+    backdrop-blur-sm
+    transition-all
+  "
+              whileHover={reduce ? undefined : { scale: 1.03 }}
+              whileTap={reduce ? undefined : { scale: 0.97 }}
+            >
+              {/* Gradient border */}
+              <span
+                className="
+      pointer-events-none absolute inset-0 rounded-full p-[1px]
+      bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]
+    "
+              >
+                <span className="block h-full w-full rounded-full bg-[#050608]" />
+              </span>
+
+              {/* Soft inner glow */}
+              <span
+                className="
+      pointer-events-none absolute inset-0 rounded-full
+      bg-[radial-gradient(circle_at_center,rgba(76,194,255,0.25),transparent_60%)]
+      opacity-0 group-hover:opacity-100
+      transition-opacity
+    "
+              />
+
+              {/* Outer neon glow */}
+              <span
+                className="
+      pointer-events-none absolute inset-0 rounded-full
+      opacity-0 group-hover:opacity-100
+      transition-opacity
+      shadow-[0_0_34px_rgba(76,194,255,0.45)]
+    "
+              />
+
+              <span className="relative z-10">Посмотреть цены</span>
             </motion.a>
           </motion.div>
 

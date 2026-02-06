@@ -401,13 +401,58 @@ export function PricingHero() {
                 <ArrowRight className="relative z-10 ml-2 h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-1" />
               </motion.a>
 
-              <motion.a
+              {/* <motion.a
                 href="#comparison"
                 className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-9 py-3.5 md:px-11 md:py-4 text-sm md:text-base text-[#E8ECF4] backdrop-blur-xl hover:bg-white/8 transition-colors"
                 whileHover={{ y: -2 }}
               >
                 <span>Сравнить пакеты</span>
-                <ArrowRight className="h-4 w-4 md:h-5 md:w-5 opacity-80" />
+             
+              </motion.a> */}
+              <motion.a
+                href="#comparison"
+                className="
+    relative group inline-flex items-center gap-2
+    rounded-full
+    px-9 py-3.5 md:px-11 md:py-4
+    text-sm md:text-base font-medium
+    text-[#F5EFE7]
+    backdrop-blur-sm
+    transition-all
+  "
+                whileHover={{ y: -2 }}
+              >
+                {/* Gradient border */}
+                <span
+                  className="
+      pointer-events-none absolute inset-0 rounded-full p-[1px]
+      bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]
+    "
+                >
+                  <span className="block h-full w-full rounded-full bg-[#050608]" />
+                </span>
+
+                {/* Soft inner glow */}
+                <span
+                  className="
+      pointer-events-none absolute inset-0 rounded-full
+      bg-[radial-gradient(circle_at_center,rgba(76,194,255,0.25),transparent_60%)]
+      opacity-0 group-hover:opacity-100
+      transition-opacity
+    "
+                />
+
+                {/* Outer neon glow */}
+                <span
+                  className="
+      pointer-events-none absolute inset-0 rounded-full
+      opacity-0 group-hover:opacity-100
+      transition-opacity
+      shadow-[0_0_34px_rgba(76,194,255,0.45)]
+    "
+                />
+
+                <span className="relative z-10">Сравнить пакеты</span>
               </motion.a>
             </motion.div>
           </motion.div>

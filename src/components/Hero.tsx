@@ -328,13 +328,12 @@ export function Hero() {
                   aria-hidden
                 />
 
-            
                 <span className="relative z-10">Запросить демо</span>
                 <ArrowRight className="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </motion.a>
 
               {/* Secondary */}
-              <motion.a
+              {/* <motion.a
                 href="#cases"
                 className="
                   group px-8 py-5 rounded-full inline-flex items-center gap-3
@@ -346,6 +345,52 @@ export function Hero() {
                 whileTap={{ scale: 0.97 }}
               >
                 <span>See Real Results</span>
+              </motion.a> */}
+
+              <motion.a
+                href="#process"
+                className="
+    relative group inline-flex items-center justify-center gap-3
+    px-8 py-5 rounded-full font-medium
+    text-[#F5EFE7]
+    backdrop-blur-sm
+    transition-all
+  "
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                {/* Gradient border */}
+                <span
+                  className="
+      pointer-events-none absolute inset-0 rounded-full p-[1px]
+      bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]
+    "
+                >
+                  <span className="block h-full w-full rounded-full bg-[#050608]" />
+                </span>
+
+                {/* Soft inner glow (existing style) */}
+                <span
+                  className="
+      pointer-events-none absolute inset-0 rounded-full
+      bg-[radial-gradient(circle_at_center,rgba(76,194,255,0.25),transparent_60%)]
+      opacity-0 group-hover:opacity-100
+      transition-opacity
+    "
+                />
+
+                {/* 🔥 OUTER neon glow (NEW) */}
+                <span
+                  className="
+      pointer-events-none absolute inset-0 rounded-full
+      opacity-0 group-hover:opacity-100
+      transition-opacity
+      shadow-[0_0_34px_rgba(76,194,255,0.45)]
+    "
+                />
+
+                <span className="relative z-10">How it works</span>
+                {/* <ArrowRight className="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-1" /> */}
               </motion.a>
             </div>
           </motion.div>

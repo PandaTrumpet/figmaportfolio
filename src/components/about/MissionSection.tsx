@@ -239,7 +239,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
-import { Heart, ArrowUpRight } from "lucide-react";
+import { Heart, ArrowRight } from "lucide-react";
 import { ImageWithFallback } from "@/src/components/figma/ImageWithFallback";
 import { PageContainer } from "../Layout/PageContainer";
 
@@ -398,7 +398,7 @@ export function MissionSection({ data }: { data: MissionData }) {
                   />
 
                   <span className="relative z-10">Обсудить задачу</span>
-                  <ArrowUpRight className="relative z-10 h-4 w-4" />
+                  <ArrowRight className="relative z-10 h-4 w-4 opacity-90 transition-transform group-hover:translate-x-1" />
                 </motion.a>
 
                 <p className="text-xs text-white/55 md:text-sm">

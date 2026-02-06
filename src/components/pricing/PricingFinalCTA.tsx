@@ -343,12 +343,59 @@ export function PricingFinalCTA() {
               <ArrowRight className="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </motion.a>
 
-            <motion.a
+            {/* <motion.a
               href="#whatsapp"
               className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-4 md:px-10 md:py-5 text-sm md:text-base text-[#E8F2FF] backdrop-blur hover:bg-white/10 transition-colors"
             >
               <MessageCircle className="h-5 w-5 text-[#4CC2FF]" />
               <span>Написать в WhatsApp</span>
+            </motion.a> */}
+            <motion.a
+              href="#whatsapp"
+              className="
+    relative group inline-flex items-center gap-2
+    rounded-full
+    px-8 py-4 md:px-10 md:py-5
+    text-sm md:text-base font-medium
+    text-[#F5EFE7]
+    backdrop-blur-sm
+    transition-all
+  "
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              {/* Gradient border */}
+              <span
+                className="
+      pointer-events-none absolute inset-0 rounded-full p-[1px]
+      bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]
+    "
+              >
+                <span className="block h-full w-full rounded-full bg-[#050608]" />
+              </span>
+
+              {/* Soft inner glow */}
+              <span
+                className="
+      pointer-events-none absolute inset-0 rounded-full
+      bg-[radial-gradient(circle_at_center,rgba(76,194,255,0.25),transparent_60%)]
+      opacity-0 group-hover:opacity-100
+      transition-opacity
+    "
+              />
+
+              {/* Outer neon glow */}
+              <span
+                className="
+      pointer-events-none absolute inset-0 rounded-full
+      opacity-0 group-hover:opacity-100
+      transition-opacity
+      shadow-[0_0_34px_rgba(76,194,255,0.45)]
+    "
+              />
+
+              <MessageCircle className="relative z-10 h-5 w-5 text-[#4CC2FF]" />
+              <span className="relative z-10">Написать в WhatsApp</span>
             </motion.a>
           </div>
 
