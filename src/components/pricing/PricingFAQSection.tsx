@@ -93,7 +93,12 @@ const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 export function PricingFAQSection() {
   return (
-    <section id="faq" className="relative py-24 md:py-32 overflow-visible">
+    <section
+      id="faq"
+      className="relative  pt-10 pb-10
+        md:pt-14 md:pb-14
+        lg:pt-16 lg:pb-16 overflow-visible"
+    >
       {/* LOCAL FX (clip only background, not content) */}
       <div
         className="

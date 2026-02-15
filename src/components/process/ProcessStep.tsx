@@ -222,8 +222,22 @@ import { ChevronDown, Clock, Check, Package } from "lucide-react";
 import { ImageWithFallback } from "@/src/components/figma/ImageWithFallback";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
+ interface ProcessStep {
+  number: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  duration: string;
+  deliverables: string[];
+  image: string;
+  icon: string;
+  details: {
+    title: string;
+    description: string;
+  }[];
+}
 
-export function ProcessStep({ step }: { step: any }) {
+export function ProcessStep({ step }: { step: ProcessStep }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });

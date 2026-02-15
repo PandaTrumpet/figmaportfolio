@@ -123,7 +123,11 @@ export function PortfolioCTA() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative py-20 md:py-24 overflow-visible text-[#F5EFE7]">
+    <section
+      className="relative  pt-10 pb-10
+        md:pt-14 md:pb-14
+        lg:pt-16 lg:pb-16 overflow-visible text-[#F5EFE7]"
+    >
       {/* LOCAL FX (clip only background, not content) */}
       <div
         className="

@@ -111,12 +111,31 @@ import { motion } from "motion/react";
 import { Package } from "lucide-react";
 import { DeliverableCard } from "./DeliverableCard";
 import { PageContainer } from "../Layout/PageContainer";
-
+interface Categoty {
+  category: string;
+  items: string[];
+  icon: string;
+}
+interface Deliverables {
+ 
+    title: string;
+    subtitle: string;
+    items: {
+      category: string;
+      items: string[];
+      icon: string;
+    }[];
+  
+}
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
-export function DeliverablesSection({ deliverables }: { deliverables: any }) {
+export function DeliverablesSection({ deliverables }: { deliverables: Deliverables }) {
   return (
-    <section className="relative py-24 md:py-32 overflow-visible text-[#F5EFE7]">
+    <section
+      className="relative  pt-10 pb-10
+        md:pt-14 md:pb-14
+        lg:pt-16 lg:pb-16overflow-visible text-[#F5EFE7]"
+    >
       {/* LOCAL FX (clip only background, not content) */}
       <div
         className="
@@ -190,7 +209,7 @@ export function DeliverablesSection({ deliverables }: { deliverables: any }) {
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-            {deliverables.items.map((category: any, index: number) => (
+            {deliverables.items.map((category: Categoty, index: number) => (
               <DeliverableCard key={index} category={category} index={index} />
             ))}
           </div>

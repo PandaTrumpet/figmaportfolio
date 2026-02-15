@@ -167,7 +167,11 @@ export function ContactMain({
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative py-20 md:py-32 bg-transparent overflow-visible">
+    <section
+      className="relative  pt-10 pb-10
+        md:pt-14 md:pb-14
+        lg:pt-16 lg:pb-16 bg-transparent overflow-visible"
+    >
       {/* ultra-subtle local texture (masked) */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.05]">
         <div

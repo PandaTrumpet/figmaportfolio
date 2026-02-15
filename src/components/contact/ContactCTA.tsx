@@ -166,7 +166,11 @@ export function ContactCTA({ data }: { data: any }) {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative py-28 md:py-36 lg:py-44 bg-transparent text-[#F5EFE7] overflow-visible">
+    <section
+      className="relative  pt-10 pb-10
+        md:pt-14 md:pb-14
+        lg:pt-16 lg:pb-16bg-transparent text-[#F5EFE7] overflow-visible"
+    >
       {/* ultra-subtle local texture (masked) — no seams */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.05]">
         <div

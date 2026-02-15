@@ -583,7 +583,11 @@ export function FocusSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-24 md:py-32 overflow-visible"
+      className="relative 
+       pt-10 pb-10
+        md:pt-14 md:pb-14
+        lg:pt-16 lg:pb-16
+      overflow-visible"
     >
       {/* фоновые споты — full-bleed */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-60 -z-10">
@@ -663,7 +667,6 @@ export function FocusSection() {
               Покажем примеры сайтов с WhatsApp и автоматизацией — без сложных
               обсуждений.
             </p>
-        
 
             <motion.a
               href="#contact"

@@ -98,8 +98,14 @@ import { motion } from "motion/react";
 import { ArrowRight, Clock } from "lucide-react";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
+interface TimelineFlowProps {
+      name: string;
+    weeks: string;
+    description: string;
+  
+}
 
-export function TimelineFlow({ phases }: { phases: any[] }) {
+export function TimelineFlow({ phases }: { phases: TimelineFlowProps[] }) {
   return (
     <div className="relative">
       {/* Desktop line */}

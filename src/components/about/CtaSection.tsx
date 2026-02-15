@@ -167,7 +167,9 @@ export function CtaSection() {
     <section
       className="
         relative overflow-visible
-        py-24 md:py-32 lg:py-40
+        pt-10 pb-10
+        md:pt-14 md:pb-14
+        lg:pt-16 lg:pb-16
       "
       aria-label="Call to action"
     >

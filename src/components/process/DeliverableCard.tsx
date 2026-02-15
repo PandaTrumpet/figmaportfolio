@@ -88,12 +88,16 @@ import { motion } from "motion/react";
 import { Check } from "lucide-react";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
-
+interface Category {
+  category: string;
+  items: string[];
+  icon: string;
+}
 export function DeliverableCard({
   category,
   index,
 }: {
-  category: any;
+  category: Category;
   index: number;
 }) {
   return (

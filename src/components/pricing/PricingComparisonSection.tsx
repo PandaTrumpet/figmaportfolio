@@ -151,7 +151,9 @@ export function PricingComparisonSection() {
     <section
       ref={sectionRef}
       id="comparison"
-      className="relative py-28 md:py-36 overflow-visible"
+      className="relative  pt-10 pb-10
+        md:pt-14 md:pb-14
+        lg:pt-16 lg:pb-16 overflow-visible"
     >
       {/* LOCAL FX (clip only background, not content) */}
       <div

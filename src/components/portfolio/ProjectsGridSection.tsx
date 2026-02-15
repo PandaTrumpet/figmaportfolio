@@ -112,7 +112,11 @@ interface Project {
 
 export function ProjectsGridSection({ projects }: { projects: Project[] }) {
   return (
-    <section className="relative py-20 md:py-32 overflow-visible">
+    <section
+      className="relative  pt-10 pb-10
+        md:pt-14 md:pb-14
+        lg:pt-16 lg:pb-16 overflow-visible"
+    >
       {/* LOCAL FX (clip only background, not content) */}
       <div
         className="

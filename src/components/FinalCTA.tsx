@@ -182,7 +182,9 @@ export function FinalCTA() {
   return (
     <section
       id="contact"
-      className="relative min-h-screen flex items-center py-32 overflow-visible text-slate-100"
+      className="relative min-h-screen flex items-center  pt-10 pb-10
+        md:pt-14 md:pb-14
+        lg:pt-16 lg:pb-16 overflow-visible text-slate-100"
       aria-labelledby="final-cta-title"
     >
       {/* Neon waves — full-bleed */}

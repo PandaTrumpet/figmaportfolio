@@ -46,7 +46,11 @@ export function ServicesCTA() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative overflow-visible py-28 text-center">
+    <section
+      className="relative overflow-visible  pt-10 pb-10
+        md:pt-14 md:pb-14
+        lg:pt-16 lg:pb-16 text-center"
+    >
       {/* BACKGROUND (full-bleed, без “шва”) */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         {/* subtle glows */}

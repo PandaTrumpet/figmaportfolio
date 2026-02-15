@@ -251,7 +251,11 @@ export function MissionSection({ data }: { data: MissionData }) {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative overflow-visible py-24 md:py-32">
+    <section
+      className="relative overflow-visible  pt-10 pb-10
+        md:pt-14 md:pb-14
+        lg:pt-16 lg:pb-16"
+    >
       {/* BACKGROUND (full-bleed, clip only background) */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         {/* background spots */}

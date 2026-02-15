@@ -195,7 +195,9 @@ export function DifferenceSection() {
     <section
       className="
         relative isolate
-        py-24 md:py-32
+       pt-10 pb-10
+        md:pt-14 md:pb-14
+        lg:pt-16 lg:pb-16
         overflow-visible
       "
       aria-label="Why it works"
