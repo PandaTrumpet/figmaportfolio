@@ -273,22 +273,7 @@ export function Hero() {
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               {/* Primary */}
-              {/* <motion.a
-                href="#contact"
-                className="
-                  relative group inline-flex items-center gap-3 px-8 py-5 rounded-full font-medium
-                  bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#63E5FF]
-                  text-slate-900 shadow-[0_0_40px_rgba(76,194,255,0.55)]
-                  hover:shadow-[0_0_60px_rgba(76,194,255,0.8)]
-                  transition-all
-                "
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-              >
-                <span className="relative z-10">Get a Free Demo</span>
-                <ArrowRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1" />
-                <div className="pointer-events-none absolute inset-0 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </motion.a> */}
+         
               <motion.a
                 href="#contact-form"
                 className="
@@ -449,7 +434,7 @@ export function Hero() {
             </motion.div>
 
             {/* Floating Neon Square */}
-            <motion.div
+            {/* <motion.div
               className="
                 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
                 w-24 h-24 rounded-2xl border border-cyan-400/60
@@ -466,7 +451,7 @@ export function Hero() {
               <span className="text-[10px] tracking-widest uppercase text-slate-50/80">
                 SavonDev
               </span>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
       </PageContainer>
