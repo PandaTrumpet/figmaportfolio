@@ -88,7 +88,13 @@ import { PageContainer } from "../Layout/PageContainer";
 
 export function PortfolioHero() {
   return (
-    <section className="relative min-h-[80vh] flex items-center py-32 md:py-40 overflow-visible">
+    <section
+      className="relative min-h-screen flex items-center 
+       pt-22 pb-12
+        md:pt-28 md:pb-16
+        lg:pt-30 lg:pb-20
+         overflow-visible"
+    >
       {/* LOCAL FX (clip only background, not section content) */}
       <div
         className="

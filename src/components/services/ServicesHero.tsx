@@ -84,7 +84,10 @@ export default function ServicesHero() {
     <section
       className="
         relative
-        py-28 md:py-36
+        min-h-screen
+          pt-22 pb-12
+        md:pt-28 md:pb-16
+        lg:pt-30 lg:pb-20
         overflow-visible
       "
     >

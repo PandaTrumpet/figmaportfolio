@@ -202,7 +202,13 @@ export function ProcessHero({
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center overflow-visible text-[#F5EFE7]">
+    <section
+      className="relative min-h-screen 
+     pt-22 pb-12
+        md:pt-28 md:pb-16
+        lg:pt-30 lg:pb-20
+    flex items-center justify-center overflow-visible text-[#F5EFE7]"
+    >
       {/* LOCAL FX — clip ONLY background */}
       <div
         className="
@@ -278,40 +284,6 @@ export function ProcessHero({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.15, ease: EASE }}
           >
-            {/* Badge */}
-            <motion.div
-              className="inline-block mb-10"
-              animate={reduce ? undefined : { y: [0, -10, 0] }}
-              transition={
-                reduce
-                  ? undefined
-                  : { duration: 4.2, repeat: Infinity, ease: "easeInOut" }
-              }
-            >
-              <div className="relative inline-flex items-center justify-center rounded-full px-6 py-3 text-[11px] md:text-xs uppercase tracking-[0.28em]">
-                <div
-                  className="pointer-events-none absolute -inset-3 rounded-full
-                  bg-[radial-gradient(circle_at_center,_rgba(76,194,255,0.45),_transparent_70%)]
-                  blur-2xl opacity-70"
-                />
-                <div className="relative rounded-full border border-white/10 bg-white/5 backdrop-blur-xl px-6 py-3">
-                  <div
-                    className="pointer-events-none absolute inset-0 rounded-full"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, rgba(58,123,255,0.55), rgba(76,194,255,0.55), rgba(155,93,255,0.55))",
-                      WebkitMask:
-                        "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
-                      WebkitMaskComposite: "xor",
-                      maskComposite: "exclude",
-                      padding: "1px",
-                    }}
-                  />
-                  <span className="relative text-[#EAF2FF]">{data.badge}</span>
-                </div>
-              </div>
-            </motion.div>
-
             {/* Title */}
             <h1 className="mx-auto max-w-5xl text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] tracking-tight">
               {data.title}

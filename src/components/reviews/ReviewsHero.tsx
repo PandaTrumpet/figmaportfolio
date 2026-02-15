@@ -187,7 +187,16 @@ export function ReviewsHero({ data }: { data: HeroData }) {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative min-h-[92vh] md:min-h-screen flex items-center justify-center overflow-visible">
+    <section
+      className="  relative min-h-screen flex items-center
+        overflow-visible
+        text-slate-100
+
+        /* ✅ HERO PADDING STANDARD (for fixed navbar) */
+        pt-22 pb-12
+        md:pt-28 md:pb-16
+        lg:pt-30 lg:pb-20"
+    >
       {/* CLIP WRAPPER — режем только фон/оверлеи */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         {/* local soft waves (без своего bg!) */}
@@ -215,24 +224,7 @@ export function ReviewsHero({ data }: { data: HeroData }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.15, ease: EASE }}
         >
-          {/* Badge */}
-          <motion.div
-            className="inline-flex justify-center mb-10"
-            animate={reduce ? undefined : { y: [0, -10, 0] }}
-            transition={
-              reduce
-                ? undefined
-                : { duration: 4.2, repeat: Infinity, ease: "easeInOut" }
-            }
-          >
-            <div className="relative inline-flex items-center gap-3 rounded-full px-6 py-3 border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] backdrop-blur-xl shadow-[0_18px_70px_rgba(0,0,0,0.65)]">
-              <span className="absolute -inset-6 rounded-full bg-[radial-gradient(circle_at_center,rgba(76,194,255,0.28),transparent_70%)] blur-2xl -z-10" />
-              <Star className="h-5 w-5 text-[#E8F2FF] fill-[#E8F2FF]" />
-              <span className="text-xs md:text-sm uppercase tracking-[0.28em] text-[#EAF0FF]/90">
-                {data.badge}
-              </span>
-            </div>
-          </motion.div>
+      
 
           {/* Title */}
           <h1 className="tracking-tight mb-8 text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95]">

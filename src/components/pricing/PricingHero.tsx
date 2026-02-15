@@ -229,7 +229,9 @@ export function PricingHero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen overflow-visible"
+      className="relative min-h-screen  pt-22 pb-12
+        md:pt-28 md:pb-16
+        lg:pt-30 lg:pb-20  overflow-visible"
     >
       {/* LOCAL FX (clip only background, not content) */}
       <div
@@ -240,12 +242,7 @@ export function PricingHero() {
         "
         aria-hidden="true"
       >
-        {/* soft spots */}
-        <div className="absolute inset-0 opacity-70">
-          <div className="absolute -top-44 -left-40 h-[520px] w-[520px] bg-[radial-gradient(circle_at_center,_#3A7BFF55,_transparent_70%)] blur-3xl" />
-          <div className="absolute -bottom-48 -right-24 h-[620px] w-[620px] bg-[radial-gradient(circle_at_center,_#4CC2FF55,_transparent_70%)] blur-3xl" />
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 h-[520px] w-[820px] bg-[radial-gradient(circle_at_center,_#9B5DFF33,_transparent_70%)] blur-3xl" />
-        </div>
+     
 
         {/* subtle grid / dots */}
         <div className="absolute inset-0 opacity-[0.10]">
@@ -290,20 +287,6 @@ export function PricingHero() {
             className="w-full"
           >
             {/* badge */}
-            <motion.div
-              className="mb-8 inline-flex items-center gap-3 rounded-full border border-white/12 bg-white/5 px-5 py-2.5 backdrop-blur-xl shadow-[0_0_30px_rgba(76,194,255,0.25)]"
-              animate={reduce ? undefined : { y: [0, -6, 0] }}
-              transition={
-                reduce
-                  ? undefined
-                  : { duration: 4, repeat: Infinity, ease: "easeInOut" }
-              }
-            >
-              <span className="inline-block h-2 w-2 rounded-full bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
-              <span className="text-xs md:text-sm uppercase tracking-[0.22em] text-[#E8F2FF]">
-                {pricingData.hero.badge}
-              </span>
-            </motion.div>
 
             {/* title */}
             <h1 className="mx-auto max-w-5xl text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] tracking-tight">

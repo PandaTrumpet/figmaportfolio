@@ -337,9 +337,11 @@ export function AboutHero({ data }: { data: HeroData }) {
       ref={sectionRef}
       className="
         relative overflow-visible
-        min-h-[100svh]
+       min-h-screen
         grid place-items-center
-        py-20 sm:py-24 md:py-28
+        pt-22 pb-12
+        md:pt-28 md:pb-16
+        lg:pt-30 lg:pb-20
       "
       aria-label="About hero"
     >
@@ -381,7 +383,7 @@ export function AboutHero({ data }: { data: HeroData }) {
               transition={{ duration: 0.9, delay: 0.1, ease: EASE }}
             >
               {/* Mini badge */}
-              <motion.div
+              {/* <motion.div
                 className="
                   inline-flex items-center gap-2
                   px-4 py-2 mb-7 sm:mb-8
@@ -399,7 +401,7 @@ export function AboutHero({ data }: { data: HeroData }) {
               >
                 <span className="inline-block w-2 h-2 rounded-full bg-[#63E5FF] shadow-[0_0_18px_rgba(99,229,255,0.55)]" />
                 Израиль • сайты + автоматизация • фокус на заявки
-              </motion.div>
+              </motion.div> */}
 
               {/* Text layer: flat (no transforms) */}
               <div className="relative transform-none will-change-auto">

@@ -89,7 +89,14 @@ export function ContactHero({ data }: { data: HeroData }) {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center overflow-visible bg-transparent">
+    <section className="  relative min-h-screen flex items-center
+        overflow-visible
+        text-slate-100
+
+        /* ✅ HERO PADDING STANDARD (for fixed navbar) */
+        pt-22 pb-12
+        md:pt-28 md:pb-16
+        lg:pt-30 lg:pb-20">
       {/* local micro grid (very subtle) */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.05]">
         <div
