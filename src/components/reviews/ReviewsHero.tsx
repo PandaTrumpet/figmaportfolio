@@ -5,6 +5,9 @@
 // import { motion, useReducedMotion } from "motion/react";
 // import { Star } from "lucide-react";
 // import type { LucideIcon } from "lucide-react";
+// import { PageContainer } from "../Layout/PageContainer";
+// import Image from "next/image";
+
 
 // type HeroData = {
 //   badge: string;
@@ -23,56 +26,55 @@
 //   const reduce = useReducedMotion();
 
 //   return (
-//     <section className="relative min-h-[92vh] md:min-h-screen flex items-center justify-center overflow-visible">
-//       {/* CLIP WRAPPER — режем только фон/оверлеи */}
-//       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-//         {/* local soft waves (без своего bg!) */}
+//     <section
+//       className="  relative min-h-screen flex items-center
+//         overflow-visible
+//         text-slate-100
+
+//         /* ✅ HERO PADDING STANDARD (for fixed navbar) */
+//         pt-22 pb-12
+//         md:pt-28 md:pb-16
+//         lg:pt-30 lg:pb-20"
+//     >
+//       <div className="pointer-events-none absolute inset-0 overflow-hidden z-0">
+//         {/* background image */}
+//         <div className="absolute inset-0">
+//           <Image
+//             src="https://images.unsplash.com/photo-1672380135241-c024f7fbfa13?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             alt=""
+//             fill
+//             priority
+//             sizes="100vw"
+//             className="object-cover opacity-55 saturate-[0.85]"
+//           />
+//         </div>
+
+//         {/* мягкий градиент только для читаемости (без "дна" секции) */}
+//         <div className="absolute inset-0 bg-gradient-to-b from-[#050814]/45 via-transparent to-transparent" />
+
+//         {/* локальные glow-споты */}
 //         <div className="absolute inset-0 opacity-70">
-//           <div className="absolute -top-44 -left-48 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle_at_center,_rgba(58,123,255,0.26),_transparent_70%)] blur-3xl" />
-//           <div className="absolute -bottom-52 -right-28 h-[620px] w-[620px] rounded-full bg-[radial-gradient(circle_at_center,_rgba(76,194,255,0.22),_transparent_72%)] blur-3xl" />
-//           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 h-[520px] w-[820px] rounded-full bg-[radial-gradient(circle_at_center,_rgba(155,93,255,0.16),_transparent_70%)] blur-3xl" />
+//           <div className="absolute -top-44 -left-44 h-[520px] w-[520px] bg-[radial-gradient(circle_at_center,_#3A7BFF44,_transparent_72%)] blur-3xl" />
+//           <div className="absolute top-[40%] -right-52 h-[680px] w-[680px] bg-[radial-gradient(circle_at_center,_#4CC2FF33,_transparent_72%)] blur-3xl" />
 //         </div>
 
-//         {/* subtle grid mask */}
-//         <div className="absolute inset-0 opacity-[0.10] [mask-image:radial-gradient(circle_at_center,black_55%,transparent_78%)]">
-//           <div className="h-full w-full bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:54px_54px]" />
+//         {/* very subtle noise */}
+//         <div className="absolute inset-0 opacity-[0.08] mix-blend-soft-light">
+//           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,_rgba(255,255,255,0.08),_transparent_40%),radial-gradient(circle_at_70%_60%,_rgba(255,255,255,0.06),_transparent_45%)]" />
 //         </div>
 
-//         {/* gentle vignette */}
-//         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(0,0,0,0.38)_100%)]" />
-
-//         {/* IMPORTANT: мягкий fade вниз, чтобы убить стык */}
-//         <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-b from-transparent to-[#020410]" />
+//         {/* плавный fade вниз */}
+//         <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-[#020410]" />
 //       </div>
 
-//       {/* Content */}
-//       <div className="relative z-10 max-w-[1400px] mx-auto w-full px-6 md:px-12 lg:px-20 text-center text-[#F5EFE7]">
+//       <PageContainer className="relative z-10 w-full text-center text-[#F5EFE7]">
 //         <motion.div
-//           initial={{ opacity: 0, y: 60 }}
+//           initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
 //           animate={{ opacity: 1, y: 0 }}
 //           transition={{ duration: 0.9, delay: 0.15, ease: EASE }}
 //         >
-//           {/* Badge */}
-//           <motion.div
-//             className="inline-flex justify-center mb-10"
-//             animate={reduce ? undefined : { y: [0, -10, 0] }}
-//             transition={
-//               reduce
-//                 ? undefined
-//                 : { duration: 4.2, repeat: Infinity, ease: "easeInOut" }
-//             }
-//           >
-//             <div className="relative inline-flex items-center gap-3 rounded-full px-6 py-3 border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] backdrop-blur-xl shadow-[0_18px_70px_rgba(0,0,0,0.65)]">
-//               <span className="absolute -inset-6 rounded-full bg-[radial-gradient(circle_at_center,rgba(76,194,255,0.28),transparent_70%)] blur-2xl -z-10" />
-//               <Star className="h-5 w-5 text-[#E8F2FF] fill-[#E8F2FF]" />
-//               <span className="text-xs md:text-sm uppercase tracking-[0.28em] text-[#EAF0FF]/90">
-//                 {data.badge}
-//               </span>
-//             </div>
-//           </motion.div>
-
 //           {/* Title */}
-//           <h1 className=" tracking-tight  mb-8  text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95]">
+//           <h1 className="tracking-tight mb-8 text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95]">
 //             <span className="bg-clip-text text-transparent bg-[linear-gradient(90deg,#F5EFE7_0%,#E8F2FF_25%,#4CC2FF_55%,#9B5DFF_100%)]">
 //               {data.title}
 //             </span>
@@ -84,13 +86,16 @@
 //           </p>
 
 //           {/* Stats */}
-//           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+//           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-[1400px] mx-auto">
 //             {data.stats.map((stat, index) => {
 //               const Icon = stat.icon;
+
 //               return (
 //                 <motion.div
 //                   key={`${stat.label}-${index}`}
-//                   initial={{ opacity: 0, y: 26 }}
+//                   initial={
+//                     reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 26 }
+//                   }
 //                   animate={{ opacity: 1, y: 0 }}
 //                   transition={{
 //                     duration: 0.6,
@@ -116,8 +121,8 @@
 //                         "linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.20) 30%, transparent 60%)",
 //                       mixBlendMode: "screen",
 //                     }}
-//                     initial={{ x: "-140%" }}
-//                     whileHover={{ x: "140%" }}
+//                     initial={reduce ? false : { x: "-140%" }}
+//                     whileHover={reduce ? undefined : { x: "140%" }}
 //                     transition={{ duration: 0.9, ease: "easeInOut" }}
 //                   />
 
@@ -156,7 +161,7 @@
 //             })}
 //           </div>
 //         </motion.div>
-//       </div>
+//       </PageContainer>
 //     </section>
 //   );
 // }
@@ -165,11 +170,9 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
-import { Star } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { PageContainer } from "../Layout/PageContainer";
 import Image from "next/image";
-
 
 type HeroData = {
   badge: string;
@@ -189,14 +192,13 @@ export function ReviewsHero({ data }: { data: HeroData }) {
 
   return (
     <section
-      className="  relative min-h-screen flex items-center
-        overflow-visible
-        text-slate-100
-
-        /* ✅ HERO PADDING STANDARD (for fixed navbar) */
+      className="
+        relative min-h-[100svh] flex items-center
+        overflow-visible text-slate-100
         pt-22 pb-12
         md:pt-28 md:pb-16
-        lg:pt-30 lg:pb-20"
+        lg:pt-30 lg:pb-20
+      "
     >
       <div className="pointer-events-none absolute inset-0 overflow-hidden z-0">
         {/* background image */}
@@ -211,118 +213,142 @@ export function ReviewsHero({ data }: { data: HeroData }) {
           />
         </div>
 
-        {/* мягкий градиент только для читаемости (без "дна" секции) */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#050814]/45 via-transparent to-transparent" />
 
-        {/* локальные glow-споты */}
         <div className="absolute inset-0 opacity-70">
           <div className="absolute -top-44 -left-44 h-[520px] w-[520px] bg-[radial-gradient(circle_at_center,_#3A7BFF44,_transparent_72%)] blur-3xl" />
           <div className="absolute top-[40%] -right-52 h-[680px] w-[680px] bg-[radial-gradient(circle_at_center,_#4CC2FF33,_transparent_72%)] blur-3xl" />
         </div>
 
-        {/* very subtle noise */}
         <div className="absolute inset-0 opacity-[0.08] mix-blend-soft-light">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,_rgba(255,255,255,0.08),_transparent_40%),radial-gradient(circle_at_70%_60%,_rgba(255,255,255,0.06),_transparent_45%)]" />
         </div>
 
-        {/* плавный fade вниз */}
         <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-[#020410]" />
       </div>
 
-      <PageContainer className="relative z-10 w-full text-center text-[#F5EFE7]">
-        <motion.div
-          initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.15, ease: EASE }}
-        >
-          {/* Title */}
-          <h1 className="tracking-tight mb-8 text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95]">
-            <span className="bg-clip-text text-transparent bg-[linear-gradient(90deg,#F5EFE7_0%,#E8F2FF_25%,#4CC2FF_55%,#9B5DFF_100%)]">
+      <PageContainer className="relative z-10 w-full text-[#F5EFE7]">
+        <div className="min-h-[calc(100svh-6rem)] grid place-items-center">
+          <motion.div
+            initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.15, ease: EASE }}
+            className="w-full flex flex-col items-center text-center"
+          >
+            {/* Title (Home-style) */}
+            <h1
+              className="
+                font-semibold tracking-tight text-balance
+                leading-[0.98]
+                mb-6 md:mb-8
+
+                max-w-[18ch]
+                sm:max-w-[20ch]
+                lg:max-w-[22ch]
+                mx-auto
+
+                text-[clamp(2.35rem,5.8vw,4.8rem)]
+                md:text-[clamp(2.9rem,5.0vw,5.2rem)]
+                lg:text-[clamp(3.1rem,4.2vw,5.3rem)]
+              "
+            >
               {data.title}
-            </span>
-          </h1>
+            </h1>
 
-          {/* Subtitle */}
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#C7CEDF] max-w-4xl mx-auto leading-relaxed mb-12">
-            {data.subtitle}
-          </p>
+            {/* Subtitle (brighter + clamp) */}
+            <p
+              className="
+                text-white/90 leading-relaxed
+                mb-10 md:mb-12
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-[1400px] mx-auto">
-            {data.stats.map((stat, index) => {
-              const Icon = stat.icon;
+                max-w-[52ch]
+                lg:max-w-[60ch]
+                mx-auto
 
-              return (
-                <motion.div
-                  key={`${stat.label}-${index}`}
-                  initial={
-                    reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 26 }
-                  }
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.6,
-                    delay: 0.45 + index * 0.08,
-                    ease: EASE,
-                  }}
-                  className="group relative rounded-3xl border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] backdrop-blur-xl p-5 md:p-6 shadow-[0_22px_80px_rgba(0,0,0,0.75)] overflow-hidden"
-                >
-                  <div className="pointer-events-none absolute -inset-10 opacity-30 blur-2xl bg-[radial-gradient(circle_at_top,rgba(58,123,255,0.55),transparent_60%)]" />
+                text-[clamp(1.05rem,2.2vw,1.25rem)]
+                md:text-[clamp(1.1rem,1.7vw,1.45rem)]
+              "
+            >
+              {data.subtitle}
+            </p>
 
+            {/* Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full max-w-[1400px] mx-auto">
+              {data.stats.map((stat, index) => {
+                const Icon = stat.icon;
+
+                return (
                   <motion.div
-                    className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{
-                      background:
-                        "radial-gradient(circle_at_center, rgba(76,194,255,0.25), transparent 60%)",
+                    key={`${stat.label}-${index}`}
+                    initial={
+                      reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 26 }
+                    }
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.6,
+                      delay: 0.45 + index * 0.08,
+                      ease: EASE,
                     }}
-                  />
+                    className="group relative rounded-3xl border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] backdrop-blur-xl p-5 md:p-6 shadow-[0_22px_80px_rgba(0,0,0,0.75)] overflow-hidden"
+                  >
+                    <div className="pointer-events-none absolute -inset-10 opacity-30 blur-2xl bg-[radial-gradient(circle_at_top,rgba(58,123,255,0.55),transparent_60%)]" />
 
-                  <motion.div
-                    className="pointer-events-none absolute -inset-10 opacity-0 group-hover:opacity-100"
-                    style={{
-                      background:
-                        "linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.20) 30%, transparent 60%)",
-                      mixBlendMode: "screen",
-                    }}
-                    initial={reduce ? false : { x: "-140%" }}
-                    whileHover={reduce ? undefined : { x: "140%" }}
-                    transition={{ duration: 0.9, ease: "easeInOut" }}
-                  />
+                    <motion.div
+                      className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      style={{
+                        background:
+                          "radial-gradient(circle_at_center, rgba(76,194,255,0.25), transparent 60%)",
+                      }}
+                    />
 
-                  <div className="relative z-10 transform-none will-change-auto">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="relative flex h-10 w-10 items-center justify-center rounded-2xl border border-white/15 bg-[radial-gradient(circle_at_top,_#3A7BFF3b,_#050816)] overflow-hidden shadow-[0_0_36px_rgba(58,123,255,0.55)]">
-                        <Icon className="relative z-10 h-5 w-5 text-[#E8F2FF]" />
-                        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[#3A7BFF66] to-[#4CC2FF66] opacity-40" />
+                    <motion.div
+                      className="pointer-events-none absolute -inset-10 opacity-0 group-hover:opacity-100"
+                      style={{
+                        background:
+                          "linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.20) 30%, transparent 60%)",
+                        mixBlendMode: "screen",
+                      }}
+                      initial={reduce ? false : { x: "-140%" }}
+                      whileHover={reduce ? undefined : { x: "140%" }}
+                      transition={{ duration: 0.9, ease: "easeInOut" }}
+                    />
+
+                    <div className="relative z-10 transform-none will-change-auto">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="relative flex h-10 w-10 items-center justify-center rounded-2xl border border-white/15 bg-[radial-gradient(circle_at_top,_#3A7BFF3b,_#050816)] overflow-hidden shadow-[0_0_36px_rgba(58,123,255,0.55)]">
+                          <Icon className="relative z-10 h-5 w-5 text-[#E8F2FF]" />
+                          <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[#3A7BFF66] to-[#4CC2FF66] opacity-40" />
+                        </div>
+
+                        <p className="text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.22em] text-white/70">
+                          {stat.label}
+                        </p>
                       </div>
 
-                      <p className="text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.22em] text-[#C7CEDF]/75">
-                        {stat.label}
+                      <p className="text-base sm:text-lg md:text-xl font-semibold text-[#F2F4FA] leading-snug">
+                        {stat.value}
                       </p>
                     </div>
 
-                    <p className="text-base sm:text-lg md:text-xl font-semibold text-[#F2F4FA] leading-snug">
-                      {stat.value}
-                    </p>
-                  </div>
-
-                  <div
-                    className="pointer-events-none absolute inset-0 rounded-3xl border border-transparent"
-                    style={{
-                      background:
-                        "linear-gradient(135deg, rgba(58,123,255,0.85), rgba(76,194,255,0.85), rgba(155,93,255,0.7))",
-                      WebkitMask:
-                        "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
-                      WebkitMaskComposite: "xor",
-                      maskComposite: "exclude",
-                      padding: "1px",
-                      opacity: 0.28,
-                    }}
-                  />
-                </motion.div>
-              );
-            })}
-          </div>
-        </motion.div>
+                    <div
+                      className="pointer-events-none absolute inset-0 rounded-3xl border border-transparent"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, rgba(58,123,255,0.85), rgba(76,194,255,0.85), rgba(155,93,255,0.7))",
+                        WebkitMask:
+                          "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
+                        WebkitMaskComposite: "xor",
+                        maskComposite: "exclude",
+                        padding: "1px",
+                        opacity: 0.28,
+                      }}
+                    />
+                  </motion.div>
+                );
+              })}
+            </div>
+          </motion.div>
+        </div>
       </PageContainer>
     </section>
   );

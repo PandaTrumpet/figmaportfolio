@@ -663,21 +663,7 @@ export function FocusSection() {
               Покажем примеры сайтов с WhatsApp и автоматизацией — без сложных
               обсуждений.
             </p>
-            {/* <motion.a
-              href="#contact"
-              className="relative inline-flex items-center justify-center overflow-hidden rounded-full px-10 py-3.5 md:px-12 md:py-4 text-sm md:text-base font-medium text-[#050816] shadow-[0_0_40px_rgba(76,194,255,0.65)]"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
-              <motion.span
-                className="absolute inset-0 bg-[linear-gradient(120deg,_transparent_0%,_white_20%,_transparent_40%)] opacity-0"
-                initial={{ x: "-100%" }}
-                whileHover={{ x: "100%", opacity: 0.5 }}
-                transition={{ duration: 0.7, ease: "easeInOut" }}
-              />
-              <span className="relative z-10">Запросить демо</span>
-            </motion.a> */}
+        
 
             <motion.a
               href="#contact"
