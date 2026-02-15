@@ -168,6 +168,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { Star } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { PageContainer } from "../Layout/PageContainer";
+import Image from "next/image";
 
 
 type HeroData = {
@@ -197,25 +198,35 @@ export function ReviewsHero({ data }: { data: HeroData }) {
         md:pt-28 md:pb-16
         lg:pt-30 lg:pb-20"
     >
-      {/* CLIP WRAPPER — режем только фон/оверлеи */}
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        {/* local soft waves (без своего bg!) */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden z-0">
+        {/* background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1672380135241-c024f7fbfa13?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover opacity-55 saturate-[0.85]"
+          />
+        </div>
+
+        {/* мягкий градиент только для читаемости (без "дна" секции) */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050814]/45 via-transparent to-transparent" />
+
+        {/* локальные glow-споты */}
         <div className="absolute inset-0 opacity-70">
-          <div className="absolute -top-44 -left-48 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle_at_center,_rgba(58,123,255,0.26),_transparent_70%)] blur-3xl" />
-          <div className="absolute -bottom-52 -right-28 h-[620px] w-[620px] rounded-full bg-[radial-gradient(circle_at_center,_rgba(76,194,255,0.22),_transparent_72%)] blur-3xl" />
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 h-[520px] w-[820px] rounded-full bg-[radial-gradient(circle_at_center,_rgba(155,93,255,0.16),_transparent_70%)] blur-3xl" />
+          <div className="absolute -top-44 -left-44 h-[520px] w-[520px] bg-[radial-gradient(circle_at_center,_#3A7BFF44,_transparent_72%)] blur-3xl" />
+          <div className="absolute top-[40%] -right-52 h-[680px] w-[680px] bg-[radial-gradient(circle_at_center,_#4CC2FF33,_transparent_72%)] blur-3xl" />
         </div>
 
-        {/* subtle grid mask */}
-        <div className="absolute inset-0 opacity-[0.10] [mask-image:radial-gradient(circle_at_center,black_55%,transparent_78%)]">
-          <div className="h-full w-full bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:54px_54px]" />
+        {/* very subtle noise */}
+        <div className="absolute inset-0 opacity-[0.08] mix-blend-soft-light">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,_rgba(255,255,255,0.08),_transparent_40%),radial-gradient(circle_at_70%_60%,_rgba(255,255,255,0.06),_transparent_45%)]" />
         </div>
 
-        {/* gentle vignette */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(0,0,0,0.38)_100%)]" />
-
-        {/* IMPORTANT: мягкий fade вниз, чтобы убить стык */}
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-b from-transparent to-[#020410]" />
+        {/* плавный fade вниз */}
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-[#020410]" />
       </div>
 
       <PageContainer className="relative z-10 w-full text-center text-[#F5EFE7]">
@@ -224,8 +235,6 @@ export function ReviewsHero({ data }: { data: HeroData }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.15, ease: EASE }}
         >
-      
-
           {/* Title */}
           <h1 className="tracking-tight mb-8 text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95]">
             <span className="bg-clip-text text-transparent bg-[linear-gradient(90deg,#F5EFE7_0%,#E8F2FF_25%,#4CC2FF_55%,#9B5DFF_100%)]">

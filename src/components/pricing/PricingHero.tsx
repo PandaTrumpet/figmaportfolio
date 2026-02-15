@@ -211,6 +211,7 @@ import { ArrowRight, Shield } from "lucide-react";
 import { pricingData } from "@/src/data/pricingData";
 import { FloatingPriceTags } from "./FloatingPriceTags";
 import { PageContainer } from "../Layout/PageContainer";
+import Image from "next/image";
 
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
@@ -233,45 +234,35 @@ export function PricingHero() {
         md:pt-28 md:pb-16
         lg:pt-30 lg:pb-20  overflow-visible"
     >
-      {/* LOCAL FX (clip only background, not content) */}
-      <div
-        className="
-          pointer-events-none absolute inset-0 -z-10 overflow-hidden
-          [mask-image:linear-gradient(to_bottom,black_0%,black_82%,transparent_100%)]
-          [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_82%,transparent_100%)]
-        "
-        aria-hidden="true"
-      >
-     
-
-        {/* subtle grid / dots */}
-        <div className="absolute inset-0 opacity-[0.10]">
-          <motion.div
-            className="h-full w-full"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.55) 1px, transparent 0)",
-              backgroundSize: "56px 56px",
-              maskImage:
-                "radial-gradient(circle at 50% 35%, black 0%, transparent 75%)",
-              WebkitMaskImage:
-                "radial-gradient(circle at 50% 35%, black 0%, transparent 75%)",
-            }}
-            animate={
-              reduce
-                ? undefined
-                : { backgroundPosition: ["0px 0px", "56px 56px"] }
-            }
-            transition={
-              reduce
-                ? undefined
-                : { duration: 44, repeat: Infinity, ease: "linear" }
-            }
+      <div className="pointer-events-none absolute inset-0 overflow-hidden z-0">
+        {/* background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1762831063004-bbd3ea38ba3a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover opacity-55 saturate-[0.85]"
           />
         </div>
 
-        {/* bottom fade (extra safety to kill any seam) */}
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-[#020410]" />
+        {/* мягкий градиент только для читаемости (без "дна" секции) */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050814]/45 via-transparent to-transparent" />
+
+        {/* локальные glow-споты */}
+        <div className="absolute inset-0 opacity-70">
+          <div className="absolute -top-44 -left-44 h-[520px] w-[520px] bg-[radial-gradient(circle_at_center,_#3A7BFF44,_transparent_72%)] blur-3xl" />
+          <div className="absolute top-[40%] -right-52 h-[680px] w-[680px] bg-[radial-gradient(circle_at_center,_#4CC2FF33,_transparent_72%)] blur-3xl" />
+        </div>
+
+        {/* very subtle noise */}
+        <div className="absolute inset-0 opacity-[0.08] mix-blend-soft-light">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,_rgba(255,255,255,0.08),_transparent_40%),radial-gradient(circle_at_70%_60%,_rgba(255,255,255,0.06),_transparent_45%)]" />
+        </div>
+
+        {/* плавный fade вниз */}
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-[#020410]" />
       </div>
 
       {/* content (единственный источник padding по ширине) */}
@@ -446,9 +437,7 @@ export function PricingHero() {
       <div
         className="pointer-events-none absolute inset-0 z-0"
         aria-hidden="true"
-      >
-        <FloatingPriceTags />
-      </div>
+      ></div>
 
       {/* floating corner cube */}
       <motion.div

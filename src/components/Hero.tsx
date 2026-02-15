@@ -270,8 +270,38 @@ export function Hero() {
         lg:pt-30 lg:pb-20
       "
     >
+      <div className="pointer-events-none absolute inset-0 overflow-hidden z-0">
+        {/* background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1643576780112-d390f5de9241?q=80&w=1178&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover opacity-55 saturate-[0.85]"
+          />
+        </div>
+
+        {/* мягкий градиент только для читаемости (без "дна" секции) */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050814]/45 via-transparent to-transparent" />
+
+        {/* локальные glow-споты */}
+        <div className="absolute inset-0 opacity-70">
+          <div className="absolute -top-44 -left-44 h-[520px] w-[520px] bg-[radial-gradient(circle_at_center,_#3A7BFF44,_transparent_72%)] blur-3xl" />
+          <div className="absolute top-[40%] -right-52 h-[680px] w-[680px] bg-[radial-gradient(circle_at_center,_#4CC2FF33,_transparent_72%)] blur-3xl" />
+        </div>
+
+        {/* very subtle noise */}
+        <div className="absolute inset-0 opacity-[0.08] mix-blend-soft-light">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,_rgba(255,255,255,0.08),_transparent_40%),radial-gradient(circle_at_70%_60%,_rgba(255,255,255,0.06),_transparent_45%)]" />
+        </div>
+
+        {/* плавный fade вниз */}
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-[#020410]" />
+      </div>
       {/* Неоновые волны (full-bleed, не зависят от контейнера) */}
-      <div
+      {/* <div
         className="pointer-events-none absolute -top-40 right-[-10%] h-96 w-96 rounded-full opacity-60 blur-3xl"
         style={{
           background:
@@ -284,7 +314,7 @@ export function Hero() {
           background:
             "radial-gradient(circle, rgba(58,123,255,0.85), transparent 55%)",
         }}
-      />
+      /> */}
 
       <PageContainer>
         <div className="relative z-10 w-full grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -412,13 +442,13 @@ export function Hero() {
           </motion.div>
 
           {/* Right Column Images */}
-          <motion.div
+          {/* <motion.div
             className="relative h-[500px] md:h-[600px]"
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
-            {/* Top Card */}
+          
             <motion.div
               className="
                 absolute top-0 right-0 w-[70%] h-[60%]
@@ -441,7 +471,7 @@ export function Hero() {
               />
             </motion.div>
 
-            {/* Bottom Card */}
+         
             <motion.div
               className="
                 absolute bottom-0 left-0 w-[70%] h-[60%]
@@ -463,7 +493,7 @@ export function Hero() {
                 height={720}
               />
             </motion.div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </PageContainer>
     </section>

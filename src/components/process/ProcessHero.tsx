@@ -182,6 +182,7 @@ import { motion, MotionValue, useReducedMotion } from "motion/react";
 import { ChevronDown } from "lucide-react";
 import { HologramShapes } from "./HologramShapes";
 import { PageContainer } from "../Layout/PageContainer";
+import Image from "next/image";
 
 
 type HeroData = {
@@ -209,6 +210,36 @@ export function ProcessHero({
         lg:pt-30 lg:pb-20
     flex items-center justify-center overflow-visible text-[#F5EFE7]"
     >
+      <div className="pointer-events-none absolute inset-0 overflow-hidden z-0">
+        {/* background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1758691736804-4e88c52ad58b?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover opacity-55 saturate-[0.85]"
+          />
+        </div>
+
+        {/* мягкий градиент только для читаемости (без "дна" секции) */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050814]/45 via-transparent to-transparent" />
+
+        {/* локальные glow-споты */}
+        <div className="absolute inset-0 opacity-70">
+          <div className="absolute -top-44 -left-44 h-[520px] w-[520px] bg-[radial-gradient(circle_at_center,_#3A7BFF44,_transparent_72%)] blur-3xl" />
+          <div className="absolute top-[40%] -right-52 h-[680px] w-[680px] bg-[radial-gradient(circle_at_center,_#4CC2FF33,_transparent_72%)] blur-3xl" />
+        </div>
+
+        {/* very subtle noise */}
+        <div className="absolute inset-0 opacity-[0.08] mix-blend-soft-light">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,_rgba(255,255,255,0.08),_transparent_40%),radial-gradient(circle_at_70%_60%,_rgba(255,255,255,0.06),_transparent_45%)]" />
+        </div>
+
+        {/* плавный fade вниз */}
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-[#020410]" />
+      </div>
       {/* LOCAL FX — clip ONLY background */}
       <div
         className="
@@ -217,61 +248,7 @@ export function ProcessHero({
           [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_80%,transparent_100%)]
         "
         aria-hidden="true"
-      >
-        {/* Ambient hologram spots */}
-        <div className="absolute inset-0">
-          <div
-            className="absolute -top-44 -left-48 h-[520px] w-[520px] rounded-full
-            bg-[radial-gradient(circle_at_center,_rgba(58,123,255,0.55),_transparent_70%)]
-            blur-3xl opacity-60"
-          />
-          <div
-            className="absolute -bottom-44 -right-24 h-[620px] w-[620px] rounded-full
-            bg-[radial-gradient(circle_at_center,_rgba(76,194,255,0.55),_transparent_70%)]
-            blur-3xl opacity-55"
-          />
-          <div
-            className="absolute top-1/3 left-1/2 -translate-x-1/2 h-[520px] w-[520px] rounded-full
-            bg-[radial-gradient(circle_at_center,_rgba(155,93,255,0.38),_transparent_72%)]
-            blur-3xl opacity-45"
-          />
-        </div>
-
-        {/* Animated grid (masked) */}
-        <div className="absolute inset-0 opacity-[0.06]">
-          <motion.div
-            className="h-full w-full"
-            style={{
-              backgroundImage:
-                "linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px)",
-              backgroundSize: "84px 84px",
-              maskImage:
-                "radial-gradient(circle at 50% 38%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 45%, rgba(0,0,0,0) 72%)",
-              WebkitMaskImage:
-                "radial-gradient(circle at 50% 38%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 45%, rgba(0,0,0,0) 72%)",
-            }}
-            animate={
-              reduce
-                ? undefined
-                : { backgroundPosition: ["0px 0px", "84px 84px"] }
-            }
-            transition={
-              reduce
-                ? undefined
-                : { duration: 34, repeat: Infinity, ease: "linear" }
-            }
-          />
-        </div>
-
-        {/* Noise (masked implicitly) */}
-        <div className="absolute inset-0 opacity-[0.05] mix-blend-soft-light">
-          <div
-            className="absolute inset-0
-            [background-image:radial-gradient(rgba(255,255,255,0.12)_1px,transparent_1px)]
-            [background-size:3px_3px]"
-          />
-        </div>
-      </div>
+      ></div>
 
       {/* CONTENT */}
       <PageContainer>
@@ -322,7 +299,7 @@ export function ProcessHero({
       </PageContainer>
 
       {/* Decorative hologram shapes (NOT clipped) */}
-      <HologramShapes />
+      {/* <HologramShapes /> */}
     </section>
   );
 }
