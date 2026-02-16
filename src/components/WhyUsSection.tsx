@@ -534,7 +534,13 @@ export function WhyUsSection() {
             </motion.div>
 
             <motion.h2
-              className="text-3xl md:text-4xl lg:text-5xl text-slate-50"
+              className="  text-3xl 
+  md:text-4xl 
+  lg:text-5xl 
+  xl:text-6xl 
+  font-semibold 
+  leading-tight 
+  md:leading-[1.15] text-slate-50 mb-3"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

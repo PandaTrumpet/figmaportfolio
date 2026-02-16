@@ -225,7 +225,15 @@ export function ClientStoriesSection({ stories }: { stories: ClientStory[] }) {
               <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[#3A7BFF66] to-[#4CC2FF66] opacity-40" />
             </div>
 
-            <motion.h2 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight">
+            <motion.h2
+              className="text-3xl 
+  md:text-4xl 
+  lg:text-5xl 
+  xl:text-6xl 
+  font-semibold 
+  leading-tight 
+  md:leading-[1.15]  text-slate-50 mb-3"
+            >
               <motion.span
                 className="relative inline-block"
                 initial="initial"

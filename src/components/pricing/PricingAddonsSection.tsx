@@ -184,7 +184,15 @@ export function PricingAddonsSection() {
               <Plus className="h-6 w-6 md:h-7 md:w-7 text-[#E8F2FF]" />
             </motion.div>
 
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight">
+            <h2
+              className="text-3xl 
+  md:text-4xl 
+  lg:text-5xl 
+  xl:text-6xl 
+  font-semibold 
+  leading-tight 
+  md:leading-[1.15]  text-slate-50 mb-3"
+            >
               {pricingData.addons.title}
             </h2>
           </div>

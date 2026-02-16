@@ -1,11 +1,9 @@
 
-
-
 // "use client";
 
 // import { useEffect, useRef, useState } from "react";
 // import { ImageWithFallback } from "./figma/ImageWithFallback";
-
+// import { PageContainer } from "./Layout/PageContainer";
 
 // const testimonials = [
 //   {
@@ -52,7 +50,7 @@
 //       ([entry]) => {
 //         if (entry.isIntersecting) setIsVisible(true);
 //       },
-//       { threshold: 0.2 }
+//       { threshold: 0.2 },
 //     );
 
 //     if (testimonialRef.current) observer.observe(testimonialRef.current);
@@ -104,20 +102,18 @@
 //             <div className="h-24 w-[140%] bg-gradient-to-r from-transparent via-white/12 to-transparent blur-[1px]" />
 //           </div>
 //         </div>
-//         {/* Сакв */}
 
 //         <div className="relative z-10 flex flex-col md:flex-row gap-6 md:gap-10 items-start">
-//           {/* Left: Avatar + identity */}
+//           {/* Left */}
 //           <div className="flex items-center gap-4 shrink-0 min-w-[220px]">
-//             {/* Avatar */}
 //             <div
 //               className="
-//         relative
-//         h-14 w-14 md:h-16 md:w-16
-//         rounded-xl overflow-hidden
-//         border border-cyan-400/30 bg-[#0B1020]/70
-//         shadow-[0_0_26px_rgba(76,194,255,0.18)]
-//       "
+//                 relative
+//                 h-14 w-14 md:h-16 md:w-16
+//                 rounded-xl overflow-hidden
+//                 border border-cyan-400/30 bg-[#0B1020]/70
+//                 shadow-[0_0_26px_rgba(76,194,255,0.18)]
+//               "
 //             >
 //               <ImageWithFallback
 //                 src={testimonial.image}
@@ -127,7 +123,6 @@
 //               <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent" />
 //             </div>
 
-//             {/* Name / role */}
 //             <div className="min-w-0">
 //               <p className="text-[15px] font-medium text-slate-100 leading-tight truncate">
 //                 {testimonial.name}
@@ -138,22 +133,21 @@
 //             </div>
 //           </div>
 
-//           {/* Center: Story */}
+//           {/* Story */}
 //           <div className="flex-1">
 //             <blockquote className="text-lg md:text-xl leading-relaxed text-slate-100/90">
 //               {testimonial.story}
 //             </blockquote>
 
-//             {/* Metrics */}
 //             <div className="mt-5 flex flex-wrap gap-3">
 //               <span
 //                 className="
-//           inline-flex items-center gap-2
-//           px-3 py-1.5 rounded-full
-//           border border-cyan-400/30 bg-[#0A0F1E]/70
-//           text-xs text-slate-200
-//           shadow-[0_0_20px_rgba(76,194,255,0.15)]
-//         "
+//                   inline-flex items-center gap-2
+//                   px-3 py-1.5 rounded-full
+//                   border border-cyan-400/30 bg-[#0A0F1E]/70
+//                   text-xs text-slate-200
+//                   shadow-[0_0_20px_rgba(76,194,255,0.15)]
+//                 "
 //               >
 //                 <span className="h-1.5 w-1.5 rounded-full bg-cyan-300 shadow-[0_0_10px_rgba(76,194,255,0.6)]" />
 //                 Заявок стало больше
@@ -161,22 +155,22 @@
 
 //               <span
 //                 className="
-//           inline-flex items-center gap-2
-//           px-3 py-1.5 rounded-full
-//           border border-cyan-400/30 bg-[#0A0F1E]/70
-//           text-xs text-slate-200
-//         "
+//                   inline-flex items-center gap-2
+//                   px-3 py-1.5 rounded-full
+//                   border border-cyan-400/30 bg-[#0A0F1E]/70
+//                   text-xs text-slate-200
+//                 "
 //               >
 //                 WhatsApp-автоматизация
 //               </span>
 
 //               <span
 //                 className="
-//           inline-flex items-center gap-2
-//           px-3 py-1.5 rounded-full
-//           border border-cyan-400/30 bg-[#0A0F1E]/70
-//           text-xs text-slate-200
-//         "
+//                   inline-flex items-center gap-2
+//                   px-3 py-1.5 rounded-full
+//                   border border-cyan-400/30 bg-[#0A0F1E]/70
+//                   text-xs text-slate-200
+//                 "
 //               >
 //                 Учёт заявок (CRM/таблица)
 //               </span>
@@ -192,15 +186,12 @@
 //   return (
 //     <section
 //       id="testimonials"
-//       className="
-//         relative min-h-screen flex items-center
-//         px-6 md:px-12 lg:px-20 py-32 overflow-visible
-        
-//         text-slate-100
-//       "
+//       className="relative min-h-screen flex items-center  pt-10 pb-10
+//         md:pt-14 md:pb-14
+//         lg:pt-16 lg:pb-16 overflow-visible text-slate-100"
 //       aria-labelledby="testimonials-title"
 //     >
-//       {/* Neon waves (same as Hero/Process) */}
+//       {/* Neon waves — full-bleed */}
 //       <div
 //         className="pointer-events-none absolute -top-40 right-[-10%] h-96 w-96 rounded-full opacity-60 blur-3xl"
 //         style={{
@@ -216,7 +207,7 @@
 //         }}
 //       />
 
-//       {/* subtle grid overlay */}
+//       {/* subtle grid overlay — full-bleed */}
 //       <div className="pointer-events-none absolute inset-0 opacity-[0.10]">
 //         <div
 //           className="h-full w-full"
@@ -228,36 +219,48 @@
 //         />
 //       </div>
 
-//       <div className="relative z-10 max-w-[1200px] mx-auto">
-//         {/* Section Header */}
-//         <div className="mb-12 md:mb-16">
-//           <div className="w-16 h-0.5 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-transparent mb-6" />
-//           <h2
-//             id="testimonials-title"
-//             className="text-3xl md:text-4xl lg:text-5xl leading-tight max-w-3xl text-slate-100"
-//           >
-//             Отзывы и результаты
-//           </h2>
-//           <p className="text-base md:text-lg text-slate-300/90 mt-4 max-w-2xl leading-relaxed">
-//             Коротко о том, что меняется после запуска: заявки не теряются,
-//             клиенты быстрее получают ответ, а обработка становится проще.
-//           </p>
-//         </div>
+//       <PageContainer className="max-w-[1200px]">
+//         <div className="relative z-10">
+//           {/* Header */}
+//           <div className="mb-12 md:mb-16">
+//             <div className="w-16 h-0.5 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-transparent mb-6" />
+//             <h2
+//               id="testimonials-title"
+//               className="  text-3xl
+//   md:text-4xl
+//   lg:text-5xl
+//   xl:text-6xl
+//   font-semibold
+//   leading-tight
+//   md:leading-[1.15]  text-slate-50"
+//             >
+//               Отзывы и результаты
+//             </h2>
+//             <p className="text-base md:text-lg text-slate-300/90 mt-4 max-w-2xl leading-relaxed">
+//               Коротко о том, что меняется после запуска: заявки не теряются,
+//               клиенты быстрее получают ответ, а обработка становится проще.
+//             </p>
+//           </div>
 
-//         {/* Testimonials */}
-//         <div className="space-y-10 md:space-y-12">
-//           {testimonials.map((testimonial, index) => (
-//             <Testimonial key={index} testimonial={testimonial} index={index} />
-//           ))}
-//         </div>
+//           {/* Testimonials */}
+//           <div className="space-y-10 md:space-y-12">
+//             {testimonials.map((testimonial, index) => (
+//               <Testimonial
+//                 key={index}
+//                 testimonial={testimonial}
+//                 index={index}
+//               />
+//             ))}
+//           </div>
 
-//         {/* Decorative element */}
-//         <div className="mt-12 flex items-center justify-center gap-4">
-//           <div className="w-16 h-px bg-cyan-200/20" />
-//           <div className="w-2 h-2 bg-cyan-200/30 rounded-full shadow-[0_0_20px_rgba(76,194,255,0.35)]" />
-//           <div className="w-16 h-px bg-cyan-200/20" />
+//           {/* Decorative element */}
+//           <div className="mt-12 flex items-center justify-center gap-4">
+//             <div className="w-16 h-px bg-cyan-200/20" />
+//             <div className="w-2 h-2 bg-cyan-200/30 rounded-full shadow-[0_0_20px_rgba(76,194,255,0.35)]" />
+//             <div className="w-16 h-px bg-cyan-200/20" />
+//           </div>
 //         </div>
-//       </div>
+//       </PageContainer>
 //     </section>
 //   );
 // }
@@ -265,7 +268,8 @@
 
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useMemo } from "react";
+import { motion, useReducedMotion } from "motion/react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { PageContainer } from "./Layout/PageContainer";
 
@@ -299,6 +303,8 @@ const testimonials = [
   },
 ];
 
+const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
 function Testimonial({
   testimonial,
   index,
@@ -306,28 +312,57 @@ function Testimonial({
   testimonial: (typeof testimonials)[0];
   index: number;
 }) {
-  const [isVisible, setIsVisible] = useState(false);
-  const testimonialRef = useRef<HTMLDivElement>(null);
+  const reduce = useReducedMotion();
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setIsVisible(true);
+  const cardVariants = useMemo(
+    () => ({
+      hidden: { opacity: 0, y: reduce ? 0 : 14 },
+      show: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.8, ease: EASE },
       },
-      { threshold: 0.2 },
-    );
+    }),
+    [reduce],
+  );
 
-    if (testimonialRef.current) observer.observe(testimonialRef.current);
-    return () => observer.disconnect();
-  }, []);
+  const textWrapVariants = useMemo(
+    () => ({
+      hidden: {},
+      show: {
+        transition: {
+          staggerChildren: 0.085,
+          delayChildren: 0.12,
+        },
+      },
+    }),
+    [],
+  );
+
+  const textItemVariants = useMemo(
+    () => ({
+      hidden: {
+        opacity: 0,
+        y: reduce ? 0 : 10,
+        filter: reduce ? "none" : "blur(6px)",
+      },
+      show: {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        transition: { duration: 0.7, ease: EASE },
+      },
+    }),
+    [reduce],
+  );
 
   return (
-    <div
-      ref={testimonialRef}
-      className={`transition-all duration-1000 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-      }`}
-      style={{ transitionDelay: `${index * 140}ms` }}
+    <motion.div
+      variants={cardVariants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.25 }}
+      style={{ transitionDelay: `${index * 90}ms` }}
     >
       <div
         className="
@@ -387,24 +422,50 @@ function Testimonial({
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent" />
             </div>
 
-            <div className="min-w-0">
-              <p className="text-[15px] font-medium text-slate-100 leading-tight truncate">
+            {/* Texts (name + role) */}
+            <motion.div
+              className="min-w-0"
+              variants={textWrapVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.35 }}
+            >
+              <motion.p
+                className="text-[15px] font-medium text-slate-100 leading-tight truncate"
+                variants={textItemVariants}
+              >
                 {testimonial.name}
-              </p>
-              <p className="text-xs uppercase tracking-[0.22em] text-slate-300/60 mt-1">
+              </motion.p>
+              <motion.p
+                className="text-xs uppercase tracking-[0.22em] text-slate-300/60 mt-1"
+                variants={textItemVariants}
+              >
                 {testimonial.role}
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
           </div>
 
           {/* Story */}
-          <div className="flex-1">
-            <blockquote className="text-lg md:text-xl leading-relaxed text-slate-100/90">
+          <motion.div
+            className="flex-1"
+            variants={textWrapVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <motion.blockquote
+              className="text-lg md:text-xl leading-relaxed text-slate-100/90"
+              variants={textItemVariants}
+            >
               {testimonial.story}
-            </blockquote>
+            </motion.blockquote>
 
-            <div className="mt-5 flex flex-wrap gap-3">
-              <span
+            <motion.div
+              className="mt-5 flex flex-wrap gap-3"
+              variants={textWrapVariants}
+            >
+              <motion.span
+                variants={textItemVariants}
                 className="
                   inline-flex items-center gap-2
                   px-3 py-1.5 rounded-full
@@ -415,9 +476,10 @@ function Testimonial({
               >
                 <span className="h-1.5 w-1.5 rounded-full bg-cyan-300 shadow-[0_0_10px_rgba(76,194,255,0.6)]" />
                 Заявок стало больше
-              </span>
+              </motion.span>
 
-              <span
+              <motion.span
+                variants={textItemVariants}
                 className="
                   inline-flex items-center gap-2
                   px-3 py-1.5 rounded-full
@@ -426,9 +488,10 @@ function Testimonial({
                 "
               >
                 WhatsApp-автоматизация
-              </span>
+              </motion.span>
 
-              <span
+              <motion.span
+                variants={textItemVariants}
                 className="
                   inline-flex items-center gap-2
                   px-3 py-1.5 rounded-full
@@ -437,20 +500,52 @@ function Testimonial({
                 "
               >
                 Учёт заявок (CRM/таблица)
-              </span>
-            </div>
-          </div>
+              </motion.span>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 export function TestimonialsSection() {
+  const reduce = useReducedMotion();
+
+  const headerWrap = useMemo(
+    () => ({
+      hidden: {},
+      show: {
+        transition: {
+          staggerChildren: 0.1,
+          delayChildren: 0.05,
+        },
+      },
+    }),
+    [],
+  );
+
+  const headerItem = useMemo(
+    () => ({
+      hidden: {
+        opacity: 0,
+        y: reduce ? 0 : 12,
+        filter: reduce ? "none" : "blur(8px)",
+      },
+      show: {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        transition: { duration: 0.85, ease: EASE },
+      },
+    }),
+    [reduce],
+  );
+
   return (
     <section
       id="testimonials"
-      className="relative min-h-screen flex items-center  pt-10 pb-10
+      className="relative min-h-screen flex items-center pt-10 pb-10
         md:pt-14 md:pb-14
         lg:pt-16 lg:pb-16 overflow-visible text-slate-100"
       aria-labelledby="testimonials-title"
@@ -485,20 +580,37 @@ export function TestimonialsSection() {
 
       <PageContainer className="max-w-[1200px]">
         <div className="relative z-10">
-          {/* Header */}
-          <div className="mb-12 md:mb-16">
-            <div className="w-16 h-0.5 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-transparent mb-6" />
-            <h2
+          {/* Header — animated texts */}
+          <motion.div
+            className="mb-12 md:mb-16"
+            variants={headerWrap}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.55 }}
+          >
+            <motion.div
+              className="w-16 h-0.5 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-transparent mb-6"
+              variants={headerItem}
+            />
+            <motion.h2
               id="testimonials-title"
-              className="text-3xl md:text-4xl lg:text-5xl leading-tight max-w-3xl text-slate-100"
+              className=" mb-3
+                text-3xl md:text-4xl lg:text-5xl xl:text-6xl
+                font-semibold leading-tight md:leading-[1.15]
+                text-slate-50
+              "
+              variants={headerItem}
             >
               Отзывы и результаты
-            </h2>
-            <p className="text-base md:text-lg text-slate-300/90 mt-4 max-w-2xl leading-relaxed">
+            </motion.h2>
+            <motion.p
+              className="text-base md:text-lg text-slate-300/90 mt-4 max-w-2xl leading-relaxed"
+              variants={headerItem}
+            >
               Коротко о том, что меняется после запуска: заявки не теряются,
               клиенты быстрее получают ответ, а обработка становится проще.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
           {/* Testimonials */}
           <div className="space-y-10 md:space-y-12">

@@ -69,7 +69,15 @@ export function ProcessSteps({ steps }: { steps: ProcessStep[] }) {
               viewport={{ once: true }}
             />
 
-            <h2 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-4 md:mb-6">
+            <h2
+              className="text-3xl 
+  md:text-4xl 
+  lg:text-5xl 
+  xl:text-6xl 
+  font-semibold 
+  leading-tight 
+  md:leading-[1.15]  text-slate-50 mb-3"
+            >
               5 шагов — от идеи до заявок в WhatsApp
             </h2>
 
@@ -81,7 +89,7 @@ export function ProcessSteps({ steps }: { steps: ProcessStep[] }) {
 
           <div className="space-y-24 md:space-y-32 lg:space-y-40">
             {steps.map((step, index) => (
-              <ProcessStep key={index} step={step}  />
+              <ProcessStep key={index} step={step} />
             ))}
           </div>
         </div>

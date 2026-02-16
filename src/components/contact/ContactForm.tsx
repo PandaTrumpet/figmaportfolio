@@ -363,7 +363,15 @@ export function ContactForm({
           viewport={{ once: true }}
           transition={{ duration: reduce ? 0 : 0.8, ease: EASE }}
         />
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-[#F2F4FA] mb-4">
+        <h2
+          className="text-3xl 
+  md:text-4xl 
+  lg:text-5xl 
+  xl:text-6xl 
+  font-semibold 
+  leading-tight 
+  md:leading-[1.15]  text-slate-50 mb-3"
+        >
           {form.title}
         </h2>
         <p className="text-base md:text-lg lg:text-xl text-[#C7CEDF] leading-relaxed max-w-2xl">

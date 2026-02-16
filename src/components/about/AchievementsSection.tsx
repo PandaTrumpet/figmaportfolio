@@ -291,7 +291,15 @@ export function AchievementsSection({
               <BadgeCheck className="h-6 w-6 text-[#E8F2FF]" />
             </span>
 
-            <h2 className="text-3xl font-semibold tracking-tight text-[#F5EFE7] md:text-5xl lg:text-6xl xl:text-7xl">
+            <h2
+              className="text-3xl 
+  md:text-4xl 
+  lg:text-5xl 
+  xl:text-6xl 
+  font-semibold 
+  leading-tight 
+  md:leading-[1.15]  text-slate-50 mb-3"
+            >
               {achievements.title}
             </h2>
           </div>

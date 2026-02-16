@@ -262,7 +262,15 @@ export function ProcessCTA() {
               />
             </div>
 
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.05]">
+            <h2
+              className="text-3xl 
+  md:text-4xl 
+  lg:text-5xl 
+  xl:text-6xl 
+  font-semibold 
+  leading-tight 
+  md:leading-[1.15]  text-slate-50 mb-3"
+            >
               Готовы начать
               <br />
               работу?

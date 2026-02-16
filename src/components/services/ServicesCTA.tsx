@@ -75,7 +75,15 @@ export function ServicesCTA() {
           transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-[800px] mx-auto"
         >
-          <h2 className="text-3xl md:text-5xl font-semibold text-[#F5EFE7] mb-6">
+          <h2
+            className="text-3xl 
+  md:text-4xl 
+  lg:text-5xl 
+  xl:text-6xl 
+  font-semibold 
+  leading-tight 
+  md:leading-[1.15]  text-slate-50 mb-3"
+          >
             Не уверены, что выбрать?
           </h2>
 

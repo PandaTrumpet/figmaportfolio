@@ -246,7 +246,15 @@ export function ProofMetricsSection() {
             transition={{ duration: 0.8, delay: 0.15, ease: EASE }}
           />
 
-          <motion.h2 className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-4 md:mb-6">
+          <motion.h2
+            className="text-3xl 
+  md:text-4xl 
+  lg:text-5xl 
+  xl:text-6xl 
+  font-semibold 
+  leading-tight 
+  md:leading-[1.15]  text-slate-50 mb-3"
+          >
             <motion.span
               className="relative inline-block"
               initial="initial"

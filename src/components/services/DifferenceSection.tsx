@@ -231,7 +231,15 @@ export function DifferenceSection() {
         >
           <div className="mb-6 h-[2px] w-20 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
 
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-[#F5EFE7] mb-4">
+          <h2
+            className="text-3xl 
+  md:text-4xl 
+  lg:text-5xl 
+  xl:text-6xl 
+  font-semibold 
+  leading-tight 
+  md:leading-[1.15]  text-slate-50 mb-3"
+          >
             Почему это работает
           </h2>
 

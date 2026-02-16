@@ -525,7 +525,13 @@ export function ProcessSection() {
             <motion.h2
               id="process-title"
               variants={item}
-              className="text-4xl md:text-5xl lg:text-6xl leading-[1.05] max-w-3xl text-slate-100"
+              className="text-3xl 
+  md:text-4xl 
+  lg:text-5xl 
+  xl:text-6xl 
+  font-semibold 
+  leading-tight 
+  md:leading-[1.15]  text-slate-50 mb-3"
             >
               Сайт → заявки → автоматизация
             </motion.h2>

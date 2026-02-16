@@ -130,7 +130,15 @@ export function ValuesSection({ values }: { values: ValueItem[] }) {
             viewport={{ once: true }}
           />
 
-          <h2 className="mb-4 text-3xl font-semibold tracking-tight text-[#F5EFE7] md:mb-6 md:text-5xl lg:text-6xl xl:text-7xl">
+          <h2
+            className="mb-3 text-3xl 
+  md:text-4xl 
+  lg:text-5xl 
+  xl:text-6xl 
+  font-semibold 
+  leading-tight 
+  md:leading-[1.15]  text-slate-50   "
+          >
             Как мы работаем
           </h2>
 
