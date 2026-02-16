@@ -183,9 +183,7 @@ export function MissionSection({ data }: { data: MissionData }) {
                   <ArrowRight className="relative z-10 h-4 w-4 opacity-90 transition-transform group-hover:translate-x-1" />
                 </motion.a>
 
-                <p className="text-xs text-white/55 md:text-sm">
-                  Обычно отвечаем в WhatsApp в течение дня.
-                </p>
+             
               </div>
             </div>
           </motion.div>

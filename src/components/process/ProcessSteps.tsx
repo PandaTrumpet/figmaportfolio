@@ -93,7 +93,13 @@ export function ProcessSteps({ steps }: { steps: ProcessStep[] }) {
             </p>
           </motion.div>
 
-          <div className="space-y-24 md:space-y-32 lg:space-y-40">
+          {/* <div className="space-y-24 md:space-y-32 lg:space-y-40">
+            {steps.map((step, index) => (
+              <ProcessStep key={index} step={step} />
+            ))}
+          </div> */}
+       
+          <div className="space-y-4 sm:space-y-6 md:space-y-8 lg:space-y-10 xl:space-y-12">
             {steps.map((step, index) => (
               <ProcessStep key={index} step={step} />
             ))}

@@ -243,9 +243,7 @@ export function CtaSection() {
             </motion.a>
           </div>
 
-          <p className="mt-6 text-xs text-white/55 sm:text-sm">
-            Без «длинных созвонов» — коротко и по делу.
-          </p>
+       
         </motion.div>
       </PageContainer>
 

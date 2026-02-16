@@ -472,9 +472,7 @@ export function DecisionSection() {
                     </span>
                   </motion.a>
 
-                  <p className="mt-3 text-xs text-[#C7CEDF] opacity-70 text-center">
-                    Нажмите, чтобы обсудить
-                  </p>
+                 
                 </div>
               </div>
             </motion.article>
