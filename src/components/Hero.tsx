@@ -297,15 +297,14 @@ export function Hero() {
             {/* Subtitle (ярче) */}
             <p
               className="
-                leading-relaxed
-                mb-10 md:mb-12
+              leading-relaxed
+mb-10 md:mb-12
 
-                text-white/90
+text-white
 
-                max-w-[52ch] lg:max-w-[60ch]
+max-w-[48ch] md:max-w-[52ch] lg:max-w-[58ch]
 
-                text-[clamp(1.05rem,2.2vw,1.25rem)]
-                md:text-[clamp(1.1rem,1.7vw,1.45rem)]
+text-[clamp(1rem,1.4vw+0.6rem,1.35rem)]
               "
             >
               Мы создаём сайты с интеграцией WhatsApp, CRM и AI-инструментов,

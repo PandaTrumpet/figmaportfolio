@@ -190,22 +190,20 @@ export function ContactHero({ data }: { data: HeroData }) {
             {/* subtitle (brighter + clamp) */}
             <p
               className="
-                text-white/90 leading-relaxed
-                mb-10 md:mb-12
+  leading-relaxed
+mb-10 md:mb-12
 
-                max-w-[52ch]
-                lg:max-w-[60ch]
-                mx-auto
+text-white
 
-                text-[clamp(1.05rem,2.2vw,1.25rem)]
-                md:text-[clamp(1.1rem,1.7vw,1.45rem)]
+max-w-[48ch] md:max-w-[52ch] lg:max-w-[58ch]
+
+text-[clamp(1rem,1.4vw+0.6rem,1.35rem)]
               "
             >
               {data.subtitle}
             </p>
 
             {/* micro-divider */}
-        
           </motion.div>
         </div>
       </PageContainer>

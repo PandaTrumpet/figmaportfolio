@@ -218,18 +218,19 @@ export function ProcessHero({
               {/* Title (✅ clamp + controlled width) */}
               <h1
                 className="
-                  font-semibold tracking-tight text-balance
-                  leading-[0.98]
-                  text-[#F5EFE7]
+              font-semibold tracking-tight text-balance
+                leading-[0.98]
+                mb-6 md:mb-8
+                text-[#F2F4FA]
 
-                  max-w-[18ch]
-                  sm:max-w-[20ch]
-                  lg:max-w-[22ch]
-                  mx-auto
+                max-w-[18ch]
+                sm:max-w-[20ch]
+                lg:max-w-[22ch]
+                mx-auto
 
-                  text-[clamp(2.35rem,5.8vw,4.8rem)]
-                  md:text-[clamp(2.9rem,5.0vw,5.2rem)]
-                  lg:text-[clamp(3.1rem,4.2vw,5.3rem)]
+                text-[clamp(2.35rem,5.8vw,4.8rem)]
+                md:text-[clamp(2.9rem,5.0vw,5.2rem)]
+                lg:text-[clamp(3.1rem,4.2vw,5.3rem)]
                 "
               >
                 {data.title}
@@ -238,17 +239,14 @@ export function ProcessHero({
               {/* Subtitle (✅ brighter + clamp) */}
               <p
                 className="
-                  mt-7 md:mt-9
-                  mb-10 md:mb-14
-                  leading-relaxed
-                  text-white/90
+                                 leading-relaxed
+mb-10 md:mb-12
 
-                  max-w-[52ch]
-                  lg:max-w-[60ch]
-                  mx-auto
+text-white
 
-                  text-[clamp(1.05rem,2.2vw,1.25rem)]
-                  md:text-[clamp(1.1rem,1.7vw,1.45rem)]
+max-w-[48ch] md:max-w-[52ch] lg:max-w-[58ch]
+
+text-[clamp(1rem,1.4vw+0.6rem,1.35rem)]
                 "
               >
                 {data.subtitle}

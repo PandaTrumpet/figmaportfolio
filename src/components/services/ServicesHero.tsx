@@ -158,15 +158,17 @@ export default function ServicesHero() {
 
             <p
               className="
-                leading-relaxed
-                text-white/90
+              
 
-                max-w-[52ch]
-                lg:max-w-[60ch]
-                mx-auto
+                  leading-relaxed
+mb-10 md:mb-12
 
-                text-[clamp(1.05rem,2.2vw,1.25rem)]
-                md:text-[clamp(1.1rem,1.7vw,1.45rem)]
+text-white
+
+max-w-[48ch] md:max-w-[52ch] lg:max-w-[58ch]
+
+text-[clamp(1rem,1.4vw+0.6rem,1.35rem)]
+
               "
             >
               Мы помогаем выбрать правильный формат: от быстрого лендинга до
