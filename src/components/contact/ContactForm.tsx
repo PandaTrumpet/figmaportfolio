@@ -374,7 +374,13 @@ export function ContactForm({
         >
           {form.title}
         </h2>
-        <p className="text-base md:text-lg lg:text-xl text-[#C7CEDF] leading-relaxed max-w-2xl">
+        <p
+          className="  mt-4
+  text-white/75
+  leading-relaxed md:leading-[1.7]
+  max-w-[52ch] md:max-w-[60ch] lg:max-w-[66ch]
+  text-[clamp(0.98rem,0.55vw+0.88rem,1.15rem)]"
+        >
           {form.subtitle}
         </p>
       </div>

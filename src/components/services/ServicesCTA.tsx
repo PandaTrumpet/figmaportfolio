@@ -87,36 +87,18 @@ export function ServicesCTA() {
             Не уверены, что выбрать?
           </h2>
 
-          <p className="text-[#C7CEDF] text-base md:text-xl mb-10 leading-relaxed">
+          <p
+            className=" text-base  mb-10     mt-4
+  text-white/75
+  leading-relaxed md:leading-[1.7]
+ 
+  text-[clamp(0.98rem,0.55vw+0.88rem,1.15rem)]"
+          >
             Мы подскажем оптимальный формат под ваш бизнес за 15 минут — без
             обязательств и “продажных” разговоров.
           </p>
 
-          {/* <motion.a
-            href="#contact"
-            className="
-              relative inline-flex items-center justify-center
-              overflow-hidden rounded-full
-              px-10 py-4
-              text-[#050816] font-medium
-              shadow-[0_0_40px_rgba(76,194,255,0.6)]
-              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4CC2FF]/70
-            "
-            whileHover={reduce ? undefined : { scale: 1.03 }}
-            whileTap={reduce ? undefined : { scale: 0.98 }}
-            transition={{ duration: 0.22, ease: "easeOut" }}
-            aria-label="Запросить консультацию — перейти к контактам"
-          >
-            <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
-            <motion.span
-              className="absolute inset-0 bg-[linear-gradient(120deg,_transparent_0%,_white_22%,_transparent_45%)] opacity-0"
-              initial={reduce ? false : { x: "-120%" }}
-              whileHover={reduce ? undefined : { x: "120%", opacity: 0.55 }}
-              transition={{ duration: 0.75, ease: "easeInOut" }}
-              aria-hidden="true"
-            />
-            <span className="relative z-10">Запросить консультацию</span>
-          </motion.a> */}
+    
 
           <motion.a
             href="#contact"

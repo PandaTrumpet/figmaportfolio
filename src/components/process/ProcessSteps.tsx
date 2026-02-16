@@ -81,7 +81,13 @@ export function ProcessSteps({ steps }: { steps: ProcessStep[] }) {
               5 шагов — от идеи до заявок в WhatsApp
             </h2>
 
-            <p className="text-base md:text-xl text-[#C7CEDF] max-w-3xl mx-auto leading-relaxed">
+            <p
+              className="  mt-4
+  text-white/75
+  leading-relaxed md:leading-[1.7]
+  md:max-w-[60ch] lg:max-w-[66ch]
+  text-[clamp(0.98rem,0.55vw+0.88rem,1.15rem)] max-w-3xl mx-auto "
+            >
               Прозрачно по срокам и результатам: вы всегда понимаете, что
               происходит на проекте и что получаете на каждом этапе.
             </p>

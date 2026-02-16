@@ -150,7 +150,13 @@ export function DifferenceSection({ data }: { data: DifferenceData }) {
             Почему с нами проще
           </h2>
 
-          <p className="max-w-3xl text-base leading-relaxed text-[#C7CEDF] sm:text-lg md:text-xl lg:text-2xl">
+          <p
+            className="  mt-4
+  text-white/75
+  leading-relaxed md:leading-[1.7]
+  max-w-[52ch] md:max-w-[60ch] lg:max-w-[66ch]
+  text-[clamp(0.98rem,0.55vw+0.88rem,1.15rem)]"
+          >
             Не “красивая студия”, а команда, которая отвечает за результат:
             понятный UX, скорость, автоматизация и контроль метрик.
           </p>

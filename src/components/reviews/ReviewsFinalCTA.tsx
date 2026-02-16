@@ -151,7 +151,13 @@ export function ReviewsFinalCTA({
             {cta.title}
           </h2>
 
-          <p className="text-sm md:text-lg lg:text-xl text-[#C7CEDF] max-w-3xl mx-auto leading-relaxed mb-10">
+          <p
+            className="  mt-4
+  text-white/75
+  leading-relaxed md:leading-[1.7]
+  max-w-[52ch] md:max-w-[60ch] lg:max-w-[66ch]
+  text-[clamp(0.98rem,0.55vw+0.88rem,1.15rem)]  mx-auto  mb-10"
+          >
             {cta.subtitle}
           </p>
 

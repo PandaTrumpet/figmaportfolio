@@ -78,7 +78,13 @@ export function CtaSection() {
             <br className="hidden sm:block" /> который приводит заявки
           </h2>
 
-          <p className="mx-auto mb-10 max-w-3xl text-base leading-relaxed text-[#C7CEDF] opacity-90 md:mb-12 md:text-xl lg:text-2xl">
+          <p
+            className="mx-auto mb-10  t  mt-4
+  text-white/75
+  leading-relaxed md:leading-[1.7]
+  max-w-[52ch] md:max-w-[60ch] lg:max-w-[66ch]
+  text-[clamp(0.98rem,0.55vw+0.88rem,1.15rem)]"
+          >
             20 минут — и у вас будет понятный план: что сделать на сайте, как
             вести в WhatsApp, и где подключить автоматизацию, чтобы не терять
             клиентов.

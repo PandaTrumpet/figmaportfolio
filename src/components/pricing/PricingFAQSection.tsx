@@ -147,7 +147,13 @@ export function PricingFAQSection() {
             {pricingData.faq.title}
           </h2>
 
-          <p className="text-base md:text-xl opacity-80 max-w-2xl mx-auto leading-relaxed">
+          <p
+            className="  mt-4
+  text-white/75
+  leading-relaxed md:leading-[1.7]
+  max-w-[52ch] md:max-w-[60ch] lg:max-w-[66ch]
+  text-[clamp(0.98rem,0.55vw+0.88rem,1.15rem)] mx-auto "
+          >
             {pricingData.faq.subtitle}
           </p>
         </motion.div>

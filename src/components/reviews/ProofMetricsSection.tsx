@@ -282,7 +282,13 @@ export function ProofMetricsSection() {
             </motion.span>
           </motion.h2>
 
-          <p className="text-base md:text-xl opacity-80 max-w-3xl mx-auto leading-relaxed text-[#C7CEDF]">
+          <p
+            className="  mt-4
+  text-white/75
+  leading-relaxed md:leading-[1.7]
+  max-w-[52ch] md:max-w-[60ch] lg:max-w-[66ch]
+  text-[clamp(0.98rem,0.55vw+0.88rem,1.15rem)]  mx-auto "
+          >
             Мы делаем акцент не на “наградах”, а на результате: понятный
             процесс, быстрый запуск и метрики, которые напрямую влияют на заявки
             и продажи.

@@ -304,7 +304,13 @@ export function AchievementsSection({
             </h2>
           </div>
 
-          <p className="mx-auto max-w-3xl text-base leading-relaxed text-[#C7CEDF] md:text-xl lg:text-2xl">
+          <p
+            className="mx-auto   mt-4
+  text-white/75
+  leading-relaxed md:leading-[1.7]
+  max-w-[52ch] md:max-w-[60ch] lg:max-w-[66ch]
+  text-[clamp(0.98rem,0.55vw+0.88rem,1.15rem)]"
+          >
             Не «награды на лендинге». А конкретные стандарты, которые
             закладываем в каждый проект — чтобы сайт приносил заявки и работал
             стабильно.

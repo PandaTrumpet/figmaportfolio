@@ -89,7 +89,11 @@ export function FinalCTA() {
             }
             viewport={{ once: true, amount: 0.35 }}
             transition={{ duration: 0.85, delay: 0.08, ease: EASE }}
-            className="text-lg md:text-2xl text-slate-300/90 mb-10 max-w-2xl mx-auto leading-relaxed"
+            className="  mt-4
+  text-white/75
+  leading-relaxed md:leading-[1.7]
+  max-w-[52ch] md:max-w-[60ch] lg:max-w-[66ch]
+  text-[clamp(0.98rem,0.55vw+0.88rem,1.15rem)] mb-10  mx-auto "
           >
             Покажем, как сайт может приводить клиентов в WhatsApp, фиксировать
             заявки и снижать ручную рутину — без сложных слов и лишних этапов.
@@ -103,8 +107,6 @@ export function FinalCTA() {
             transition={{ duration: 0.75, delay: 0.12, ease: EASE }}
             className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center mb-8"
           >
-        
-
             <motion.a
               href="#contact-form"
               className="
@@ -149,7 +151,6 @@ export function FinalCTA() {
               <ArrowRight className="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </motion.a>
 
-         
             <motion.a
               href="#pricing"
               className="
