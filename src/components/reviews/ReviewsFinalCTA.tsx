@@ -48,9 +48,7 @@ export function ReviewsFinalCTA({
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         <Particles />
       </div>
-      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-        <FloatingShapes />
-      </div>
+      
 
       {/* content */}
       <PageContainer className="relative z-10">
