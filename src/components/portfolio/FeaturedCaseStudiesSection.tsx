@@ -159,7 +159,7 @@ export function FeaturedCaseStudiesSection({
           viewport={{ once: true }}
           className="mb-10 md:mb-12"
         >
-          <div className="mb-6 h-[2px] w-16 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
+          {/* <div className="mb-6 h-[2px] w-16 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" /> */}
 
           <h2
             className="text-3xl 

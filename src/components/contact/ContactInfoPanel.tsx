@@ -49,7 +49,7 @@ export function ContactInfoPanel({
     <div className="relative">
       {/* header */}
       <div className="mb-8">
-        <div className="mb-5 h-[2px] w-16 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
+        {/* <div className="mb-5 h-[2px] w-16 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" /> */}
         <h3 className="text-2xl md:text-3xl font-semibold tracking-tight text-[#F2F4FA]">
           Быстрый контакт
         </h3>

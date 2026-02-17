@@ -47,13 +47,13 @@ export function MissionSection({ data }: { data: MissionData }) {
             className="text-[#F5EFE7]"
           >
             {/* accent line */}
-            <motion.div
+            {/* <motion.div
               className="mb-7 h-[2px] w-20 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]"
               initial={{ width: 0 }}
               whileInView={{ width: 80 }}
               transition={{ duration: 0.9, delay: 0.15, ease: EASE }}
               viewport={{ once: true }}
-            />
+            /> */}
 
             <h2
               className="mb-3 text-3xl 

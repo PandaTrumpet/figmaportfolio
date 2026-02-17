@@ -251,13 +251,13 @@ export function PricingFinalCTA() {
           viewport={{ once: true }}
         >
           {/* accent line */}
-          <motion.div
+          {/* <motion.div
             className="mx-auto mb-6 h-[2px] w-20 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]"
             initial={{ width: 0 }}
             whileInView={{ width: 80 }}
             transition={{ duration: 0.9, ease: EASE }}
             viewport={{ once: true }}
-          />
+          /> */}
 
           {/* badge */}
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs md:text-sm tracking-wide text-[#E8F2FF] backdrop-blur">

@@ -239,12 +239,12 @@ export function ProofMetricsSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: EASE }}
         >
-          <motion.div
+          {/* <motion.div
             className="mb-6 h-[2px] w-20 mx-auto bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]"
             initial={{ width: 0 }}
             animate={isInView ? { width: 80 } : {}}
             transition={{ duration: 0.8, delay: 0.15, ease: EASE }}
-          />
+          /> */}
 
           <motion.h2
             className="text-3xl 

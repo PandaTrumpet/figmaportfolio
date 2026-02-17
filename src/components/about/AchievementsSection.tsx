@@ -278,13 +278,13 @@ export function AchievementsSection({
           viewport={{ once: true, margin: "-120px" }}
           className="mb-12 text-center md:mb-16"
         >
-          <motion.div
+          {/* <motion.div
             className="mx-auto mb-6 h-[2px] w-20 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]"
             initial={{ width: 0 }}
             whileInView={{ width: 80 }}
             transition={{ duration: 0.9, delay: 0.12, ease: EASE }}
             viewport={{ once: true }}
-          />
+          /> */}
 
           <div className="mb-4 flex items-center justify-center gap-3 md:mb-6 md:gap-4">
             <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/15 bg-[radial-gradient(circle_at_top,_#3A7BFF3b,_#050816)] shadow-[0_0_40px_rgba(58,123,255,0.55)] md:h-12 md:w-12">

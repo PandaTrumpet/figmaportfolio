@@ -83,13 +83,13 @@ export function ContactCTA({ data }: { data: any }) {
 
           <div className="text-center">
             {/* top accent line */}
-            <motion.div
+            {/* <motion.div
               className="mx-auto mb-7 h-[2px] w-20 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]"
               initial={{ width: 0, opacity: 0 }}
               whileInView={{ width: 80, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: reduce ? 0 : 0.8, ease: EASE }}
-            />
+            /> */}
 
             <h2
               className="text-3xl 

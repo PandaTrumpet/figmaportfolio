@@ -183,7 +183,7 @@ export default function PricingBridgeSection() {
 
           <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
             <div className="max-w-2xl">
-              <div className="mb-4 h-[2px] w-20 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
+              {/* <div className="mb-4 h-[2px] w-20 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" /> */}
               <h3 className="text-2xl md:text-4xl font-semibold tracking-tight text-[#F5EFE7] mb-3">
                 Посмотреть пакеты и цены
               </h3>

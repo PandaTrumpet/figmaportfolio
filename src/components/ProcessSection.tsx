@@ -517,10 +517,10 @@ export function ProcessSection() {
             viewport={{ once: true, amount: 0.35 }}
             className="mb-16 md:mb-24"
           >
-            <motion.div
+            {/* <motion.div
               variants={item}
               className="w-16 h-0.5 mb-8 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-transparent"
-            />
+            /> */}
 
             <motion.h2
               id="process-title"

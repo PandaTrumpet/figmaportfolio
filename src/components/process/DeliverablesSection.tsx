@@ -172,13 +172,13 @@ export function DeliverablesSection({ deliverables }: { deliverables: Deliverabl
             viewport={{ once: true }}
             className="text-center mb-16 md:mb-20"
           >
-            <motion.div
+            {/* <motion.div
               className="mx-auto mb-6 h-[2px] w-20 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]"
               initial={{ width: 0 }}
               whileInView={{ width: 80 }}
               transition={{ duration: 0.9, ease: "easeOut" }}
               viewport={{ once: true }}
-            />
+            /> */}
 
             <div className="flex items-center justify-center gap-3 md:gap-4 mb-4 md:mb-6">
               {/* Icon capsule */}

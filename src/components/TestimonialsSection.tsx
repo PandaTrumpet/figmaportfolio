@@ -322,10 +322,10 @@ export function TestimonialsSection() {
             whileInView="show"
             viewport={{ once: true, amount: 0.55 }}
           >
-            <motion.div
+            {/* <motion.div
               className="w-16 h-0.5 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-transparent mb-6"
               variants={headerItem}
-            />
+            /> */}
             <motion.h2
               id="testimonials-title"
               className=" mb-3

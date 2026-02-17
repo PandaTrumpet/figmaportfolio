@@ -527,10 +527,10 @@ export function WhyUsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <div className="w-16 h-px bg-gradient-to-r from-cyan-400 via-sky-500 to-fuchsia-500" />
-              <span className="text-xs md:text-sm uppercase tracking-[0.28em] text-cyan-100/70">
+              {/* <div className="w-16 h-px bg-gradient-to-r from-cyan-400 via-sky-500 to-fuchsia-500" /> */}
+              {/* <span className="text-xs md:text-sm uppercase tracking-[0.28em] text-cyan-100/70">
                 Почему израильский бизнес выбирает нас
-              </span>
+              </span> */}
             </motion.div>
 
             <motion.h2

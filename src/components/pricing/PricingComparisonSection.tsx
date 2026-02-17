@@ -183,12 +183,12 @@ export function PricingComparisonSection() {
           className="text-center mb-16 md:mb-20"
         >
           {/* gradient line */}
-          <motion.div
+          {/* <motion.div
             className="mb-6 h-[2px] w-20 mx-auto bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]"
             initial={{ width: 0 }}
             animate={isInView ? { width: 80 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-          />
+          /> */}
 
           {/* Title with glitch */}
           <motion.h2

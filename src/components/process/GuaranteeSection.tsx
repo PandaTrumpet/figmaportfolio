@@ -157,7 +157,7 @@ export function GuaranteeSection({ guarantee }: { guarantee: GuaranteeSectionPro
                   ))}
                 </div>
 
-                <div className="mt-10 md:mt-12 h-[2px] w-24 mx-auto bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF] opacity-70" />
+                {/* <div className="mt-10 md:mt-12 h-[2px] w-24 mx-auto bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF] opacity-70" /> */}
               </div>
             </motion.div>
           </motion.div>

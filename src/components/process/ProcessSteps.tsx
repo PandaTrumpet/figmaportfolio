@@ -61,13 +61,13 @@ export function ProcessSteps({ steps }: { steps: ProcessStep[] }) {
             viewport={{ once: true }}
             className="text-center mb-16 md:mb-24"
           >
-            <motion.div
+            {/* <motion.div
               className="mx-auto mb-8 h-[2px] w-20 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]"
               initial={{ width: 0 }}
               whileInView={{ width: 80 }}
               transition={{ duration: 0.9, ease: "easeOut" }}
               viewport={{ once: true }}
-            />
+            /> */}
 
             <h2
               className="text-3xl 

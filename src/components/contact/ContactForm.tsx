@@ -356,13 +356,13 @@ export function ContactForm({
     <div className="relative">
       {/* Header (Tel-Aviv Night Waves) */}
       <div className="mb-10 md:mb-12">
-        <motion.div
+        {/* <motion.div
           className="mb-6 h-[2px] w-20 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]"
           initial={{ width: 0, opacity: 0 }}
           whileInView={{ width: 80, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: reduce ? 0 : 0.8, ease: EASE }}
-        />
+        /> */}
         <h2
           className="text-3xl 
   md:text-4xl 

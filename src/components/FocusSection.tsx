@@ -255,12 +255,12 @@ export function FocusSection() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <motion.div
+            {/* <motion.div
               className="mb-6 h-[2px] w-20 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]"
               initial={{ width: 0 }}
               animate={isInView ? { width: 80 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-            />
+            /> */}
 
             <motion.h2
               className="  text-3xl

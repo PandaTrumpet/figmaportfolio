@@ -130,13 +130,13 @@ export function DifferenceSection({ data }: { data: DifferenceData }) {
           viewport={{ once: true, margin: "-120px" }}
           className="mb-12 md:mb-16"
         >
-          <motion.div
+          {/* <motion.div
             className="mb-6 h-[2px] w-20 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]"
             initial={{ width: 0 }}
             whileInView={{ width: 80 }}
             transition={{ duration: 0.9, delay: 0.12, ease: EASE }}
             viewport={{ once: true }}
-          />
+          /> */}
 
           <h2
             className="mb-3 text-3xl 

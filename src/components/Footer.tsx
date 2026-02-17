@@ -5,6 +5,8 @@
 // import * as React from "react";
 // import { ArrowUpRight, ArrowRight, Mail } from "lucide-react";
 // import { motion, useReducedMotion } from "motion/react";
+// import { PageContainer } from "./Layout/PageContainer";
+
 
 // const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
@@ -39,7 +41,7 @@
 
 //   const handleNavClick = (
 //     e: React.MouseEvent<HTMLAnchorElement>,
-//     href: string
+//     href: string,
 //   ) => {
 //     if (!href?.startsWith("#")) return;
 
@@ -53,25 +55,24 @@
 
 //   return (
 //     <footer
-//       className="
-      
-//         px-6 md:px-12 lg:px-20 py-16 md:py-24
-//        bg-[#020410]
-//         text-slate-100
-//       "
+//       className="relative overflow-hidden bg-[#020410] py-16 md:py-24 text-slate-100"
 //       aria-label="Footer"
 //     >
-   
+//       {/* Background glow */}
 //       <div
 //         className="pointer-events-none absolute bottom-[-25%] left-[-10%] h-[26rem] w-[26rem] rounded-full opacity-55 blur-3xl"
 //         style={{
 //           background:
 //             "radial-gradient(circle, rgba(58,123,255,0.8), transparent 55%)",
 //         }}
+//         aria-hidden="true"
 //       />
 
 //       {/* Subtle grid overlay */}
-//       <div className="pointer-events-none absolute inset-0 opacity-[0.10]">
+//       <div
+//         className="pointer-events-none absolute inset-0 opacity-[0.10]"
+//         aria-hidden="true"
+//       >
 //         <div
 //           className="h-full w-full"
 //           style={{
@@ -82,7 +83,7 @@
 //         />
 //       </div>
 
-//       <div className="relative z-10 max-w-[1400px] mx-auto">
+//       <PageContainer className="relative z-10 max-w-[1200px]">
 //         {/* Main Footer Content */}
 //         <div className="grid md:grid-cols-12 gap-10 md:gap-14 mb-14 md:mb-20">
 //           {/* Brand Column */}
@@ -228,7 +229,10 @@
 //           "
 //         >
 //           {/* inner glow */}
-//           <div className="pointer-events-none absolute inset-0 opacity-70">
+//           <div
+//             className="pointer-events-none absolute inset-0 opacity-70"
+//             aria-hidden="true"
+//           >
 //             <div
 //               className="absolute -top-20 -right-16 h-64 w-64 rounded-full blur-3xl opacity-55"
 //               style={{
@@ -277,22 +281,39 @@
 //                   focus:ring-2 focus:ring-cyan-300/40
 //                 "
 //               />
-//               <button
+          
+//               <motion.button
 //                 type="submit"
-//                 className="
-//                   relative group inline-flex items-center justify-center gap-2
-//                   px-7 py-4 rounded-full font-medium whitespace-nowrap
-//                   bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#63E5FF]
-//                   text-slate-900
-//                   shadow-[0_0_34px_rgba(76,194,255,0.45)]
-//                   hover:shadow-[0_0_55px_rgba(76,194,255,0.75)]
-//                   transition-all
-//                 "
+//                 whileHover={{ scale: 1.03 }}
+//                 whileTap={{ scale: 0.97 }}
+//                 transition={{ duration: 0.2, ease: "easeOut" }}
+//                 className=" cursor-pointer
+//     relative group inline-flex items-center justify-center gap-2
+//     overflow-hidden rounded-full
+//     px-7 py-4 font-medium whitespace-nowrap
+//     text-[#050816]
+
+//     shadow-[0_0_34px_rgba(76,194,255,0.45)]
+//     hover:shadow-[0_0_55px_rgba(76,194,255,0.75)]
+//     transition-shadow
+//   "
 //               >
-//                 Запросить демо
-//                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-//                 <span className="pointer-events-none absolute inset-0 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-//               </button>
+//                 {/* gradient background */}
+//                 <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
+
+//                 {/* hover overlay */}
+//                 <span
+//                   className="
+//       pointer-events-none absolute inset-0 rounded-full
+//       bg-white/10 opacity-0
+//       group-hover:opacity-100 transition-opacity
+//     "
+//                   aria-hidden="true"
+//                 />
+
+//                 <span className="relative z-10">Запросить демо</span>
+//                 <ArrowRight className="relative z-10 h-4 w-4 transition-transform group-hover:translate-x-1" />
+//               </motion.button>
 //             </form>
 //           </div>
 //         </div>
@@ -324,70 +345,47 @@
 //           <div className="w-10 h-0.5 bg-cyan-200/35" />
 //           <div className="w-6 h-0.5 bg-cyan-200/25" />
 //         </div>
-//       </div>
+//       </PageContainer>
 //     </footer>
 //   );
 // }
 
+
 "use client";
 
 import * as React from "react";
-import { ArrowUpRight, ArrowRight, Mail } from "lucide-react";
+import Link from "next/link";
+import { Mail, Phone, ArrowRight } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import { PageContainer } from "./Layout/PageContainer";
-
-
-const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 export function Footer() {
   const reduce = useReducedMotion();
   const currentYear = new Date().getFullYear();
 
-  const footerLinks = {
-    services: [
-      { label: "Сайты (лендинг / многостраничный)", href: "#", isPage: false },
-      {
-        label: "Автоматизация (WhatsApp / учёт заявок)",
-        href: "#",
-        isPage: false,
-      },
-      { label: "UI/UX дизайн (под ваш бренд)", href: "#", isPage: false },
-      { label: "AI-боты и чат-боты", href: "#", isPage: false },
-    ],
-    company: [
-      { label: "Процесс", href: "#process" },
-      { label: "Кейсы", href: "#cases" },
-      { label: "Отзывы", href: "#testimonials" },
-      { label: "Контакты", href: "#contact" },
-    ],
-    social: [
-      { label: "Instagram", href: "#" },
-      { label: "LinkedIn", href: "#" },
-      { label: "Behance", href: "#" },
-      { label: "Dribbble", href: "#" },
-    ],
-  };
+  const pages = [
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Portfolio", href: "/portfolio" },
+    { label: "Process", href: "/process" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "Reviews", href: "/reviews" },
+    { label: "Contact", href: "/contact" },
+  ];
 
-  const handleNavClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    href: string,
-  ) => {
-    if (!href?.startsWith("#")) return;
-
-    e.preventDefault();
-    const el = document.querySelector(href);
-    if (!el) return;
-
-    const offsetTop = el.getBoundingClientRect().top + window.pageYOffset - 80;
-    window.scrollTo({ top: offsetTop, behavior: "smooth" });
-  };
+  const legal = [
+    { label: "Privacy", href: "/privacy" },
+    { label: "Terms", href: "/terms" },
+    { label: "Cookies", href: "/cookies" },
+    { label: "Accessibility", href: "/accessibility" },
+    { label: "Refunds", href: "/refund" },
+  ];
 
   return (
     <footer
-      className="relative overflow-hidden bg-[#020410] py-16 md:py-24 text-slate-100"
+      className="relative overflow-hidden bg-[#020410] py-12 md:py-16 text-slate-100"
       aria-label="Footer"
     >
-      {/* Background glow */}
       <div
         className="pointer-events-none absolute bottom-[-25%] left-[-10%] h-[26rem] w-[26rem] rounded-full opacity-55 blur-3xl"
         style={{
@@ -397,7 +395,6 @@ export function Footer() {
         aria-hidden="true"
       />
 
-      {/* Subtle grid overlay */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.10]"
         aria-hidden="true"
@@ -413,12 +410,11 @@ export function Footer() {
       </div>
 
       <PageContainer className="relative z-10 max-w-[1200px]">
-        {/* Main Footer Content */}
-        <div className="grid md:grid-cols-12 gap-10 md:gap-14 mb-14 md:mb-20">
-          {/* Brand Column */}
-          <div className="md:col-span-5">
-            <div className="flex items-center gap-3 mb-7">
-              {/* Neon mark */}
+        {/* Top */}
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
+          {/* Brand */}
+          <div className="max-w-xl">
+            <div className="flex items-center gap-3 mb-5">
               <div
                 className="
                   relative h-10 w-10 rounded-2xl
@@ -435,20 +431,15 @@ export function Footer() {
               </span>
             </div>
 
-            <p className="text-lg text-slate-300/85 leading-relaxed mb-7 max-w-md">
-              Премиальные сайты и автоматизация для бизнеса в Израиле: заявки в
-              WhatsApp, учёт клиентов и меньше ручной рутины.
+            <p className="text-base md:text-lg text-slate-300/85 leading-relaxed mb-5">
+              Премиальные сайты и автоматизация для бизнеса в Израиле — от
+              структуры оффера до запусков и CRM/WhatsApp-воронок.
             </p>
 
-            <div className="space-y-3">
+            <div className="flex flex-col gap-3">
               <a
                 href="mailto:hello@studio.com"
-                className="
-                  inline-flex items-center gap-2
-                  text-base md:text-lg text-slate-100
-                  opacity-90 hover:opacity-100 transition-opacity
-                  group
-                "
+                className="inline-flex items-center gap-2 text-slate-100 opacity-90 hover:opacity-100 transition-opacity group"
               >
                 <Mail className="w-5 h-5 text-cyan-200/90" />
                 hello@studio.com
@@ -457,237 +448,55 @@ export function Footer() {
 
               <a
                 href="tel:+972501234567"
-                className="block text-sm md:text-base text-slate-200/70 hover:text-slate-100 transition-colors"
+                className="inline-flex items-center gap-2 text-slate-100/85 hover:text-slate-100 transition-colors group"
               >
+                <Phone className="w-5 h-5 text-cyan-200/85" />
                 +972 50-123-4567
+                <ArrowRight className="w-4 h-4 opacity-60 transition-transform group-hover:translate-x-1" />
               </a>
-
-              <p className="text-sm text-slate-200/55">
-                Работаем по всему Израилю и за его пределами.
-              </p>
             </div>
           </div>
 
-          {/* Links Columns */}
-          <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8 md:gap-10">
-            {/* Services */}
-            <div>
-              <h3 className="text-xs uppercase tracking-[0.22em] text-slate-200/50 mb-5">
-                Services
-              </h3>
-              <ul className="space-y-3">
-                {footerLinks.services.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="
-                        inline-flex items-center gap-2
-                        text-slate-200/70 hover:text-slate-100
-                        transition-colors group
-                      "
-                    >
-                      <span className="h-1.5 w-1.5 rounded-full bg-cyan-300/50 group-hover:bg-cyan-200/80 transition-colors" />
-                      <span>{link.label}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          {/* Sitemap */}
+          <div className="w-full md:max-w-[520px]">
+            <h3 className="text-xs uppercase tracking-[0.22em] text-slate-200/50 mb-4">
+              Sitemap
+            </h3>
 
-            {/* Company */}
-            <div>
-              <h3 className="text-xs uppercase tracking-[0.22em] text-slate-200/50 mb-5">
-                Company
-              </h3>
-              <ul className="space-y-3">
-                {footerLinks.company.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      onClick={(e) => handleNavClick(e, link.href)}
-                      className="
-                        inline-flex items-center gap-2
-                        text-slate-200/70 hover:text-slate-100
-                        transition-colors group
-                      "
+            <nav aria-label="Footer navigation">
+              <ul className="flex flex-wrap gap-x-5 gap-y-3">
+                {pages.map((p) => (
+                  <li key={p.href}>
+                    <Link
+                      href={p.href}
+                      className="text-slate-200/70 hover:text-slate-100 transition-colors"
                     >
-                      <span className="h-1.5 w-1.5 rounded-full bg-cyan-300/40 group-hover:bg-cyan-200/80 transition-colors" />
-                      <span>{link.label}</span>
-                    </a>
+                      {p.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
-            </div>
+            </nav>
 
-            {/* Social */}
-            <div>
-              <h3 className="text-xs uppercase tracking-[0.22em] text-slate-200/50 mb-5">
-                Social
-              </h3>
-              <ul className="space-y-3">
-                {footerLinks.social.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="
-                        inline-flex items-center gap-2
-                        text-slate-200/70 hover:text-slate-100
-                        transition-colors group
-                      "
-                    >
-                      <span>{link.label}</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 opacity-50 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </a>
-                  </li>
-                ))}
-              </ul>
+            <div className="mt-6 flex flex-wrap gap-x-4 gap-y-2 text-xs md:text-sm text-slate-200/55">
+              {legal.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="hover:text-slate-100 transition-colors"
+                >
+                  {l.label}
+                </Link>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Newsletter / CTA Strip */}
-        <div
-          className="
-            relative overflow-hidden rounded-3xl
-            border border-cyan-400/25 bg-[#0A0F1E]/70 backdrop-blur-xl
-            shadow-[0_0_70px_rgba(76,194,255,0.12)]
-            p-7 md:p-10
-            mb-12
-          "
-        >
-          {/* inner glow */}
-          <div
-            className="pointer-events-none absolute inset-0 opacity-70"
-            aria-hidden="true"
-          >
-            <div
-              className="absolute -top-20 -right-16 h-64 w-64 rounded-full blur-3xl opacity-55"
-              style={{
-                background:
-                  "radial-gradient(circle, rgba(76,194,255,0.35), transparent 60%)",
-              }}
-            />
-            <div
-              className="absolute -bottom-24 -left-20 h-72 w-72 rounded-full blur-3xl opacity-45"
-              style={{
-                background:
-                  "radial-gradient(circle, rgba(58,123,255,0.28), transparent 60%)",
-              }}
-            />
+        {/* Bottom */}
+        <div className="mt-10 border-t border-cyan-200/10 pt-7">
+          <div className="text-sm text-slate-200/55 text-center">
+            © {currentYear} SavonDev. All rights reserved.
           </div>
-
-          <div className="relative z-10 grid md:grid-cols-2 gap-7 items-center">
-            <div>
-              <h3 className="text-2xl md:text-3xl text-slate-100 mb-2">
-                Хотите увидеть демо под вашу нишу?
-              </h3>
-              <p className="text-slate-300/85">
-                Покажем на примере вашего бизнеса: сайт → WhatsApp → учёт заявок
-                → уведомления и аналитика.
-              </p>
-            </div>
-
-            <form
-              className="flex flex-col sm:flex-row gap-3"
-              onSubmit={(e) => e.preventDefault()}
-            >
-              <label className="sr-only" htmlFor="footer-email">
-                Email address
-              </label>
-              <input
-                id="footer-email"
-                type="email"
-                placeholder="your@email.com"
-                className="
-                  flex-1 rounded-full
-                  px-6 py-4
-                  bg-[#0B1020]/75 text-slate-100
-                  placeholder:text-slate-300/50
-                  border border-cyan-400/25
-                  outline-none
-                  focus:ring-2 focus:ring-cyan-300/40
-                "
-              />
-              {/* <button
-                type="submit"
-                className="
-                  relative group inline-flex items-center justify-center gap-2
-                  px-7 py-4 rounded-full font-medium whitespace-nowrap
-                  bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#63E5FF]
-                  text-slate-900
-                  shadow-[0_0_34px_rgba(76,194,255,0.45)]
-                  hover:shadow-[0_0_55px_rgba(76,194,255,0.75)]
-                  transition-all
-                "
-              >
-                Запросить демо
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                <span className="pointer-events-none absolute inset-0 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </button> */}
-              <motion.button
-                type="submit"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-                className=" cursor-pointer
-    relative group inline-flex items-center justify-center gap-2
-    overflow-hidden rounded-full
-    px-7 py-4 font-medium whitespace-nowrap
-    text-[#050816]
-
-    shadow-[0_0_34px_rgba(76,194,255,0.45)]
-    hover:shadow-[0_0_55px_rgba(76,194,255,0.75)]
-    transition-shadow
-  "
-              >
-                {/* gradient background */}
-                <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
-
-                {/* hover overlay */}
-                <span
-                  className="
-      pointer-events-none absolute inset-0 rounded-full
-      bg-white/10 opacity-0
-      group-hover:opacity-100 transition-opacity
-    "
-                  aria-hidden="true"
-                />
-
-                <span className="relative z-10">Запросить демо</span>
-                <ArrowRight className="relative z-10 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </motion.button>
-            </form>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="border-t border-cyan-200/10 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex flex-wrap gap-6 text-sm text-slate-200/55">
-              <a href="#" className="hover:text-slate-100 transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="hover:text-slate-100 transition-colors">
-                Terms of Service
-              </a>
-              <a href="#" className="hover:text-slate-100 transition-colors">
-                Accessibility
-              </a>
-            </div>
-
-            <div className="text-sm text-slate-200/55">
-              © {currentYear} SavonDev. All rights reserved.
-            </div>
-          </div>
-        </div>
-
-        {/* Decorative bars */}
-        <div className="mt-12 flex gap-4 opacity-25">
-          <div className="w-16 h-0.5 bg-gradient-to-r from-cyan-200/70 to-transparent" />
-          <div className="w-10 h-0.5 bg-cyan-200/35" />
-          <div className="w-6 h-0.5 bg-cyan-200/25" />
         </div>
       </PageContainer>
     </footer>

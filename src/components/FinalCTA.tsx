@@ -26,13 +26,7 @@ export function FinalCTA() {
             "radial-gradient(circle, rgba(76,194,255,0.9), transparent 60%)",
         }}
       />
-      <div
-        className="pointer-events-none absolute bottom-[-20%] left-[-10%] h-[26rem] w-[26rem] rounded-full opacity-60 blur-3xl"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(58,123,255,0.85), transparent 55%)",
-        }}
-      />
+    
 
       {/* Subtle grid overlay — full-bleed */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.10]">
@@ -49,13 +43,7 @@ export function FinalCTA() {
       <PageContainer className="max-w-[1200px]">
         <div className="relative z-10 text-center">
           {/* Decorative top line */}
-          <motion.div
-            initial={reduce ? undefined : { width: 0, opacity: 0 }}
-            whileInView={reduce ? undefined : { width: 96, opacity: 1 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.8, ease: EASE }}
-            className="mx-auto mb-10 h-0.5 w-24 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-transparent"
-          />
+        
 
           {/* Headline */}
           <motion.h2
