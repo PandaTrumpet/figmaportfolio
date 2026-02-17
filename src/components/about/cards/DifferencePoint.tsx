@@ -1,91 +1,4 @@
-// "use client";
 
-// import { useRef } from "react";
-// import { motion, useInView } from "motion/react";
-// import { ImageWithFallback } from "@/src/components/figma/ImageWithFallback";
-
-// type DifferencePointItem = {
-//   title: string;
-//   description: string;
-//   image: string;
-// };
-
-// export function DifferencePoint({
-//   point,
-//   index,
-// }: {
-//   point: DifferencePointItem;
-//   index: number;
-// }) {
-//   const ref = useRef<HTMLDivElement | null>(null);
-//   const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-//   return (
-//     <div
-//       ref={ref}
-//       className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-center ${
-//         index % 2 === 1 ? "lg:grid-flow-dense" : ""
-//       }`}
-//     >
-//       {/* Image */}
-//       <motion.div
-//         initial={{ opacity: 0, x: index % 2 === 0 ? -60 : 60 }}
-//         animate={isInView ? { opacity: 1, x: 0 } : {}}
-//         transition={{ duration: 0.8 }}
-//         className={index % 2 === 1 ? "lg:col-start-2" : ""}
-//       >
-//         <motion.div
-//           className="aspect-16/10 border-4 border-[#050608] overflow-hidden"
-//           whileHover={{
-//             boxShadow: "20px 20px 0px 0px rgba(5,6,8,1)",
-//             x: -8,
-//             y: -8,
-//           }}
-//           transition={{ duration: 0.3 }}
-//         >
-//           <motion.div
-//             whileHover={{ scale: 1.1 }}
-//             transition={{ duration: 0.7 }}
-//           >
-//             <ImageWithFallback
-//               src={point.image}
-//               alt={point.title}
-//               className="w-full h-full object-cover"
-//             />
-//           </motion.div>
-//         </motion.div>
-//       </motion.div>
-
-//       {/* Content */}
-//       <motion.div
-//         initial={{ opacity: 0, x: index % 2 === 0 ? 60 : -60 }}
-//         animate={isInView ? { opacity: 1, x: 0 } : {}}
-//         transition={{ duration: 0.8, delay: 0.2 }}
-//         className={index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""}
-//       >
-//         <div className="mb-8">
-//           <motion.div
-//             className="inline-block px-4 py-2 border-2 border-[#050608] text-sm uppercase tracking-wider mb-6"
-//             whileHover={{ x: 5 }}
-//           >
-//             0{index + 1}
-//           </motion.div>
-//         </div>
-
-//         <h3 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-8 leading-tight">
-//           {point.title}
-//         </h3>
-
-//         <p className="text-xl md:text-2xl lg:text-3xl opacity-70 leading-relaxed">
-//           {point.description}
-//         </p>
-//       </motion.div>
-//     </div>
-//   );
-// }
-
-
-// DifferencePoint.tsx
 "use client";
 
 import { useRef, useState } from "react";
@@ -130,8 +43,12 @@ export function DifferencePoint({
         className={flip ? "lg:col-start-2" : ""}
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
-        initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, x: flip ? 40 : -40 }}
-        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: flip ? 40 : -40 }}
+        initial={
+          reduce ? { opacity: 1, y: 0 } : { opacity: 0, x: flip ? 40 : -40 }
+        }
+        animate={
+          isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: flip ? 40 : -40 }
+        }
         transition={{ duration: 0.7, ease: EASE }}
       >
         {/* glow under image */}
@@ -186,7 +103,8 @@ export function DifferencePoint({
               }}
               transition={{ duration: 0.22 }}
               style={{
-                background: "linear-gradient(135deg, #3A7BFF, #4CC2FF, #9B5DFF)",
+                background:
+                  "linear-gradient(135deg, #3A7BFF, #4CC2FF, #9B5DFF)",
                 WebkitMask:
                   "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
                 WebkitMaskComposite: "xor",
@@ -216,12 +134,16 @@ export function DifferencePoint({
       {/* Content */}
       <motion.div
         className={flip ? "lg:col-start-1 lg:row-start-1" : ""}
-        initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, x: flip ? -40 : 40 }}
-        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: flip ? -40 : 40 }}
+        initial={
+          reduce ? { opacity: 1, y: 0 } : { opacity: 0, x: flip ? -40 : 40 }
+        }
+        animate={
+          isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: flip ? -40 : 40 }
+        }
         transition={{ duration: 0.7, delay: 0.08, ease: EASE }}
       >
         {/* number pill */}
-        <motion.div
+        {/* <motion.div
           className="
             inline-flex items-center gap-2
             rounded-full border border-white/10
@@ -235,13 +157,54 @@ export function DifferencePoint({
         >
           <span className="inline-block h-2 w-2 rounded-full bg-[#63E5FF] shadow-[0_0_18px_rgba(99,229,255,0.55)]" />
           <span className="uppercase tracking-wider">0{index + 1}</span>
-        </motion.div>
+        </motion.div> */}
 
-        <h3 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold tracking-tight text-[#F2F4FA] mb-5 leading-tight">
+        {/* <h3 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold tracking-tight text-[#F2F4FA] mb-5 leading-tight">
           {point.title}
         </h3>
 
         <p className="text-base md:text-xl lg:text-2xl text-[#C7CEDF] leading-relaxed max-w-xl">
+          {point.description} */}
+        {/* </p> */}
+        {/* number pill */}
+        <motion.div
+          className="
+    inline-flex items-center gap-2
+    rounded-full border border-white/10
+    bg-white/5 backdrop-blur-md
+    px-4 py-2 mb-5 md:mb-6
+    text-[11px] md:text-[12px]
+    leading-[1.2]
+    text-white/80
+    shadow-[0_18px_60px_rgba(0,0,0,0.35)]
+  "
+          whileHover={reduce ? undefined : { x: 6 }}
+          transition={{ duration: 0.22, ease: "easeOut" }}
+        >
+          <span className="inline-block h-2 w-2 rounded-full bg-[#63E5FF] shadow-[0_0_18px_rgba(99,229,255,0.55)]" />
+          <span className="uppercase tracking-[0.22em]">0{index + 1}</span>
+        </motion.div>
+
+        <h3
+          className="
+    text-[22px] md:text-[28px] lg:text-[34px] xl:text-[38px]
+    leading-[1.12] md:leading-[1.1]
+    font-semibold tracking-[-0.012em]
+    text-[#F2F4FA]
+    mb-3.5 md:mb-4
+  "
+        >
+          {point.title}
+        </h3>
+
+        <p
+          className="
+    text-[15px] md:text-[16px] lg:text-[18px] xl:text-[19px]
+    leading-[1.55] md:leading-[1.6] lg:leading-[1.65]
+    text-[#C7CEDF]
+    max-w-[60ch] lg:max-w-[62ch]
+  "
+        >
           {point.description}
         </p>
       </motion.div>

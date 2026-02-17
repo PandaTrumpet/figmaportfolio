@@ -13,7 +13,7 @@ export function FinalCTA() {
   return (
     <section
       id="contact"
-      className="relative min-h-screen flex items-center  pt-10 pb-10
+      className="relative flex items-center  pt-10 pb-10
         md:pt-14 md:pb-14
         lg:pt-16 lg:pb-16 overflow-visible text-slate-100"
       aria-labelledby="final-cta-title"
@@ -26,7 +26,6 @@ export function FinalCTA() {
             "radial-gradient(circle, rgba(76,194,255,0.9), transparent 60%)",
         }}
       />
-    
 
       {/* Subtle grid overlay — full-bleed */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.10]">
@@ -43,7 +42,6 @@ export function FinalCTA() {
       <PageContainer className="max-w-[1200px]">
         <div className="relative z-10 text-center">
           {/* Decorative top line */}
-        
 
           {/* Headline */}
           <motion.h2
@@ -193,22 +191,11 @@ export function FinalCTA() {
             transition={{ duration: 0.7, delay: 0.18, ease: EASE }}
             className="text-xs md:text-sm text-slate-200/60 uppercase tracking-widest"
           >
-            Ответим в течение 24 часов • Можно начать с демо
+            Базируемся в Израиле, работаем с бизнесом по всему миру.
           </motion.p>
 
-          {/* Decorative bottom element */}
-          <div className="mt-16 flex items-center justify-center gap-4">
-            <div className="w-24 md:w-32 h-px bg-cyan-200/15" />
-            <div className="w-2.5 h-2.5 bg-cyan-200/20 rotate-45 shadow-[0_0_18px_rgba(76,194,255,0.25)]" />
-            <div className="w-24 md:w-32 h-px bg-cyan-200/15" />
-          </div>
-
-          {/* Footer note */}
-          <div className="mt-14 pt-10 border-t border-cyan-200/10">
-            <p className="text-slate-200/55 text-sm">
-              Базируемся в Израиле, работаем с бизнесом по всему миру.
-            </p>
-          </div>
+      
+          
         </div>
       </PageContainer>
     </section>

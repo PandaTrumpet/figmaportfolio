@@ -441,6 +441,144 @@ function Block({
   );
 }
 
+// Адаптированнный вариант по шрифтам на всфкий  случай 
+
+// function Block({
+//   reason,
+//   index,
+// }: {
+//   reason: (typeof reasons)[0];
+//   index: number;
+// }) {
+//   const tiltX = useMotionValue(0);
+//   const tiltY = useMotionValue(0);
+
+//   const smoothTiltX = useSpring(tiltX, { stiffness: 120, damping: 18 });
+//   const smoothTiltY = useSpring(tiltY, { stiffness: 120, damping: 18 });
+
+//   const rotateX = useTransform(smoothTiltY, [-1, 1], [6, -6]);
+//   const rotateY = useTransform(smoothTiltX, [-1, 1], [-6, 6]);
+
+//   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+//     const rect = e.currentTarget.getBoundingClientRect();
+//     const x = (e.clientX - rect.left) / rect.width;
+//     const y = (e.clientY - rect.top) / rect.height;
+
+//     tiltX.set(x * 2 - 1);
+//     tiltY.set(y * 2 - 1);
+//   };
+
+//   return (
+//     <motion.div
+//       style={{
+//         rotateX,
+//         rotateY,
+//         transformStyle: "preserve-3d",
+//       }}
+//       onMouseMove={handleMouseMove}
+//       onMouseLeave={() => {
+//         tiltX.set(0);
+//         tiltY.set(0);
+//       }}
+//       className={`group relative rounded-3xl border border-white/5 bg-gradient-to-br from-white/5 via-white/0 to-white/5 backdrop-blur-xl shadow-[0_0_40px_rgba(15,23,42,0.9)]
+//       grid md:grid-cols-2 gap-8 md:gap-16 items-center px-6 md:px-10 lg:px-12 py-10 md:py-12`}
+//       initial={{ opacity: 0, y: 40, scale: 0.96 }}
+//       whileInView={{ opacity: 1, y: 0, scale: 1 }}
+//       viewport={{ once: true, amount: 0.3 }}
+//       transition={{
+//         duration: 0.8,
+//         delay: index * 0.12,
+//         ease: [0.22, 1, 0.36, 1],
+//       }}
+//     >
+//       {/* Glow behind card */}
+//       <div className="pointer-events-none absolute -inset-0.5 -z-10 rounded-[32px] bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.4),transparent_60%)] opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-700" />
+
+//       {/* Text */}
+//       <div
+//         className={`space-y-5 md:space-y-6 ${
+//           reason.reverse ? "md:order-2 md:pl-4" : "md:pr-4"
+//         }`}
+//       >
+//         <motion.div
+//           className="flex items-center gap-3"
+//           initial={{ opacity: 0, x: -20 }}
+//           whileInView={{ opacity: 1, x: 0 }}
+//           viewport={{ once: true }}
+//           transition={{ duration: 0.6, delay: index * 0.1 }}
+//         >
+//           <div className="w-12 h-px bg-gradient-to-r from-cyan-400 via-sky-500 to-fuchsia-500" />
+//           <span
+//             className="
+//               text-[11px] md:text-[12px]
+//               leading-[1.2]
+//               uppercase tracking-[0.2em]
+//               text-cyan-200/70
+//             "
+//           >
+//             Фокус на рынке Израиля
+//           </span>
+//         </motion.div>
+
+//         <motion.h3
+//           className="
+//             text-[22px] md:text-[26px] lg:text-[30px]
+//             leading-[1.12] md:leading-[1.1]
+//             tracking-[-0.01em]
+//             bg-gradient-to-r from-[#F5F7FF] via-[#C7D2FE] to-[#A5B4FC]
+//             bg-clip-text text-transparent
+//             mb-1 md:mb-1.5
+//           "
+//           initial={{ opacity: 0, y: 20 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           viewport={{ once: true }}
+//           transition={{
+//             duration: 0.7,
+//             delay: 0.15 + index * 0.1,
+//           }}
+//         >
+//           {reason.subtitle}
+//         </motion.h3>
+
+//         <motion.p
+//           className="
+//             text-[15px] md:text-[16px] lg:text-[17px]
+//             leading-[1.55] md:leading-[1.6]
+//             text-slate-200/80
+//             max-w-[60ch]
+//           "
+//           initial={{ opacity: 0, y: 20 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           viewport={{ once: true }}
+//           transition={{
+//             duration: 0.7,
+//             delay: 0.25 + index * 0.1,
+//           }}
+//         >
+//           {reason.description}
+//         </motion.p>
+//       </div>
+
+//       {/* Image block */}
+//       <div className={`${reason.reverse ? "md:order-1" : ""} relative`}>
+//         <div className="pointer-events-none absolute -inset-10 bg-[radial-gradient(circle_at_bottom,_rgba(244,114,182,0.4),transparent_65%)] opacity-60 blur-3xl" />
+
+//         <motion.div
+//           className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-cyan-300/25 bg-gradient-to-tr from-sky-500/15 via-slate-900 to-fuchsia-500/15"
+//           whileHover={{ y: -4, scale: 1.03 }}
+//           transition={{ duration: 0.6 }}
+//         >
+//           <ImageWithFallback
+//             src={reason.image}
+//             alt={reason.imageAlt}
+//             className="w-full h-full object-cover scale-[1.03] group-hover:scale-[1.07] transition-all duration-700"
+//           />
+//         </motion.div>
+//       </div>
+//     </motion.div>
+//   );
+// }
+
 export function WhyUsSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
 

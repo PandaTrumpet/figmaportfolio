@@ -385,17 +385,46 @@ export function AchievementsSection({
                     <TrendingUp className="h-7 w-7 text-[#E8F2FF] opacity-90" />
                   </span>
                 </div>
-
-                <p className="mb-2 text-center text-4xl font-semibold tracking-tight text-[#F2F4FA] md:text-5xl">
+          
+                <p
+                  className="
+    mb-2.5 md:mb-3
+    text-center
+    text-[34px] md:text-[42px] lg:text-[48px]
+    leading-[1.02]
+    font-semibold tracking-[-0.02em]
+    text-[#F2F4FA]
+  "
+                >
                   {stat.number}
                 </p>
-                <p className="mb-2 text-center text-base text-[#E8ECF4] md:text-lg">
+
+                <p
+                  className="
+    mb-2
+    text-center
+    text-[15px] md:text-[16px] lg:text-[17px]
+    leading-[1.25]
+    font-medium tracking-[-0.005em]
+    text-[#E8ECF4]
+  "
+                >
                   {stat.label}
                 </p>
-                <p className="text-center text-sm leading-relaxed text-[#C7CEDF] opacity-85 md:text-base">
+
+                <p
+                  className="
+    text-center
+    text-[14px] md:text-[15px] lg:text-[16px]
+    leading-[1.55] md:leading-[1.6]
+    text-[#C7CEDF]
+    opacity-85
+    max-w-[42ch]
+    mx-auto
+  "
+                >
                   {stat.description}
                 </p>
-
                 {/* corner detail */}
                 <div
                   className="pointer-events-none absolute bottom-4 right-4 h-8 w-8 opacity-40"

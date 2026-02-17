@@ -1,61 +1,4 @@
 
-// "use client";
-
-// import { useRef } from "react";
-// import { motion, useInView } from "motion/react";
-
-// type ValueItem = {
-//   icon: string; // эмодзи или любой текстовый символ
-//   title: string;
-//   description: string;
-// };
-
-// export function ValueCard({
-//   value,
-//   index,
-// }: {
-//   value: ValueItem;
-//   index: number;
-// }) {
-//   const ref = useRef<HTMLDivElement | null>(null);
-//   const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-//   return (
-//     <motion.div
-//       ref={ref}
-//       initial={{ opacity: 0, y: 60 }}
-//       animate={isInView ? { opacity: 1, y: 0 } : {}}
-//       transition={{ duration: 0.8, delay: index * 0.1 }}
-//       className="group"
-//     >
-//       <motion.div
-//         className="border-2 border-[#050608] p-10 md:p-12 bg-[#F5EFE7] hover:bg-white transition-all h-full"
-//         whileHover={{
-//           boxShadow: "16px 16px 0px 0px rgba(5,6,8,1)",
-//           x: -5,
-//           y: -5,
-//         }}
-//       >
-//         {/* Icon (string) */}
-//         <motion.div
-//           className="text-6xl md:text-7xl mb-6 leading-none select-none"
-//           animate={{ rotate: [0, 10, -10, 0] }}
-//           transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-//         >
-//           <span aria-hidden="true">{value.icon}</span>
-//         </motion.div>
-
-//         <h3 className="text-2xl md:text-3xl lg:text-4xl mb-6">{value.title}</h3>
-
-//         <p className="text-lg md:text-xl opacity-70 leading-relaxed">
-//           {value.description}
-//         </p>
-//       </motion.div>
-//     </motion.div>
-//   );
-// }
-
-// ValueCard.tsx
 "use client";
 
 import { useRef, useState } from "react";
@@ -190,8 +133,8 @@ export function ValueCard({
         </motion.div>
 
         {/* Text */}
-        <div className="relative z-30 transform-none will-change-auto">
-          {/* UX: заголовки короче/сильнее под Израиль */}
+        {/* <div className="relative z-30 transform-none will-change-auto">
+    
           <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight mb-3 text-[#F2F4FA]">
             {value.title}
           </h3>
@@ -199,9 +142,32 @@ export function ValueCard({
           <p className="text-sm md:text-base lg:text-lg text-[#D5DBE6] leading-relaxed">
             {value.description}
           </p>
+        </div> */}
+        <div className="relative z-30 transform-none will-change-auto">
+          <h3
+            className="
+      text-[20px] md:text-[24px] lg:text-[28px]
+      leading-[1.12] md:leading-[1.1]
+      font-semibold tracking-[-0.012em]
+      mb-2.5 md:mb-3
+      text-[#F2F4FA]
+    "
+          >
+            {value.title}
+          </h3>
+
+          <p
+            className="
+      text-[15px] md:text-[16px] lg:text-[17px]
+      leading-[1.55] md:leading-[1.6]
+      text-[#D5DBE6]
+      max-w-[56ch]
+    "
+          >
+            {value.description}
+          </p>
         </div>
 
-        {/* corner detail */}
         <motion.div
           className="pointer-events-none absolute bottom-4 right-4 h-8 w-8 opacity-40 z-20"
           animate={{

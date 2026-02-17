@@ -76,6 +76,131 @@ const glitchSecondary = {
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
+// function ProofCard({
+//   item,
+//   index,
+//   isInView,
+//   reduce,
+// }: {
+//   item: ProofItem;
+//   index: number;
+//   isInView: boolean;
+//   reduce: boolean;
+// }) {
+//   const Icon = item.icon;
+
+//   return (
+//     <motion.div
+//       className="relative"
+//       initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 34 }}
+//       animate={isInView ? { opacity: 1, y: 0 } : {}}
+//       transition={{
+//         duration: 0.6,
+//         delay: reduce ? 0 : index * 0.12,
+//         ease: EASE,
+//       }}
+//     >
+//       {/* base glow */}
+//       <motion.div
+//         className="absolute -inset-[12px] rounded-[34px] bg-[radial-gradient(circle_at_top,_rgba(58,123,255,0.55),_transparent_70%)] blur-2xl -z-20"
+//         animate={reduce ? undefined : { opacity: [0.22, 0.36, 0.22] }}
+//         transition={
+//           reduce
+//             ? undefined
+//             : { duration: 5.5, repeat: Infinity, ease: "easeInOut" }
+//         }
+//         aria-hidden="true"
+//       />
+
+//       <motion.div
+//         className="
+//           group relative h-full rounded-3xl border border-white/10
+//           bg-gradient-to-b from-[#060A13] via-[#050816] to-[#02030A]
+//           p-7 md:p-8
+//           shadow-[0_26px_80px_rgba(0,0,0,0.85)]
+//           backdrop-blur-xl overflow-hidden
+//         "
+//         whileHover={reduce ? undefined : { y: -6 }}
+//         transition={{ duration: 0.25, ease: "easeOut" }}
+//       >
+//         {/* inner gradient wash */}
+//         <div
+//           className={`pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br ${item.gradient} -z-10 opacity-45`}
+//           aria-hidden="true"
+//         />
+
+//         {/* hover aura (adds depth) */}
+//         <motion.div
+//           className="pointer-events-none absolute inset-0 rounded-3xl -z-10 opacity-0 group-hover:opacity-100"
+//           style={{
+//             background:
+//               "radial-gradient(circle_at_center, rgba(76,194,255,0.18), transparent 60%)",
+//           }}
+//           transition={{ duration: 0.25 }}
+//           aria-hidden="true"
+//         />
+
+//         {/* sheen */}
+//         <motion.div
+//           className="pointer-events-none absolute -inset-10 bg-[linear-gradient(115deg,_transparent_0%,_rgba(255,255,255,0.22)_30%,_transparent_60%)] mix-blend-screen -z-10 opacity-0"
+//           whileHover={reduce ? undefined : { opacity: 1, x: "140%" }}
+//           initial={{ x: "-140%" }}
+//           transition={{ duration: 0.9, ease: "easeInOut" }}
+//           aria-hidden="true"
+//         />
+
+//         {/* contour */}
+//         <div
+//           className="pointer-events-none absolute inset-0 rounded-3xl border border-transparent z-10"
+//           style={{
+//             background: "linear-gradient(135deg, #3A7BFF, #4CC2FF, #9B5DFF)",
+//             WebkitMask:
+//               "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
+//             WebkitMaskComposite: "xor",
+//             maskComposite: "exclude",
+//             padding: "1px",
+//             opacity: 0.18,
+//           }}
+//           aria-hidden="true"
+//         />
+
+//         <div className="relative z-30">
+//           <div className="mb-6 flex items-center justify-between gap-4">
+//             <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-white/15 bg-[radial-gradient(circle_at_top,_#3A7BFF3b,_#050816)] overflow-hidden shadow-[0_0_40px_rgba(58,123,255,0.7)]">
+//               <Icon className="relative z-20 h-7 w-7 text-[#E8F2FF]" />
+//               <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[#3A7BFF66] to-[#4CC2FF66] opacity-40" />
+//             </div>
+
+//             <div className="text-right">
+//               <p className="text-2xl md:text-3xl font-semibold text-[#F2F4FA] leading-none">
+//                 {item.metric}
+//               </p>
+//               <p className="text-[10px] md:text-xs uppercase tracking-[0.24em] text-[#C7CEDF]/70 mt-1">
+//                 {item.metricLabel}
+//               </p>
+//             </div>
+//           </div>
+
+//           <h3 className="text-xl md:text-2xl font-semibold mb-3 text-[#F2F4FA]">
+//             {item.title}
+//           </h3>
+
+//           <p className="text-sm md:text-base leading-relaxed text-[#C7CEDF]">
+//             {item.description}
+//           </p>
+//         </div>
+
+//         <div
+//           className="pointer-events-none absolute bottom-4 right-4 h-8 w-8 opacity-40 z-20"
+//           aria-hidden="true"
+//         >
+//           <div className="h-full w-full rounded-br-3xl border-b border-r border-[#4CC2FF77]" />
+//         </div>
+//       </motion.div>
+//     </motion.div>
+//   );
+// }
+
 function ProofCard({
   item,
   index,
@@ -165,6 +290,7 @@ function ProofCard({
         />
 
         <div className="relative z-30">
+          {/* top row */}
           <div className="mb-6 flex items-center justify-between gap-4">
             <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-white/15 bg-[radial-gradient(circle_at_top,_#3A7BFF3b,_#050816)] overflow-hidden shadow-[0_0_40px_rgba(58,123,255,0.7)]">
               <Icon className="relative z-20 h-7 w-7 text-[#E8F2FF]" />
@@ -172,20 +298,43 @@ function ProofCard({
             </div>
 
             <div className="text-right">
-              <p className="text-2xl md:text-3xl font-semibold text-[#F2F4FA] leading-none">
+              <p
+                className="
+                  text-[28px] md:text-[32px] lg:text-[36px]
+                  leading-none
+                  font-semibold tracking-[-0.01em]
+                  text-[#F2F4FA]
+                "
+              >
                 {item.metric}
               </p>
-              <p className="text-[10px] md:text-xs uppercase tracking-[0.24em] text-[#C7CEDF]/70 mt-1">
+              <p className="mt-1 text-[10px] md:text-xs uppercase tracking-[0.24em] text-[#C7CEDF]/70">
                 {item.metricLabel}
               </p>
             </div>
           </div>
 
-          <h3 className="text-xl md:text-2xl font-semibold mb-3 text-[#F2F4FA]">
+          {/* title */}
+          <h3
+            className="
+              mb-3
+              text-[18px] md:text-[20px] lg:text-[22px]
+              leading-[1.15]
+              font-semibold tracking-[-0.01em]
+              text-[#F2F4FA]
+            "
+          >
             {item.title}
           </h3>
 
-          <p className="text-sm md:text-base leading-relaxed text-[#C7CEDF]">
+          {/* body */}
+          <p
+            className="
+              text-[15px] md:text-[16px] lg:text-[17px]
+              leading-[1.55] md:leading-[1.6]
+              text-[#C7CEDF]
+            "
+          >
             {item.description}
           </p>
         </div>

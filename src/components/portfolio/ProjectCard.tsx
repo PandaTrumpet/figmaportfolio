@@ -117,14 +117,20 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
           >
             <div className="absolute inset-0 bg-[#050608]/70 backdrop-blur-sm" />
             <div className="relative z-10 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-2.5 text-[#F2F4FA] shadow-[0_0_40px_rgba(76,194,255,0.35)]">
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm md:text-base font-medium"
-              >
-                Смотреть проект
-              </a>
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+    text-[14px] md:text-[15px] lg:text-[16px]
+    leading-[1.2]
+    font-medium
+  "
+                >
+                  Смотреть проект
+                </a>
+              )}
               <ExternalLink className="w-4 h-4 opacity-90" />
             </div>
           </motion.div>
@@ -133,7 +139,17 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
           {project.featured && (
             <div className="absolute top-4 left-4 z-10 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 backdrop-blur-xl">
               <Star className="h-4 w-4 text-[#4CC2FF]" />
-              <span className="text-xs text-[#E8F2FF] opacity-90">
+              {/* <span className="text-xs text-[#E8F2FF] opacity-90">
+                Избранный
+              </span> */}
+              <span
+                className="
+    text-[11px] md:text-[12px]
+    leading-[1.2]
+    uppercase tracking-[0.18em]
+    text-[#E8F2FF] opacity-90
+  "
+              >
                 Избранный
               </span>
             </div>
@@ -143,16 +159,44 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
         {/* content */}
         <div className="p-6 md:p-7">
           <div className="mb-2">
-            <h3 className="text-2xl md:text-3xl font-semibold text-[#F2F4FA] leading-tight">
+            {/* <h3 className="text-2xl md:text-3xl font-semibold text-[#F2F4FA] leading-tight">
+              {project.title}
+            </h3> */}
+            <h3
+              className="
+    text-[20px] md:text-[22px] lg:text-[24px]
+    leading-[1.15] md:leading-[1.12]
+    font-semibold tracking-[-0.01em]
+    text-[#F2F4FA]
+    mb-2
+  "
+            >
               {project.title}
             </h3>
           </div>
 
-          <p className="text-sm md:text-base text-[#C7CEDF] opacity-70 mb-4">
+          <p
+            className="
+    text-[12px] md:text-[13px] lg:text-[14px]
+    leading-[1.2]
+    text-[#C7CEDF]
+    opacity-70
+    mb-4
+  "
+          >
             {project.client}
           </p>
 
-          <p className="text-sm md:text-base leading-relaxed text-[#E8ECF4] opacity-80 mb-6">
+          <p
+            className="
+    text-[15px] md:text-[16px] lg:text-[17px]
+    leading-[1.55] md:leading-[1.6]
+    text-[#E8ECF4]
+    opacity-80
+    mb-5 md:mb-6
+    max-w-[56ch]
+  "
+          >
             {project.description}
           </p>
 
@@ -161,7 +205,16 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
             {project.industry?.slice(0, 2).map((ind: string) => (
               <span
                 key={ind}
-                className="text-xs md:text-sm px-3 py-1 rounded-full border border-white/10 bg-white/5 text-[#D5DBE6] backdrop-blur"
+                className="
+  text-[12px] md:text-[13px] lg:text-[14px]
+  leading-[1.2]
+  px-3 py-1.5
+  rounded-full
+  border border-white/10
+  bg-white/5
+  text-[#D5DBE6]
+  backdrop-blur
+"
               >
                 {ind}
               </span>
@@ -170,7 +223,15 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
             {project.type?.slice(0, 1).map((t: string) => (
               <span
                 key={t}
-                className="text-xs md:text-sm px-3 py-1 rounded-full border border-white/10 bg-gradient-to-r from-[#3A7BFF33] via-[#4CC2FF22] to-transparent text-[#E8F2FF]"
+                className="
+  text-[12px] md:text-[13px] lg:text-[14px]
+  leading-[1.2]
+  px-3 py-1.5
+  rounded-full
+  border border-white/10
+  bg-gradient-to-r from-[#3A7BFF33] via-[#4CC2FF22] to-transparent
+  text-[#E8F2FF]
+"
               >
                 {t}
               </span>

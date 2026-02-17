@@ -54,15 +54,37 @@ export function CaseStudyBlock({
           {/* header row */}
           <div className="flex items-start justify-between gap-6">
             <div className="flex items-start gap-4 min-w-0">
-              <span className="text-4xl md:text-5xl font-semibold text-white/10 leading-none select-none">
+              <span
+                className="
+    text-[40px] md:text-[52px]
+    leading-[0.95]
+    font-semibold tracking-[-0.02em]
+    text-white/10
+    select-none
+  "
+              >
                 {number}
               </span>
 
               <div className="min-w-0">
-                <h3 className="text-2xl md:text-3xl font-semibold tracking-tight text-[#F2F4FA] leading-tight">
+                <h3
+                  className="
+    text-[22px] md:text-[26px] lg:text-[30px]
+    leading-[1.12] md:leading-[1.1]
+    font-semibold tracking-[-0.012em]
+    text-[#F2F4FA]
+  "
+                >
                   {project.title}
                 </h3>
-                <p className="mt-1 text-sm md:text-base text-[#C7CEDF] opacity-80">
+                <p
+                  className="
+    mt-1
+    text-[12px] md:text-[13px] lg:text-[14px]
+    leading-[1.2]
+    text-[#C7CEDF] opacity-80
+  "
+                >
                   {project.client}
                 </p>
 
@@ -71,7 +93,15 @@ export function CaseStudyBlock({
                   {project.industry?.slice(0, 1).map((ind: string) => (
                     <span
                       key={ind}
-                      className="text-xs px-3 py-1 rounded-full border border-white/10 bg-white/5 text-[#D5DBE6]"
+                      className="
+  text-[12px] md:text-[13px]
+  leading-[1.2]
+  px-3 py-1.5
+  rounded-full
+  border border-white/10
+  bg-white/5
+  text-[#D5DBE6]
+"
                     >
                       {ind}
                     </span>
@@ -79,7 +109,15 @@ export function CaseStudyBlock({
                   {project.type?.slice(0, 2).map((t: string) => (
                     <span
                       key={t}
-                      className="text-xs px-3 py-1 rounded-full border border-white/10 bg-gradient-to-r from-[#3A7BFF33] via-[#4CC2FF22] to-transparent text-[#E8F2FF]"
+                      className="
+  text-[12px] md:text-[13px]
+  leading-[1.2]
+  px-3 py-1.5
+  rounded-full
+  border border-white/10
+  bg-gradient-to-r from-[#3A7BFF33] via-[#4CC2FF22] to-transparent
+  text-[#E8F2FF]
+"
                     >
                       {t}
                     </span>
@@ -150,7 +188,15 @@ export function CaseStudyBlock({
             {/* results */}
             <div className="lg:col-span-5">
               <div className="rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6 backdrop-blur-xl">
-                <h4 className="text-sm uppercase tracking-[0.22em] text-[#C7CEDF] mb-4">
+                <h4
+                  className="
+    text-[11px] md:text-[12px]
+    leading-[1.2]
+    uppercase tracking-[0.22em]
+    text-[#C7CEDF]
+    mb-4
+  "
+                >
                   Результат
                 </h4>
 
@@ -162,7 +208,14 @@ export function CaseStudyBlock({
                         key={i}
                         className="rounded-xl border border-white/10 bg-gradient-to-br from-[#9B5DFF18] via-transparent to-transparent p-4"
                       >
-                        <p className="text-sm md:text-base text-[#E8ECF4] opacity-85 leading-relaxed">
+                        <p
+                          className="
+    text-[15px] md:text-[16px] lg:text-[17px]
+    leading-[1.55] md:leading-[1.6]
+    text-[#E8ECF4]
+    opacity-85
+  "
+                        >
                           {r}
                         </p>
                       </div>
@@ -173,7 +226,16 @@ export function CaseStudyBlock({
                 <div className="mt-5">
                   <a
                     href="#contact"
-                    className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm md:text-base text-[#F2F4FA] hover:bg-white/10 transition"
+                    className="
+  inline-flex items-center gap-3 rounded-full
+  border border-white/10 bg-white/5
+  px-6 py-3.5
+  text-[14px] md:text-[15px] lg:text-[16px]
+  leading-[1.2]
+  font-medium
+  text-[#F2F4FA]
+  hover:bg-white/10 transition
+"
                   >
                     <span>Обсудить похожий проект</span>
                     <ArrowRight className="w-5 h-5 opacity-90" />
@@ -194,19 +256,19 @@ export function CaseStudyBlock({
             >
               <div className="grid lg:grid-cols-2 gap-4">
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6 backdrop-blur-xl">
-                  <h5 className="text-xs uppercase tracking-[0.22em] text-[#C7CEDF] mb-3">
+                  <h5 className="text-[11px] md:text-[12px] leading-[1.2] uppercase tracking-[0.22em] text-[#C7CEDF] mb-3">
                     Задача
                   </h5>
-                  <p className="text-sm md:text-base text-[#E8ECF4] opacity-85 leading-relaxed">
+                  <p className="text-[15px] md:text-[16px] lg:text-[17px] leading-[1.55] md:leading-[1.6] text-[#E8ECF4] opacity-85">
                     {project.caseStudy.challenge}
                   </p>
                 </div>
 
                 <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-[#060A13] via-[#050816] to-[#02030A] p-5 md:p-6">
-                  <h5 className="text-xs uppercase tracking-[0.22em] text-[#C7CEDF] mb-3">
+                  <h5 className="text-[11px] md:text-[12px] leading-[1.2] uppercase tracking-[0.22em] text-[#C7CEDF] mb-3">
                     Решение
                   </h5>
-                  <p className="text-sm md:text-base text-[#F2F4FA] opacity-90 leading-relaxed">
+                  <p className="text-[15px] md:text-[16px] lg:text-[17px] leading-[1.55] md:leading-[1.6] text-[#E8ECF4] opacity-85">
                     {project.caseStudy.solution}
                   </p>
                 </div>
