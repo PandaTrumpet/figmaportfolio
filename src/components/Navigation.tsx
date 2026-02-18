@@ -4,10 +4,9 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { PageContainer } from "./Layout/PageContainer";
-
+import { LanguageSwitcher } from "@/src/components/LanguageSwitcher";
 const NAV_OFFSET = 80;
 
 const navLinks = [
@@ -24,9 +23,10 @@ const navLinks = [
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  
-  const rawPathname = usePathname();
-  const pathname = rawPathname ?? "/"; // ✅ всегда строка
+
+  const pathname = usePathname(); // ✅ locale-safe (без /en)
+  const router = useRouter();
+
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -34,12 +34,18 @@ export function Navigation() {
   }, []);
 
   const scrollToSection = (selector: string) => {
+    // если мы НЕ на главной — сначала уходим на главную с hash
+    if (pathname !== "/") {
+      router.push(`/${selector}`);
+      setIsMobileMenuOpen(false);
+      return;
+    }
+
     const el = document.querySelector(selector);
     if (!el) return;
 
     const top =
       el.getBoundingClientRect().top + window.pageYOffset - NAV_OFFSET;
-
     window.scrollTo({ top, behavior: "smooth" });
     setIsMobileMenuOpen(false);
   };
@@ -150,21 +156,6 @@ export function Navigation() {
               {/* <button
                 type="button"
                 onClick={() => scrollToSection("#contact")}
-                className="
-                  relative inline-flex items-center rounded-full px-6 py-3
-                  text-[11px] font-semibold tracking-[0.22em] uppercase
-                  bg-linear-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#63E5FF]
-                  text-slate-950
-                  shadow-[0_0_40px_rgba(76,194,255,0.7)]
-                  hover:shadow-[0_0_60px_rgba(76,194,255,0.9)]
-                  transition-transform duration-200 hover:scale-[1.03]
-                "
-              >
-                <span className="relative z-10">Get Started</span>
-              </button> */}
-              <button
-                type="button"
-                onClick={() => scrollToSection("#contact")}
                 className=" cursor-pointer
     group relative inline-flex items-center overflow-hidden rounded-full
     px-6 py-3
@@ -176,10 +167,10 @@ export function Navigation() {
     transition-transform duration-200 hover:scale-[1.03]
   "
               >
-                {/* Unified gradient palette */}
+               
                 <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
 
-                {/* Unified hover highlight */}
+           
                 <span
                   className="
       pointer-events-none absolute inset-0 rounded-full
@@ -190,7 +181,9 @@ export function Navigation() {
                 />
 
                 <span className="relative z-10">Get Started</span>
-              </button>
+              </button> */}
+
+              <LanguageSwitcher />
             </div>
 
             {/* MOBILE TOGGLE */}
@@ -237,80 +230,6 @@ export function Navigation() {
             ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"}
           `}
         >
-          {/* <div className="pt-24 pb-10 px-8 space-y-6 text-slate-100">
-            {navLinks.map((link, i) => {
-              const delay = 0.1 + i * 0.08;
-
-              const baseClasses = `
-                mobile-nav-link
-                block text-xl font-medium tracking-wide
-                text-slate-200/80
-                transition-all
-                hover:text-cyan-200 
-                hover:drop-shadow-[0_0_12px_rgba(76,194,255,0.55)]
-                hover:scale-[1.02]
-              `;
-
-              const animatedStyle: React.CSSProperties = {
-                animationName: isMobileMenuOpen ? "neon-glitch-in" : "none",
-                animationDelay: `${delay}s`,
-              };
-
-              if (link.isPage) {
-                return (
-                  <Link
-                    key={link.label}
-                    href={link.href}
-                    onClick={(e) => {
-                      if (
-                        link.label === "Home" &&
-                        pathname === "/" &&
-                        link.scrollTo
-                      ) {
-                        e.preventDefault();
-                        scrollToSection(link.scrollTo);
-                      } else {
-                        setIsMobileMenuOpen(false);
-                      }
-                    }}
-                    className={baseClasses}
-                    style={animatedStyle}
-                  >
-                    {link.label}
-                  </Link>
-                );
-              }
-
-              return (
-                <button
-                  key={link.label}
-                  type="button"
-                  onClick={() => scrollToSection(link.href)}
-                  className={baseClasses}
-                  style={animatedStyle}
-                >
-                  {link.label}
-                </button>
-              );
-            })}
-
-            <div className="pt-6 border-t border-slate-700/60">
-              <button
-                type="button"
-                onClick={() => scrollToSection("#contact")}
-                className="
-                  block w-full rounded-full px-6 py-4 text-center text-sm font-semibold tracking-[0.18em] uppercase
-                  bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#63E5FF]
-                  text-slate-950
-                  shadow-[0_0_30px_rgba(76,194,255,0.8)]
-                  hover:shadow-[0_0_45px_rgba(76,194,255,0.95)]
-                  transition-transform duration-150 hover:scale-[1.02]
-                "
-              >
-                Get Started
-              </button>
-            </div>
-          </div> */}
           <div className="pt-24 pb-10 px-8 space-y-6 text-slate-100">
             {navLinks.map((link, i) => {
               const delay = 0.1 + i * 0.08;

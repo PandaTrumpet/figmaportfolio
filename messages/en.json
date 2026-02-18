@@ -1,0 +1,11 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Websites & automation for Israeli SMB",
+    "subtitle": "Not just a site — a business system."
+  }
+}

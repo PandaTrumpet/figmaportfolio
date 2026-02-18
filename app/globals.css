@@ -284,17 +284,17 @@ html {
 /* Кастомный курсор */
 html,
 body {
-  cursor: none;
+  /* cursor: none; */
 }
 
 .cursor-hidden * {
-  cursor: none !important;
+  /* cursor: none !important; */
 }
 
 /* можно добавить класс .cursor-default на блоки, где нужен обычный курсор */
 .cursor-default,
 .cursor-default * {
-  cursor: auto !important;
+  /* cursor: auto !important; */
 }
 
 
