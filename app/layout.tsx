@@ -42,11 +42,12 @@
 
 
 
+// Рабочий вариант
+
 // import React from "react";
 // import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
 // import "./globals.css";
-// import { getLocale } from "next-intl/server";
 
 // const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 // const geistMono = Geist_Mono({
@@ -59,16 +60,15 @@
 //   description: "Websites & automation for Israeli SMB",
 // };
 
-// export default async function RootLayout({
+// export default function RootLayout({
 //   children,
 // }: {
 //   children: React.ReactNode;
-// }) {
-//   const locale = await getLocale();
-//   const dir = locale === "he" ? "rtl" : "ltr";
-
+//   }) {
+  
+  
 //   return (
-//     <html lang={locale} dir={dir}>
+//     <html>
 //       <body
 //         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 //       >
@@ -80,12 +80,19 @@
 
 
 
+
+// Самый првильній варинт!
+
 import React from "react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -102,9 +109,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
+    <html suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#050814] text-slate-100`}
       >
         {children}
       </body>

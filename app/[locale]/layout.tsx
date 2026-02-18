@@ -66,9 +66,13 @@
 
 
 
+
+// Рабочий варинт
+
+
 // import React from "react";
 // import { NextIntlClientProvider } from "next-intl";
-// import { getMessages } from "next-intl/server";
+// import { getMessages, setRequestLocale } from "next-intl/server";
 // import { notFound } from "next/navigation";
 
 // import { Footer } from "@/src/components/Footer";
@@ -82,6 +86,10 @@
 //   return (locales as readonly string[]).includes(v);
 // }
 
+// export function generateStaticParams() {
+//   return locales.map((locale) => ({ locale }));
+// }
+
 // export default async function LocaleLayout({
 //   children,
 //   params,
@@ -89,11 +97,15 @@
 //   children: React.ReactNode;
 //   params: Promise<{ locale: string }>;
 // }) {
-//   const { locale } = await params;
+//   const { locale } = await params; // ✅ важно для твоего Next 16
 
 //   if (!isLocale(locale)) notFound();
 
-//   const messages = await getMessages({ locale });
+//   // ✅ важно для next-intl + кеша
+//   setRequestLocale(locale);
+
+//   // ✅ после setRequestLocale locale передавать не нужно
+//   const messages = await getMessages();
 
 //   return (
 //     <NextIntlClientProvider locale={locale} messages={messages}>
@@ -105,9 +117,7 @@
 //   );
 // }
 
-
-// app/[locale]/layout.tsx
-
+// Самый првильній варинт!
 
 import React from "react";
 import { NextIntlClientProvider } from "next-intl";
@@ -117,8 +127,7 @@ import { notFound } from "next/navigation";
 import { Footer } from "@/src/components/Footer";
 import { Navigation } from "@/src/components/Navigation";
 import { HyperPrecisionCursor } from "@/src/components/HyperPrecisionCursor";
-export const dynamic = "force-static";
-export const revalidate = 3600;
+
 const locales = ["en", "he", "ru"] as const;
 type Locale = (typeof locales)[number];
 
@@ -137,22 +146,24 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params; // ✅ важно для твоего Next 16
+  const { locale } = await params;
 
   if (!isLocale(locale)) notFound();
 
-  // ✅ важно для next-intl + кеша
   setRequestLocale(locale);
-
-  // ✅ после setRequestLocale locale передавать не нужно
   const messages = await getMessages();
+
+  const dir = locale === "he" ? "rtl" : "ltr";
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
-      <HyperPrecisionCursor />
-      <Navigation />
-      {children}
-      <Footer />
+      {/* 🔥 Управление направлением и языком здесь */}
+      <div lang={locale} dir={dir} className="min-h-dvh">
+        <HyperPrecisionCursor />
+        <Navigation />
+        {children}
+        <Footer />
+      </div>
     </NextIntlClientProvider>
   );
 }
