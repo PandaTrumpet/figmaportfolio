@@ -10,7 +10,7 @@ import { PageContainer } from "../Layout/PageContainer";
 export function PricingPackagesSection() {
   return (
     <section
-      id="pricing"
+      id="pricing-packages"
       className="relative  pt-10 pb-10
         md:pt-14 md:pb-14
         lg:pt-16 lg:pb-16 overflow-visible"

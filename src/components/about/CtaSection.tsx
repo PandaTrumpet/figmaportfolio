@@ -192,9 +192,9 @@ export function CtaSection() {
             </Link>
             {/* Secondary CTA */}
            
-
-            <motion.a
-              href="#cases"
+   <Link href={`/${locale}/pricing#pricing-packages`} scroll>
+            <motion.span
+            
               className="
     relative group inline-flex items-center gap-2
     rounded-full
@@ -241,7 +241,8 @@ export function CtaSection() {
 
               <span className="relative z-10">Посмотреть кейсы</span>
               {/* <ArrowRight className="relative z-10 h-4 w-4 opacity-90 transition-transform group-hover:translate-x-1" /> */}
-            </motion.a>
+              </motion.span>
+                 </Link>
           </div>
         </motion.div>
       </PageContainer>

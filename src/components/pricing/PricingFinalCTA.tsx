@@ -211,8 +211,58 @@ const locale = useLocale();
                 <ArrowRight className="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </motion.span>
             </Link>
-            <motion.a
+            {/* <motion.a
               href="#whatsapp"
+              className="
+    relative group inline-flex items-center gap-2
+    rounded-full
+    px-8 py-4 md:px-10 md:py-5
+    text-sm md:text-base font-medium
+    text-[#F5EFE7]
+    backdrop-blur-sm
+    transition-all
+  "
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+            >
+       
+              <span
+                className="
+      pointer-events-none absolute inset-0 rounded-full p-[1px]
+      bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]
+    "
+              >
+                <span className="block h-full w-full rounded-full bg-[#050608]" />
+              </span>
+
+           
+              <span
+                className="
+      pointer-events-none absolute inset-0 rounded-full
+      bg-[radial-gradient(circle_at_center,rgba(76,194,255,0.25),transparent_60%)]
+      opacity-0 group-hover:opacity-100
+      transition-opacity
+    "
+              />
+
+           
+              <span
+                className="
+      pointer-events-none absolute inset-0 rounded-full
+      opacity-0 group-hover:opacity-100
+      transition-opacity
+      shadow-[0_0_34px_rgba(76,194,255,0.45)]
+    "
+              />
+
+              <MessageCircle className="relative z-10 h-5 w-5 text-[#4CC2FF]" />
+              <span className="relative z-10">Написать в WhatsApp</span>
+            </motion.a> */}
+
+            <motion.a
+              href="https://wa.me/+380634398038?text=Здравствуйте,%20хочу%20обсудить%20проект"
+              target="_blank"
+              rel="noopener noreferrer"
               className="
     relative group inline-flex items-center gap-2
     rounded-full
@@ -259,15 +309,6 @@ const locale = useLocale();
               <span className="relative z-10">Написать в WhatsApp</span>
             </motion.a>
           </div>
-
-          {/* <motion.a
-            href="#comparison"
-            className="mt-6 inline-flex items-center gap-2 text-sm md:text-base text-[#C7CEDF] hover:text-[#F2F4FA] transition-colors"
-            whileHover={reduce ? undefined : { x: 6 }}
-          >
-            <span>Сравнить пакеты</span>
-            <ArrowRight className="h-4 w-4" />
-          </motion.a> */}
 
           <p className="mt-6 text-xs md:text-sm text-[#9AA6BF]">
             Лицензии сервисов (CRM / CMS / хостинг / чат-бот платформы)

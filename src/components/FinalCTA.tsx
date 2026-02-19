@@ -179,8 +179,9 @@ export function FinalCTA() {
               </motion.span>
             </Link>
 
-            <motion.a
-              href="#pricing"
+<Link href={`/${locale}/pricing#pricing-packages`} scroll>
+            <motion.span
+             
               className="
     relative group inline-flex items-center justify-center
     px-9 py-5 rounded-full text-base md:text-lg font-medium
@@ -222,7 +223,8 @@ export function FinalCTA() {
               />
 
               <span className="relative z-10">Посмотреть цены</span>
-            </motion.a>
+              </motion.span>
+              </Link>
           </motion.div>
 
           {/* Optional line */}
