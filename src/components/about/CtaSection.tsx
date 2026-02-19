@@ -5,12 +5,13 @@
 import { motion, useReducedMotion } from "motion/react";
 import {  ArrowRight, Sparkles } from "lucide-react";
 import { PageContainer } from "../Layout/PageContainer";
-
+import Link from "next/link";
+import { useLocale } from "next-intl";
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 export function CtaSection() {
   const reduce = useReducedMotion();
-
+  const locale = useLocale();
   return (
     <section
       className="
@@ -92,35 +93,8 @@ export function CtaSection() {
 
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row md:gap-5">
             {/* Primary CTA */}
-            {/* <motion.a
-              href="#contact"
-              className="
-                relative inline-flex items-center justify-center gap-3
-                overflow-hidden rounded-full
-                px-8 py-4 md:px-10 md:py-5
-                text-sm md:text-base font-medium
-                text-[#050816]
-                shadow-[0_0_45px_rgba(76,194,255,0.55)]
-                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4CC2FF]/70 focus-visible:ring-offset-0
-              "
-              whileHover={reduce ? undefined : { scale: 1.03 }}
-              whileTap={reduce ? undefined : { scale: 0.98 }}
-              transition={{ duration: 0.25, ease: "easeOut" }}
-              aria-label="Обсудить задачу"
-            >
-              <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
-              <motion.span
-                className="absolute inset-0 bg-[linear-gradient(120deg,_transparent_0%,_white_20%,_transparent_40%)] opacity-0"
-                initial={{ x: "-120%" }}
-                whileHover={reduce ? undefined : { x: "120%", opacity: 0.55 }}
-                transition={{ duration: 0.8, ease: "easeInOut" }}
-                aria-hidden="true"
-              />
-              <span className="relative z-10">Обсудить задачу</span>
-              <ArrowUpRight className="relative z-10 h-4 w-4" />
-            </motion.a> */}
 
-            <motion.a
+            {/* <motion.a
               href="#contact"
               className="
     relative group inline-flex items-center justify-center gap-3
@@ -142,10 +116,10 @@ export function CtaSection() {
               transition={{ duration: 0.25, ease: "easeOut" }}
               aria-label="Обсудить задачу"
             >
-              {/* Main gradient — fixed palette */}
+       
               <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
 
-              {/* Depth / glass layer */}
+        
               <span
                 className="
       pointer-events-none absolute inset-0
@@ -155,7 +129,7 @@ export function CtaSection() {
                 aria-hidden="true"
               />
 
-              {/* Hover soft highlight — unified */}
+       
               <span
                 className="
       pointer-events-none absolute inset-0 rounded-full
@@ -167,30 +141,57 @@ export function CtaSection() {
 
               <span className="relative z-10">Обсудить задачу</span>
               <ArrowRight className="relative z-10 h-4 w-4 opacity-90 transition-transform group-hover:translate-x-1" />
-            </motion.a>
-
-            {/* Secondary CTA */}
-            {/* <motion.a
-              href="#cases"
-              className="
-                inline-flex items-center gap-2
-                rounded-full
-                px-6 py-3 md:px-7 md:py-4
-                border border-white/10
-                bg-white/5 backdrop-blur-md
-                text-sm md:text-base
-                text-white/80 hover:text-white
-                hover:border-white/15 hover:bg-white/7
-                transition
-                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/25
-              "
-              whileHover={reduce ? undefined : { y: -2 }}
-              transition={{ duration: 0.22, ease: "easeOut" }}
-              aria-label="Посмотреть кейсы"
-            >
-              <span>Посмотреть кейсы</span>
-              <ArrowRight className="h-4 w-4 opacity-90" />
             </motion.a> */}
+            <Link href={`/${locale}/contact#contact-form`} scroll>
+              <motion.span
+                className="
+          relative group inline-flex items-center justify-center gap-3
+          overflow-hidden rounded-full
+          px-8 py-4 md:px-10 md:py-5
+          text-sm md:text-base font-medium
+          text-[#050816]
+          shadow-[0_0_40px_rgba(76,194,255,0.55)]
+          hover:shadow-[0_0_65px_rgba(76,194,255,0.85)]
+          transition-shadow
+          focus-visible:outline-none
+          focus-visible:ring-2 focus-visible:ring-[#4CC2FF]/70
+          focus-visible:ring-offset-0
+          cursor-pointer
+        "
+                whileHover={reduce ? undefined : { scale: 1.03 }}
+                whileTap={reduce ? undefined : { scale: 0.97 }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
+                aria-label="Обсудить задачу — перейти к форме контактов"
+              >
+                {/* Main gradient */}
+                <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
+
+                {/* Depth / glass layer */}
+                <span
+                  className="
+            pointer-events-none absolute inset-0
+            [background:linear-gradient(to_bottom,rgba(255,255,255,0.28),rgba(255,255,255,0.06)_45%,rgba(0,0,0,0.12))]
+            mix-blend-overlay
+          "
+                  aria-hidden="true"
+                />
+
+                {/* Hover highlight */}
+                <span
+                  className="
+            pointer-events-none absolute inset-0 rounded-full
+            bg-white/10 opacity-0
+            group-hover:opacity-100 transition-opacity
+          "
+                  aria-hidden="true"
+                />
+
+                <span className="relative z-10">Обсудить задачу</span>
+                <ArrowRight className="relative z-10 h-4 w-4 opacity-90 transition-transform group-hover:translate-x-1" />
+              </motion.span>
+            </Link>
+            {/* Secondary CTA */}
+           
 
             <motion.a
               href="#cases"
@@ -242,8 +243,6 @@ export function CtaSection() {
               {/* <ArrowRight className="relative z-10 h-4 w-4 opacity-90 transition-transform group-hover:translate-x-1" /> */}
             </motion.a>
           </div>
-
-       
         </motion.div>
       </PageContainer>
 

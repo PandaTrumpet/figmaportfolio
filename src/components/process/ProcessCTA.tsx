@@ -6,7 +6,8 @@ import dynamic from "next/dynamic";
 import { motion } from "motion/react";
 import { ArrowRight, Sparkles, Target, Zap } from "lucide-react";
 import { PageContainer } from "../Layout/PageContainer";
-
+import Link from "next/link";
+import { useLocale } from "next-intl";
 const ParticlesBackground = dynamic(
   () =>
     import("@/src/components/ParticlesBackground").then(
@@ -18,6 +19,7 @@ const ParticlesBackground = dynamic(
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 export function ProcessCTA() {
+    const locale = useLocale();
   return (
     <section
       id="contact"
@@ -111,27 +113,6 @@ export function ProcessCTA() {
             <div className="mt-10 md:mt-12 flex items-center justify-center">
               {/* <motion.a
                 href="#contact"
-                className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-full
-                           px-9 py-3.5 md:px-12 md:py-4 text-sm md:text-base font-medium
-                           text-[#050816] shadow-[0_0_46px_rgba(76,194,255,0.55)]"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                transition={{ duration: 0.25, ease: "easeOut" }}
-              >
-                <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
-
-                <motion.span
-                  className="absolute inset-0 bg-[linear-gradient(120deg,_transparent_0%,_white_20%,_transparent_40%)] opacity-0"
-                  initial={{ x: "-100%" }}
-                  whileHover={{ x: "100%", opacity: 0.55 }}
-                  transition={{ duration: 0.7, ease: "easeInOut" }}
-                />
-
-                <span className="relative z-10">Начать проект</span>
-                <ArrowRight className="relative z-10 h-5 w-5 md:h-6 md:w-6 transition-transform group-hover:translate-x-1" />
-              </motion.a> */}
-              <motion.a
-                href="#contact"
                 className="
     group relative inline-flex items-center justify-center gap-3
     overflow-hidden rounded-full
@@ -147,10 +128,10 @@ export function ProcessCTA() {
                 whileTap={{ scale: 0.97 }}
                 transition={{ duration: 0.25, ease: "easeOut" }}
               >
-                {/* Main gradient — fixed palette */}
+           
                 <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
 
-                {/* Depth / glass layer */}
+            
                 <span
                   className="
       pointer-events-none absolute inset-0
@@ -160,7 +141,6 @@ export function ProcessCTA() {
                   aria-hidden="true"
                 />
 
-                {/* Hover soft highlight — unified */}
                 <span
                   className="
       pointer-events-none absolute inset-0 rounded-full
@@ -172,7 +152,51 @@ export function ProcessCTA() {
 
                 <span className="relative z-10">Начать проект</span>
                 <ArrowRight className="relative z-10 h-5 w-5 md:h-6 md:w-6 transition-transform group-hover:translate-x-1" />
-              </motion.a>
+              </motion.a> */}
+              <Link href={`/${locale}/contact#contact-form`} scroll>
+                <motion.span
+                  className="
+      group relative inline-flex items-center justify-center gap-3
+      overflow-hidden rounded-full
+      px-9 py-3.5 md:px-12 md:py-4
+      text-sm md:text-base font-medium
+      text-[#050816]
+      shadow-[0_0_40px_rgba(76,194,255,0.55)]
+      hover:shadow-[0_0_65px_rgba(76,194,255,0.85)]
+      transition-shadow
+      cursor-pointer
+    "
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ duration: 0.25, ease: "easeOut" }}
+                >
+                  {/* Main gradient */}
+                  <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
+
+                  {/* Depth / glass layer */}
+                  <span
+                    className="
+        pointer-events-none absolute inset-0
+        [background:linear-gradient(to_bottom,rgba(255,255,255,0.28),rgba(255,255,255,0.06)_45%,rgba(0,0,0,0.12))]
+        mix-blend-overlay
+      "
+                    aria-hidden="true"
+                  />
+
+                  {/* Hover highlight */}
+                  <span
+                    className="
+        pointer-events-none absolute inset-0 rounded-full
+        bg-white/10 opacity-0
+        group-hover:opacity-100 transition-opacity
+      "
+                    aria-hidden="true"
+                  />
+
+                  <span className="relative z-10">Начать проект</span>
+                  <ArrowRight className="relative z-10 h-5 w-5 md:h-6 md:w-6 transition-transform group-hover:translate-x-1" />
+                </motion.span>
+              </Link>
             </div>
 
             <p className="mt-6 text-xs md:text-sm text-[#C7CEDF]/75">

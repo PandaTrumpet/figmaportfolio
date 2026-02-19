@@ -7,7 +7,8 @@ import { useRef } from "react";
 import { motion, useInView, useReducedMotion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { PageContainer } from "../Layout/PageContainer";
-
+import Link from "next/link";
+import { useLocale } from "next-intl";
 const options = [
   {
     title: "Нужны заявки уже сейчас",
@@ -38,7 +39,7 @@ export function DecisionSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-120px" });
   const reduce = useReducedMotion();
-
+  const locale = useLocale();
   return (
     <section
       ref={sectionRef}
@@ -171,8 +172,6 @@ export function DecisionSection() {
                 {/* left */}
                 <div className="min-w-0">
                   <div className="flex items-center gap-4 mb-3">
-              
-
                     <span
                       className="
     text-[11px] md:text-[12px]
@@ -198,7 +197,6 @@ export function DecisionSection() {
                     </span>
                   </div>
 
-               
                   <h3
                     className="
     text-[20px] md:text-[22px] lg:text-[24px]
@@ -211,7 +209,6 @@ export function DecisionSection() {
                     {o.title}
                   </h3>
 
-               
                   <p
                     className="
     text-[15px] md:text-[16px] lg:text-[17px]
@@ -224,7 +221,6 @@ export function DecisionSection() {
                     {o.description}
                   </p>
 
-              
                   <div
                     className="
     mt-4 inline-flex items-center gap-2
@@ -242,8 +238,7 @@ export function DecisionSection() {
 
                 {/* right: result pill */}
                 <div className="shrink-0">
-             
-                  <motion.a
+                  {/* <motion.a
                     href="#contact"
                     className="
     relative group inline-flex items-center justify-center
@@ -260,10 +255,10 @@ export function DecisionSection() {
                     whileTap={reduce ? undefined : { scale: 0.97 }}
                     transition={{ duration: 0.2, ease: "easeOut" }}
                   >
-                    {/* Main gradient — fixed palette */}
+                
                     <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
 
-                    {/* Depth / glass layer */}
+              
                     <span
                       className="
       pointer-events-none absolute inset-0
@@ -273,7 +268,7 @@ export function DecisionSection() {
                       aria-hidden="true"
                     />
 
-                    {/* Hover soft highlight — unified */}
+                 
                     <span
                       className="
       pointer-events-none absolute inset-0 rounded-full
@@ -287,7 +282,54 @@ export function DecisionSection() {
                       {o.result}
                       <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                     </span>
-                  </motion.a>
+                  </motion.a> */}
+                  <Link href={`/${locale}/contact#contact-form`} scroll>
+                    <motion.span
+                      className="
+          relative group inline-flex items-center justify-center
+          overflow-hidden rounded-full
+          px-7 py-3.5
+          text-sm md:text-base font-medium
+          text-[#050816]
+          shadow-[0_0_40px_rgba(76,194,255,0.55)]
+          hover:shadow-[0_0_65px_rgba(76,194,255,0.85)]
+          transition-shadow
+          cursor-pointer
+        "
+                      whileHover={reduce ? undefined : { scale: 1.03 }}
+                      whileTap={reduce ? undefined : { scale: 0.97 }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
+                      aria-label="Перейти к форме контактов"
+                    >
+                      {/* Main gradient — fixed palette */}
+                      <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
+
+                      {/* Depth / glass layer */}
+                      <span
+                        className="
+            pointer-events-none absolute inset-0
+            [background:linear-gradient(to_bottom,rgba(255,255,255,0.28),rgba(255,255,255,0.06)_45%,rgba(0,0,0,0.12))]
+            mix-blend-overlay
+          "
+                        aria-hidden="true"
+                      />
+
+                      {/* Hover soft highlight — unified */}
+                      <span
+                        className="
+            pointer-events-none absolute inset-0 rounded-full
+            bg-white/10 opacity-0
+            group-hover:opacity-100 transition-opacity
+          "
+                        aria-hidden="true"
+                      />
+
+                      <span className="relative z-10 flex items-center gap-3">
+                        {o.result}
+                        <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                      </span>
+                    </motion.span>
+                  </Link>
                 </div>
               </div>
             </motion.article>

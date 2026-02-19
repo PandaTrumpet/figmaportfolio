@@ -296,7 +296,9 @@ body {
 .cursor-default * {
   cursor: auto !important;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 
 /* Кастомный курсор */
 

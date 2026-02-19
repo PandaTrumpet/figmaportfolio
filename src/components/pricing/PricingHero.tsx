@@ -130,7 +130,7 @@ text-[clamp(1rem,1.4vw+0.6rem,1.35rem)]
                 whileTap={{ scale: 0.97 }}
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
-                <span className="relative z-10">Запросить демо</span>
+                <span className="relative z-10">Обсудить задачу</span>
                 <ArrowRight className="relative z-10 ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </motion.a>
 

@@ -1,50 +1,14 @@
 
-// "use client";
-
-// import { motion } from "motion/react";
-
-// export function ServicesCTA() {
-//   return (
-//     <section className="relative overflow-hidden px-6 md:px-12 lg:px-20 py-28 text-center">
-//       <motion.div
-//         initial={{ opacity: 0, y: 30 }}
-//         whileInView={{ opacity: 1, y: 0 }}
-//         viewport={{ once: true }}
-//         className="max-w-[800px] mx-auto"
-//       >
-//         <h2 className="text-3xl md:text-5xl font-semibold text-[#F5EFE7] mb-6">
-//           Не уверены, что выбрать?
-//         </h2>
-//         <p className="text-[#C7CEDF] text-base md:text-xl mb-10">
-//           Мы подскажем оптимальный формат под ваш бизнес за 15 минут — без
-//           обязательств и “продажных” разговоров.
-//         </p>
-
-//         <a
-//           href="#contact"
-//           className="inline-flex items-center justify-center rounded-full px-10 py-4 text-[#050816] font-medium bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF] shadow-[0_0_40px_rgba(76,194,255,0.6)]"
-//         >
-//           Запросить консультацию
-//         </a>
-//       </motion.div>
-
-//       {/* anti-seam fades (под общий фон страницы) */}
-//       <div className="pointer-events-none absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-[#020410] to-transparent" />
-//       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#020410] to-transparent" />
-//     </section>
-//   );
-// }
-
-
 
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
 import { PageContainer } from "../Layout/PageContainer";
-
+import Link from "next/link";
+import { useLocale } from "next-intl";
 export function ServicesCTA() {
   const reduce = useReducedMotion();
-
+  const locale = useLocale();
   return (
     <section
       className="relative overflow-visible  pt-10 pb-10
@@ -98,9 +62,7 @@ export function ServicesCTA() {
             обязательств и “продажных” разговоров.
           </p>
 
-    
-
-          <motion.a
+          {/* <motion.a
             href="#contact"
             className="
     relative group inline-flex items-center justify-center
@@ -121,10 +83,10 @@ export function ServicesCTA() {
             transition={{ duration: 0.22, ease: "easeOut" }}
             aria-label="Запросить консультацию — перейти к контактам"
           >
-            {/* Main gradient — fixed palette */}
+      
             <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
 
-            {/* Depth / glass layer */}
+       
             <span
               className="
       pointer-events-none absolute inset-0
@@ -134,7 +96,6 @@ export function ServicesCTA() {
               aria-hidden="true"
             />
 
-            {/* Hover soft highlight — unified */}
             <span
               className="
       pointer-events-none absolute inset-0 rounded-full
@@ -144,8 +105,54 @@ export function ServicesCTA() {
               aria-hidden="true"
             />
 
-            <span className="relative z-10">Запросить консультацию</span>
-          </motion.a>
+            <span className="relative z-10">Обсудить задачу</span>
+          </motion.a> */}
+          <Link href={`/${locale}/contact#contact-form`} scroll>
+            <motion.span
+              className="
+          relative group inline-flex items-center justify-center
+          overflow-hidden rounded-full
+          px-10 py-4
+          font-medium text-[#050816]
+          shadow-[0_0_40px_rgba(76,194,255,0.55)]
+          hover:shadow-[0_0_65px_rgba(76,194,255,0.85)]
+          transition-shadow
+          focus-visible:outline-none
+          focus-visible:ring-2 focus-visible:ring-[#4CC2FF]/70
+          focus-visible:ring-offset-0
+          cursor-pointer
+        "
+              whileHover={reduce ? undefined : { scale: 1.03 }}
+              whileTap={reduce ? undefined : { scale: 0.97 }}
+              transition={{ duration: 0.22, ease: "easeOut" }}
+              aria-label="Обсудить задачу — перейти к форме контактов"
+            >
+              {/* Main gradient */}
+              <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
+
+              {/* Depth / glass layer */}
+              <span
+                className="
+            pointer-events-none absolute inset-0
+            [background:linear-gradient(to_bottom,rgba(255,255,255,0.28),rgba(255,255,255,0.06)_45%,rgba(0,0,0,0.12))]
+            mix-blend-overlay
+          "
+                aria-hidden="true"
+              />
+
+              {/* Hover highlight */}
+              <span
+                className="
+            pointer-events-none absolute inset-0 rounded-full
+            bg-white/10 opacity-0
+            group-hover:opacity-100 transition-opacity
+          "
+                aria-hidden="true"
+              />
+
+              <span className="relative z-10">Обсудить задачу</span>
+            </motion.span>
+          </Link>
         </motion.div>
       </PageContainer>
     </section>

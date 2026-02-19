@@ -5,6 +5,9 @@ import { useRef } from "react";
 import { motion, useInView, AnimatePresence } from "motion/react";
 import { ArrowRight  } from "lucide-react";
 import { ImageWithFallback } from "@/src/components/figma/ImageWithFallback";
+
+import Link from "next/link";
+import { useLocale } from "next-intl";
 interface Project {
   id: string;
   title: string;
@@ -32,7 +35,7 @@ export function CaseStudyBlock({
 }) {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-120px" });
-
+  const locale = useLocale();
   if (!project?.caseStudy) return null;
 
   const number = String(index + 1).padStart(2, "0");
@@ -224,7 +227,7 @@ export function CaseStudyBlock({
 
                 {/* CTA compact */}
                 <div className="mt-5">
-                  <a
+                  {/* <a
                     href="#contact"
                     className="
   inline-flex items-center gap-3 rounded-full
@@ -239,7 +242,25 @@ export function CaseStudyBlock({
                   >
                     <span>Обсудить похожий проект</span>
                     <ArrowRight className="w-5 h-5 opacity-90" />
-                  </a>
+                  </a> */}
+                  <Link
+                    href={`/${locale}/contact#contact-form`}
+                    scroll
+                    className="
+        inline-flex items-center gap-3 rounded-full
+        border border-white/10 bg-white/5
+        px-6 py-3.5
+        text-[14px] md:text-[15px] lg:text-[16px]
+        leading-[1.2]
+        font-medium
+        text-[#F2F4FA]
+        hover:bg-white/10 transition
+      "
+                    aria-label="Обсудить похожий проект"
+                  >
+                    <span>Обсудить похожий проект</span>
+                    <ArrowRight className="w-5 h-5 opacity-90" />
+                  </Link>{" "}
                 </div>
               </div>
             </div>

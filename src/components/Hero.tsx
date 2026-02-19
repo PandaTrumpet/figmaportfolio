@@ -5,6 +5,8 @@
 
 import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { useLocale } from "next-intl";
 import { motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
 import { PageContainer } from "./Layout/PageContainer";
@@ -19,7 +21,7 @@ export function Hero() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
+ const locale = useLocale();
   return (
     <section
       id="hero"
@@ -102,27 +104,28 @@ text-[clamp(1rem,1.4vw+0.6rem,1.35rem)]
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              {/* Primary */}
-              <motion.a
-                href="#contact-form"
-                className="
-                 relative group inline-flex items-center justify-center
-    overflow-hidden rounded-full
-    px-10 py-3.5 md:px-12 md:py-4
-    text-sm md:text-base font-medium
-    text-[#050816]
-    shadow-[0_0_40px_rgba(76,194,255,0.55)]
-    hover:shadow-[0_0_65px_rgba(76,194,255,0.85)]
-    transition-shadow
-                "
-                whileHover={reduce ? undefined : { scale: 1.03 }}
-                whileTap={reduce ? undefined : { scale: 0.97 }}
-              >
-                <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
-                <span className="relative z-10">Запросить демо</span>
-                <ArrowRight className="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </motion.a>
-
+        
+              <Link href={`/${locale}/contact#contact-form`} scroll>
+                <motion.span
+                  className="
+            relative group inline-flex items-center justify-center
+            overflow-hidden rounded-full
+            px-10 py-3.5 md:px-12 md:py-4
+            text-sm md:text-base font-medium
+            text-[#050816]
+            shadow-[0_0_40px_rgba(76,194,255,0.55)]
+            hover:shadow-[0_0_65px_rgba(76,194,255,0.85)]
+            transition-shadow
+            cursor-pointer
+          "
+                  whileHover={reduce ? undefined : { scale: 1.03 }}
+                  whileTap={reduce ? undefined : { scale: 0.97 }}
+                >
+                  <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
+                  <span className="relative z-10">Обсудить задачу </span>
+                  <ArrowRight className="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </motion.span>
+              </Link>
               {/* Secondary */}
               <motion.a
                 href="#process"

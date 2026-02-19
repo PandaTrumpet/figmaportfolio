@@ -5,7 +5,7 @@
 import * as React from "react";
 import { motion, useReducedMotion } from "motion/react";
 
-
+import { useEffect, useState } from "react";
 import { ContactForm } from "./ContactForm";
 import { ContactInfoPanel } from "./ContactInfoPanel";
 import type { ContactFormState } from "./ContactPage";
@@ -33,12 +33,26 @@ export function ContactMain({
   ) => void;
 }) {
   const reduce = useReducedMotion();
-
+  const [forceReveal, setForceReveal] = useState(false);
+useEffect(() => {
+  if (window.location.hash === "#contact-form") {
+    queueMicrotask(() => {
+      setForceReveal(true);
+      requestAnimationFrame(() => {
+        document
+          .getElementById("contact-form")
+          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+  }
+}, []);
   return (
     <section
       className="relative  pt-10 pb-10
         md:pt-14 md:pb-14
+      
         lg:pt-16 lg:pb-16 bg-transparent overflow-visible"
+      id="contact-form"
     >
       {/* ultra-subtle local texture (masked) */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.05]">
@@ -64,9 +78,20 @@ export function ContactMain({
       <PageContainer className="relative z-10">
         <div className="grid lg:grid-cols-[1.5fr,1fr] gap-12 lg:gap-20 items-start">
           {/* LEFT: FORM */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: reduce ? 0 : 0.8,
+              ease: EASE,
+            }}
+            viewport={{ once: true, margin: "-120px" }}
+            className="relative"
+          > */}
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            animate={forceReveal ? { opacity: 1, y: 0 } : undefined}
+            whileInView={forceReveal ? undefined : { opacity: 1, y: 0 }}
             transition={{
               duration: reduce ? 0 : 0.8,
               ease: EASE,
