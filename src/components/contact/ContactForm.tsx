@@ -1,4 +1,3 @@
-
 "use client";
 
 import * as React from "react";
@@ -31,7 +30,7 @@ export function ContactForm({
   onMultiChange: (name: "additionalServices", values: string[]) => void;
 }) {
   const reduce = useReducedMotion();
-console.log(formData);
+  console.log(formData);
 
   return (
     <div className="relative">
@@ -433,6 +432,100 @@ function FormTextarea({
   );
 }
 
+// function FormCheckboxChips({
+//   label,
+//   name,
+//   values,
+//   options,
+//   hint,
+//   onToggle,
+// }: {
+//   label: string;
+//   name: string;
+//   values: string[];
+//   options: string[];
+//   hint?: string;
+//   onToggle: (value: string) => void;
+// }) {
+//   return (
+//     <fieldset className="relative">
+//       <legend className="mb-3 block text-xs md:text-sm tracking-[0.18em] text-[#AEB8CC]">
+//         {label}
+//       </legend>
+
+//       <div className="flex flex-wrap gap-2.5">
+//         {options.map((opt) => {
+//           const checked = values.includes(opt);
+
+//           return (
+//             <label
+//               key={opt}
+//               className={`
+//                 group relative cursor-pointer select-none
+//                 inline-flex items-center gap-2 rounded-full
+//                 px-4 py-2.5 md:px-4.5 md:py-2.5
+//                 border backdrop-blur-sm transition-all
+//                 ${
+//                   checked
+//                     ? "border-[#4CC2FF55] bg-[#4CC2FF18] text-[#F2F4FA] shadow-[0_0_24px_rgba(76,194,255,0.22)]"
+//                     : "border-white/10 bg-white/5 text-white/80 hover:bg-white/8 hover:border-white/15"
+//                 }
+//               `}
+//             >
+//               {/* real checkbox for accessibility */}
+//               <input
+//                 type="checkbox"
+//                 name={name}
+//                 value={opt}
+//                 checked={checked}
+//                 onChange={() => onToggle(opt)}
+//                 className="sr-only"
+//               />
+
+//               {/* custom check */}
+//               <span
+//                 aria-hidden="true"
+//                 className={`
+//                   grid place-items-center
+//                   h-4 w-4 rounded-md border transition-colors
+//                   ${
+//                     checked
+//                       ? "border-[#4CC2FFAA] bg-[#4CC2FF] text-[#050816]"
+//                       : "border-white/20 bg-white/0 text-transparent group-hover:border-white/35"
+//                   }
+//                 `}
+//               />
+
+//               <span className="text-sm md:text-[0.95rem] leading-none">
+//                 {opt}
+//               </span>
+
+//               {/* subtle glow when active */}
+//               <span
+//                 aria-hidden="true"
+//                 className={`
+//                   pointer-events-none absolute inset-0 rounded-full
+//                   ${checked ? "opacity-100" : "opacity-0"}
+//                   transition-opacity
+//                 `}
+//                 style={{
+//                   boxShadow: checked
+//                     ? "0 0 0 1px rgba(76,194,255,0.25), 0 0 34px rgba(76,194,255,0.18)"
+//                     : undefined,
+//                 }}
+//               />
+//             </label>
+//           );
+//         })}
+//       </div>
+
+//       {hint ? (
+//         <p className="mt-3 text-xs text-white/45 leading-relaxed">{hint}</p>
+//       ) : null}
+//     </fieldset>
+//   );
+// }
+
 function FormCheckboxChips({
   label,
   name,
@@ -454,27 +547,31 @@ function FormCheckboxChips({
         {label}
       </legend>
 
-      <div className="flex flex-wrap gap-2.5">
+      {/* responsive grid: mobile=1, laptop=2, desktop=3 */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-3.5">
         {options.map((opt) => {
           const checked = values.includes(opt);
+          const id = `${name}-${opt.replace(/\s+/g, "-").toLowerCase()}`;
 
           return (
             <label
               key={opt}
+              htmlFor={id}
               className={`
                 group relative cursor-pointer select-none
-                inline-flex items-center gap-2 rounded-full
-                px-4 py-2.5 md:px-4.5 md:py-2.5
-                border backdrop-blur-sm transition-all
+                rounded-2xl border backdrop-blur-sm
+                px-4 py-3 md:px-4.5 md:py-3.5
+                transition-all
                 ${
                   checked
-                    ? "border-[#4CC2FF55] bg-[#4CC2FF18] text-[#F2F4FA] shadow-[0_0_24px_rgba(76,194,255,0.22)]"
-                    : "border-white/10 bg-white/5 text-white/80 hover:bg-white/8 hover:border-white/15"
+                    ? "border-[#4CC2FF55] bg-[#4CC2FF14] shadow-[0_0_26px_rgba(76,194,255,0.18)]"
+                    : "border-white/10 bg-white/5 hover:bg-white/8 hover:border-white/15"
                 }
               `}
             >
-              {/* real checkbox for accessibility */}
+              {/* real checkbox (accessible) */}
               <input
+                id={id}
                 type="checkbox"
                 name={name}
                 value={opt}
@@ -483,39 +580,58 @@ function FormCheckboxChips({
                 className="sr-only"
               />
 
-              {/* custom check */}
+              <div className="flex items-start gap-3">
+                {/* check box */}
+                <span
+                  aria-hidden="true"
+                  className={`
+                    mt-0.5 grid place-items-center
+                    h-5 w-5 shrink-0 rounded-md border
+                    transition-colors
+                    ${
+                      checked
+                        ? "border-[#4CC2FFAA] bg-[#4CC2FF] text-[#050816]"
+                        : "border-white/20 bg-transparent text-transparent group-hover:border-white/35"
+                    }
+                  `}
+                >
+                  ✓
+                </span>
+
+                {/* label text */}
+                <div className="min-w-0">
+                  <span className="block text-sm md:text-[0.95rem] leading-snug text-[#F2F4FA]">
+                    {opt}
+                  </span>
+
+                  {/* optional micro hint per item (оставил задел, если захочешь) */}
+                  {/* <span className="mt-0.5 block text-xs text-white/45">...</span> */}
+                </div>
+              </div>
+
+              {/* subtle inner highlight */}
               <span
                 aria-hidden="true"
                 className={`
-                  grid place-items-center
-                  h-4 w-4 rounded-md border transition-colors
-                  ${
-                    checked
-                      ? "border-[#4CC2FFAA] bg-[#4CC2FF] text-[#050816]"
-                      : "border-white/20 bg-white/0 text-transparent group-hover:border-white/35"
-                  }
-                `}
-              />
-                
-             
-
-              <span className="text-sm md:text-[0.95rem] leading-none">
-                {opt}
-              </span>
-
-              {/* subtle glow when active */}
-              <span
-                aria-hidden="true"
-                className={`
-                  pointer-events-none absolute inset-0 rounded-full
-                  ${checked ? "opacity-100" : "opacity-0"}
+                  pointer-events-none absolute inset-0 rounded-2xl
                   transition-opacity
+                  ${checked ? "opacity-100" : "opacity-0"}
                 `}
                 style={{
                   boxShadow: checked
-                    ? "0 0 0 1px rgba(76,194,255,0.25), 0 0 34px rgba(76,194,255,0.18)"
+                    ? "0 0 0 1px rgba(76,194,255,0.22), 0 0 34px rgba(76,194,255,0.14)"
                     : undefined,
                 }}
+              />
+
+              {/* keyboard focus ring */}
+              <span
+                aria-hidden="true"
+                className="
+                  pointer-events-none absolute inset-0 rounded-2xl
+                  ring-0 ring-[#4CC2FF66] ring-offset-0
+                  group-has-[:focus-visible]:ring-2
+                "
               />
             </label>
           );

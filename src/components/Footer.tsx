@@ -1,16 +1,17 @@
 
 
-
+"use client"
 import * as React from "react";
 // import Link from "next/link";
 import { Mail, Phone, ArrowRight } from "lucide-react";
-import { Link } from "@/i18n/navigation";
+
 import { PageContainer } from "./Layout/PageContainer";
-
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
+const NAV_OFFSET = 80;
 export function Footer() {
-
+ const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const currentYear = new Date().getFullYear();
-
+  const pathname = usePathname(); // ✅ locale-safe (без /en)
   const pages = [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
@@ -28,6 +29,23 @@ export function Footer() {
     { label: "Accessibility", href: "/accessibility" },
     { label: "Refunds", href: "/refund" },
   ];
+  const router = useRouter();
+  const scrollToSection = (selector: string) => {
+    // если мы НЕ на главной — сначала уходим на главную с hash
+    if (pathname !== "/") {
+      router.push(`/${selector}`);
+      setIsMobileMenuOpen(false);
+      return;
+    }
+
+    const el = document.querySelector(selector);
+    if (!el) return;
+
+    const top =
+      el.getBoundingClientRect().top + window.pageYOffset - NAV_OFFSET;
+    window.scrollTo({ top, behavior: "smooth" });
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <footer
@@ -78,7 +96,36 @@ export function Footer() {
                 <span className="text-slate-300/80">Dev</span>
               </span>
             </div>
-
+            {/* <Link
+              href="/"
+              onClick={(e) => {
+                if (pathname === "/" && typeof window !== "undefined") {
+                  e.preventDefault();
+                  scrollToSection("#hero");
+                } else {
+                  setIsMobileMenuOpen(false);
+                }
+              }}
+              className="group flex items-center gap-3"
+            >
+              <div
+                className="
+                  relative w-9 h-9 rounded-xl
+                  bg-linear-to-tr from-[#3A7BFF] via-[#4CC2FF] to-[#8B5CF6]
+                  shadow-[0_0_30px_rgba(76,194,255,0.65)]
+                  transition-transform duration-300
+                  group-hover:rotate-6 group-hover:scale-105
+                "
+              >
+                <span className="absolute inset-0.5 rounded-[0.65rem] bg-slate-950/80 backdrop-blur-md" />
+                <span className="relative z-10 flex h-full w-full items-center justify-center text-[10px] font-semibold tracking-[0.16em] uppercase text-slate-100/80">
+                  SD
+                </span>
+              </div>
+              <span className="text-sm md:text-base tracking-[0.22em] uppercase text-slate-200/90">
+                SavonDev Studio
+              </span>
+            </Link> */}
             <p className="text-base md:text-lg text-slate-300/85 leading-relaxed mb-5">
               Премиальные сайты и автоматизация для бизнеса в Израиле — от
               структуры оффера до запусков и CRM/WhatsApp-воронок.

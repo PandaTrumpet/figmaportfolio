@@ -38,38 +38,7 @@ export default function ContactPage() {
   const [formData, setFormData] = useState<ContactFormState>(INITIAL_FORM);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-// useEffect(() => {
-//   const addons = safeReadAddons();
-//   const selectedPackage = safeReadPackage();
 
-//   setFormData((prev) => ({
-//     ...prev,
-//     additionalServices: addons.length ? addons : prev.additionalServices,
-//     package: selectedPackage || prev.package,
-//   }));
-// }, []);
-//   const containerRef = useRef<HTMLDivElement | null>(null);
-
-//   const handleSubmit = async (e: React.FormEvent) => {
-//     e.preventDefault();
-//     if (isSubmitting) return;
-
-//     setIsSubmitting(true);
-
-//     try {
-   
-//       await new Promise((resolve) => setTimeout(resolve, 1500));
-
-//       setIsSubmitted(true);
-
-//       setTimeout(() => {
-//         setIsSubmitted(false);
-//         setFormData(INITIAL_FORM);
-//       }, 5000);
-//     } finally {
-//       setIsSubmitting(false);
-//     }
-//   };
 useEffect(() => {
   const addons = safeReadAddons();
   const selectedPackage = safeReadPackage();
