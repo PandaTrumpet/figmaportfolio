@@ -1,47 +1,4 @@
-// "use client";
 
-// import * as React from "react";
-
-// type Props = {
-//   label: string;
-//   name: string;
-//   type: string;
-//   placeholder: string;
-//   value: string;
-//   onChange: (
-//     e: React.ChangeEvent<
-//       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-//     >,
-//   ) => void;
-//   required?: boolean;
-// };
-
-// export function FormField({
-//   label,
-//   name,
-//   type,
-//   placeholder,
-//   value,
-//   onChange,
-//   required,
-// }: Props) {
-//   return (
-//     <div>
-//       <label className="mb-3 block text-xs md:text-sm tracking-[0.18em] text-[#AEB8CC]">
-//         {label}
-//       </label>
-//       <input
-//         type={type}
-//         name={name}
-//         value={value}
-//         onChange={onChange}
-//         placeholder={placeholder}
-//         required={required}
-//         className="w-full rounded-2xl border border-white/10 bg-white/5 px-5 py-3.5 text-[#F2F4FA] placeholder-white/25 outline-none transition-colors backdrop-blur-sm focus:border-[#4CC2FF66]"
-//       />
-//     </div>
-//   );
-// }
 
 "use client";
 

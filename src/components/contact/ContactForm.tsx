@@ -1,5 +1,4 @@
 
-
 "use client";
 
 import * as React from "react";
@@ -17,6 +16,7 @@ export function ContactForm({
   isSubmitting,
   onSubmit,
   onChange,
+  onMultiChange,
 }: {
   form: any;
   formData: ContactFormState;
@@ -28,6 +28,7 @@ export function ContactForm({
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >,
   ) => void;
+  onMultiChange: (name: "additionalServices", values: string[]) => void;
 }) {
   const reduce = useReducedMotion();
 
@@ -35,7 +36,6 @@ export function ContactForm({
     <div className="relative">
       {/* Header (Tel-Aviv Night Waves) */}
       <div className="mb-10 md:mb-12">
-   
         <h2
           className="text-3xl 
   md:text-4xl 
@@ -176,23 +176,32 @@ export function ContactForm({
                   value={formData.phone}
                   onChange={onChange}
                 />
-                <FormField
-                  label={form.fields.company.label}
-                  name="company"
-                  type={form.fields.company.type}
-                  placeholder={form.fields.company.placeholder}
-                  value={formData.company}
+
+                {/* NEW: Package select (replaces budget & removed company) */}
+                <FormSelect
+                  label={form.fields.package.label}
+                  name="package"
+                  value={formData.package}
                   onChange={onChange}
+                  placeholder={form.fields.package.placeholder}
+                  options={form.fields.package.options}
                 />
               </div>
 
-              <FormSelect
-                label={form.fields.budget.label}
-                name="budget"
-                value={formData.budget}
-                onChange={onChange}
-                placeholder={form.fields.budget.placeholder}
-                options={form.fields.budget.options}
+              {/* NEW: Additional Services (multi-select) */}
+              <FormCheckboxChips
+                label={form.fields.additionalServices.label}
+                name="additionalServices"
+                values={formData.additionalServices}
+                options={form.fields.additionalServices.options}
+                hint={form.fields.additionalServices.hint}
+                onToggle={(service) => {
+                  const next = formData.additionalServices.includes(service)
+                    ? formData.additionalServices.filter((s) => s !== service)
+                    : [...formData.additionalServices, service];
+
+                  onMultiChange("additionalServices", next);
+                }}
               />
 
               <FormTextarea
@@ -254,10 +263,7 @@ function TelAvivSubmitButton({
       whileTap={reduce ? undefined : { scale: isSubmitting ? 1 : 0.97 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
     >
-      {/* Unified gradient palette */}
       <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
-
-      {/* Unified hover highlight */}
       <span
         className="
       pointer-events-none absolute inset-0 rounded-2xl
@@ -266,7 +272,6 @@ function TelAvivSubmitButton({
     "
         aria-hidden="true"
       />
-
       <span className="relative z-10 inline-flex items-center justify-center gap-3 text-base md:text-lg">
         {isSubmitting ? (
           <>
@@ -330,7 +335,6 @@ function FormSelect({
           ))}
         </select>
 
-        {/* custom chevron */}
         <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#C7CEDF] opacity-70">
           ▾
         </span>
@@ -338,6 +342,56 @@ function FormSelect({
     </div>
   );
 }
+
+// function FormMultiSelect({
+//   label,
+//   name,
+//   values,
+//   onValuesChange,
+//   options,
+//   hint,
+// }: {
+//   label: string;
+//   name: string;
+//   values: string[];
+//   onValuesChange: (values: string[]) => void;
+//   options: string[];
+//   hint?: string;
+// }) {
+//   return (
+//     <div>
+//       <label className="mb-3 block text-xs md:text-sm tracking-[0.18em] text-[#AEB8CC]">
+//         {label}
+//       </label>
+
+//       <div className="relative">
+//         <select
+//           name={name}
+//           multiple
+//           value={values}
+//           onChange={(e) => {
+//             const selected = Array.from(e.target.selectedOptions).map(
+//               (o) => o.value,
+//             );
+//             onValuesChange(selected);
+//           }}
+//           className="w-full rounded-2xl border border-white/10 bg-white/5 px-5 py-3.5 text-[#F2F4FA] outline-none transition-colors backdrop-blur-sm focus:border-[#4CC2FF66]"
+//           size={Math.min(6, options.length)} // nice UX: shows a few rows
+//         >
+//           {options.map((opt, i) => (
+//             <option key={i} value={opt} className="bg-[#050816]">
+//               {opt}
+//             </option>
+//           ))}
+//         </select>
+
+//         {hint ? (
+//           <p className="mt-2 text-xs text-white/45 leading-relaxed">{hint}</p>
+//         ) : null}
+//       </div>
+//     </div>
+//   );
+// }
 
 function FormTextarea({
   label,
@@ -375,5 +429,101 @@ function FormTextarea({
         className="w-full resize-none rounded-2xl border border-white/10 bg-white/5 px-5 py-3.5 text-[#F2F4FA] placeholder-white/25 outline-none transition-colors backdrop-blur-sm focus:border-[#4CC2FF66]"
       />
     </div>
+  );
+}
+
+function FormCheckboxChips({
+  label,
+  name,
+  values,
+  options,
+  hint,
+  onToggle,
+}: {
+  label: string;
+  name: string;
+  values: string[];
+  options: string[];
+  hint?: string;
+  onToggle: (value: string) => void;
+}) {
+  return (
+    <fieldset className="relative">
+      <legend className="mb-3 block text-xs md:text-sm tracking-[0.18em] text-[#AEB8CC]">
+        {label}
+      </legend>
+
+      <div className="flex flex-wrap gap-2.5">
+        {options.map((opt) => {
+          const checked = values.includes(opt);
+
+          return (
+            <label
+              key={opt}
+              className={`
+                group relative cursor-pointer select-none
+                inline-flex items-center gap-2 rounded-full
+                px-4 py-2.5 md:px-4.5 md:py-2.5
+                border backdrop-blur-sm transition-all
+                ${
+                  checked
+                    ? "border-[#4CC2FF55] bg-[#4CC2FF18] text-[#F2F4FA] shadow-[0_0_24px_rgba(76,194,255,0.22)]"
+                    : "border-white/10 bg-white/5 text-white/80 hover:bg-white/8 hover:border-white/15"
+                }
+              `}
+            >
+              {/* real checkbox for accessibility */}
+              <input
+                type="checkbox"
+                name={name}
+                value={opt}
+                checked={checked}
+                onChange={() => onToggle(opt)}
+                className="sr-only"
+              />
+
+              {/* custom check */}
+              <span
+                aria-hidden="true"
+                className={`
+                  grid place-items-center
+                  h-4 w-4 rounded-md border transition-colors
+                  ${
+                    checked
+                      ? "border-[#4CC2FFAA] bg-[#4CC2FF] text-[#050816]"
+                      : "border-white/20 bg-white/0 text-transparent group-hover:border-white/35"
+                  }
+                `}
+              />
+                
+             
+
+              <span className="text-sm md:text-[0.95rem] leading-none">
+                {opt}
+              </span>
+
+              {/* subtle glow when active */}
+              <span
+                aria-hidden="true"
+                className={`
+                  pointer-events-none absolute inset-0 rounded-full
+                  ${checked ? "opacity-100" : "opacity-0"}
+                  transition-opacity
+                `}
+                style={{
+                  boxShadow: checked
+                    ? "0 0 0 1px rgba(76,194,255,0.25), 0 0 34px rgba(76,194,255,0.18)"
+                    : undefined,
+                }}
+              />
+            </label>
+          );
+        })}
+      </div>
+
+      {hint ? (
+        <p className="mt-3 text-xs text-white/45 leading-relaxed">{hint}</p>
+      ) : null}
+    </fieldset>
   );
 }
