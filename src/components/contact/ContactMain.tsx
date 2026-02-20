@@ -160,12 +160,12 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
-
+import { contactData } from "@/src/data/contactData";
 import { ContactForm } from "./ContactForm";
 import { ContactInfoPanel } from "./ContactInfoPanel";
 import type { ContactFormState } from "./ContactPage";
 import { PageContainer } from "../Layout/PageContainer";
-
+type ContactPageData = typeof contactData;
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 export function ContactMain({
@@ -177,7 +177,7 @@ export function ContactMain({
   onChange,
   onMultiChange,
 }: {
-  data: any;
+  data: ContactPageData;
   formData: ContactFormState;
   isSubmitted: boolean;
   isSubmitting: boolean;

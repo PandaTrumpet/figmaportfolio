@@ -60,13 +60,7 @@ export function PricingPackagesSection() {
           viewport={{ once: true, margin: "-80px" }}
           className="text-center mb-12 md:mb-16"
         >
-          {/* <motion.div
-            className="mb-6 h-[2px] w-20 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF] mx-auto"
-            initial={{ width: 0 }}
-            whileInView={{ width: 80 }}
-            transition={{ duration: 0.9, delay: 0.15 }}
-            viewport={{ once: true }}
-          /> */}
+     
 
           <h2
             className="text-3xl 

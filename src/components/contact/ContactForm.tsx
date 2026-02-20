@@ -6,7 +6,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { Check, Send } from "lucide-react";
 import { FormField } from "./FormField";
 import type { ContactFormState } from "./ContactPage";
-
+import type { ContactFormConfig } from "@/src/data/contactData";
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 export function ContactForm({
@@ -18,7 +18,7 @@ export function ContactForm({
   onChange,
   onMultiChange,
 }: {
-  form: any;
+  form: ContactFormConfig;
   formData: ContactFormState;
   isSubmitted: boolean;
   isSubmitting: boolean;
@@ -31,6 +31,7 @@ export function ContactForm({
   onMultiChange: (name: "additionalServices", values: string[]) => void;
 }) {
   const reduce = useReducedMotion();
+console.log(formData);
 
   return (
     <div className="relative">

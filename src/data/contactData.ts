@@ -320,3 +320,5 @@ export const contactData: ContactData = {
     ],
   },
 };
+
+export type ContactFormConfig = ContactData["form"];

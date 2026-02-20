@@ -10,6 +10,8 @@ import { pricingData } from "@/src/data/pricingData";
 import { IconBadge } from "./IconBadge";
 import Link from "next/link";
 import { useLocale } from "next-intl";
+import { useRouter } from "next/navigation";
+import { safeWritePackage } from "@/src/utils/addonsStorage";
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 export function PricingCard({
@@ -33,7 +35,7 @@ const locale = useLocale();
   const badgeId = `pricing-badge-${index}`;
   const titleId = `pricing-title-${index}`;
   const descId = `pricing-desc-${index}`;
-
+const router = useRouter();
   return (
     <motion.article
       ref={ref}
@@ -277,41 +279,7 @@ const locale = useLocale();
           <p className="mt-2 text-sm text-[#EAF2FF] opacity-90">{pkg.ideal}</p>
         </div>
 
-        {/* CTA */}
-        {/* <motion.a
-          href="#contact"
-          className="
-            group relative z-20 mt-7 inline-flex w-full items-center justify-center gap-2
-            overflow-hidden rounded-full
-            px-10 py-3.5
-            text-sm md:text-base font-medium
-            text-[#050816]
-            shadow-[0_0_40px_rgba(76,194,255,0.55)]
-            hover:shadow-[0_0_65px_rgba(76,194,255,0.85)]
-            transition-shadow
-          "
-          whileHover={reduce ? undefined : { scale: 1.03 }}
-          whileTap={reduce ? undefined : { scale: 0.97 }}
-          transition={{ duration: 0.25, ease: "easeOut" }}
-        >
-          <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
-          <span
-            className="
-              pointer-events-none absolute inset-0
-              [background:linear-gradient(to_bottom,rgba(255,255,255,0.28),rgba(255,255,255,0.06)_45%,rgba(0,0,0,0.12))]
-              mix-blend-overlay
-            "
-            aria-hidden="true"
-          />
-          <span
-            className="pointer-events-none absolute inset-0 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"
-            aria-hidden="true"
-          />
-
-          <span className="relative z-10">{pkg.cta}</span>
-          <ArrowRight className="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-1" />
-        </motion.a> */}
-        <Link
+        {/* <Link
           href={`/${locale}/contact#contact-form`}
           scroll
           className="block w-full"
@@ -349,7 +317,46 @@ const locale = useLocale();
             <span className="relative z-10">{pkg.cta}</span>
             <ArrowRight className="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-1" />
           </motion.span>
-        </Link>
+        </Link> */}
+
+        <motion.button
+          type="button"
+          onClick={() => {
+            safeWritePackage(pkg.name); // ✅ сохраняем выбранный пакет
+            router.push(`/${locale}/contact#contact-form`); // ✅ идём к форме
+          }}
+          className="
+    group relative z-20 mt-7 inline-flex w-full items-center justify-center gap-2
+    overflow-hidden rounded-full
+    px-10 py-3.5
+    text-sm md:text-base font-medium
+    text-[#050816]
+    shadow-[0_0_40px_rgba(76,194,255,0.55)]
+    hover:shadow-[0_0_65px_rgba(76,194,255,0.85)]
+    transition-shadow
+    cursor-pointer
+  "
+          whileHover={reduce ? undefined : { scale: 1.03 }}
+          whileTap={reduce ? undefined : { scale: 0.97 }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
+        >
+          <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
+          <span
+            className="
+      pointer-events-none absolute inset-0
+      [background:linear-gradient(to_bottom,rgba(255,255,255,0.28),rgba(255,255,255,0.06)_45%,rgba(0,0,0,0.12))]
+      mix-blend-overlay
+    "
+            aria-hidden="true"
+          />
+          <span
+            className="pointer-events-none absolute inset-0 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"
+            aria-hidden="true"
+          />
+
+          <span className="relative z-10">{pkg.cta}</span>
+          <ArrowRight className="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-1" />
+        </motion.button>
 
         {/* corner accent */}
         <motion.div
