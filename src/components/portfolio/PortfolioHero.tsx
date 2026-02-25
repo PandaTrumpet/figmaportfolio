@@ -5,8 +5,40 @@
 import { motion } from "motion/react";
 import { PageContainer } from "../Layout/PageContainer";
 import Image from "next/image";
-
+import { useGlobalLoader } from "@/src/components/loader/LoaderProvider";
+import { useEffect, useRef } from "react";
 export function PortfolioHero() {
+
+  
+const HERO_BG =
+    "https://images.unsplash.com/photo-1546809059-7b1cdd47eae6?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+  
+    const loader = useGlobalLoader();
+  
+    const doneRef = useRef(false);
+  
+    const finish = () => {
+      if (doneRef.current) return;
+      doneRef.current = true;
+  
+      // лёгкая пауза, чтобы исчезало “дорого”
+      window.setTimeout(() => loader.hide(), 500);
+    };
+  
+    useEffect(() => {
+      loader.show();
+  
+      // страховка: если по какой-то причине events не пришли — не зависаем
+      const hardTimeout = window.setTimeout(() => {
+        finish();
+      }, 3500);
+  
+      return () => {
+        window.clearTimeout(hardTimeout);
+        loader.hide();
+      };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
   return (
     <section
       className="
@@ -21,12 +53,16 @@ export function PortfolioHero() {
         {/* background image */}
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1546809059-7b1cdd47eae6?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        
+
+            src={HERO_BG}
             alt=""
             fill
             priority
             sizes="100vw"
             className="object-cover opacity-55 saturate-[0.85]"
+            onLoadingComplete={finish}
+            onError={finish}
           />
         </div>
 

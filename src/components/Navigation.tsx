@@ -7,7 +7,7 @@ import { Menu, X } from "lucide-react";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { PageContainer } from "./Layout/PageContainer";
 import { LanguageSwitcher } from "@/src/components/LanguageSwitcher";
-const NAV_OFFSET = 80;
+    const NAV_OFFSET = 80;
 
 const navLinks = [
   { label: "Home", href: "/", isPage: true, scrollTo: "#hero" },
