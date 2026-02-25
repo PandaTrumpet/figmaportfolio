@@ -7,13 +7,13 @@ import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useLocale } from "next-intl";
-import { motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
 import { PageContainer } from "./Layout/PageContainer";
 import { useTranslations } from "next-intl";
 // import { useGlobalLoader } from "./loader/LoaderProvider";
 
-
+import { GlobalLoaderInline } from "@/src/components/loader/GlobalLoaderInline";
 
 export function Hero() {
   const [scrollY, setScrollY] = useState(0);
@@ -25,7 +25,10 @@ export function Hero() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
- const locale = useLocale();
+  const locale = useLocale();
+   const [bgReady, setBgReady] = useState(false);
+
+
   return (
     <section
       id="hero"
@@ -38,6 +41,19 @@ export function Hero() {
         lg:pt-30 lg:pb-16
       "
     >
+      <AnimatePresence>
+        {!bgReady && (
+          <motion.div
+            className="absolute inset-0 z-[50]"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <GlobalLoaderInline open />
+          </motion.div>
+        )}
+      </AnimatePresence>
       {/* Background */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden z-0">
         <div className="absolute inset-0">
@@ -50,6 +66,9 @@ export function Hero() {
             className="object-cover opacity-55 saturate-[0.85]"
             // onLoad={() => hide()} // ✅ когда реально загрузилось
             // onError={() => hide()}
+
+            onLoadingComplete={() => setBgReady(true)}
+            onError={() => setBgReady(true)}
           />
         </div>
 

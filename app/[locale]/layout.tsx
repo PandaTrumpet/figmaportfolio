@@ -9,7 +9,8 @@
   import { Footer } from "@/src/components/Footer";
   import { Navigation } from "@/src/components/Navigation";
   import { HyperPrecisionCursor } from "@/src/components/HyperPrecisionCursor";
-import { LoaderProvider } from "@/src/components/loader/LoaderProvider";
+// import { LoaderProvider } from "@/src/components/loader/InnerLoaderProvider";
+
 
   const locales = ["en", "he", "ru"] as const;
   type Locale = (typeof locales)[number];
@@ -46,13 +47,16 @@ import { LoaderProvider } from "@/src/components/loader/LoaderProvider";
           id="loader-root" className="fixed inset-0 z-[9999] pointer-events-none" 
           /> */}
           <div
-           className="fixed inset-0 z-[9999] pointer-events-none" 
+            id="loader-root"
+            className="fixed  inset-0 z-[9999] pointer-events-none"
           />
           {/* <LoaderProvider> */}
             <HyperPrecisionCursor />
             <Navigation />
-            {children}
-            <Footer />
+           
+    {children}
+    <Footer />
+
           {/* </LoaderProvider> */}
         </div>
       </NextIntlClientProvider>
