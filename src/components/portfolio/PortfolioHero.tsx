@@ -5,12 +5,11 @@
 import { motion } from "motion/react";
 import { PageContainer } from "../Layout/PageContainer";
 import Image from "next/image";
-import { useGlobalLoader } from "@/src/components/loader/LoaderProvider";
+// import { useGlobalLoader } from "@/src/components/loader/LoaderProvider";
 export function PortfolioHero() {
 
-  
-const HERO_BG =
-  "https://images.unsplash.com/photo-1546809059-7b1cdd47eae6?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+    // const { hide } = useGlobalLoader();
+
   return (
     <section
       className="
@@ -31,6 +30,8 @@ const HERO_BG =
             priority
             sizes="100vw"
             className="object-cover opacity-55 saturate-[0.85]"
+            // onLoad={() => hide()} // ✅ когда реально загрузилось
+            // onError={() => hide()}
           />
         </div>
 

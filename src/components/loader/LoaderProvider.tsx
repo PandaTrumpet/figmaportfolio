@@ -77,51 +77,104 @@
 //   return ctx;
 // }
 
+// "use client";
+
+// import React, {
+//   createContext,
+//   useContext,
+//   useMemo,
+//   useState,
+//   useEffect,
+// } from "react";
+// import { GlobalLoader } from "../GlobalLoader";
+
+// type Ctx = {
+//   show: () => void;
+//   hide: () => void;
+//   set: (v: boolean) => void;
+//   isOpen: boolean;
+// };
+
+// const LoaderCtx = createContext<Ctx | null>(null);
+
+// export function LoaderProvider({ children }: { children: React.ReactNode }) {
+//   const [isOpen, setIsOpen] = useState(true); // ✅ стартуем с true
+
+//   // страховка (если вдруг не вызвали hide)
+//   useEffect(() => {
+//     const t = window.setTimeout(() => setIsOpen(false), 5000);
+//     return () => window.clearTimeout(t);
+//   }, []);
+
+//   const value = useMemo<Ctx>(
+//     () => ({
+//       isOpen,
+//       show: () => setIsOpen(true),
+//       hide: () => setIsOpen(false),
+//       set: (v) => setIsOpen(v),
+//     }),
+//     [isOpen],
+//   );
+
+//   return (
+//     <LoaderCtx.Provider value={value}>
+//       <GlobalLoader open={isOpen} />
+//       {children}
+//     </LoaderCtx.Provider>
+//   );
+// }
+
+// export function useGlobalLoader() {
+//   const ctx = useContext(LoaderCtx);
+//   if (!ctx)
+//     throw new Error("useGlobalLoader must be used inside LoaderProvider");
+//   return ctx;
+// }
+
 "use client";
 
-import React, {
-  createContext,
-  useContext,
-  useMemo,
-  useState,
-  useEffect,
-} from "react";
+import React, { createContext, useContext, useMemo, useState } from "react";
+import { usePathname } from "next/navigation";
 import { GlobalLoader } from "../GlobalLoader";
 
 type Ctx = {
-  show: () => void;
-  hide: () => void;
-  set: (v: boolean) => void;
   isOpen: boolean;
+  hide: () => void;
+  show: () => void;
+  set: (v: boolean) => void;
 };
 
 const LoaderCtx = createContext<Ctx | null>(null);
 
-export function LoaderProvider({ children }: { children: React.ReactNode }) {
-  const [isOpen, setIsOpen] = useState(true); // ✅ стартуем с true
+function InnerLoaderProvider({ children }: { children: React.ReactNode }) {
+  // ✅ стартуем с "фон НЕ готов" => лоадер открыт
+  const [bgReady, setBgReady] = useState(false);
 
-  // страховка (если вдруг не вызвали hide)
-  useEffect(() => {
-    const t = window.setTimeout(() => setIsOpen(false), 500);
-    return () => window.clearTimeout(t);
-  }, []);
+  const isOpen = !bgReady;
 
   const value = useMemo<Ctx>(
     () => ({
       isOpen,
-      show: () => setIsOpen(true),
-      hide: () => setIsOpen(false),
-      set: (v) => setIsOpen(v),
+      hide: () => setBgReady(true),
+      show: () => setBgReady(false),
+      set: (v) => setBgReady(!v ? false : true), // set(true)=готов, set(false)=не готов
     }),
     [isOpen],
   );
 
   return (
     <LoaderCtx.Provider value={value}>
-      {children}
       <GlobalLoader open={isOpen} />
+      {children}
     </LoaderCtx.Provider>
   );
+}
+
+export function     LoaderProvider({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+
+  // ✅ ключ меняется => InnerLoaderProvider перемонтируется => bgReady снова false
+  return <InnerLoaderProvider key={pathname}>{children}</InnerLoaderProvider>;
 }
 
 export function useGlobalLoader() {

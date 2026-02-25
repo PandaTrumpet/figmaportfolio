@@ -11,11 +11,15 @@ import { motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
 import { PageContainer } from "./Layout/PageContainer";
 import { useTranslations } from "next-intl";
+// import { useGlobalLoader } from "./loader/LoaderProvider";
+
+
+
 export function Hero() {
   const [scrollY, setScrollY] = useState(0);
   const reduce = useReducedMotion();
   const t = useTranslations("hero");
-  
+    // const { hide } = useGlobalLoader();
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -44,6 +48,8 @@ export function Hero() {
             priority
             sizes="100vw"
             className="object-cover opacity-55 saturate-[0.85]"
+            // onLoad={() => hide()} // ✅ когда реально загрузилось
+            // onError={() => hide()}
           />
         </div>
 
@@ -104,7 +110,6 @@ text-[clamp(1rem,1.4vw+0.6rem,1.35rem)]
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-        
               <Link href={`/${locale}/contact#contact-form`} scroll>
                 <motion.span
                   className="
