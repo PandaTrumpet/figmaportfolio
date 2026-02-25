@@ -103,17 +103,18 @@
 
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { PageContainer } from "../Layout/PageContainer";
 import Image from "next/image";
-
+import { useState } from "react";
+import { GlobalLoaderInline } from "@/src/components/loader/GlobalLoaderInline";
 type HeroData = { badge: string; title: string; subtitle: string };
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 export function ContactHero({ data }: { data: HeroData }) {
   const reduce = useReducedMotion();
-
+   const [bgReady, setBgReady] = useState(false);
   return (
     <section
       className="
@@ -124,6 +125,19 @@ export function ContactHero({ data }: { data: HeroData }) {
         lg:pt-30 lg:pb-20
       "
     >
+      <AnimatePresence>
+        {!bgReady && (
+          <motion.div
+            className="absolute inset-0 z-[50]"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <GlobalLoaderInline open />
+          </motion.div>
+        )}
+      </AnimatePresence>
       <div className="pointer-events-none absolute inset-0 overflow-hidden z-0">
         {/* background image */}
         <div className="absolute inset-0">
@@ -134,6 +148,8 @@ export function ContactHero({ data }: { data: HeroData }) {
             priority
             sizes="100vw"
             className="object-cover opacity-55 saturate-[0.85]"
+            onLoadingComplete={() => setBgReady(true)}
+            onError={() => setBgReady(true)}
           />
         </div>
 
