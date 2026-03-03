@@ -389,5 +389,88 @@
       "aria": "Discuss your task — go to the contact form"
     },
     "imageAlt": "Mission visual: conversion-focused websites and automation"
+  }, "services": {
+    "meta": {
+      "title": "Services — SavonDev Studio",
+      "description": "Premium websites and automation for Israeli SMB: UX, speed, SEO, WhatsApp-first and CRM integrations.",
+      "ogTitle": "Services — SavonDev Studio",
+      "ogDescription": "Not just a website — a lead-generating system: UX, speed, SEO and automation.",
+      "ogLocale": "en_US",
+      "twitterTitle": "Services — SavonDev Studio",
+      "twitterDescription": "Premium websites + automation: WhatsApp-first, SEO-ready, fast MVP launch."
+    },
+    "aria": {
+      "page": "Services page",
+      "heroTitle": "Services and solutions",
+      "decisionTitle": "How to choose the right approach",
+      "differenceTitle": "Why it works",
+      "pricingTitle": "Pricing overview",
+      "ctaTitle": "Call to action"
+    },
+    "hero": {
+      "titleLine1": "You’re not choosing a website.",
+      "titleLine2": "You’re choosing a growth system.",
+      "subtitle": "We help you pick the right format: from a fast landing page to a full digital system with WhatsApp, CRM and automation."
+    },
+    "decision": {
+      "title": "Where you should start",
+      "subtitle": "A quick pick: choose the scenario closest to your situation — and get the direction that delivers results the fastest.",
+      "ifLabel": "If",
+      "ctaAria": "Choose “{result}” — go to the contact form",
+      "options": {
+        "opt1": {
+          "title": "You need leads right now",
+          "result": "Landing + WhatsApp",
+          "description": "Fast launch and a clear offer. You get inquiries in WhatsApp and validate demand without a complex system.",
+          "meta": "Time-to-leads: 10–14 days"
+        },
+        "opt2": {
+          "title": "Leads get lost and there’s no system",
+          "result": "Website + automation",
+          "description": "We connect a WhatsApp bot, forms and a CRM so leads don’t get lost and your process becomes predictable.",
+          "meta": "Order & CRM: Notion / Airtable"
+        },
+        "opt3": {
+          "title": "You have products or a catalog",
+          "result": "E-commerce / platform",
+          "description": "Catalog, payments, order statuses and auto notifications — everything to sell without manual chaos.",
+          "meta": "Payments + automation"
+        }
+      }
+    },
+    "difference": {
+      "title": "Why it works",
+      "subtitle": "We don’t sell templates. We design a system that brings clients and makes operations easier.",
+      "points": {
+        "p1": {
+          "title": "We design the customer journey",
+          "text": "Not just a site — a clear flow from the first touch to the inquiry and repeat purchase."
+        },
+        "p2": {
+          "title": "Automation is built in",
+          "text": "WhatsApp, forms and CRM are integrated into the process — not added later as an afterthought."
+        },
+        "p3": {
+          "title": "Clarity before we start",
+          "text": "You understand the structure, stages and expected outcome upfront — no surprises."
+        },
+        "p4": {
+          "title": "Built for small businesses",
+          "text": "Solutions tailored to real SMB budgets and day-to-day needs in Israel."
+        }
+      }
+    },
+    "pricingBridge": {
+      "title": "See packages and pricing",
+      "subtitle": "On the Pricing page: tiers, timelines, what’s included, and customization options for your business.",
+      "cta": "Go to Pricing",
+      "ctaAria": "Go to the Pricing page — packages and pricing"
+    },
+    "cta": {
+      "title": "Not sure what to choose?",
+      "subtitle": "In 15 minutes we’ll recommend the best format for your business — no commitments and no sales pressure.",
+      "primary": "Discuss your project",
+      "primaryAria": "Discuss your project — go to the contact form"
+    }
   }
 }
