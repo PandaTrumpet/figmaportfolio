@@ -389,7 +389,8 @@
       "aria": "Discuss your task — go to the contact form"
     },
     "imageAlt": "Mission visual: conversion-focused websites and automation"
-  }, "services": {
+  },
+  "services": {
     "meta": {
       "title": "Services — SavonDev Studio",
       "description": "Premium websites and automation for Israeli SMB: UX, speed, SEO, WhatsApp-first and CRM integrations.",
@@ -472,5 +473,306 @@
       "primary": "Discuss your project",
       "primaryAria": "Discuss your project — go to the contact form"
     }
+  },
+  "processe": {
+    "hero": {
+      "badge": "How it works",
+      "title": "A website that brings clients",
+      "subtitle": "We build a clear flow: a visitor lands on your site, messages you on WhatsApp, and enters a system where no lead gets lost.",
+      "scrollHint": "See the process",
+      "scrollAria": "Scroll to process steps"
+    },
+    "steps": {
+      "s1": {
+        "title": "Audit & strategy",
+        "subtitle": "Understand the business and customer journey",
+        "description": "In 1–2 calls we define the goal, offer, and the main scenario: how people find you, what they see, and how quickly they reach WhatsApp. We remove noise and keep what drives leads.",
+        "duration": "3–5 days",
+        "deliverables": {
+          "d1": "Short brief + 60-minute call",
+          "d2": "Customer journey map: site → WhatsApp → lead",
+          "d3": "Page structure and key blocks",
+          "d4": "Offer wording (short and clear)",
+          "d5": "Project plan with steps and deadlines",
+          "d6": "KPIs to measure results (clicks, leads, conversion)"
+        },
+        "details": {
+          "p1": {
+            "title": "Offer",
+            "description": "We frame the value so it’s understood in 5 seconds"
+          },
+          "p2": {
+            "title": "Lead scenario",
+            "description": "We design the shortest path to WhatsApp"
+          },
+          "p3": {
+            "title": "Measurability",
+            "description": "We build in metrics: clicks, leads, conversion, sources"
+          }
+        }
+      },
+
+      "s2": {
+        "title": "UX/UI for conversion",
+        "subtitle": "Design that drives action",
+        "description": "We create wireframes and UI focused on clarity and speed: mobile-first, strong CTAs, trust, and a clean structure. Premium visuals — but the goal is fast WhatsApp contact.",
+        "duration": "7–10 days",
+        "deliverables": {
+          "d1": "Sitemap and user flows",
+          "d2": "Key screen wireframes",
+          "d3": "UI concept in your style (Night Waves)",
+          "d4": "Final design for all pages and states",
+          "d5": "UI kit (buttons, forms, cards, colors)",
+          "d6": "Clickable prototype (to validate logic)"
+        },
+        "details": {
+          "p1": {
+            "title": "Mobile-first",
+            "description": "Primary scenario is on phones: fast, clear, no clutter"
+          },
+          "p2": {
+            "title": "Trust",
+            "description": "We add what matters: facts, testimonials, cases, guarantees"
+          },
+          "p3": {
+            "title": "CTA logic",
+            "description": "Buttons and forms guide to action, not decoration"
+          }
+        }
+      },
+
+      "s3": {
+        "title": "Development & integrations",
+        "subtitle": "Fast, clean, SEO-ready",
+        "description": "We build with a modern stack, optimize speed and SEO, connect WhatsApp and — if needed — a CRM. You get a system where leads arrive and are captured reliably.",
+        "duration": "2–4 weeks",
+        "deliverables": {
+          "d1": "Frontend development (Next.js / React)",
+          "d2": "Responsive layout + premium micro-interactions",
+          "d3": "WhatsApp integration (click-to-chat + events)",
+          "d4": "Lead forms and processing",
+          "d5": "Optional CRM setup (Notion / Airtable / HubSpot)",
+          "d6": "Baseline SEO setup (structure, meta, indexing)"
+        },
+        "details": {
+          "p1": {
+            "title": "Speed",
+            "description": "Core Web Vitals optimization for Google and ads"
+          },
+          "p2": {
+            "title": "Integrations",
+            "description": "WhatsApp + CRM connected into one clear lead pipeline"
+          },
+          "p3": {
+            "title": "Quality",
+            "description": "Clean modular code — easy to extend and maintain"
+          }
+        }
+      },
+
+      "s4": {
+        "title": "Testing & quality",
+        "subtitle": "Make it work in real life",
+        "description": "We test like real users: phones, browsers, slow networks. We validate lead flows, performance, accessibility, and SEO before launch.",
+        "duration": "3–5 days",
+        "deliverables": {
+          "d1": "Device and browser testing",
+          "d2": "Flow checks: click → WhatsApp → lead",
+          "d3": "Performance audit (Lighthouse)",
+          "d4": "Basic accessibility check (WCAG)",
+          "d5": "Pre-launch SEO checklist",
+          "d6": "Fixes for found issues"
+        },
+        "details": {
+          "p1": {
+            "title": "Flows",
+            "description": "We ensure the path to a lead has no drop-offs"
+          },
+          "p2": {
+            "title": "Reliability",
+            "description": "We remove small issues that usually hurt conversion"
+          },
+          "p3": {
+            "title": "Readiness",
+            "description": "Before launch everything is stable and predictable"
+          }
+        }
+      },
+
+      "s5": {
+        "title": "Launch & analytics",
+        "subtitle": "Make results measurable",
+        "description": "We launch without downtime: domain, SSL, hosting, analytics. We set events (WhatsApp click, form submit) so you can see what works and where leads come from.",
+        "duration": "2–4 days",
+        "deliverables": {
+          "d1": "Production deploy (Vercel / hosting of choice)",
+          "d2": "Domain + SSL",
+          "d3": "GA4 + Tag Manager (events & goals)",
+          "d4": "Search Console",
+          "d5": "Basic error monitoring (optional)",
+          "d6": "Short handover guide for your team"
+        },
+        "details": {
+          "p1": {
+            "title": "Tracking",
+            "description": "We count WhatsApp clicks and leads — no guessing"
+          },
+          "p2": {
+            "title": "Sources",
+            "description": "You see where leads come from: ads, search, social"
+          },
+          "p3": {
+            "title": "Control",
+            "description": "Metrics show what to improve first"
+          }
+        }
+      }
+    },
+
+    "deliverables": {
+      "title": "What you get",
+      "subtitle": "A complete launch kit for growth — without chaos or lost leads.",
+      "c1": {
+        "category": "Design & look",
+        "items": {
+          "i1": "Mobile-optimized website design",
+          "i2": "Conversion-focused page structure",
+          "i3": "A trustworthy visual style customers understand",
+          "i4": "Clean animations and effects without overload",
+          "i5": "Design that’s easy to extend later"
+        }
+      },
+      "c2": {
+        "category": "Development & website",
+        "items": {
+          "i1": "A fully working website published online",
+          "i2": "Correct on phones and desktops",
+          "i3": "Connected lead forms and CTA buttons",
+          "i4": "WhatsApp integration (and other channels if needed)",
+          "i5": "Fast load and stable performance"
+        }
+      },
+      "c3": {
+        "category": "Lead capture & communication",
+        "items": {
+          "i1": "All forms and CTAs working correctly",
+          "i2": "Reliable lead transfer without losses",
+          "i3": "WhatsApp and other channels connected",
+          "i4": "Messaging scenarios verified",
+          "i5": "Ready to receive real customers"
+        }
+      },
+      "c4": {
+        "category": "Post-launch support",
+        "items": {
+          "i1": "Support after launch if something needs tweaks",
+          "i2": "Answers to questions about the website",
+          "i3": "Small changes by agreement",
+          "i4": "Recommendations for next improvements",
+          "i5": "A clear point of contact for future help"
+        }
+      }
+    },
+
+    "timeline": {
+      "title": "Project timeline (depends on scope)",
+      "p1": {
+        "name": "Discovery",
+        "weeks": "Usually: 2–5 days",
+        "description": "We define goals, offer, audience, and competitors. Duration depends on services and available materials (texts, photos, pricing)."
+      },
+      "p2": {
+        "name": "Design",
+        "weeks": "Usually: 3–10 days",
+        "description": "Wireframes + design. Landing pages are faster; complex multi-page structures take longer. Faster with brand guidelines and references."
+      },
+      "p3": {
+        "name": "Development",
+        "weeks": "Usually: 5–20 days",
+        "description": "Build and implementation. Landing page: 5–10 days; multi-page site: 10–15; site + integrations/CRM/bot: up to 20."
+      },
+      "p4": {
+        "name": "Testing",
+        "weeks": "Usually: 1–3 days",
+        "description": "Devices, speed, SEO basics, and lead flows. Longer with many integrations or custom lead scenarios."
+      },
+      "p5": {
+        "name": "Launch",
+        "weeks": "Usually: 1–2 days",
+        "description": "Deploy, domain/SSL, analytics, and handover. Duration depends on access to hosting/domain and tracking requirements."
+      }
+    },
+
+    "guarantee": {
+      "title": "Our guarantees",
+      "points": {
+        "p1": "Launch by the agreed deadline — or a refund",
+        "p2": "Lighthouse score 90+ (Performance, SEO, Accessibility, Best Practices)",
+        "p3": "30 days of free post-launch support and tweaks",
+        "p4": "Unlimited design revisions until you’re satisfied",
+        "p5": "Full rights to source code, design, and content",
+        "p6": "Clear communication and transparent steps — no surprises"
+      }
+    },
+    "meta": {
+      "title": "Process — SavonDev Studio",
+      "description": "A step-by-step workflow for websites and automation: strategy, UX/UI, development, QA, launch, and analytics.",
+      "ogTitle": "Process — SavonDev Studio",
+      "ogDescription": "A transparent workflow: from strategy and design to launch, analytics, and integrations (WhatsApp/CRM).",
+      "ogLocale": "en_US",
+      "twitterTitle": "Process — SavonDev Studio",
+      "twitterDescription": "How we deliver a website that brings clients: steps, timeline, deliverables, and guarantees."
+    },
+    "aria": {
+      "page": "Process page",
+      "heroTitle": "Process hero section heading",
+      "stepsTitle": "Process steps",
+      "timelineTitle": "Project timeline",
+      "deliverablesTitle": "Deliverables",
+      "guaranteeTitle": "Guarantees",
+      "ctaTitle": "Call to action"
+    },
+    "stepsSection": {
+      "title": "5 steps — from idea to WhatsApp leads",
+      "subtitle": "Clear timelines and outcomes: you always know what’s happening and what you get at every stage."
+    },
+    "step": {
+      "resultPrefix": "Stage result: ",
+      "showDetails": "What you get",
+      "hideDetails": "Hide details",
+      "aria": {
+        "stepLabel": "Step",
+        "resultLabel": "Stage result",
+        "detailsRegion": "Stage details"
+      }
+    },
+    "timelines": {
+      "mobileNote": "Timelines are approximate — we confirm them after a short brief.",
+      "aria": {
+        "phaseLabel": "Phase",
+        "durationLabel": "Duration"
+      }
+    },
+    "deliverable": {
+      "cardSubtitle": "Everything you need to launch and operate without losing leads.",
+      "aria": {
+        "cardLabel": "Category"
+      }
+    },
+    "guarantes": {
+      "aria": {
+        "listLabel": "Guarantees list"
+      }
+    },
+    "cta": {
+      "titleLine1": "Ready to start",
+      "titleLine2": "working together?",
+      "subtitle": "Book a free consultation. We’ll discuss your project and build a clear plan: website + WhatsApp + automation.",
+      "button": "Start a project",
+      "buttonAria": "Go to the contact page and open the consultation form",
+      "note": "We’ll reply within 24 hours. No pushy sales."
+    }
   }
+    
+   
 }
