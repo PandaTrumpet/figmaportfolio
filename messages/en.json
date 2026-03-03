@@ -1,11 +1,393 @@
 {
-  "nav": {
-    "home": "Home",
-    "services": "Services",
-    "contact": "Contact"
-  },
   "hero": {
-    "title": "Websites & automation for Israeli SMB",
-    "subtitle": "Not just a site — a business system."
+    "title": "Websites and automation that bring you clients",
+    "subtitle": "We build websites with WhatsApp, CRM, and AI tools so your business gets more leads, responds faster, and spends less time on routine.",
+    "primaryCta": "Discuss your project",
+    "secondaryCta": "How it works",
+    "aria": {
+      "skipToContent": "Skip to main content",
+      "heroActions": "Hero actions",
+      "primaryCta": "Go to the contact form to discuss your project",
+      "secondaryCta": "Jump to the process section"
+    }
+  },
+  "focus": {
+    "title": "Solutions to grow your business",
+    "subtitle": "From a fast landing page to full e-commerce — we build a system that brings leads, connects WhatsApp, automates replies, and captures clients in a CRM.",
+    "services": {
+      "landing": {
+        "title": "Landing pages",
+        "description": "A landing page that brings leads to WhatsApp and doesn’t lose customers. Fast launch, clear offer, analytics, and a conversion-focused structure.",
+        "features": [
+          "Ready in 10–14 days",
+          "WhatsApp lead capture + tracking",
+          "A/B-ready setup and analytics"
+        ]
+      },
+      "automation": {
+        "title": "Website + automation",
+        "description": "A website that works like a “24/7 manager”: explains value, collects requests via a WhatsApp bot, and sends them to a CRM — so you don’t lose clients.",
+        "features": [
+          "WhatsApp bot for leads and first questions",
+          "CRM (Notion / Airtable / HubSpot) as needed",
+          "Forms, bot, and leads → one system"
+        ]
+      },
+      "ecommerce": {
+        "title": "Online stores",
+        "description": "A store that sells: smooth catalog UX, payments, automatic order statuses, and customer messages in WhatsApp.",
+        "features": [
+          "Payments and delivery (your stack)",
+          "Auto notifications in WhatsApp/SMS",
+          "Order management dashboard"
+        ]
+      }
+    },
+    "bottomCtaText": "We’ll show real examples of websites with WhatsApp and automation — no complicated calls.",
+    "bottomCtaButton": "Discuss your project",
+    "aria": {
+      "servicesList": "List of services",
+      "featuresList": "List of key benefits",
+      "primaryCta": "Go to the contact form to discuss your project"
+    }
+  },
+  "whyUs": {
+    "title": "Why Israeli businesses choose us",
+    "label": "Focus on the Israeli market",
+    "reasons": {
+      "market": {
+        "subtitle": "We understand Israel’s market and customer behavior",
+        "description": "We build websites and automation for real Israeli SMBs: fast solutions, a clear offer, WhatsApp as the main channel, and trust from the first screen.",
+        "imageAlt": "A team discussing a project"
+      },
+      "resultFirst": {
+        "subtitle": "Results first, design second",
+        "description": "Every block on the website is built for leads: structure, messaging, forms, and a WhatsApp bot. Design is the packaging — the goal is always the same: more customers and less routine.",
+        "imageAlt": "Working on a laptop"
+      },
+      "automation": {
+        "subtitle": "Automation and chatbots that save time",
+        "description": "We connect a WhatsApp bot, a CRM (Notion/Airtable/HubSpot), and automated flows: FAQs, lead capture, notifications, and saving clients in your system.",
+        "imageAlt": "A modern workspace"
+      },
+      "premium": {
+        "subtitle": "Premium without the extra hype",
+        "description": "We deliver a modern, high-end visual level — without making things harder for the client. Everything should be clear, fast, and convenient: for you and your users.",
+        "imageAlt": "A minimalist office"
+      }
+    }
+  },
+  "image": {
+    "errorAlt": "Error loading image",
+    "aria": {
+      "errorImageLabel": "The image failed to load. A fallback icon is shown.",
+      "imageAltFallback": "Image"
+    }
+  },
+  "process": {
+    "title": "Website → leads → automation",
+    "lead": {
+      "before": "No guesswork: we build a website that",
+      "highlight1": "generates leads",
+      "middle": "and we connect automation right away — so inquiries",
+      "highlight2": "don’t get lost"
+    },
+    "tags": {
+      "tag1": "form → WhatsApp/Telegram",
+      "tag2": "CRM → calendar",
+      "tag3": "analytics → follow-up messages"
+    },
+    "steps": {
+      "step1": {
+        "title": "Understand the goal",
+        "description": "We quickly clarify what you sell, who you sell to, and how leads come in today. We lock in what should change after the site launch.",
+        "bullets": [
+          "Goal and offer",
+          "What leads you need",
+          "What blocks growth now"
+        ]
+      },
+      "step2": {
+        "title": "Design the customer journey",
+        "description": "We build a structure that drives to a lead and plan what happens next: WhatsApp message, bot, booking, CRM.",
+        "bullets": [
+          "Structure and copy",
+          "Flow: website → WhatsApp",
+          "CRM/calendar/notifications"
+        ]
+      },
+      "step3": {
+        "title": "Design",
+        "description": "We craft a modern premium design for your brand: clean, clear, mobile-friendly, and focused on conversion.",
+        "bullets": [
+          "Brand-aligned design",
+          "Premium effects and hover",
+          "Mobile-first"
+        ]
+      },
+      "step4": {
+        "title": "Build and launch",
+        "description": "We ship a fast website, connect integrations and analytics. After launch we test everything so leads come in reliably.",
+        "bullets": [
+          "Fast loading",
+          "WhatsApp/bot/CRM (if needed)",
+          "Lead analytics"
+        ]
+      }
+    },
+    "cta": {
+      "badge": "Premium • Fast • Measurable",
+      "title": {
+        "before": "Want a demo where a lead",
+        "highlight": "instantly",
+        "after": "goes to WhatsApp and a CRM?"
+      },
+      "description": "We’ll show how it works for your niche (clinic, salon, service). You’ll see not a “pretty mockup” but a clear flow: form → message → booking/CRM → analytics.",
+      "primaryButton": "Discuss your project",
+      "secondaryButton": "View case studies",
+      "note": "Quick start: a demo call and a clear plan. Next — design, development, and integrations."
+    },
+    "aria": {
+      "stepsList": "Work process steps",
+      "stepCard": "Step {number}: {title}",
+      "stepCardInner": "Step card {number}",
+      "stepBullets": "Step {number} bullet points",
+      "tags": "Key automation directions",
+      "cta": "Call to action section",
+      "ctaButtons": "Call to action buttons",
+      "primaryCta": "Go to the contact form to discuss your project",
+      "secondaryCta": "Go to the pricing/case studies section"
+    }
+  },
+  "testimonials": {
+    "title": "Testimonials & results",
+    "subtitle": "A quick look at what changes after launch: leads don’t get lost, customers get answers faster, and handling inquiries becomes easier.",
+    "tags": {
+      "moreLeads": "More leads",
+      "whatsappAutomation": "WhatsApp automation",
+      "crmTracking": "Lead tracking (CRM/sheet)"
+    },
+    "aria": {
+      "list": "Customer testimonials list",
+      "tags": "Key outcomes and effects"
+    }
+  },
+  "finalCta": {
+    "title": "Let’s build a website and automation that work for your business",
+    "subtitle": "We’ll show how a website can drive clients into WhatsApp, track leads, and reduce manual routine — without complicated jargon or extra steps.",
+    "primaryButton": "Discuss your project",
+    "secondaryButton": "View pricing",
+    "note": "Based in Israel, working with businesses worldwide.",
+    "aria": {
+      "ctaButtons": "Call to action buttons",
+      "primaryCta": "Go to the contact form to discuss your project",
+      "secondaryCta": "Go to pricing packages and plans"
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "About — SavonDev Studio",
+      "description": "Premium websites and automation for Israeli SMBs. UX, speed, SEO, and leads under control.",
+      "ogTitle": "About — SavonDev Studio",
+      "ogDescription": "Digital products that drive leads: UX, performance, SEO, and automation.",
+      "ogLocale": "en_US",
+      "twitterTitle": "About — SavonDev Studio",
+      "twitterDescription": "Premium web solutions & automation — from offer and UX to analytics and continuous improvements."
+    },
+    "aria": {
+      "page": "About page",
+      "heroTitle": "About hero section",
+      "missionTitle": "Our mission",
+      "valuesTitle": "Our values",
+      "differenceTitle": "Why it’s easier with us",
+      "achievementsTitle": "Quality standards",
+      "ctaTitle": "Call to action"
+    },
+    "data": {
+      "hero": {
+        "title": "We build digital products that perform",
+        "subtitle": "We’re a Tel Aviv-based team of designers and developers delivering premium web solutions for ambitious brands.",
+        "stats": [
+          { "label": "Markets", "value": "Israel & EU" },
+          { "label": "Communication", "value": "WhatsApp-first" },
+          { "label": "MVP launch", "value": "2–4 weeks" },
+          { "label": "Lead automation", "value": "From day one" }
+        ]
+      },
+      "mission": {
+        "title": "Our mission",
+        "description": "We believe every business deserves a digital presence that not only looks great, but also delivers measurable results. Our job is to craft web products that combine aesthetics, functionality, and business goals. We don’t just build websites — we build growth tools."
+      },
+      "values": [
+        {
+          "title": "Quality — without slowing down",
+          "description": "Fast, but never sloppy. Clean UX, solid structure, and careful implementation — built to last."
+        },
+        {
+          "title": "Transparency at every step",
+          "description": "Timeline, budget, and milestones — upfront. You always know what’s done and what’s next."
+        },
+        {
+          "title": "Leads matter more than visuals",
+          "description": "Design is a tool. We focus on conversion: offer, CTAs, trust, speed, and clear actions."
+        },
+        {
+          "title": "We stay after launch",
+          "description": "No disappearing after release. Support, improvements, and automation — so results keep growing."
+        }
+      ],
+      "difference": {
+        "title": "Why it’s easier with us",
+        "subtitle": "Not just a ‘pretty website’. A system that brings leads.",
+        "points": [
+          {
+            "title": "Offer & UX first",
+            "description": "We don’t start with ‘design for design’. We start with what the user must do. We package the offer, build structure, CTAs, and flows — so people don’t get lost and reach the inquiry."
+          },
+          {
+            "title": "Fast. Reliable. SEO-ready",
+            "description": "Modern stack (React/Next), performance optimization, basic SEO and analytics. It loads fast, indexes properly, and scales without rewrites a month later."
+          },
+          {
+            "title": "Launch → measure → improve",
+            "description": "After release we don’t guess. We track where users drop (events, funnel, forms) and improve precisely: copy, sections, steps, and conversion."
+          }
+        ]
+      },
+      "team": [
+        {
+          "name": "David Levi",
+          "role": "Founder & Creative Director",
+          "bio": "12 years in digital, worked with brands from startups to Fortune 500. Focused on UX/UI and brand strategy."
+        },
+        {
+          "name": "Maya Cohen",
+          "role": "Lead Developer",
+          "bio": "Full-stack developer experienced with React, Node.js, and cloud infrastructure. Performance optimization fan."
+        },
+        {
+          "name": "Noam Shapiro",
+          "role": "UX/UI Designer",
+          "bio": "Designer with a psychology background. Creates interfaces that work on a subconscious level."
+        },
+        {
+          "name": "Tamar Avraham",
+          "role": "Project Manager",
+          "bio": "Keeps the process under control and ensures projects ship on time and within budget."
+        }
+      ],
+      "achievements": {
+        "title": "Quality standards",
+        "items": [
+          {
+            "award": "WhatsApp-first UX",
+            "category": "Shortest path to inquiry — no extra steps"
+          },
+          {
+            "award": "Speed & performance",
+            "category": "Optimized load time and stable delivery"
+          },
+          {
+            "award": "SEO foundation",
+            "category": "Structure, meta/OG, and indexability"
+          },
+          {
+            "award": "Event analytics",
+            "category": "Buttons, forms, funnel — see where leads drop"
+          },
+          {
+            "award": "Integrations & CRM",
+            "category": "Notion / Airtable / HubSpot — as needed"
+          },
+          {
+            "award": "Launch & support",
+            "category": "Fixes, improvements, and post-release care"
+          }
+        ]
+      },
+      "recognition": [
+        {
+          "number": "2–4 weeks",
+          "label": "MVP launch",
+          "description": "Clear milestones and deadlines — no surprises"
+        },
+        {
+          "number": "One thread",
+          "label": "No extra middlemen",
+          "description": "Direct communication and fast decisions without losing context"
+        },
+        {
+          "number": "From day one",
+          "label": "Leads under control",
+          "description": "Form/WhatsApp + lead capture (CRM when needed)"
+        }
+      ]
+    },
+    "valuesSection": {
+      "title": "How we work",
+      "subtitle": "Clear timelines, a transparent process, and a focus on leads. No “magic” — only clear steps and measurable results."
+    },
+    "differenceSection": {
+      "title": "Why it’s easier with us",
+      "subtitle": "Not a “pretty studio” — a team accountable for results: clear UX, speed, automation, and metrics you can track."
+    },
+    "achievementsSection": {
+      "subtitle": "Not “awards on a landing page”, but real standards we build into every project — so your site generates leads and stays reliable."
+    },
+    "ctaSection": {
+      "titleLine1": "Let’s launch a website",
+      "titleLine2": "that brings you leads",
+      "subtitle": "In 20 minutes you’ll get a clear plan: what to change on the site, how to route people to WhatsApp, and where to add automation so you don’t lose clients.",
+      "primaryLabel": "Discuss the project",
+      "secondaryLabel": "View packages",
+      "primaryAria": "Discuss the project — go to the contact form",
+      "secondaryAria": "View packages — go to the pricing section"
+    }
+  },
+  "home": {
+    "meta": {
+      "title": "SavonDev Studio — websites & automation for Israeli SMB",
+      "description": "Premium websites and automation for Israeli small businesses: design, speed, SEO, CRM, WhatsApp funnels, and integrations.",
+      "ogTitle": "SavonDev Studio — websites & automation",
+      "ogDescription": "Website + automation to generate leads: SEO, CRM, chat flows, integrations, and analytics.",
+      "ogLocale": "en_US",
+      "twitterTitle": "SavonDev Studio — websites & automation",
+      "twitterDescription": "Premium digital for Israel: websites + automation."
+    },
+    "aria": {
+      "page": "Home page",
+      "heroTitle": "Hero: websites & automation",
+      "focusTitle": "Focus: what we build",
+      "whyUsTitle": "Why choose us",
+      "processTitle": "Our process",
+      "testimonialsTitle": "Client testimonials",
+      "finalCtaTitle": "Final call to action"
+    }
+  },
+  "aboutHero": {
+    "aria": {
+      "title": "About SavonDev Studio",
+      "subtitle": "Short overview and key metrics"
+    },
+    "imageAlt": "SavonDev Studio workspace",
+    "stats": {
+      "ariaList": "Key metrics",
+      "ariaItem": "Metric: {value}. {label}."
+    }
+  },
+  "missionSection": {
+    "aria": {
+      "title": "Our mission",
+      "subtitle": "Why we build websites as a sales and automation tool"
+    },
+    "badge": {
+      "text": "Straight. Fast. To the point.",
+      "aria": "Our work principle: straight, fast, and to the point"
+    },
+    "cta": {
+      "label": "Discuss your task",
+      "aria": "Discuss your task — go to the contact form"
+    },
+    "imageAlt": "Mission visual: conversion-focused websites and automation"
   }
 }

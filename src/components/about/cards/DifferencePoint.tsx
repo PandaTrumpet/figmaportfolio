@@ -1,12 +1,196 @@
+// "use client";
+
+// import { useRef, useState } from "react";
+// import {
+//   motion,
+//   useInView,
+//   useReducedMotion,
+// } from "motion/react";
+// import { ImageWithFallback } from "@/src/components/figma/ImageWithFallback";
+
+// type DifferencePointItem = {
+//   title: string;
+//   description: string;
+//   image: string;
+// };
+
+// const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
+// export function DifferencePoint({
+//   point,
+//   index,
+// }: {
+//   point: DifferencePointItem;
+//   index: number;
+// }) {
+//   const ref = useRef<HTMLDivElement | null>(null);
+//   const reduce = useReducedMotion();
+//   const isInView = useInView(ref, { once: true, margin: "-120px" });
+//   const [isHovered, setIsHovered] = useState(false);
+
+//   const flip = index % 2 === 1;
+
+//   return (
+//     <div
+//       ref={ref}
+//       className={`grid lg:grid-cols-2 gap-10 lg:gap-14 items-center ${
+//         flip ? "lg:grid-flow-dense" : ""
+//       }`}
+//     >
+//       {/* Image */}
+//       <motion.div
+//         className={flip ? "lg:col-start-2" : ""}
+//         onHoverStart={() => setIsHovered(true)}
+//         onHoverEnd={() => setIsHovered(false)}
+//         initial={
+//           reduce ? { opacity: 1, y: 0 } : { opacity: 0, x: flip ? 40 : -40 }
+//         }
+//         animate={
+//           isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: flip ? 40 : -40 }
+//         }
+//         transition={{ duration: 0.7, ease: EASE }}
+//       >
+//         {/* glow under image */}
+//         <motion.div
+//           className="relative"
+//           whileHover={reduce ? undefined : { y: -10 }}
+//           transition={{ duration: 0.28, ease: "easeOut" }}
+//         >
+//           <motion.div
+//             className="absolute -inset-[12px] rounded-[34px] bg-[radial-gradient(circle_at_top,_rgba(58,123,255,0.55),_transparent_70%)] blur-2xl -z-20"
+//             animate={{
+//               opacity: isHovered ? 1 : 0.32,
+//               scale: isHovered ? 1.06 : 1,
+//             }}
+//             transition={{ duration: 0.32, ease: "easeOut" }}
+//             aria-hidden="true"
+//           />
+
+//           <motion.div
+//             className="
+//               relative aspect-[16/10] rounded-3xl
+//               border border-white/10
+//               bg-gradient-to-b from-[#060A13] via-[#050816] to-[#02030A]
+//               shadow-[0_26px_80px_rgba(0,0,0,0.85)]
+//               backdrop-blur-xl overflow-hidden
+//             "
+//           >
+//             {/* inner glow */}
+//             <motion.div
+//               className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-[#3A7BFF22] via-transparent to-[#4CC2FF22] -z-10"
+//               animate={{ opacity: isHovered ? 0.9 : 0.35 }}
+//               transition={{ duration: 0.28 }}
+//               aria-hidden="true"
+//             />
+
+//             {/* sheen */}
+//             <motion.div
+//               className="pointer-events-none absolute -inset-10 bg-[linear-gradient(115deg,_transparent_0%,_rgba(255,255,255,0.20)_30%,_transparent_60%)] mix-blend-screen -z-10"
+//               initial={{ x: "-140%" }}
+//               whileHover={reduce ? undefined : { x: "140%" }}
+//               transition={{ duration: 0.9, ease: "easeInOut" }}
+//               aria-hidden="true"
+//             />
+
+//             {/* neon outline frame */}
+//             <motion.div
+//               className="pointer-events-none absolute inset-0 rounded-3xl border border-transparent z-10"
+//               animate={{
+//                 boxShadow: isHovered
+//                   ? "0 0 0 1px rgba(76,194,255,0.7), 0 0 42px rgba(76,194,255,1)"
+//                   : "0 0 0 1px rgba(255,255,255,0.06)",
+//               }}
+//               transition={{ duration: 0.22 }}
+//               style={{
+//                 background:
+//                   "linear-gradient(135deg, #3A7BFF, #4CC2FF, #9B5DFF)",
+//                 WebkitMask:
+//                   "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
+//                 WebkitMaskComposite: "xor",
+//                 maskComposite: "exclude",
+//                 padding: "1px",
+//               }}
+//               aria-hidden="true"
+//             />
+
+//             <motion.div
+//               className="absolute inset-0"
+//               whileHover={reduce ? undefined : { scale: 1.06 }}
+//               transition={{ duration: 0.7, ease: EASE }}
+//             >
+//               <ImageWithFallback
+//                 src={point.image}
+//                 alt={point.title}
+//                 className="absolute inset-0 w-full h-full object-cover"
+//               />
+//             </motion.div>
+
+//             <div className="absolute inset-0 bg-gradient-to-t from-[#050816]/70 via-transparent to-transparent" />
+//           </motion.div>
+//         </motion.div>
+//       </motion.div>
+
+//       {/* Content */}
+//       <motion.div
+//         className={flip ? "lg:col-start-1 lg:row-start-1" : ""}
+//         initial={
+//           reduce ? { opacity: 1, y: 0 } : { opacity: 0, x: flip ? -40 : 40 }
+//         }
+//         animate={
+//           isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: flip ? -40 : 40 }
+//         }
+//         transition={{ duration: 0.7, delay: 0.08, ease: EASE }}
+//       >
+
+//         <motion.div
+//           className="
+//     inline-flex items-center gap-2
+//     rounded-full border border-white/10
+//     bg-white/5 backdrop-blur-md
+//     px-4 py-2 mb-5 md:mb-6
+//     text-[11px] md:text-[12px]
+//     leading-[1.2]
+//     text-white/80
+//     shadow-[0_18px_60px_rgba(0,0,0,0.35)]
+//   "
+//           whileHover={reduce ? undefined : { x: 6 }}
+//           transition={{ duration: 0.22, ease: "easeOut" }}
+//         >
+//           <span className="inline-block h-2 w-2 rounded-full bg-[#63E5FF] shadow-[0_0_18px_rgba(99,229,255,0.55)]" />
+//           <span className="uppercase tracking-[0.22em]">0{index + 1}</span>
+//         </motion.div>
+
+//         <h3
+//           className="
+//     text-[22px] md:text-[28px] lg:text-[34px] xl:text-[38px]
+//     leading-[1.12] md:leading-[1.1]
+//     font-semibold tracking-[-0.012em]
+//     text-[#F2F4FA]
+//     mb-3.5 md:mb-4
+//   "
+//         >
+//           {point.title}
+//         </h3>
+
+//         <p
+//           className="
+//     text-[15px] md:text-[16px] lg:text-[18px] xl:text-[19px]
+//     leading-[1.55] md:leading-[1.6] lg:leading-[1.65]
+//     text-[#C7CEDF]
+//     max-w-[60ch] lg:max-w-[62ch]
+//   "
+//         >
+//           {point.description}
+//         </p>
+//       </motion.div>
+//     </div>
+//   );
+// }
 
 "use client";
 
-import { useRef, useState } from "react";
-import {
-  motion,
-  useInView,
-  useReducedMotion,
-} from "motion/react";
+import { useRef, useState, useId } from "react";
+import { motion, useInView, useReducedMotion } from "motion/react";
 import { ImageWithFallback } from "@/src/components/figma/ImageWithFallback";
 
 type DifferencePointItem = {
@@ -27,22 +211,29 @@ export function DifferencePoint({
   const ref = useRef<HTMLDivElement | null>(null);
   const reduce = useReducedMotion();
   const isInView = useInView(ref, { once: true, margin: "-120px" });
-  const [isHovered, setIsHovered] = useState(false);
+
+  // WCAG: hover должен иметь эквивалент для клавиатуры
+  const [isActive, setIsActive] = useState(false);
 
   const flip = index % 2 === 1;
 
+  // WCAG: связка article -> заголовок/описание
+  const titleId = useId();
+  const descId = useId();
+  const mediaLabelId = useId();
+
   return (
-    <div
+    <article
       ref={ref}
+      aria-labelledby={titleId}
+      aria-describedby={descId}
       className={`grid lg:grid-cols-2 gap-10 lg:gap-14 items-center ${
         flip ? "lg:grid-flow-dense" : ""
       }`}
     >
-      {/* Image */}
+      {/* Image / Media */}
       <motion.div
         className={flip ? "lg:col-start-2" : ""}
-        onHoverStart={() => setIsHovered(true)}
-        onHoverEnd={() => setIsHovered(false)}
         initial={
           reduce ? { opacity: 1, y: 0 } : { opacity: 0, x: flip ? 40 : -40 }
         }
@@ -51,35 +242,50 @@ export function DifferencePoint({
         }
         transition={{ duration: 0.7, ease: EASE }}
       >
-        {/* glow under image */}
         <motion.div
           className="relative"
           whileHover={reduce ? undefined : { y: -10 }}
           transition={{ duration: 0.28, ease: "easeOut" }}
         >
+          {/* glow under image */}
           <motion.div
             className="absolute -inset-[12px] rounded-[34px] bg-[radial-gradient(circle_at_top,_rgba(58,123,255,0.55),_transparent_70%)] blur-2xl -z-20"
             animate={{
-              opacity: isHovered ? 1 : 0.32,
-              scale: isHovered ? 1.06 : 1,
+              opacity: isActive ? 1 : 0.32,
+              scale: isActive ? 1.06 : 1,
             }}
             transition={{ duration: 0.32, ease: "easeOut" }}
             aria-hidden="true"
           />
 
+          {/* Media container: keyboard focusable */}
           <motion.div
+            tabIndex={0}
+            role="group"
+            aria-labelledby={mediaLabelId}
+            onMouseEnter={() => setIsActive(true)}
+            onMouseLeave={() => setIsActive(false)}
+            onFocus={() => setIsActive(true)}
+            onBlur={() => setIsActive(false)}
             className="
               relative aspect-[16/10] rounded-3xl
               border border-white/10
               bg-gradient-to-b from-[#060A13] via-[#050816] to-[#02030A]
               shadow-[0_26px_80px_rgba(0,0,0,0.85)]
               backdrop-blur-xl overflow-hidden
+              outline-none
+              focus-visible:ring-2 focus-visible:ring-[#4CC2FF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#020410]
             "
           >
+            {/* SR-only label for the media group */}
+            <span id={mediaLabelId} className="sr-only">
+              {point.title}
+            </span>
+
             {/* inner glow */}
             <motion.div
               className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-[#3A7BFF22] via-transparent to-[#4CC2FF22] -z-10"
-              animate={{ opacity: isHovered ? 0.9 : 0.35 }}
+              animate={{ opacity: isActive ? 0.9 : 0.35 }}
               transition={{ duration: 0.28 }}
               aria-hidden="true"
             />
@@ -97,7 +303,7 @@ export function DifferencePoint({
             <motion.div
               className="pointer-events-none absolute inset-0 rounded-3xl border border-transparent z-10"
               animate={{
-                boxShadow: isHovered
+                boxShadow: isActive
                   ? "0 0 0 1px rgba(76,194,255,0.7), 0 0 42px rgba(76,194,255,1)"
                   : "0 0 0 1px rgba(255,255,255,0.06)",
               }}
@@ -126,7 +332,11 @@ export function DifferencePoint({
               />
             </motion.div>
 
-            <div className="absolute inset-0 bg-gradient-to-t from-[#050816]/70 via-transparent to-transparent" />
+            {/* decorative gradient overlay */}
+            <div
+              className="absolute inset-0 bg-gradient-to-t from-[#050816]/70 via-transparent to-transparent"
+              aria-hidden="true"
+            />
           </motion.div>
         </motion.div>
       </motion.div>
@@ -142,72 +352,53 @@ export function DifferencePoint({
         }
         transition={{ duration: 0.7, delay: 0.08, ease: EASE }}
       >
-        {/* number pill */}
-        {/* <motion.div
+        {/* step pill (decorative-ish, но читаемый текст оставляем) */}
+        <motion.div
           className="
             inline-flex items-center gap-2
             rounded-full border border-white/10
             bg-white/5 backdrop-blur-md
-            px-4 py-2 mb-6
-            text-xs sm:text-sm text-white/80
+            px-4 py-2 mb-5 md:mb-6
+            text-[11px] md:text-[12px]
+            leading-[1.2]
+            text-white/80
             shadow-[0_18px_60px_rgba(0,0,0,0.35)]
           "
           whileHover={reduce ? undefined : { x: 6 }}
           transition={{ duration: 0.22, ease: "easeOut" }}
         >
-          <span className="inline-block h-2 w-2 rounded-full bg-[#63E5FF] shadow-[0_0_18px_rgba(99,229,255,0.55)]" />
-          <span className="uppercase tracking-wider">0{index + 1}</span>
-        </motion.div> */}
-
-        {/* <h3 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold tracking-tight text-[#F2F4FA] mb-5 leading-tight">
-          {point.title}
-        </h3>
-
-        <p className="text-base md:text-xl lg:text-2xl text-[#C7CEDF] leading-relaxed max-w-xl">
-          {point.description} */}
-        {/* </p> */}
-        {/* number pill */}
-        <motion.div
-          className="
-    inline-flex items-center gap-2
-    rounded-full border border-white/10
-    bg-white/5 backdrop-blur-md
-    px-4 py-2 mb-5 md:mb-6
-    text-[11px] md:text-[12px]
-    leading-[1.2]
-    text-white/80
-    shadow-[0_18px_60px_rgba(0,0,0,0.35)]
-  "
-          whileHover={reduce ? undefined : { x: 6 }}
-          transition={{ duration: 0.22, ease: "easeOut" }}
-        >
-          <span className="inline-block h-2 w-2 rounded-full bg-[#63E5FF] shadow-[0_0_18px_rgba(99,229,255,0.55)]" />
-          <span className="uppercase tracking-[0.22em]">0{index + 1}</span>
+          <span
+            className="inline-block h-2 w-2 rounded-full bg-[#63E5FF] shadow-[0_0_18px_rgba(99,229,255,0.55)]"
+            aria-hidden="true"
+          />
+          <span className="uppercase tracking-[0.22em]">{`0${index + 1}`}</span>
         </motion.div>
 
         <h3
+          id={titleId}
           className="
-    text-[22px] md:text-[28px] lg:text-[34px] xl:text-[38px]
-    leading-[1.12] md:leading-[1.1]
-    font-semibold tracking-[-0.012em]
-    text-[#F2F4FA]
-    mb-3.5 md:mb-4
-  "
+            text-[22px] md:text-[28px] lg:text-[34px] xl:text-[38px]
+            leading-[1.12] md:leading-[1.1]
+            font-semibold tracking-[-0.012em]
+            text-[#F2F4FA]
+            mb-3.5 md:mb-4
+          "
         >
           {point.title}
         </h3>
 
         <p
+          id={descId}
           className="
-    text-[15px] md:text-[16px] lg:text-[18px] xl:text-[19px]
-    leading-[1.55] md:leading-[1.6] lg:leading-[1.65]
-    text-[#C7CEDF]
-    max-w-[60ch] lg:max-w-[62ch]
-  "
+            text-[15px] md:text-[16px] lg:text-[18px] xl:text-[19px]
+            leading-[1.55] md:leading-[1.6] lg:leading-[1.65]
+            text-[#C7CEDF]
+            max-w-[60ch] lg:max-w-[62ch]
+          "
         >
           {point.description}
         </p>
       </motion.div>
-    </div>
+    </article>
   );
 }

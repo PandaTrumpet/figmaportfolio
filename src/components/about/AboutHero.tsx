@@ -1,6 +1,7 @@
 
 
 
+
 "use client";
 
 import { useRef, useState } from "react";
@@ -10,6 +11,8 @@ import {
   useTransform,
   useReducedMotion,
 } from "motion/react";
+import { useLocale, useTranslations } from "next-intl";
+
 import { ImageWithFallback } from "@/src/components/figma/ImageWithFallback";
 import { PageContainer } from "../Layout/PageContainer";
 
@@ -27,6 +30,10 @@ export function AboutHero({ data }: { data: HeroData }) {
   const sectionRef = useRef<HTMLElement | null>(null);
   const reduce = useReducedMotion();
 
+  const locale = useLocale();
+  const isRTL = locale === "he";
+  const t = useTranslations("aboutHero");
+
   const [hoveredStat, setHoveredStat] = useState<number | null>(null);
 
   const { scrollYProgress } = useScroll({
@@ -40,6 +47,9 @@ export function AboutHero({ data }: { data: HeroData }) {
   return (
     <section
       ref={sectionRef}
+      dir={isRTL ? "rtl" : "ltr"}
+      aria-labelledby="about-hero-title"
+      aria-describedby="about-hero-subtitle"
       className="
         relative overflow-visible
         min-h-[100svh]
@@ -48,8 +58,15 @@ export function AboutHero({ data }: { data: HeroData }) {
         md:pt-28 md:pb-16
         lg:pt-30 lg:pb-20
       "
-      aria-label="About hero"
     >
+      {/* Hidden anchors for a11y structure (no UI impact) */}
+      <h1 id="about-hero-title" className="sr-only">
+        {t("aria.title")}
+      </h1>
+      <p id="about-hero-subtitle" className="sr-only">
+        {t("aria.subtitle")}
+      </p>
+
       {/* Parallax Background (FULL-BLEED) */}
       <div
         className="absolute inset-0 z-0 pointer-events-none overflow-hidden"
@@ -58,8 +75,10 @@ export function AboutHero({ data }: { data: HeroData }) {
         <motion.div className="absolute inset-0" style={{ y: y1 }}>
           <ImageWithFallback
             src={data.image}
-            alt="SavonDev studio workspace"
+            alt={t("imageAlt")}
             className="absolute inset-0 w-full h-full object-cover scale-125"
+            // подсказка браузеру — визуальный приоритет (без изменения логики загрузки)
+            fetchPriority="high"
           />
         </motion.div>
 
@@ -78,7 +97,6 @@ export function AboutHero({ data }: { data: HeroData }) {
       {/* Content (CONTAINER) */}
       <PageContainer className="relative z-10 w-full max-w-[1200px] text-white">
         <motion.div style={{ opacity: contentOpacity }}>
-          {/* ✅ Centered content block */}
           <div className="w-full flex flex-col items-center text-center">
             <motion.div
               initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
@@ -87,44 +105,33 @@ export function AboutHero({ data }: { data: HeroData }) {
               className="w-full"
             >
               <div className="relative transform-none will-change-auto">
-                {/* Title (✅ clamp + controlled width) */}
-                <h1
+                {/* Title */}
+                <h2
                   className="
                     font-semibold tracking-tight text-balance
                     leading-[0.98]
                     mb-6 md:mb-8
-
                     max-w-[18ch]
                     sm:max-w-[20ch]
                     lg:max-w-[22ch]
                     mx-auto
-
                     text-[clamp(2.35rem,5.8vw,4.8rem)]
                     md:text-[clamp(2.9rem,5.0vw,5.2rem)]
                     lg:text-[clamp(3.1rem,4.2vw,5.3rem)]
                   "
                 >
                   {data.title}
-                </h1>
+                </h2>
 
-                {/* Subtitle (✅ brighter) */}
+                {/* Subtitle */}
                 <p
                   className="
-                  
-
-                  
-                  
                     mx-auto
-                                 leading-relaxed
-mb-10 md:mb-12
-
-text-white
-
-max-w-[48ch] md:max-w-[52ch] lg:max-w-[58ch]
-
-text-[clamp(1rem,1.4vw+0.6rem,1.35rem)]
-
-                  
+                    leading-relaxed
+                    mb-10 md:mb-12
+                    text-white
+                    max-w-[48ch] md:max-w-[52ch] lg:max-w-[58ch]
+                    text-[clamp(1rem,1.4vw+0.6rem,1.35rem)]
                   "
                 >
                   {data.subtitle}
@@ -132,12 +139,13 @@ text-[clamp(1rem,1.4vw+0.6rem,1.35rem)]
               </div>
             </motion.div>
 
-            {/* ✅ spacing between text and stats */}
             <div className="h-10 sm:h-12 md:h-14" />
           </div>
 
-          {/* Stats Grid (оставляем твою логику, только аккуратный центр) */}
+          {/* Stats Grid */}
           <motion.div
+            role="list"
+            aria-label={t("stats.ariaList")}
             initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.25, ease: EASE }}
@@ -149,6 +157,7 @@ text-[clamp(1rem,1.4vw+0.6rem,1.35rem)]
               return (
                 <motion.div
                   key={index}
+                  role="listitem"
                   className="relative"
                   onHoverStart={() => setHoveredStat(index)}
                   onHoverEnd={() => setHoveredStat(null)}
@@ -171,6 +180,7 @@ text-[clamp(1rem,1.4vw+0.6rem,1.35rem)]
                       scale: isHovered ? 1.06 : 1,
                     }}
                     transition={{ duration: 0.32, ease: "easeOut" }}
+                    aria-hidden="true"
                   />
 
                   <motion.div
@@ -180,6 +190,7 @@ text-[clamp(1rem,1.4vw+0.6rem,1.35rem)]
                       scale: isHovered ? 1.05 : 0.96,
                     }}
                     transition={{ duration: 0.32, ease: "easeOut" }}
+                    aria-hidden="true"
                   />
 
                   <motion.div
@@ -197,6 +208,10 @@ text-[clamp(1rem,1.4vw+0.6rem,1.35rem)]
                         : { y: -10, boxShadow: "0 32px 110px rgba(0,0,0,1)" }
                     }
                     transition={{ duration: 0.28, ease: "easeOut" }}
+                    aria-label={t("stats.ariaItem", {
+                      value: stat.value,
+                      label: stat.label,
+                    })}
                   >
                     <motion.div
                       className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-[#3A7BFF22] via-transparent to-[#4CC2FF22] -z-10"
