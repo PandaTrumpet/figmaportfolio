@@ -1192,5 +1192,247 @@
       },
       "note": "רישיונות לשירותי צד-שלישי (CRM / CMS / אחסון / פלטפורמות צ׳אטבוט) משולמים על-ידי הלקוח — אני עוזר לבחור ומגדיר את הכול."
     }
+  },
+  "reviewsData": {
+    "meta": {
+      "title": "ביקורות ותהליך — SavonDev Studio",
+      "description": "סיפורי לקוחות אמיתיים ותהליך עבודה: אתרים, WhatsApp ואוטומציה לעסקים קטנים בישראל.",
+      "ogTitle": "ביקורות ותהליך — SavonDev Studio",
+      "ogDescription": "איך אנחנו עובדים: גישה, תהליך ועקרונות מאחורי אתרים ואוטומציה.",
+      "ogLocale": "he_IL",
+      "twitterTitle": "ביקורות ותהליך — SavonDev Studio",
+      "twitterDescription": "סיפורי לקוחות ואיך אנחנו עובדים: אתר + CRM + אוטומציה."
+    },
+    "aria": {
+      "page": "עמוד ביקורות ותהליך עבודה",
+      "heroTitle": "איך אנחנו עובדים עם עסקים",
+      "storiesTitle": "סיפורי לקוחות",
+      "proofTitle": "הוכחות ומדדים",
+      "ctaTitle": "קריאה לפעולה"
+    },
+    "hero": {
+      "title": "איך אנחנו עובדים עם עסקים",
+      "subtitle": "בלי הבטחות רועשות — רק הגישה, התהליך והעקרונות שבהם אנחנו משיקים אתרים ואוטומציה לעסקים קטנים.",
+      "badge": "Client Feedback & Process",
+      "stats": [
+        { "label": "מיקוד", "value": "תוצאה" },
+        { "label": "שיטה", "value": "שלב-אחר-שלב" },
+        { "label": "השקה", "value": "בלי מורכבות" },
+        { "label": "עבודה", "value": "בשקיפות" }
+      ]
+    },
+    "clientStories": [
+      {
+        "name": "יעל כהן",
+        "role": "בעלת עסק",
+        "company": "GreenTech Israel",
+        "story": "אנחנו עסק טכנולוגי קטן ודחינו הרבה זמן את שדרוג האתר. האתר הישן נבנה לפני שנים והפסיק לעזור במכירות.",
+        "challenge": "האתר נראה מיושן, לא הסביר מה אנחנו עושים ולא הביא פניות. רוב הלקוחות הגיעו מהמלצות או כתבו ישירות.",
+        "solution": "קיבלנו אתר ברור עם מבנה חזק, דגש על השירותים וקשר פשוט דרך WhatsApp. התהליך היה רגוע וברור.",
+        "results": [
+          { "metric": "פניות מהאתר", "value": "הפכו לקבועות" },
+          { "metric": "זמן תגובה", "value": "התקצר" },
+          { "metric": "בהירות השירותים", "value": "השתפרה" },
+          { "metric": "שימוש יומיומי", "value": "הפך להרגל" }
+        ],
+        "quote": "האתר סוף סוף הפך לכלי עבודה ולא רק כרטיס ביקור. קל יותר להסביר מה אנחנו עושים ולטפל בפניות.",
+        "projectType": "אתר תדמיתי",
+        "industry": "Technology"
+      },
+      {
+        "name": "דוד לוי",
+        "role": "מנהל",
+        "company": "TLV Fashion House",
+        "story": "אנחנו עסק אופליין עם לקוחות קבועים, אבל הבנו שבלי אתר טוב אנחנו מפסידים הזמנות חדשות.",
+        "challenge": "רצינו אתר נקי ומודרני — בלי עומס עיצובי ובלי מערכות מסובכות.",
+        "solution": "בנינו אתר עם פוקוס על קולקציות, דוגמאות וקשר מהיר ב-WhatsApp. בלי פיצ׳רים מיותרים, עם לוגיקה ברורה.",
+        "results": [
+          { "metric": "פניות מלקוחות חדשים", "value": "התחילו להגיע" },
+          { "metric": "קשר אונליין", "value": "נעשה נוח יותר" },
+          { "metric": "אמון במותג", "value": "עלה" },
+          { "metric": "מעורבות", "value": "גדלה" }
+        ],
+        "quote": "לא הבטיחו ניסים — פשוט בנו אתר נקי שבאמת עוזר לעסק.",
+        "projectType": "אתר קטלוג",
+        "industry": "Fashion & Retail"
+      },
+      {
+        "name": "מיכאל רוזנברג",
+        "role": "שותף-מייסד",
+        "company": "HealthTech Solutions",
+        "story": "אנחנו בתחום הבריאות, ולכן אמון והסבר ברור הם קריטיים.",
+        "challenge": "קשה להסביר תהליכים טכניים ורפואיים בצורה פשוטה. לקוחות שאלו שוב ושוב את אותן השאלות.",
+        "solution": "האתר עזר לסדר מידע, להציג תהליך עבודה ולאחד שאלות נפוצות במקום אחד. הוספנו גם טופס יצירת קשר נוח.",
+        "results": [
+          { "metric": "פניות ראשוניות", "value": "השתפרו באיכות" },
+          { "metric": "כמות השאלות", "value": "ירדה" },
+          { "metric": "מוכנות הלקוחות", "value": "השתפרה" },
+          { "metric": "שימוש במכירות", "value": "נעשה קל יותר" }
+        ],
+        "quote": "היום האתר באמת תומך בשיחות מכירה. לקוחות מגיעים מוכנים יותר.",
+        "projectType": "אתר מידע",
+        "industry": "Healthcare"
+      }
+    ],
+    "videoTestimonials": [
+      {
+        "name": "שרה אברהם",
+        "role": "Founder",
+        "company": "Bloom Cosmetics",
+        "duration": "2:15",
+        "quote": "ראינו ROI כבר בחודש הראשון. המכירות גדלו ב-300%."
+      },
+      {
+        "name": "אריה כהן",
+        "role": "CEO",
+        "company": "TechFlow",
+        "duration": "1:45",
+        "quote": "השותף הדיגיטלי הכי טוב שעבדנו איתו. מעבר לציפיות."
+      },
+      {
+        "name": "ליאור דהן",
+        "role": "Marketing Manager",
+        "company": "FoodHub",
+        "duration": "3:20",
+        "quote": "האתר עובד כמו מנהל מכירות 24/7. מדהים."
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Ronit Shapiro",
+        "role": "Product Manager",
+        "company": "DataViz Pro",
+        "text": "We worked with three agencies before STUDIO. This is the first time a project shipped on time, on budget, with results beyond expectations. The team is exceptionally professional.",
+        "date": "2 weeks ago",
+        "projectType": "SaaS Landing"
+      },
+      {
+        "name": "Eitan Barak",
+        "role": "Founder",
+        "company": "EduTech Israel",
+        "text": "The site got Site of the Day in the first week after launch! Organic conversion grew by 400%. An investment that paid off in 2 months.",
+        "date": "1 month ago",
+        "projectType": "Education Platform"
+      },
+      {
+        "name": "Talia Goldman",
+        "role": "CMO",
+        "company": "Luxury Homes TLV",
+        "text": "Premium level across everything — from consultation to post-launch support. Our clients (high-net-worth individuals) love the website. Lead quality improved dramatically.",
+        "date": "3 weeks ago",
+        "projectType": "Real Estate Portal"
+      },
+      {
+        "name": "Omer Levi",
+        "role": "CEO",
+        "company": "FitLife",
+        "text": "We migrated from WordPress to a custom React app. Performance jumped from a 45 Lighthouse score to 98. SEO rankings took off. The website is now our main competitive advantage.",
+        "date": "2 months ago",
+        "projectType": "Fitness Platform"
+      },
+      {
+        "name": "Maya Azulay",
+        "role": "Co-Founder",
+        "company": "ArtSpace Gallery",
+        "text": "Working with STUDIO feels like working with an artist who understands code. The site turned out to be a piece of art. Online art sales now make up 60% of our revenue.",
+        "date": "1 month ago",
+        "projectType": "Art Gallery E-commerce"
+      },
+      {
+        "name": "Netanel Cohen",
+        "role": "Operations Director",
+        "company": "LogiTech Solutions",
+        "text": "The launch was flawless. Zero downtime, every integration works perfectly. The team training was comprehensive. Post-launch support is top-tier. Highly recommended.",
+        "date": "6 weeks ago",
+        "projectType": "B2B Portal"
+      },
+      {
+        "name": "Shani Levin",
+        "role": "Marketing Lead",
+        "company": "BeautyBar",
+        "text": "E-commerce on steroids. Custom features we didn’t even ask for — but they became real game-changers. Conversion rate jumped from 1.2% to 4.8%. Insane.",
+        "date": "3 weeks ago",
+        "projectType": "Beauty E-commerce"
+      },
+      {
+        "name": "Yuval Berger",
+        "role": "Founder",
+        "company": "StartupHub",
+        "text": "Great value for money. We chose the Growth package but got Premium-level quality. The website attracted investor attention and helped us close our funding round. Worth every shekel.",
+        "date": "5 weeks ago",
+        "projectType": "Startup Platform"
+      }
+    ],
+    "platforms": [
+      { "name": "Google Reviews", "rating": "4.9", "reviewCount": "87" },
+      { "name": "Clutch.co", "rating": "5.0", "reviewCount": "34" },
+      { "name": "Awwwards", "rating": "9.2", "reviewCount": "12" },
+      { "name": "CSS Awards", "rating": "9.5", "reviewCount": "8" }
+    ],
+    "cta": {
+      "title": "בואו נדבר על הפרויקט שלכם",
+      "subtitle": "נראה איך משיקים אתר עם WhatsApp ואוטומציה — בלי מורכבות מיותרת ובלי לשלם יותר מדי.",
+      "button": "לדבר על הפרויקט"
+    }
+  },
+  "reviews": {
+    "clientStories": {
+      "title": "סיפורי לקוחות",
+      "subtitle": "לא “מילים יפות”, אלא מקרים ברורים: מה היה, מה בנינו, ומה השתנה.",
+      "caseLabel": "מקרה #{id}",
+      "cardTitle": "המלצה אנונימית",
+      "ratingText": "דירוג: {rating} מתוך 5",
+      "tagsLabel": "תגיות הפרויקט",
+      "blocks": {
+        "story": "סיפור",
+        "challenge": "אתגר",
+        "solution": "פתרון",
+        "results": "תוצאות"
+      }
+    },
+    "proofMetrics": {
+      "title": "הוכחות בתהליך ובמספרים",
+      "subtitle": "אנחנו לא מתמקדים ב“פרסים” — אלא בתוצאה: תהליך ברור, השקה מהירה ומדדים שמשפיעים ישירות על לידים ומכירות.",
+      "items": [
+        {
+          "title": "תהליך ברור וניתן לניהול",
+          "description": "בלי כאוס ובלי הפתעות. קודם מבנה והצעת ערך, אחר כך עיצוב, בנייה והשקה. תמיד ברור מה עושים, למה, ובאיזה שלב הפרויקט נמצא.",
+          "metric": "4",
+          "metricLabel": "שלבים עד להשקה"
+        },
+        {
+          "title": "התחלה מהירה בלי לאבד פוקוס",
+          "description": "לא מושכים חודשים. קודם משיקים גרסה עובדת שמתחילה לקבל פניות — שיפורים והרחבות מגיעים אחר כך.",
+          "metric": "10–14",
+          "metricLabel": "ימים עד להשקה"
+        },
+        {
+          "title": "לידים לא הולכים לאיבוד",
+          "description": "מסלול קצר לפעולה: קריאות פעולה ברורות, WhatsApp כערוץ מרכזי ושליטה בכל נקודות הכניסה.",
+          "metric": "1",
+          "metricLabel": "מטרה: ליד"
+        },
+        {
+          "title": "עיצוב שעובד בשביל העסק",
+          "description": "הוויז’ואל והאנימציות מחזקים אמון ולא מפריעים למשתמש. יפה — כן. אבל קודם כול: אפקטיבי.",
+          "metric": "90+",
+          "metricLabel": "יעד Lighthouse"
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "בואו נדבר על הפרויקט שלכם",
+      "subtitle": "נראה איך להשיק אתר עם WhatsApp ואוטומציה ללידים — בלי מורכבות מיותרת ובלי הוצאות יתר.",
+      "button": "לדבר על הפרויקט",
+      "aria": {
+        "primaryCta": "מעבר לטופס יצירת קשר כדי לדבר על הפרויקט",
+        "opensContactForm": "נפתחת עמוד יצירת קשר עם הטופס"
+      },
+      "seo": {
+        "name": "דברו על הפרויקט — SavonDev Studio",
+        "description": "קריאה לפעולה: מעבר לעמוד יצירת קשר לשיחה על השקת אתר והטמעת אוטומציה.",
+        "publisherName": "SavonDev Studio"
+      }
+    }
   }
 }

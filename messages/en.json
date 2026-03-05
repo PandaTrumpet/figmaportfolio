@@ -1209,6 +1209,248 @@
       },
       "note": "Third-party service licenses (CRM / CMS / hosting / chatbot platforms) are paid by the client — I help choose and configure everything."
     }
+  },
+  "reviewsData": {
+    "meta": {
+      "title": "Reviews & Process — SavonDev Studio",
+      "description": "Real client stories and our delivery process: websites, WhatsApp and automation for Israeli small businesses.",
+      "ogTitle": "Reviews & Process — SavonDev Studio",
+      "ogDescription": "How we deliver: approach, process, and principles behind websites and automation.",
+      "ogLocale": "en_US",
+      "twitterTitle": "Reviews & Process — SavonDev Studio",
+      "twitterDescription": "Client stories and how we work: website + CRM + automation."
+    },
+    "aria": {
+      "page": "Reviews and process page",
+      "heroTitle": "How we work with businesses",
+      "storiesTitle": "Client stories",
+      "proofTitle": "Proof and metrics",
+      "ctaTitle": "Final call to action"
+    },
+    "hero": {
+      "title": "How we work with businesses",
+      "subtitle": "No loud promises — just the approach, process, and principles we use to launch websites and automation for small businesses.",
+      "badge": "Client Feedback & Process",
+      "stats": [
+        { "label": "Focus", "value": "Outcome" },
+        { "label": "Method", "value": "Step-by-step" },
+        { "label": "Launch", "value": "No complexity" },
+        { "label": "Work", "value": "Transparent" }
+      ]
+    },
+    "clientStories": [
+      {
+        "name": "Yael Cohen",
+        "role": "Business Owner",
+        "company": "GreenTech Israel",
+        "story": "We’re a small tech business and kept postponing a website refresh. The old site was built years ago and stopped helping with sales.",
+        "challenge": "The site looked outdated, didn’t explain what we do, and didn’t generate inquiries. Most clients reached out directly or came from referrals.",
+        "solution": "We got a clear website with a strong structure, services-first messaging, and simple WhatsApp contact. The process was calm and straightforward.",
+        "results": [
+          { "metric": "Website inquiries", "value": "became consistent" },
+          { "metric": "Response time", "value": "decreased" },
+          { "metric": "Service clarity", "value": "improved" },
+          { "metric": "Daily usage", "value": "became routine" }
+        ],
+        "quote": "The website finally became a working tool, not just a business card. It’s easier to explain what we do and handle requests.",
+        "projectType": "Corporate website",
+        "industry": "Technology"
+      },
+      {
+        "name": "David Levi",
+        "role": "Manager",
+        "company": "TLV Fashion House",
+        "story": "We’re an offline business with loyal clients, but we knew we were losing new orders without a proper website.",
+        "challenge": "We wanted a clean, modern website — without overloaded design or complex systems.",
+        "solution": "We built the site around collections, examples, and fast WhatsApp contact. No extra features — just clear logic.",
+        "results": [
+          { "metric": "New client inquiries", "value": "started coming in" },
+          { "metric": "Online contact", "value": "became easier" },
+          { "metric": "Brand trust", "value": "increased" },
+          { "metric": "Engagement", "value": "went up" }
+        ],
+        "quote": "No miracles promised — just a clean website that genuinely helps our business.",
+        "projectType": "Catalog website",
+        "industry": "Fashion & Retail"
+      },
+      {
+        "name": "Michael Rosenberg",
+        "role": "Co-founder",
+        "company": "HealthTech Solutions",
+        "story": "We work in healthcare, so trust and clear explanation are critical.",
+        "challenge": "It’s hard to explain technical and medical processes in simple terms. Clients kept asking the same questions.",
+        "solution": "The website helped structure information, show the workflow, and collect key FAQs in one place. We also added a convenient contact form.",
+        "results": [
+          { "metric": "Initial leads", "value": "became higher quality" },
+          { "metric": "Repeated questions", "value": "decreased" },
+          { "metric": "Client readiness", "value": "improved" },
+          { "metric": "Sales usage", "value": "became easier" }
+        ],
+        "quote": "Now the website truly supports sales conversations. Clients come more prepared.",
+        "projectType": "Informational website",
+        "industry": "Healthcare"
+      }
+    ],
+    "videoTestimonials": [
+      {
+        "name": "Sarah Avraham",
+        "role": "Founder",
+        "company": "Bloom Cosmetics",
+        "duration": "2:15",
+        "quote": "ROI was visible in the first month. Sales grew by 300%."
+      },
+      {
+        "name": "Arie Cohen",
+        "role": "CEO",
+        "company": "TechFlow",
+        "duration": "1:45",
+        "quote": "The best web partner we’ve worked with. Exceeded expectations."
+      },
+      {
+        "name": "Lior Dahan",
+        "role": "Marketing Manager",
+        "company": "FoodHub",
+        "duration": "3:20",
+        "quote": "The site works like a sales manager 24/7. Incredible."
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Ronit Shapiro",
+        "role": "Product Manager",
+        "company": "DataViz Pro",
+        "text": "We worked with three agencies before STUDIO. This is the first time a project shipped on time, on budget, with results beyond expectations. The team is exceptionally professional.",
+        "date": "2 weeks ago",
+        "projectType": "SaaS Landing"
+      },
+      {
+        "name": "Eitan Barak",
+        "role": "Founder",
+        "company": "EduTech Israel",
+        "text": "The site got Site of the Day in the first week after launch! Organic conversion grew by 400%. An investment that paid off in 2 months.",
+        "date": "1 month ago",
+        "projectType": "Education Platform"
+      },
+      {
+        "name": "Talia Goldman",
+        "role": "CMO",
+        "company": "Luxury Homes TLV",
+        "text": "Premium level across everything — from consultation to post-launch support. Our clients (high-net-worth individuals) love the website. Lead quality improved dramatically.",
+        "date": "3 weeks ago",
+        "projectType": "Real Estate Portal"
+      },
+      {
+        "name": "Omer Levi",
+        "role": "CEO",
+        "company": "FitLife",
+        "text": "We migrated from WordPress to a custom React app. Performance jumped from a 45 Lighthouse score to 98. SEO rankings took off. The website is now our main competitive advantage.",
+        "date": "2 months ago",
+        "projectType": "Fitness Platform"
+      },
+      {
+        "name": "Maya Azulay",
+        "role": "Co-Founder",
+        "company": "ArtSpace Gallery",
+        "text": "Working with STUDIO feels like working with an artist who understands code. The site turned out to be a piece of art. Online art sales now make up 60% of our revenue.",
+        "date": "1 month ago",
+        "projectType": "Art Gallery E-commerce"
+      },
+      {
+        "name": "Netanel Cohen",
+        "role": "Operations Director",
+        "company": "LogiTech Solutions",
+        "text": "The launch was flawless. Zero downtime, every integration works perfectly. The team training was comprehensive. Post-launch support is top-tier. Highly recommended.",
+        "date": "6 weeks ago",
+        "projectType": "B2B Portal"
+      },
+      {
+        "name": "Shani Levin",
+        "role": "Marketing Lead",
+        "company": "BeautyBar",
+        "text": "E-commerce on steroids. Custom features we didn’t even ask for — but they became real game-changers. Conversion rate jumped from 1.2% to 4.8%. Insane.",
+        "date": "3 weeks ago",
+        "projectType": "Beauty E-commerce"
+      },
+      {
+        "name": "Yuval Berger",
+        "role": "Founder",
+        "company": "StartupHub",
+        "text": "Great value for money. We chose the Growth package but got Premium-level quality. The website attracted investor attention and helped us close our funding round. Worth every shekel.",
+        "date": "5 weeks ago",
+        "projectType": "Startup Platform"
+      }
+    ],
+    "platforms": [
+      { "name": "Google Reviews", "rating": "4.9", "reviewCount": "87" },
+      { "name": "Clutch.co", "rating": "5.0", "reviewCount": "34" },
+      { "name": "Awwwards", "rating": "9.2", "reviewCount": "12" },
+      { "name": "CSS Awards", "rating": "9.5", "reviewCount": "8" }
+    ],
+    "cta": {
+      "title": "Let’s discuss your project",
+      "subtitle": "We’ll show how to launch a website with WhatsApp and automation — without unnecessary complexity or overpaying.",
+      "button": "Discuss the project"
+    }
+  },
+  "reviews": {
+    "clientStories": {
+      "title": "Client stories",
+      "subtitle": "Not “pretty words”, but clear cases: what was happening, what we built, and what changed.",
+      "caseLabel": "Case #{id}",
+      "cardTitle": "Anonymous testimonial",
+      "ratingText": "Rated {rating} out of 5",
+      "tagsLabel": "Project tags",
+      "blocks": {
+        "story": "Story",
+        "challenge": "Challenge",
+        "solution": "Solution",
+        "results": "Results"
+      }
+    },
+    "proofMetrics": {
+      "title": "Proof in process and numbers",
+      "subtitle": "We don’t optimize for “awards” — we optimize for outcomes: a clear process, a fast launch, and metrics that directly impact leads and sales.",
+      "items": [
+        {
+          "title": "A clear, manageable process",
+          "description": "No chaos, no surprises. First structure and offer, then design, build, and launch. You always know what we’re doing, why, and where the project stands.",
+          "metric": "4",
+          "metricLabel": "steps to launch"
+        },
+        {
+          "title": "Fast start without losing focus",
+          "description": "We don’t drag projects for months. We launch a working version that starts capturing leads — improvements and expansions come next.",
+          "metric": "10–14",
+          "metricLabel": "days to launch"
+        },
+        {
+          "title": "Leads don’t get lost",
+          "description": "A short path to action: clear CTAs, WhatsApp as the primary channel, and control over every entry point.",
+          "metric": "1",
+          "metricLabel": "goal: a lead"
+        },
+        {
+          "title": "Design that works for the business",
+          "description": "Visuals and motion build trust without getting in the user’s way. Beautiful — yes. But first and foremost: effective.",
+          "metric": "90+",
+          "metricLabel": "Lighthouse target"
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Let’s talk about your project",
+      "subtitle": "We’ll show how to launch a website with WhatsApp and lead automation — without unnecessary complexity or overspending.",
+      "button": "Discuss the project",
+      "aria": {
+        "primaryCta": "Go to the contact form to discuss the project",
+        "opensContactForm": "Opens the contact page with the form"
+      },
+      "seo": {
+        "name": "Discuss your project — SavonDev Studio",
+        "description": "Final call to action: open the contact page and discuss a website launch and automation setup.",
+        "publisherName": "SavonDev Studio"
+      }
+    }
   }
 }
   
