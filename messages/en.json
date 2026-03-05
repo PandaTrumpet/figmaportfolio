@@ -772,7 +772,444 @@
       "buttonAria": "Go to the contact page and open the consultation form",
       "note": "We’ll reply within 24 hours. No pushy sales."
     }
+  },
+  "pricing": {
+    "meta": {
+      "title": "Pricing — SavonDev Studio",
+      "description": "Transparent pricing for websites, automation and CRM systems for Israeli businesses.",
+      "ogTitle": "SavonDev Studio Pricing",
+      "ogDescription": "Choose a package for website development and business automation.",
+      "ogLocale": "en_US",
+      "twitterTitle": "SavonDev Studio Pricing",
+      "twitterDescription": "Website and automation packages for modern businesses."
+    },
+    "aria": {
+      "page": "Pricing page",
+      "heroTitle": "Pricing overview",
+      "packagesTitle": "Website packages",
+      "comparisonTitle": "Package comparison",
+      "addonsTitle": "Additional services",
+      "faqTitle": "Pricing frequently asked questions",
+      "ctaTitle": "Start your project"
+    },
+    "schema": {
+      "siteUrl": "https://savondev.com",
+      "pricingUrl": "https://savondev.com/en/pricing",
+      "serviceName": "Website development & automation",
+      "serviceDescription": "Premium websites, CRM integrations and WhatsApp automation for Israeli businesses.",
+      "catalogName": "Pricing packages",
+      "offers": {
+        "starter": {
+          "name": "Starter",
+          "description": "Landing page or small website with conversion-focused UI and basic automation setup.",
+          "price": "0"
+        },
+        "growth": {
+          "name": "Growth",
+          "description": "Multi-page website with lead capture, integrations and analytics.",
+          "price": "0"
+        },
+        "premium": {
+          "name": "Premium",
+          "description": "Full solution: website + CRM pipeline + WhatsApp bot + advanced automation.",
+          "price": "0"
+        }
+      },
+      "faq": {
+        "q1": {
+          "q": "Do you have fixed prices or custom quotes?",
+          "a": "Packages are a starting point. Final pricing depends on scope, integrations and timeline."
+        },
+        "q2": {
+          "q": "What is included in the packages?",
+          "a": "Design, development, basic SEO, performance setup and a clear delivery plan. Add-ons are optional."
+        },
+        "q3": {
+          "q": "How fast can we launch?",
+          "a": "A basic landing can be launched quickly. More complex automation and CRM require additional setup time."
+        },
+        "q4": {
+          "q": "Can you integrate WhatsApp and CRM?",
+          "a": "Yes. We integrate WhatsApp flows and CRM pipelines depending on your business process."
+        }
+      }
+    }
+  },
+  "pricingData": {
+    "hero": {
+      "title": "Transparent pricing",
+      "subtitle": "No hidden fees. Clear packages, defined scope, and a fixed price aligned with your business goals.",
+      "badge": "Pricing",
+      "guarantee": "30-day money-back guarantee",
+      "primaryCta": {
+        "label": "Discuss your project",
+        "href": "#contact",
+        "aria": "Go to contact section"
+      },
+      "secondaryCta": {
+        "label": "Compare packages",
+        "href": "#comparison",
+        "aria": "Go to package comparison"
+      }
+    },
+
+    "packages": {
+      "starter": {
+        "tagline": "Fast launch",
+        "price": "₪3,900",
+        "period": "one-time",
+        "description": "A landing page or a simple website that explains your service and captures leads via forms or WhatsApp.",
+        "ideal": "Solo services, salons, small businesses",
+        "cta": "Choose Starter",
+        "features": {
+          "f1": "Landing page or up to 3 pages",
+          "f2": "Responsive design (mobile-first)",
+          "f3": "Conversion-focused structure",
+          "f4": "Lead form or WhatsApp",
+          "f5": "Simple CRM setup (Notion / Airtable)",
+          "f6": "Basic lead automation",
+          "f7": "Optional: WhatsApp bot (initial questions → CRM)",
+          "f8": "2 revision rounds",
+          "f9": "14 days support after launch",
+          "f10": "Website access + instructions",
+          "f11": "Multilingual — optional"
+        }
+      },
+      "growth": {
+        "tagline": "Most popular",
+        "price": "₪8,900",
+        "period": "one-time",
+        "description": "A website that works like a manager: captures leads, sends them to your CRM, and helps you avoid losing clients.",
+        "ideal": "Clinics, services, growing businesses",
+        "cta": "Choose Growth",
+        "features": {
+          "f1": "Up to 10 pages",
+          "f2": "Premium UI/UX built for trust",
+          "f3": "Animations and micro-interactions",
+          "f4": "CMS for easy self-editing",
+          "f5": "Forms + WhatsApp → CRM",
+          "f6": "CRM (Notion / Airtable / HubSpot — based on your needs)",
+          "f7": "Lead & status automation",
+          "f8": "Multilingual (RU / EN / HE)",
+          "f9": "Optional: WhatsApp bot (lead qualification + flows)",
+          "f10": "4 revision rounds",
+          "f11": "30 days support",
+          "f12": "Website access + instructions"
+        }
+      },
+      "premium": {
+        "tagline": "Business system",
+        "price": "₪15,900",
+        "period": "one-time",
+        "description": "A full digital system: website, CRM and process automation built for business growth.",
+        "ideal": "Companies that need processes and scalability",
+        "cta": "Choose Premium",
+        "features": {
+          "f1": "Unlimited number of pages",
+          "f2": "Custom UI/UX design",
+          "f3": "Advanced animations and custom components",
+          "f4": "Headless CMS (if needed)",
+          "f5": "CRM tailored to your business processes",
+          "f6": "Automation for leads, statuses and communication",
+          "f7": "Integrations with external services",
+          "f8": "Multilingual support",
+          "f9": "Optional: WhatsApp bot / AI bot (support + qualification + FAQ)",
+          "f10": "Unlimited revisions within the agreed scope",
+          "f11": "60 days support",
+          "f12": "Website access + instructions",
+          "f13": "Training on how to use the system"
+        }
+      }
+    },
+
+    "comparison": {
+      "title": "Package comparison",
+      "features": {
+        "f1": {
+          "name": "Project type",
+          "starter": "Landing / simple site",
+          "growth": "Sales-driven website",
+          "premium": "Business digital system"
+        },
+        "f2": {
+          "name": "Number of pages",
+          "starter": "Up to 3",
+          "growth": "Up to 10",
+          "premium": "Unlimited"
+        },
+        "f3": {
+          "name": "Design & UX",
+          "starter": "Clean, conversion-focused",
+          "growth": "Premium UI/UX",
+          "premium": "Custom UI/UX"
+        },
+        "f4": {
+          "name": "Animations & effects",
+          "starter": "Minimal",
+          "growth": "Micro-interactions",
+          "premium": "Advanced & custom"
+        },
+        "f5": {
+          "name": "CRM system",
+          "starter": "Notion / Airtable",
+          "growth": "CRM tailored to your needs",
+          "premium": "CRM tailored to processes"
+        },
+        "f6": {
+          "name": "Leads & communication",
+          "starter": "Form or WhatsApp",
+          "growth": "Forms + WhatsApp → CRM",
+          "premium": "Multi-channel → CRM"
+        },
+        "f7": {
+          "name": "WhatsApp bot",
+          "starter": "Optional",
+          "growth": "Optional",
+          "premium": "Optional (AI / flows)"
+        },
+        "f8": {
+          "name": "Multilingual",
+          "starter": "Optional",
+          "growth": "Included (RU / EN / HE)",
+          "premium": "Included"
+        },
+        "f9": {
+          "name": "CMS (content management)",
+          "growth": "Easy self-editing",
+          "premium": "Headless CMS (if needed)"
+        },
+        "f10": {
+          "name": "Integrations",
+          "growth": "Basic",
+          "premium": "External services & APIs"
+        },
+        "f11": {
+          "name": "Revision rounds",
+          "starter": "2",
+          "growth": "4",
+          "premium": "Unlimited"
+        },
+        "f12": {
+          "name": "Post-launch support",
+          "starter": "14 days",
+          "growth": "30 days",
+          "premium": "60 days"
+        },
+        "f13": {
+          "name": "System training",
+          "growth": "Quick onboarding",
+          "premium": "Full training"
+        }
+      }
+    },
+
+    "addons": {
+      "title": "Add-on modules",
+      "subtitle": "Boost your website with automation and business processes",
+      "items": {
+        "a1": {
+          "name": "WhatsApp Bot (Lead Qualifier)",
+          "price": "₪1,900",
+          "description": "A WhatsApp bot that asks initial questions and sends lead details directly to your CRM.",
+          "features": {
+            "f1": "Initial question flows",
+            "f2": "Lead qualification",
+            "f3": "Data sent to CRM",
+            "f4": "Works 24/7",
+            "f5": "Perfect for services and clinics"
+          }
+        },
+        "a2": {
+          "name": "CRM Setup & Pipeline",
+          "price": "₪2,400",
+          "description": "CRM setup for your business: lead stages, statuses and automated notifications.",
+          "features": {
+            "f1": "Notion / Airtable / HubSpot",
+            "f2": "Lead stages & statuses",
+            "f3": "New lead notifications",
+            "f4": "Team-friendly workflow"
+          }
+        },
+        "a3": {
+          "name": "Automation Pack",
+          "price": "₪1,600",
+          "description": "Automate routine operations: leads, tasks, notifications and tables — no manual work.",
+          "features": {
+            "f1": "Make / Zapier scenarios",
+            "f2": "Leads → CRM → tasks",
+            "f3": "Email / WhatsApp notifications",
+            "f4": "Saves your team time"
+          }
+        },
+        "a4": {
+          "name": "Booking & Calendar System",
+          "price": "₪1,400",
+          "description": "Online booking with automatic confirmations and calendar synchronization.",
+          "features": {
+            "f1": "Booking form on your website",
+            "f2": "Time slots & schedule",
+            "f3": "Auto confirmations via WhatsApp",
+            "f4": "Google Calendar sync"
+          }
+        },
+        "a5": {
+          "name": "AI Bot (FAQ / Support)",
+          "price": "₪2,900",
+          "description": "An AI bot that answers common questions and supports clients without a manager.",
+          "features": {
+            "f1": "FAQ answers",
+            "f2": "24/7 support",
+            "f3": "Less workload for your team",
+            "f4": "Integrates with website or WhatsApp"
+          }
+        },
+        "a6": {
+          "name": "Monthly Maintenance",
+          "price": "₪1,200 / month",
+          "description": "Technical support, updates and stability monitoring for your website and automations.",
+          "features": {
+            "f1": "Updates and minor fixes",
+            "f2": "Bot & CRM monitoring",
+            "f3": "Backups",
+            "f4": "Priority support"
+          }
+        }
+      }
+    },
+
+    "faq": {
+      "title": "Frequently asked questions",
+      "subtitle": "Short and clear — how we work and what you get",
+      "items": {
+        "q1": {
+          "q": "How does payment work?",
+          "a": "Payment is split into milestones: a deposit to start the project and the remaining balance when the website is ready to launch. Payment method can be discussed — bank transfer or other convenient options."
+        },
+        "q2": {
+          "q": "How long does development take?",
+          "a": "On average: Starter — up to 2 weeks, Growth — 3–4 weeks, Premium — 4–6 weeks. Timelines depend on pages, languages and automation scope."
+        },
+        "q3": {
+          "q": "What is included in revision rounds?",
+          "a": "A revision round is a consolidated list of changes you send as one batch. We implement it and present an updated version. The number of rounds depends on your package."
+        },
+        "q4": {
+          "q": "Will I be able to edit content myself?",
+          "a": "Yes. Growth and Premium include a CMS so you can edit texts and pages on your own. We provide onboarding and documentation."
+        },
+        "q5": {
+          "q": "How do the CRM and leads from the site work?",
+          "a": "Leads from the website and WhatsApp are automatically sent to your CRM (Notion, Airtable, HubSpot, etc.). You see clients, statuses and request history in one place."
+        },
+        "q6": {
+          "q": "Who pays for CRM, CMS and automation services?",
+          "a": "Licenses and subscriptions for CRM, CMS, chatbot platforms, WhatsApp Business API and other external services are paid by the client. I help you choose, set up and integrate the right tools."
+        },
+        "q7": {
+          "q": "Do you integrate WhatsApp and chatbots?",
+          "a": "Yes. WhatsApp integration is possible in every package. In Starter — basic lead capture. In Growth and Premium — flows, lead qualification and chatbots, including AI when needed."
+        },
+        "q8": {
+          "q": "Do you support multilingual websites?",
+          "a": "Yes. Growth and Premium include multilingual support (typically RU / EN / HE). Starter can add it as an option."
+        },
+        "q9": {
+          "q": "Who pays for hosting and domain?",
+          "a": "Hosting, domain and third-party platforms are paid by the client directly. I help you choose the best option and configure everything end-to-end."
+        },
+        "q10": {
+          "q": "Can we start small and expand later?",
+          "a": "Yes. Many clients start with Starter or Growth and later add CRM, automation or new pages. The project is built with scalability in mind."
+        },
+        "q11": {
+          "q": "What if I need custom logic?",
+          "a": "If your needs go beyond the package, we discuss the solution and cost upfront. No hidden work or surprise fees."
+        }
+      }
+    },
+
+    "cta": {
+      "title": "Not sure which package to choose?",
+      "subtitle": "Book a free 30-minute consultation. We’ll help you define the best solution for your business.",
+      "button": "Discuss your project"
+    },
+    "packagesSection": {
+      "title": "Choose your package",
+      "subtitle": "All packages include a full development cycle",
+      "listAria": "List of pricing packages"
+    },
+    "card": {
+      "popularAria": "Most popular package",
+      "noSubscription": "No subscriptions. Transparent pricing.",
+      "featuresAria": "List of included package features",
+      "addon": {
+        "title": "Optional: WhatsApp bot / AI assistant",
+        "description": "Initial questions, lead qualification, and CRM delivery without losing inquiries."
+      },
+      "idealLabel": "Ideal for",
+      "chooseAria": "Choose the {package} package and go to the contact form"
+    },
+    "comparisonSection": {
+      "subtitle": "A clear comparison of packages — without marketing noise or hidden conditions."
+    },
+    "comparisonTable": {
+      "caption": "Comparison table of packages and included features",
+      "featuresCol": "Features",
+      "yes": "Included",
+      "no": "Not included",
+      "mobileTitle": "Comparison",
+      "mobileNote": "On mobile, the comparison is shown as cards — easier to read than a wide table.",
+      "columns": {
+        "starter": "Starter",
+        "growth": "Growth",
+        "premium": "Premium"
+      }
+    },
+    "addonsSection": {
+      "listAria": "List of add-on modules"
+    },
+    "addonCard": {
+      "priceNote": "add-on",
+      "add": "Add to package",
+      "added": "Added to package",
+      "addAria": "Add the “{name}” module to the selected package",
+      "removeAria": "Remove the “{name}” module from selected add-ons",
+      "featuresAria": "Features included in {name}"
+    },
+    "faqSection": {
+      "listAria": "List of questions and answers"
+    },
+    "faqItem": {
+      "state": {
+        "open": "Answer expanded",
+        "closed": "Answer collapsed"
+      }
+    },
+    "finalCta": {
+      "badge": "Website + CRM + lead automation",
+      "cardsAria": "What’s included in the free consultation",
+      "cards": [
+        {
+          "title": "CRM setup",
+          "text": "I set up Notion / Airtable / HubSpot and a clear lead pipeline."
+        },
+        {
+          "title": "Lead automation",
+          "text": "Form / WhatsApp → CRM: new leads, statuses, notifications."
+        },
+        {
+          "title": "Implementation plan",
+          "text": "We define scope, timeline, and the best package for your case."
+        }
+      ],
+      "whatsapp": {
+        "label": "Message on WhatsApp",
+        "aria": "Open WhatsApp in a new tab and send a message",
+        "href": "https://wa.me/+380634398038?text=Hi,%20I%20would%20like%20to%20discuss%20a%20project"
+      },
+      "note": "Third-party service licenses (CRM / CMS / hosting / chatbot platforms) are paid by the client — I help choose and configure everything."
+    }
   }
-    
-   
 }
+  
+
