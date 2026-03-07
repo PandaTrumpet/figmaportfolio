@@ -1584,7 +1584,136 @@
         }
       ]
     }
+  },
+  "contact": {
+    "meta": {
+      "title": "Контакты | SavonDev Studio",
+      "description": "Свяжитесь с SavonDev Studio, чтобы обсудить сайт, автоматизацию, CRM, WhatsApp-бота или AI-решение для бизнеса в Израиле.",
+      "ogTitle": "Контакты | SavonDev Studio",
+      "ogDescription": "Обсудим ваш сайт, автоматизацию и digital-решение для бизнеса в Израиле.",
+      "ogLocale": "ru_RU",
+      "twitterTitle": "Контакты | SavonDev Studio",
+      "twitterDescription": "Свяжитесь с SavonDev Studio по вопросам сайтов, CRM, автоматизации и WhatsApp-ботов."
+    },
+    "aria": {
+      "page": "Страница контактов SavonDev Studio",
+      "heroTitle": "Связаться с SavonDev Studio",
+      "mainTitle": "Форма и контактная информация",
+      "ctaTitle": "Финальный призыв к действию"
+    },
+    "schema": {
+      "pageName": "Контакты SavonDev Studio",
+      "pageDescription": "Контактная страница SavonDev Studio для запросов по сайтам, автоматизации, CRM и WhatsApp-ботам в Израиле.",
+      "pageUrl": "https://savondev.com/contact",
+      "inLanguage": "ru",
+      "faq": {
+        "q1": {
+          "q": "Как быстро вы отвечаете на заявки?",
+          "a": "Обычно первый ответ приходит в течение 24 часов в рабочие дни."
+        },
+        "q2": {
+          "q": "Можно ли обратиться только за автоматизацией без разработки сайта?",
+          "a": "Да, мы можем отдельно внедрить CRM, WhatsApp-автоматизацию, AI-бота или другие digital-инструменты."
+        },
+        "q3": {
+          "q": "Работаете ли вы с бизнесом в Израиле?",
+          "a": "Да, SavonDev Studio ориентируется на рынок Израиля и помогает малому бизнесу внедрять современные digital-решения."
+        }
+      }
+    },
+    "hero": {
+      "title": "Давайте создадим что-то великое",
+      "subtitle": "Готовы начать проект? Напишите нам, и мы ответим в течение 24 часов.",
+      "badge": "Связаться с нами"
+    },
+    "form": {
+        "successSecondary": "Проверьте вашу почту — я отвечу на сообщение.",
+      "submitLoading": "Отправка…",
+      "trustLine": "Без навязчивых продаж. Сначала уточню задачу и предложу лучший формат: лендинг, сайт с CRM или automation."
+  ,
+      "title": "Отправьте заявку",
+      "subtitle": "Расскажите о своём проекте, и мы подготовим предложение",
+      "fields": {
+        "name": {
+          "label": "Ваше имя",
+          "placeholder": "Иван Коэн"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "ivan@company.co.il"
+        },
+        "phone": {
+          "label": "Телефон",
+          "placeholder": "+972 50 123 4567"
+        },
+        "package": {
+          "label": "Выберите пакет",
+          "placeholder": "Starter / Growth / Premium",
+          "options": {
+            "starter": "Starter",
+            "growth": "Growth",
+            "premium": "Premium"
+          }
+        },
+        "additionalServices": {
+          "label": "Дополнительные услуги",
+          "hint": "Можно выбрать несколько.",
+          "options": {
+            "whatsappBot": "WhatsApp Bot (квалификация лидов)",
+            "crmSetup": "Настройка CRM и воронки",
+            "automationPack": "Пакет автоматизаций",
+            "bookingSystem": "Система бронирования и календаря",
+            "aiBot": "AI-бот (FAQ / поддержка)",
+            "maintenance": "Ежемесячная поддержка"
+          }
+        },
+        "message": {
+          "label": "Расскажите о проекте",
+          "placeholder": "Опишите ваши цели, задачи, сроки..."
+        }
+      },
+      "button": "Отправить заявку",
+      "successMessage": "Спасибо! Мы свяжемся с вами в течение 24 часов."
+    },
+    "contacts": {
+      "whatsapp": {
+        "label": "WhatsApp",
+        "value": "+972 50 123 4567"
+      },
+      "phone": {
+        "label": "Телефон",
+        "value": "+972 3 123 4567"
+      },
+      "email": {
+        "label": "Email"
+      }
+    },
+    "office": { "panelTitle": "Быстрый контакт",
+      "panelSubtitle": "Напишите в WhatsApp или отправьте письмо — отвечу быстро и по делу.",
+      "title": "Наш офис",
+      "address": "Rothschild Blvd 42",
+      "city": "Tel Aviv, Israel",
+      "hours": "Вс–Чт: 9:00 - 18:00"
+    },
+    "cta": {
+         "buttonLabel": "Написать в WhatsApp",
+      "buttonHref": "https://wa.me/972501234567",
+      "title": "Есть вопрос по сайту или автоматизации?",
+      "subtitle": "Напишите — коротко обсудим задачу и я подскажу, подойдёт ли вам сайт, автоматизация или WhatsApp-бот. Без обязательств.",
+      "stats": {
+        "firstReply": {
+          "label": "Первый ответ",
+          "value": "В течение дня"
+        },
+        "call": {
+          "label": "Бесплатный созвон",
+          "value": "20–30 мин"
+        },
+        "contact": {
+          "label": "Прямой контакт",
+          "value": "Лично"
+        }
+      }
+    }
   }
- 
-  
 }

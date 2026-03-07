@@ -1451,6 +1451,137 @@
         "publisherName": "SavonDev Studio"
       }
     }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact | SavonDev Studio",
+      "description": "Contact SavonDev Studio to discuss a website, automation, CRM, WhatsApp bot, or AI solution for your business in Israel.",
+      "ogTitle": "Contact | SavonDev Studio",
+      "ogDescription": "Let’s discuss your website, automation, and digital solution for your business in Israel.",
+      "ogLocale": "en_US",
+      "twitterTitle": "Contact | SavonDev Studio",
+      "twitterDescription": "Get in touch with SavonDev Studio about websites, CRM, automation, and WhatsApp bots."
+    },
+    "aria": {
+      "page": "SavonDev Studio contact page",
+      "heroTitle": "Contact SavonDev Studio",
+      "mainTitle": "Form and contact information",
+      "ctaTitle": "Final call to action"
+    },
+    "schema": {
+      "pageName": "SavonDev Studio Contact",
+      "pageDescription": "Contact page of SavonDev Studio for website, automation, CRM, and WhatsApp bot inquiries in Israel.",
+      "pageUrl": "https://savondev.com/contact",
+      "inLanguage": "en",
+      "faq": {
+        "q1": {
+          "q": "How quickly do you respond to inquiries?",
+          "a": "In most cases, the first response is sent within 24 hours on business days."
+        },
+        "q2": {
+          "q": "Can I contact you only for automation without a website project?",
+          "a": "Yes, we can implement CRM, WhatsApp automation, an AI bot, or other digital tools as a standalone service."
+        },
+        "q3": {
+          "q": "Do you work with businesses in Israel?",
+          "a": "Yes, SavonDev Studio focuses on the Israeli market and helps small businesses adopt modern digital solutions."
+        }
+      }
+    },
+    "hero": {
+      "title": "Let’s build something great",
+      "subtitle": "Ready to start your project? Contact us and we’ll reply within 24 hours.",
+      "badge": "Get In Touch"
+    },
+    "form": {
+       "successSecondary": "Check your email — I’ll reply to your message soon.",
+      "submitLoading": "Sending…",
+      "trustLine": "No pushy sales. First, I’ll clarify your task and suggest the right format: landing page, website with CRM, or automation.",
+      "title": "Send a request",
+      "subtitle": "Tell us about your project and we’ll prepare a proposal",
+      "fields": {
+        "name": {
+          "label": "Your name",
+          "placeholder": "Ivan Cohen"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "ivan@company.co.il"
+        },
+        "phone": {
+          "label": "Phone",
+          "placeholder": "+972 50 123 4567"
+        },
+        "package": {
+          "label": "Choose your package",
+          "placeholder": "Starter / Growth / Premium",
+          "options": {
+            "starter": "Starter",
+            "growth": "Growth",
+            "premium": "Premium"
+          }
+        },
+        "additionalServices": {
+          "label": "Additional services",
+          "hint": "You can choose multiple options.",
+          "options": {
+            "whatsappBot": "WhatsApp Bot (Lead Qualifier)",
+            "crmSetup": "CRM Setup & Pipeline",
+            "automationPack": "Automation Pack",
+            "bookingSystem": "Booking & Calendar System",
+            "aiBot": "AI Bot (FAQ / Support)",
+            "maintenance": "Monthly Maintenance"
+          }
+        },
+        "message": {
+          "label": "Tell us about the project",
+          "placeholder": "Describe your goals, scope, timeline..."
+        }
+      },
+      "button": "Send request",
+      "successMessage": "Thank you! We’ll get back to you within 24 hours."
+    },
+    "contacts": {
+      "whatsapp": {
+        "label": "WhatsApp",
+        "value": "+972 50 123 4567"
+      },
+      "phone": {
+        "label": "Phone",
+        "value": "+972 3 123 4567"
+      },
+      "email": {
+        "label": "Email"
+      }
+    },
+    "office": {
+        "panelTitle": "Quick contact",
+      "panelSubtitle": "Message me on WhatsApp or send an email — I’ll reply quickly and clearly."  ,
+      "title": "Our office",
+      "address": "Rothschild Blvd 42",
+      "city": "Tel Aviv, Israel",
+      "hours": "Sun–Thu: 9:00 AM - 6:00 PM"
+    },
+    "cta": {
+      "buttonLabel": "Message on WhatsApp",
+      "buttonHref": "https://wa.me/972501234567",
+      "title": "Have a question about a website or automation?",
+      "subtitle": "Send a message — we’ll briefly discuss your task and I’ll tell you whether a website, automation, or a WhatsApp bot is the right fit. No obligation.",
+      "stats": {
+        "firstReply": {
+          "label": "First reply",
+          "value": "Within one day"
+        },
+        "call": {
+          "label": "Free call",
+          "value": "20–30 min"
+        },
+        "contact": {
+          "label": "Direct contact",
+          "value": "Personally"
+        }
+      }
+    }
   }
 }
   
