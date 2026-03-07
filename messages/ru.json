@@ -342,6 +342,24 @@
       "secondaryLabel": "Посмотреть пакеты",
       "primaryAria": "Обсудить задачу — перейти к форме контактов",
       "secondaryAria": "Посмотреть пакеты — перейти к секции стоимости"
+    },
+    "schema": {
+      "page": {
+        "name": "О SavonDev Studio",
+        "description": "Страница о SavonDev Studio: подход, ценности, опыт и причина создания агентства для бизнеса в Израиле.",
+        "url": "https://savondev.com/about",
+        "inLanguage": "ru"
+      },
+      "organization": {
+        "name": "SavonDev Studio",
+        "url": "https://savondev.com",
+        "description": "SavonDev Studio создает сайты, автоматизацию, CRM и AI-решения для малого бизнеса в Израиле."
+      },
+      "founder": {
+        "name": "Dmitriy Savon",
+        "jobTitle": "Founder & Full-Stack Developer",
+        "description": "Основатель SavonDev Studio, full-stack разработчик и digital-специалист, создающий современные решения для бизнеса в Израиле."
+      }
     }
   },
   "home": {
@@ -362,6 +380,22 @@
       "processTitle": "Процесс работы",
       "testimonialsTitle": "Отзывы клиентов",
       "finalCtaTitle": "Финальный призыв к действию"
+    },
+    "schema": {
+      "organization": {
+        "name": "SavonDev Studio",
+        "description": "SavonDev Studio создает сайты, автоматизацию, CRM и AI-решения для малого бизнеса в Израиле.",
+        "url": "https://savondev.com",
+        "contactType": "sales",
+        "email": "dsavontrumpet@gmail.com",
+        "telephone": "+97231234567",
+        "availableLanguages": ["English", "Hebrew", "Russian"]
+      },
+      "website": {
+        "name": "SavonDev Studio",
+        "url": "https://savondev.com",
+        "inLanguage": "ru"
+      }
     }
   },
   "aboutHero": {
@@ -604,6 +638,26 @@
       "subtitle": "Мы подскажем оптимальный формат под ваш бизнес за 15 минут — без обязательств и “продажных” разговоров.",
       "primary": "Обсудить задачу",
       "primaryAria": "Обсудить задачу — перейти к форме контактов"
+    },
+    "schema": {
+      "service": {
+        "name": "Услуги SavonDev Studio",
+        "description": "Создание сайтов, CRM, автоматизация, WhatsApp-боты и AI-решения для малого бизнеса в Израиле.",
+        "types": [
+          "Web Design",
+          "Web Development",
+          "CRM Integration",
+          "WhatsApp Automation",
+          "AI Chatbot Development"
+        ]
+      },
+      "organization": {
+        "name": "SavonDev Studio"
+      },
+      "breadcrumb": {
+        "home": "Главная",
+        "services": "Услуги"
+      }
     }
   },
   "processe": {
@@ -904,9 +958,27 @@
       "button": "Начать проект",
       "buttonAria": "Перейти на страницу контактов к форме консультации",
       "note": "Ответим в течение 24 часов. Без навязчивых продаж."
+    },
+    "schema": {
+      "page": {
+        "name": "Процесс работы | SavonDev Studio",
+        "description": "Пошаговый процесс работы SavonDev Studio: от стратегии и структуры до дизайна, разработки, запуска и поддержки."
+      },
+      "service": {
+        "name": "Процесс разработки SavonDev Studio",
+        "description": "Прозрачный процесс создания сайта и digital-решения для бизнеса в Израиле."
+      },
+      "organization": {
+        "name": "SavonDev Studio"
+      },
+      "breadcrumb": {
+        "home": "Главная",
+        "process": "Процесс"
+      }
     }
   },
   "pricing": {
+    
     "meta": {
       "title": "Стоимость — SavonDev Studio",
       "description": "Прозрачная стоимость разработки сайтов, автоматизации и CRM для бизнеса.",
@@ -926,6 +998,10 @@
       "ctaTitle": "Начать проект"
     },
     "schema": {
+       "breadcrumb": {
+        "home": "Главная",
+        "pricing": "Цены"
+      },
       "siteUrl": "https://savondev.com",
       "pricingUrl": "https://savondev.com/ru/pricing",
       "serviceName": "Разработка сайтов и автоматизация",
@@ -1523,6 +1599,24 @@
       "title": "Обсудим ваш проект",
       "subtitle": "Покажем, как можно запустить сайт с WhatsApp и автоматизацией без лишней сложности и переплат.",
       "button": "Обсудить проект"
+    },
+    "schema": {
+      "page": {
+        "name": "Отзывы клиентов | SavonDev Studio",
+        "description": "Отзывы клиентов SavonDev Studio о разработке сайтов, автоматизации, CRM и digital-решениях для бизнеса в Израиле."
+      },
+      "organization": {
+        "name": "SavonDev Studio"
+      },
+      "featuredReview": {
+        "body": "SavonDev Studio помог структурировать проект, улучшить подачу и создать современное digital-решение для бизнеса.",
+        "author": "Клиент SavonDev Studio",
+        "ratingValue": "5"
+      },
+      "breadcrumb": {
+        "home": "Главная",
+        "reviews": "Отзывы"
+      }
     }
   },
   "reviews": {

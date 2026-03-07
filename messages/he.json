@@ -327,6 +327,24 @@
       "secondaryLabel": "צפייה בחבילות",
       "primaryAria": "נדבר על הפרויקט — מעבר לטופס יצירת קשר",
       "secondaryAria": "צפייה בחבילות — מעבר לסעיף התמחור"
+    },
+    "schema": {
+      "page": {
+        "name": "אודות SavonDev Studio",
+        "description": "הכירו את SavonDev Studio, הערכים, הניסיון והחזון שמאחורי בניית אתרים ואוטומציה לעסקים בישראל.",
+        "url": "https://savondev.com/about",
+        "inLanguage": "he"
+      },
+      "organization": {
+        "name": "SavonDev Studio",
+        "url": "https://savondev.com",
+        "description": "SavonDev Studio בונה אתרים, אוטומציה, תהליכי CRM ופתרונות AI לעסקים קטנים בישראל."
+      },
+      "founder": {
+        "name": "Dmitriy Savon",
+        "jobTitle": "Founder & Full-Stack Developer",
+        "description": "המייסד של SavonDev Studio, מפתח full-stack ומומחה דיגיטלי שבונה פתרונות עסקיים מודרניים לשוק הישראלי."
+      }
     }
   },
   "home": {
@@ -347,6 +365,22 @@
       "processTitle": "תהליך העבודה",
       "testimonialsTitle": "המלצות לקוחות",
       "finalCtaTitle": "קריאה אחרונה לפעולה"
+    },
+    "schema": {
+      "organization": {
+        "name": "SavonDev Studio",
+        "description": "SavonDev Studio בונה אתרים, אוטומציה, תהליכי CRM ופתרונות AI לעסקים קטנים בישראל.",
+        "url": "https://savondev.com",
+        "contactType": "sales",
+        "email": "dsavontrumpet@gmail.com",
+        "telephone": "+97231234567",
+        "availableLanguages": ["English", "Hebrew", "Russian"]
+      },
+      "website": {
+        "name": "SavonDev Studio",
+        "url": "https://savondev.com",
+        "inLanguage": "he"
+      }
     }
   },
   "aboutHero": {
@@ -457,6 +491,26 @@
       "subtitle": "תוך 15 דקות נמליץ על הפורמט המתאים לעסק שלכם — בלי התחייבות ובלי לחץ מכירות.",
       "primary": "לדבר על הפרויקט",
       "primaryAria": "לדבר על הפרויקט — מעבר לטופס יצירת קשר"
+    },
+    "schema": {
+      "service": {
+        "name": "השירותים של SavonDev Studio",
+        "description": "אתרים, CRM, אוטומציה, בוטים ל-WhatsApp ופתרונות AI לעסקים קטנים בישראל.",
+        "types": [
+          "Web Design",
+          "Web Development",
+          "CRM Integration",
+          "WhatsApp Automation",
+          "AI Chatbot Development"
+        ]
+      },
+      "organization": {
+        "name": "SavonDev Studio"
+      },
+      "breadcrumb": {
+        "home": "דף הבית",
+        "services": "שירותים"
+      }
     }
   },
   "processe": {
@@ -754,6 +808,23 @@
       "button": "להתחיל פרויקט",
       "buttonAria": "מעבר לעמוד יצירת קשר ופתיחת טופס הייעוץ",
       "note": "נחזור אליכם תוך 24 שעות. בלי מכירות אגרסיביות."
+    },
+    "schema": {
+      "page": {
+        "name": "תהליך העבודה | SavonDev Studio",
+        "description": "הכירו את תהליך העבודה של SavonDev Studio: מאסטרטגיה ומבנה ועד עיצוב, פיתוח, השקה ותמיכה."
+      },
+      "service": {
+        "name": "תהליך הפיתוח של SavonDev Studio",
+        "description": "תהליך שקוף לבניית אתר ופתרון דיגיטלי לעסקים בישראל."
+      },
+      "organization": {
+        "name": "SavonDev Studio"
+      },
+      "breadcrumb": {
+        "home": "דף הבית",
+        "process": "תהליך"
+      }
     }
   },
   "pricing": {
@@ -776,6 +847,10 @@
       "ctaTitle": "התחלת הפרויקט"
     },
     "schema": {
+       "breadcrumb": {
+        "home": "דף הבית",
+        "pricing": "מחירים"
+      },
       "siteUrl": "https://savondev.com",
       "pricingUrl": "https://savondev.com/he/pricing",
       "serviceName": "פיתוח אתרים ואוטומציה",
@@ -1373,6 +1448,24 @@
       "title": "בואו נדבר על הפרויקט שלכם",
       "subtitle": "נראה איך משיקים אתר עם WhatsApp ואוטומציה — בלי מורכבות מיותרת ובלי לשלם יותר מדי.",
       "button": "לדבר על הפרויקט"
+    },
+    "schema": {
+      "page": {
+        "name": "חוות דעת של לקוחות | SavonDev Studio",
+        "description": "חוות דעת של לקוחות SavonDev Studio על אתרים, אוטומציה, CRM ופתרונות דיגיטליים לעסקים בישראל."
+      },
+      "organization": {
+        "name": "SavonDev Studio"
+      },
+      "featuredReview": {
+        "body": "SavonDev Studio עזר לבנות את הפרויקט נכון, לשפר את ההצגה וליצור פתרון דיגיטלי מודרני לעסק.",
+        "author": "לקוח של SavonDev Studio",
+        "ratingValue": "5"
+      },
+      "breadcrumb": {
+        "home": "דף הבית",
+        "reviews": "חוות דעת"
+      }
     }
   },
   "reviews": {

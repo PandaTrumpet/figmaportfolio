@@ -342,6 +342,24 @@
       "secondaryLabel": "View packages",
       "primaryAria": "Discuss the project — go to the contact form",
       "secondaryAria": "View packages — go to the pricing section"
+    },
+    "schema": {
+      "page": {
+        "name": "About SavonDev Studio",
+        "description": "Learn about SavonDev Studio, its values, experience, and the mission behind building business websites and automation for Israel.",
+        "url": "https://savondev.com/about",
+        "inLanguage": "en"
+      },
+      "organization": {
+        "name": "SavonDev Studio",
+        "url": "https://savondev.com",
+        "description": "SavonDev Studio builds websites, automation systems, CRM workflows, and AI solutions for small businesses in Israel."
+      },
+      "founder": {
+        "name": "Dmitriy Savon",
+        "jobTitle": "Founder & Full-Stack Developer",
+        "description": "Founder of SavonDev Studio, a full-stack developer and digital specialist building modern business solutions for the Israeli market."
+      }
     }
   },
   "home": {
@@ -362,6 +380,22 @@
       "processTitle": "Our process",
       "testimonialsTitle": "Client testimonials",
       "finalCtaTitle": "Final call to action"
+    },
+    "schema": {
+      "organization": {
+        "name": "SavonDev Studio",
+        "description": "SavonDev Studio builds websites, automation systems, CRM workflows, and AI solutions for small businesses in Israel.",
+        "url": "https://savondev.com",
+        "contactType": "sales",
+        "email": "dsavontrumpet@gmail.com",
+        "telephone": "+97231234567",
+        "availableLanguages": ["English", "Hebrew", "Russian"]
+      },
+      "website": {
+        "name": "SavonDev Studio",
+        "url": "https://savondev.com",
+        "inLanguage": "en"
+      }
     }
   },
   "aboutHero": {
@@ -472,6 +506,26 @@
       "subtitle": "In 15 minutes we’ll recommend the best format for your business — no commitments and no sales pressure.",
       "primary": "Discuss your project",
       "primaryAria": "Discuss your project — go to the contact form"
+    },
+    "schema": {
+      "service": {
+        "name": "SavonDev Studio Services",
+        "description": "Websites, CRM, automation, WhatsApp bots, and AI solutions for small businesses in Israel.",
+        "types": [
+          "Web Design",
+          "Web Development",
+          "CRM Integration",
+          "WhatsApp Automation",
+          "AI Chatbot Development"
+        ]
+      },
+      "organization": {
+        "name": "SavonDev Studio"
+      },
+      "breadcrumb": {
+        "home": "Home",
+        "services": "Services"
+      }
     }
   },
   "processe": {
@@ -771,6 +825,23 @@
       "button": "Start a project",
       "buttonAria": "Go to the contact page and open the consultation form",
       "note": "We’ll reply within 24 hours. No pushy sales."
+    },
+    "schema": {
+      "page": {
+        "name": "Process | SavonDev Studio",
+        "description": "Explore the SavonDev Studio workflow: from strategy and structure to design, development, launch, and support."
+      },
+      "service": {
+        "name": "SavonDev Studio Development Process",
+        "description": "A transparent process for building websites and digital solutions for businesses in Israel."
+      },
+      "organization": {
+        "name": "SavonDev Studio"
+      },
+      "breadcrumb": {
+        "home": "Home",
+        "process": "Process"
+      }
     }
   },
   "pricing": {
@@ -793,6 +864,10 @@
       "ctaTitle": "Start your project"
     },
     "schema": {
+       "breadcrumb": {
+        "home": "Home",
+        "pricing": "Pricing"
+      },
       "siteUrl": "https://savondev.com",
       "pricingUrl": "https://savondev.com/en/pricing",
       "serviceName": "Website development & automation",
@@ -1390,6 +1465,24 @@
       "title": "Let’s discuss your project",
       "subtitle": "We’ll show how to launch a website with WhatsApp and automation — without unnecessary complexity or overpaying.",
       "button": "Discuss the project"
+    },
+    "schema": {
+      "page": {
+        "name": "Client Reviews | SavonDev Studio",
+        "description": "Client reviews of SavonDev Studio covering websites, automation, CRM, and digital solutions for businesses in Israel."
+      },
+      "organization": {
+        "name": "SavonDev Studio"
+      },
+      "featuredReview": {
+        "body": "SavonDev Studio helped structure the project, improve presentation, and build a modern digital solution for the business.",
+        "author": "SavonDev Studio Client",
+        "ratingValue": "5"
+      },
+      "breadcrumb": {
+        "home": "Home",
+        "reviews": "Reviews"
+      }
     }
   },
   "reviews": {
