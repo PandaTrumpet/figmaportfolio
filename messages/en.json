@@ -864,7 +864,7 @@
       "ctaTitle": "Start your project"
     },
     "schema": {
-       "breadcrumb": {
+      "breadcrumb": {
         "home": "Home",
         "pricing": "Pricing"
       },
@@ -1587,7 +1587,7 @@
       "badge": "Get In Touch"
     },
     "form": {
-       "successSecondary": "Check your email — I’ll reply to your message soon.",
+      "successSecondary": "Check your email — I’ll reply to your message soon.",
       "submitLoading": "Sending…",
       "trustLine": "No pushy sales. First, I’ll clarify your task and suggest the right format: landing page, website with CRM, or automation.",
       "title": "Send a request",
@@ -1648,8 +1648,8 @@
       }
     },
     "office": {
-        "panelTitle": "Quick contact",
-      "panelSubtitle": "Message me on WhatsApp or send an email — I’ll reply quickly and clearly."  ,
+      "panelTitle": "Quick contact",
+      "panelSubtitle": "Message me on WhatsApp or send an email — I’ll reply quickly and clearly.",
       "title": "Our office",
       "address": "Rothschild Blvd 42",
       "city": "Tel Aviv, Israel",
@@ -1674,6 +1674,56 @@
           "value": "Personally"
         }
       }
+    }
+  },
+  "navigation": {
+    "skipToContent": "Skip to main content",
+    "cta": "Start a project",
+    "links": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "portfolio": "Portfolio",
+      "process": "Process",
+      "pricing": "Pricing",
+      "reviews": "Reviews",
+      "contact": "Contact"
+    },
+    "aria": {
+      "primaryNav": "Primary navigation",
+      "logoHome": "SavonDev Studio — go to homepage",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu",
+      "mobileMenu": "Mobile navigation menu"
+    }
+  },
+  "footer": {
+    "description": "Premium websites and automation for businesses in Israel — from offer structure to launch, CRM, and WhatsApp funnels.",
+    "sitemapTitle": "Sitemap",
+    "copyright": "All rights reserved.",
+    "links": {
+      "home": "Home",
+      "about": "About",
+      "portfolio": "Portfolio",
+      "process": "Process",
+      "pricing": "Pricing",
+      "reviews": "Reviews",
+      "contact": "Contact"
+    },
+    "legal": {
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "cookies": "Cookies",
+      "accessibility": "Accessibility",
+      "refunds": "Refunds"
+    },
+    "aria": {
+      "footer": "Site footer",
+      "homeLink": "SavonDev Studio — go to homepage",
+      "footerNav": "Footer navigation",
+      "legalNav": "Legal navigation",
+      "emailLink": "Send an email",
+      "phoneLink": "Call by phone"
     }
   }
 }

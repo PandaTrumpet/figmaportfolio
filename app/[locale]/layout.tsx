@@ -1,64 +1,113 @@
+//   import React from "react";
+//   import { NextIntlClientProvider } from "next-intl";
+//   import { getMessages, setRequestLocale } from "next-intl/server";
+//   import { notFound } from "next/navigation";
 
+//   import { Footer } from "@/src/components/Footer";
+//   import { Navigation } from "@/src/components/Navigation";
+//   import { HyperPrecisionCursor } from "@/src/components/HyperPrecisionCursor";
+// // import { LoaderProvider } from "@/src/components/loader/InnerLoaderProvider";
 
+//   const locales = ["en", "he", "ru"] as const;
+//   type Locale = (typeof locales)[number];
 
-  import React from "react";
-  import { NextIntlClientProvider } from "next-intl";
-  import { getMessages, setRequestLocale } from "next-intl/server";
-  import { notFound } from "next/navigation";
+//   function isLocale(v: string): v is Locale {
+//     return (locales as readonly string[]).includes(v);
+//   }
 
-  import { Footer } from "@/src/components/Footer";
-  import { Navigation } from "@/src/components/Navigation";
-  import { HyperPrecisionCursor } from "@/src/components/HyperPrecisionCursor";
-// import { LoaderProvider } from "@/src/components/loader/InnerLoaderProvider";
+//   export function generateStaticParams() {
+//     return locales.map((locale) => ({ locale }));
+//   }
 
+//   export default async function LocaleLayout({
+//     children,
+//     params,
+//   }: {
+//     children: React.ReactNode;
+//     params: Promise<{ locale: string }>;
+//   }) {
+//     const { locale } = await params;
 
-  const locales = ["en", "he", "ru"] as const;
-  type Locale = (typeof locales)[number];
+//     if (!isLocale(locale)) notFound();
 
-  function isLocale(v: string): v is Locale {
-    return (locales as readonly string[]).includes(v);
-  }
+//     setRequestLocale(locale);
+//     const messages = await getMessages();
 
-  export function generateStaticParams() {
-    return locales.map((locale) => ({ locale }));
-  }
+//     const dir = locale === "he" ? "rtl" : "ltr";
 
-  export default async function LocaleLayout({
-    children,
-    params,
-  }: {
-    children: React.ReactNode;
-    params: Promise<{ locale: string }>;
-  }) {
-    const { locale } = await params;
+//     return (
+//       <NextIntlClientProvider locale={locale} messages={messages}>
+//         {/* 🔥 Управление направлением и языком здесь */}
+//         <div lang={locale} dir={dir} className="min-h-dvh">
+//           {/* <div
+//           id="loader-root" className="fixed inset-0 z-[9999] pointer-events-none"
+//           /> */}
+//           <div
+//             id="loader-root"
+//             className="fixed  inset-0 z-[9999] pointer-events-none"
+//           />
+//           {/* <LoaderProvider> */}
+//             <HyperPrecisionCursor />
+//             <Navigation />
 
-    if (!isLocale(locale)) notFound();
+//     {children}
+//     <Footer />
 
-    setRequestLocale(locale);
-    const messages = await getMessages();
+//           {/* </LoaderProvider> */}
+//         </div>
+//       </NextIntlClientProvider>
+//     );
+//   }
 
-    const dir = locale === "he" ? "rtl" : "ltr";
+import React from "react";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, setRequestLocale } from "next-intl/server";
+import { notFound } from "next/navigation";
 
-    return (
-      <NextIntlClientProvider locale={locale} messages={messages}>
-        {/* 🔥 Управление направлением и языком здесь */}
-        <div lang={locale} dir={dir} className="min-h-dvh">
-          {/* <div
-          id="loader-root" className="fixed inset-0 z-[9999] pointer-events-none" 
-          /> */}
-          <div
-            id="loader-root"
-            className="fixed  inset-0 z-[9999] pointer-events-none"
-          />
-          {/* <LoaderProvider> */}
-            <HyperPrecisionCursor />
-            <Navigation />
-           
-    {children}
-    <Footer />
+import { Footer } from "@/src/components/Footer";
+import { Navigation } from "@/src/components/Navigation";
+import { HyperPrecisionCursor } from "@/src/components/HyperPrecisionCursor";
 
-          {/* </LoaderProvider> */}
-        </div>
-      </NextIntlClientProvider>
-    );
-  }
+const locales = ["en", "he", "ru"] as const;
+type Locale = (typeof locales)[number];
+
+function isLocale(v: string): v is Locale {
+  return (locales as readonly string[]).includes(v);
+}
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+export default async function LocaleLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
+  if (!isLocale(locale)) notFound();
+
+  setRequestLocale(locale);
+  const messages = await getMessages();
+
+  const dir = locale === "he" ? "rtl" : "ltr";
+
+  return (
+    <NextIntlClientProvider locale={locale} messages={messages}>
+      <div lang={locale} dir={dir} className="min-h-dvh">
+        <div
+          id="loader-root"
+          className="fixed inset-0 z-[9999] pointer-events-none"
+        />
+
+        <HyperPrecisionCursor />
+        <Navigation />
+        {children}
+        <Footer />
+      </div>
+    </NextIntlClientProvider>
+  );
+}

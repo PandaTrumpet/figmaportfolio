@@ -847,7 +847,7 @@
       "ctaTitle": "התחלת הפרויקט"
     },
     "schema": {
-       "breadcrumb": {
+      "breadcrumb": {
         "home": "דף הבית",
         "pricing": "מחירים"
       },
@@ -1570,7 +1570,7 @@
       "badge": "צרו קשר"
     },
     "form": {
-       "successSecondary": "בדקו את האימייל שלכם — אענה להודעה בהקדם.",
+      "successSecondary": "בדקו את האימייל שלכם — אענה להודעה בהקדם.",
       "submitLoading": "שולח…",
       "trustLine": "בלי מכירות אגרסיביות. קודם אבין את המשימה ואציע את הפורמט המתאים: דף נחיתה, אתר עם CRM או אוטומציה.",
       "title": "שלחו בקשה",
@@ -1631,7 +1631,7 @@
       }
     },
     "office": {
-        "panelTitle": "יצירת קשר מהירה",
+      "panelTitle": "יצירת קשר מהירה",
       "panelSubtitle": "כתבו לי ב-WhatsApp או שלחו אימייל — אענה מהר ולעניין.",
       "title": "המשרד שלנו",
       "address": "Rothschild Blvd 42",
@@ -1657,6 +1657,56 @@
           "value": "אישי"
         }
       }
+    }
+  },
+  "navigation": {
+    "skipToContent": "דלג לתוכן הראשי",
+    "cta": "להתחיל פרויקט",
+    "links": {
+      "home": "דף הבית",
+      "about": "אודות",
+      "services": "שירותים",
+      "portfolio": "פורטפוליו",
+      "process": "תהליך",
+      "pricing": "מחירים",
+      "reviews": "חוות דעת",
+      "contact": "צור קשר"
+    },
+    "aria": {
+      "primaryNav": "ניווט ראשי",
+      "logoHome": "SavonDev Studio — מעבר לדף הבית",
+      "openMenu": "פתח תפריט",
+      "closeMenu": "סגור תפריט",
+      "mobileMenu": "תפריט ניווט לנייד"
+    }
+  },
+  "footer": {
+    "description": "אתרים פרימיום ואוטומציה לעסקים בישראל — ממבנה ההצעה ועד השקה, CRM ומשפכי WhatsApp.",
+    "sitemapTitle": "מפת האתר",
+    "copyright": "כל הזכויות שמורות.",
+    "links": {
+      "home": "דף הבית",
+      "about": "אודות",
+      "portfolio": "פורטפוליו",
+      "process": "תהליך",
+      "pricing": "מחירים",
+      "reviews": "חוות דעת",
+      "contact": "צור קשר"
+    },
+    "legal": {
+      "privacy": "פרטיות",
+      "terms": "תנאים",
+      "cookies": "Cookies",
+      "accessibility": "נגישות",
+      "refunds": "החזרים"
+    },
+    "aria": {
+      "footer": "כותרת תחתונה של האתר",
+      "homeLink": "SavonDev Studio — מעבר לדף הבית",
+      "footerNav": "ניווט תחתון",
+      "legalNav": "ניווט משפטי",
+      "emailLink": "שליחת אימייל",
+      "phoneLink": "התקשרות טלפונית"
     }
   }
 }
