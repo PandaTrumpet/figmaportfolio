@@ -1715,7 +1715,9 @@
       "terms": "Terms",
       "cookies": "Cookies",
       "accessibility": "Accessibility",
-      "refunds": "Refunds"
+      "refunds": "Refunds",
+      "disclaimer": "Disclaimer",
+      "ai-policy": "AI & Automation"
     },
     "aria": {
       "footer": "Site footer",
@@ -1724,6 +1726,759 @@
       "legalNav": "Legal navigation",
       "emailLink": "Send an email",
       "phoneLink": "Call by phone"
+    }
+  },
+  "privacy": {
+    "eyebrow": "Legal information",
+    "title": "Privacy Policy",
+    "intro": "This Privacy Policy explains what information may be collected through the agency website, how it is used, how it is protected, and what rights visitors may have. The website is informational in nature: visitors may submit inquiries or contact us regarding services, but no online payments are currently processed through the website.",
+    "updated": "Last updated: March 2026",
+    "data": {
+      "title": "What information may be collected",
+      "text": "We may receive only the information that you voluntarily provide through contact forms or other communication channels, as well as basic technical data necessary for the operation of the website.",
+      "items": [
+        "name, phone number, email address, and other contact details",
+        "message content submitted through a form or messenger",
+        "technical data such as IP address, browser type, device, and interface language",
+        "aggregated or anonymized analytics and page usage data"
+      ]
+    },
+    "usage": {
+      "title": "How information is used",
+      "text": "Information is used only for communication with potential clients, handling inquiries, and improving the quality of the website and services.",
+      "items": [
+        "to respond to inquiries and messages",
+        "to discuss projects, services, and cooperation",
+        "to improve the website structure, content, and functionality",
+        "for basic analytics, security, and abuse prevention"
+      ]
+    },
+    "cookies": {
+      "title": "Cookies and analytics",
+      "text": "The website may use cookies, pixels, and similar technologies to ensure proper functionality, analyze traffic, and improve the user experience.",
+      "items": [
+        "functional cookies for stable website performance",
+        "analytics tools to understand visitor behavior",
+        "marketing tools may be added in the future if separately integrated"
+      ]
+    },
+    "security": {
+      "title": "Storage and data protection",
+      "text": "Reasonable technical and organizational measures are taken to protect information from unauthorized access, loss, disclosure, or alteration.",
+      "items": [
+        "restricted access to collected data",
+        "use of secure hosting and email providers",
+        "data minimization wherever reasonably possible",
+        "retention only for as long as needed for communication and legitimate purposes"
+      ]
+    },
+    "rights": {
+      "title": "Your rights",
+      "text": "You may contact us regarding your personal data if you have previously submitted it through the website.",
+      "items": [
+        "request access to your data",
+        "ask to correct inaccurate information",
+        "request deletion where retention is no longer necessary",
+        "withdraw consent for further communication"
+      ]
+    },
+    "contact": {
+      "title": "Contact and third-party services",
+      "text": "The website may rely on third-party providers such as hosting, analytics, forms, email providers, and other technical tools. If you have privacy-related questions, you may contact us using the contact details provided on the website.",
+      "items": [
+        "third-party services process data only to the extent necessary for their function",
+        "the website may contain links to external resources governed by their own privacy policies"
+      ]
+    },
+    "legal": {
+      "title": "Legal note",
+      "text": "This policy has been prepared with the general business model of a web agency and the Israeli market context in mind. Since the website does not currently process online payments, provisions related to payment-card or billing data are not applicable. The website also does not currently operate as a platform with user accounts involving enhanced processing of sensitive personal data."
+    },
+    "meta": {
+      "title": "Privacy Policy | SavonDev",
+      "description": "SavonDev Privacy Policy explaining what data may be collected through the website, how it is used, stored, and protected for a web agency operating in the Israeli market.",
+      "ogTitle": "Privacy Policy | SavonDev",
+      "ogDescription": "Learn what information the SavonDev website may collect, how it is used, and what rights visitors have.",
+      "ogLocale": "en_US",
+      "twitterTitle": "Privacy Policy | SavonDev",
+      "twitterDescription": "SavonDev Privacy Policy for a web agency website serving the Israeli market."
+    },
+    "schema": {
+      "page": {
+        "name": "SavonDev Privacy Policy",
+        "description": "Privacy Policy page of the SavonDev website.",
+        "about": "Privacy Policy"
+      },
+      "organization": {
+        "name": "SavonDev",
+        "description": "Web agency building websites and automation for small businesses in Israel.",
+        "contactType": "customer support",
+        "email": "hello@savondev.com",
+        "telephone": "+972-00-000-0000",
+        "availableLanguages": ["English", "Hebrew", "Russian"]
+      }
+    },
+    "aria": {
+      "page": "Privacy Policy page",
+      "contentTitle": "Main Privacy Policy content",
+      "sections": "Privacy policy sections",
+      "sectionList": "List of section provisions"
+    }
+  },
+  "terms": {
+    "eyebrow": "Legal terms",
+    "title": "Terms of Use",
+    "intro": "These Terms of Use govern access to and use of this website. By using the website, you confirm that you have read these terms and agree to comply with them. The website is informational and promotional in nature and is intended to present the web agency’s services and enable visitors to submit inquiries.",
+    "updated": "Last updated: March 2026",
+    "acceptance": {
+      "title": "Acceptance of terms",
+      "text": "Use of the website constitutes acceptance of these Terms of Use in their current version.",
+      "items": [
+        "if you do not agree to these terms, please do not use the website",
+        "continued use of the website after updates means acceptance of the revised version",
+        "separate project agreements, when signed, take precedence over these general website terms"
+      ]
+    },
+    "services": {
+      "title": "Nature of the website and services",
+      "text": "The website describes services related to website development, UX/UI, automation, CRM integrations, chatbots, and related digital solutions. The website itself is not a platform for automatic contract formation or online payment processing.",
+      "items": [
+        "all information on the website is provided for general informational purposes",
+        "content on the website does not constitute a binding public offer unless expressly stated otherwise",
+        "scope, timelines, pricing, and deliverables are agreed separately",
+        "payments for services, if applicable, are handled outside the website until separate payment infrastructure is introduced"
+      ]
+    },
+    "permittedUse": {
+      "title": "Permitted use",
+      "text": "Users agree to use the website lawfully, in good faith, and only for obtaining information or contacting us regarding services.",
+      "items": [
+        "you may not disrupt the website, interfere with its infrastructure, or attempt unauthorized access",
+        "you may not use the website to send spam, malicious content, or unlawful requests",
+        "you may not copy the site structure, texts, visual solutions, or other materials in violation of applicable law"
+      ]
+    },
+    "intellectualProperty": {
+      "title": "Intellectual property",
+      "text": "The website content, including design, text, graphics, logos, interface solutions, code elements, and other materials, belongs to the site owner or is used lawfully.",
+      "items": [
+        "no part of the website may be reproduced, distributed, or used commercially without prior permission",
+        "trademarks, brand names, and visual elements remain legally protected to the extent provided by applicable law",
+        "only ordinary personal non-commercial use of the website is permitted"
+      ]
+    },
+    "thirdParty": {
+      "title": "Third-party services and links",
+      "text": "The website may contain links to third-party platforms, tools, social networks, or external resources. We do not control the content or terms of use of such resources.",
+      "items": [
+        "when following external links, users do so at their own risk",
+        "third-party websites are governed by their own terms and policies",
+        "integrations, third-party widgets, and services may change without prior notice"
+      ]
+    },
+    "disclaimer": {
+      "title": "Disclaimer and limitation of liability",
+      "text": "The website is provided on an “as is” and “as available” basis. We aim to keep the information accurate and current, but we do not guarantee that the website will be error-free, uninterrupted, or fully complete at all times.",
+      "items": [
+        "information on the website does not constitute legal, financial, or other professional advice",
+        "to the extent permitted by applicable law, we are not liable for indirect damages, loss of profit, loss of data, or consequences arising from website use",
+        "nothing in these terms excludes liability that cannot be excluded under applicable law"
+      ]
+    },
+    "law": {
+      "title": "Governing law",
+      "text": "These Terms of Use are governed by the laws of the State of Israel. Any dispute related to the website shall be resolved in accordance with applicable Israeli law and jurisdiction rules.",
+      "items": [
+        "mandatory consumer protection provisions, where applicable, remain in force",
+        "if any provision of these terms is found invalid, the remaining provisions continue to apply"
+      ]
+    },
+    "contact": {
+      "title": "Contact",
+      "text": "For questions related to the website, services, or these terms, you may contact us using the contact details provided on the website.",
+      "items": [
+        "business inquiries and project requests are reviewed individually",
+        "pre-contract correspondence does not mean automatic acceptance of a project"
+      ]
+    },
+    "legal": {
+      "title": "Legal note",
+      "text": "This version of the Terms of Use has been prepared for a web agency website operating in the Israeli market, taking into account that the website does not currently process online payments and does not provide user accounts with extended functionality. If online sales, subscriptions, client dashboards, or SaaS features are added later, this document should be updated."
+    },
+    "meta": {
+      "title": "Terms of Use | SavonDev",
+      "description": "SavonDev Terms of Use covering website access rules, permitted use, intellectual property, limitation of liability, and legal conditions for the Israeli market.",
+      "ogTitle": "Terms of Use | SavonDev",
+      "ogDescription": "Review the SavonDev website Terms of Use, visitor rights, and key legal conditions.",
+      "ogLocale": "en_US",
+      "twitterTitle": "Terms of Use | SavonDev",
+      "twitterDescription": "Legal website terms for SavonDev, a web agency serving the Israeli market."
+    },
+    "schema": {
+      "page": {
+        "name": "SavonDev Terms of Use",
+        "description": "Terms of Use page of the SavonDev website.",
+        "about": "Terms of Use"
+      },
+      "organization": {
+        "name": "SavonDev",
+        "description": "Web agency building websites and automation for small businesses in Israel.",
+        "contactType": "customer support",
+        "email": "hello@savondev.com",
+        "telephone": "+972-00-000-0000",
+        "availableLanguages": ["English", "Hebrew", "Russian"]
+      }
+    },
+    "aria": {
+      "page": "Terms of Use page",
+      "contentTitle": "Main Terms of Use content",
+      "sections": "Terms of Use sections",
+      "sectionList": "List of section provisions"
+    }
+  },
+  "accessibility": {
+    "eyebrow": "Accessibility",
+    "title": "Accessibility Statement",
+    "intro": "We are committed to making this website accessible to the widest possible audience, including people with disabilities and users of assistive technologies. We continue to improve the accessibility of the website and its interfaces in line with applicable requirements and reasonable technical capabilities.",
+    "updated": "Last updated: March 2026",
+    "commitment": {
+      "title": "Our accessibility approach",
+      "text": "We treat accessibility as an important part of digital product quality and user experience.",
+      "items": [
+        "we aim to design pages, navigation, and forms so they are convenient for different users",
+        "accessibility is considered when developing new pages, components, and updates",
+        "we continue addressing identified barriers as the website evolves"
+      ]
+    },
+    "standard": {
+      "title": "Standards and references",
+      "text": "The website is built with reference to accessibility expectations applicable to digital services in Israel and to widely accepted international web accessibility guidance.",
+      "items": [
+        "WCAG AA principles are taken into account during design and development",
+        "page and interface structure is created with semantics and predictable behavior in mind",
+        "we aim for compatibility with modern assistive technologies"
+      ]
+    },
+    "features": {
+      "title": "What is already being implemented",
+      "text": "The website uses practices that help improve interaction for keyboard users, screen reader users, and visual readability.",
+      "items": [
+        "logical heading and section structure",
+        "labels and aria attributes for important interactive elements",
+        "visible focus states for keyboard navigation",
+        "attention to text readability and contrast",
+        "clear wording for buttons, links, and forms"
+      ]
+    },
+    "compatibility": {
+      "title": "Compatibility",
+      "text": "The website is designed to work in modern browsers, on mobile devices, and with basic assistive technologies.",
+      "items": [
+        "responsive presentation across desktop, tablet, and mobile",
+        "the interface is intended to remain usable during keyboard navigation",
+        "we aim to support screen readers in common browsing scenarios"
+      ]
+    },
+    "content": {
+      "title": "Content, documents, and media",
+      "text": "We try to publish content in a way that is easier to understand and navigate, although some items may still require further adaptation.",
+      "items": [
+        "images and visual blocks are accompanied by meaningful text alternatives where reasonably possible",
+        "new pages are checked for baseline accessibility before publication",
+        "if the website includes documents or embedded third-party materials, their accessibility may depend on the original source"
+      ]
+    },
+    "limitations": {
+      "title": "Known limitations",
+      "text": "Despite our efforts, some parts of the website may not yet be fully optimized for every accessibility scenario.",
+      "items": [
+        "some animations, decorative effects, or third-party integrations may require additional adaptation",
+        "some older parts of the website may be improved gradually rather than all at once",
+        "if you encounter a barrier, we would appreciate your feedback"
+      ]
+    },
+    "feedback": {
+      "title": "Accessibility feedback",
+      "text": "If you notice an accessibility issue, you may let us know. This helps us identify and remove real barriers more quickly.",
+      "items": [
+        "describe the page or feature where the problem occurred",
+        "if possible, include the device, browser, and interaction method used",
+        "we will try to review the report and find a reasonable solution"
+      ]
+    },
+    "contact": {
+      "title": "How to contact us",
+      "text": "For accessibility-related questions about the website, you may use the contact details shown on the website. It is helpful to include the subject of your request and a short description of the issue.",
+      "items": [
+        "specify the page where the issue occurred",
+        "describe what was inaccessible or difficult to use",
+        "where appropriate, we may offer an alternative way to receive the information"
+      ]
+    },
+    "legal": {
+      "title": "Legal note",
+      "text": "This page reflects the current effort to make the website more accessible for users in the Israeli market context and in line with generally accepted web accessibility expectations. Because the website is continuously evolving, accessibility improvements are also implemented progressively."
+    },
+    "meta": {
+      "title": "Accessibility Statement | SavonDev",
+      "description": "SavonDev Accessibility Statement covering our approach to web accessibility, compatibility, known limitations, and how to report accessibility issues.",
+      "ogTitle": "Accessibility Statement | SavonDev",
+      "ogDescription": "Learn how SavonDev approaches web accessibility and how to report an accessibility issue on the website.",
+      "ogLocale": "en_US",
+      "twitterTitle": "Accessibility Statement | SavonDev",
+      "twitterDescription": "SavonDev Accessibility Statement for a web agency website serving the Israeli market."
+    },
+    "schema": {
+      "page": {
+        "name": "SavonDev Accessibility Statement",
+        "description": "Accessibility Statement page of the SavonDev website.",
+        "about": "Accessibility Statement"
+      },
+      "organization": {
+        "name": "SavonDev",
+        "description": "Web agency building websites and automation for small businesses in Israel.",
+        "contactType": "accessibility support",
+        "email": "hello@savondev.com",
+        "telephone": "+972-00-000-0000",
+        "availableLanguages": ["English", "Hebrew", "Russian"]
+      }
+    },
+    "aria": {
+      "page": "Accessibility Statement page",
+      "contentTitle": "Main Accessibility Statement content",
+      "sections": "Accessibility Statement sections",
+      "sectionList": "List of section provisions"
+    }
+  },
+  "refund": {
+    "eyebrow": "Refunds and cancellations",
+    "title": "Refund Policy",
+    "intro": "This page explains the current approach to cancellations and refunds. At this time, the website does not process online payments, and the website is used only to present services and allow visitors to submit inquiries.",
+    "updated": "Last updated: March 2026",
+    "currentModel": {
+      "title": "Current business model",
+      "text": "The website is informational in nature and does not process payments automatically through an integrated checkout.",
+      "items": [
+        "visitors may review services and submit inquiries",
+        "use of the website alone does not constitute the purchase of a service",
+        "specific project terms are discussed separately"
+      ]
+    },
+    "noOnlinePayments": {
+      "title": "No online payments at this time",
+      "text": "Because the website does not currently include an integrated payment system, a standard automatic refund process through the website does not apply.",
+      "items": [
+        "the website does not charge visitors for services",
+        "the website does not create subscriptions or instant purchases",
+        "if online payment is added later, this policy will be updated"
+      ]
+    },
+    "futurePayments": {
+      "title": "If payments are added later",
+      "text": "If online payments or remote ordering of services are introduced, this Refund Policy will be revised and expanded to reflect the actual sales model and applicable rules.",
+      "items": [
+        "cancellation and refund timeframes will be stated separately",
+        "the request procedure will be described",
+        "special terms may be added for partially performed work or reserved production time"
+      ]
+    },
+    "customAgreements": {
+      "title": "Custom agreements",
+      "text": "If a project is agreed separately through correspondence, invoice, contract, or another document, those individual terms take priority.",
+      "items": [
+        "they may contain their own advance-payment rules",
+        "they may define cancellation terms after work has started",
+        "they may provide for partial refunds or no refunds after a specific stage"
+      ]
+    },
+    "exceptions": {
+      "title": "Important limitations",
+      "text": "This Refund Policy should not be interpreted as a promise of an automatic refund in every situation where payment was made outside the website under separate agreed terms.",
+      "items": [
+        "each situation is assessed in light of the service type and the stage of performance",
+        "customized digital services may have specific cancellation considerations once work has begun",
+        "in all cases, mandatory provisions of applicable law remain unaffected"
+      ]
+    },
+    "law": {
+      "title": "Applicable law",
+      "text": "If mandatory consumer protection rules or other non-waivable legal rules apply to a specific transaction, they remain in force regardless of the wording of this page.",
+      "items": [
+        "matters are considered in light of the applicable laws of the State of Israel",
+        "if any provision is found unenforceable, the remaining provisions continue to apply"
+      ]
+    },
+    "contact": {
+      "title": "How to ask a question",
+      "text": "If you have a question about payment, cancellation, or a possible refund for an agreed project, please contact us using the contact details shown on the website.",
+      "items": [
+        "include the date of the agreement or payment",
+        "briefly describe the project and the situation",
+        "where possible, attach confirmation of the correspondence or invoice"
+      ]
+    },
+    "updates": {
+      "title": "Policy updates",
+      "text": "This page may be updated as the business model, payment methods, or service delivery format of the website changes.",
+      "items": [
+        "a new version becomes effective when published on the website",
+        "the latest update date is shown at the top of the page"
+      ]
+    },
+    "legal": {
+      "title": "Legal note",
+      "text": "This version of the policy has been prepared for a web agency website that does not currently accept online payments through the website. If checkout, subscriptions, prepayments, card payments, or another remote sales model are added later, this document should be updated to reflect the actual payment flow and applicable rules."
+    },
+    "meta": {
+      "title": "Refund Policy | SavonDev",
+      "description": "SavonDev Refund Policy explaining the current cancellation and refund approach while no online payments are processed through the website.",
+      "ogTitle": "Refund Policy | SavonDev",
+      "ogDescription": "Learn how SavonDev currently handles refund and cancellation questions.",
+      "ogLocale": "en_US",
+      "twitterTitle": "Refund Policy | SavonDev",
+      "twitterDescription": "SavonDev Refund Policy for a web agency website without integrated online payments."
+    },
+    "schema": {
+      "page": {
+        "name": "SavonDev Refund Policy",
+        "description": "Refund Policy page of the SavonDev website.",
+        "about": "Refund Policy"
+      },
+      "organization": {
+        "name": "SavonDev",
+        "description": "Web agency building websites and automation for small businesses in Israel.",
+        "contactType": "customer support",
+        "email": "hello@savondev.com",
+        "telephone": "+972-00-000-0000",
+        "availableLanguages": ["English", "Hebrew", "Russian"]
+      }
+    },
+    "aria": {
+      "page": "Refund Policy page",
+      "contentTitle": "Main Refund Policy content",
+      "sections": "Refund Policy sections",
+      "sectionList": "List of section provisions"
+    }
+  },
+
+  "cookies": {
+    "eyebrow": "Cookies",
+    "title": "Cookie Policy",
+    "intro": "This page explains how cookies and similar technologies may be used on the website, why they are used, and how visitors can manage them.",
+    "updated": "Last updated: March 2026",
+
+    "whatAreCookies": {
+      "title": "What are cookies",
+      "text": "Cookies are small text files stored on a user’s device when visiting a website.",
+      "items": [
+        "they help websites remember user preferences",
+        "they may improve usability and performance",
+        "they may support analytics, security, and technical website functions"
+      ]
+    },
+
+    "whyWeUse": {
+      "title": "Why cookies are used",
+      "text": "Cookies may be used to ensure that the website works properly, improve the user experience, and preserve basic technical settings.",
+      "items": [
+        "to support stable interface performance",
+        "to remember certain user preferences",
+        "to improve speed and ease of interaction with the website"
+      ]
+    },
+
+    "analytics": {
+      "title": "Analytics cookies",
+      "text": "Analytics tools may collect anonymized information about how users interact with the website.",
+      "items": [
+        "which pages are visited most often",
+        "how users move through the website",
+        "which devices, browsers, and language settings are used"
+      ]
+    },
+
+    "thirdParty": {
+      "title": "Third-party services",
+      "text": "Some third-party services integrated into the website may use their own cookies or similar technologies.",
+      "items": [
+        "analytics platforms",
+        "embedded forms or external widgets",
+        "marketing or advertising tools, if added in the future"
+      ]
+    },
+
+    "control": {
+      "title": "How to control cookies",
+      "text": "Visitors can manage cookies through their browser settings, including the ability to block or delete cookies.",
+      "items": [
+        "you can delete cookies that have already been stored",
+        "you can prevent cookies from being stored in the future",
+        "disabling some cookies may affect the proper functioning of certain parts of the website"
+      ]
+    },
+
+    "contact": {
+      "title": "Contact",
+      "text": "If you have questions about cookies or similar technologies used on the website, you may contact us using the contact details provided on the website.",
+      "items": [
+        "include the subject of your request",
+        "if possible, specify which part of the website your question relates to",
+        "we will try to respond within a reasonable time"
+      ]
+    },
+
+    "meta": {
+      "title": "Cookie Policy | SavonDev",
+      "description": "SavonDev Cookie Policy explaining how cookies and similar technologies are used, why they are used, and how visitors can manage them.",
+      "ogTitle": "Cookie Policy | SavonDev",
+      "ogDescription": "Learn how SavonDev uses cookies and similar technologies on the website.",
+      "ogLocale": "en_US",
+      "twitterTitle": "Cookie Policy | SavonDev",
+      "twitterDescription": "SavonDev Cookie Policy for a web agency website serving the Israeli market."
+    },
+
+    "schema": {
+      "page": {
+        "name": "SavonDev Cookie Policy",
+        "description": "Cookie Policy page of the SavonDev website.",
+        "about": "Cookie Policy"
+      },
+      "organization": {
+        "name": "SavonDev",
+        "description": "Web agency building websites and automation for small businesses in Israel.",
+        "contactType": "customer support",
+        "email": "hello@savondev.com",
+        "telephone": "+972-00-000-0000",
+        "availableLanguages": ["English", "Hebrew", "Russian"]
+      }
+    },
+
+    "aria": {
+      "page": "Cookie Policy page",
+      "contentTitle": "Main Cookie Policy content",
+      "sections": "Cookie Policy sections",
+      "sectionList": "List of section provisions"
+    }
+  },
+  "disclaimer": {
+    "eyebrow": "Legal notice",
+    "title": "Disclaimer",
+    "intro": "This page explains the limitations associated with the information, materials, and statements published on the website. The website is informational and promotional in nature and should not be interpreted as a guarantee of any specific result, professional advice, or an unconditional promise of achieving particular business outcomes.",
+    "updated": "Last updated: March 2026",
+    "informationalPurpose": {
+      "title": "Informational nature of the website",
+      "text": "The website materials are published for general information about the agency’s services, approach, case examples, and capabilities.",
+      "items": [
+        "information on the website is not individual advice",
+        "website content does not replace a separate agreement, technical specification, or commercial proposal",
+        "publishing materials does not create an obligation to perform a project on stated or implied terms"
+      ]
+    },
+    "noGuarantees": {
+      "title": "No guarantees of results",
+      "text": "We do not guarantee any specific commercial, technical, marketing, or other result solely on the basis of information published on the website.",
+      "items": [
+        "no guarantee is made regarding growth in sales, leads, conversion, or profit",
+        "no guarantee is made regarding specific search rankings or advertising performance",
+        "results depend on many factors, including market conditions, product quality, budget, timing, content, and third-party actions"
+      ]
+    },
+    "thirdPartyServices": {
+      "title": "Third-party services and platforms",
+      "text": "Projects may involve third-party services, platforms, APIs, CRM systems, messengers, analytics tools, and cloud services.",
+      "items": [
+        "we do not control the rules, availability, or changes of third-party services",
+        "external platforms may operate under their own terms, pricing, and limitations",
+        "interruptions, policy changes, or shutdowns of third-party services are not always within our control"
+      ]
+    },
+    "externalLinks": {
+      "title": "External links",
+      "text": "The website may contain links to external resources, services, and platforms for user convenience.",
+      "items": [
+        "we do not control the content of external websites",
+        "we are not responsible for the accuracy, currency, or security of third-party resources",
+        "use of external websites is governed by their own terms and policies"
+      ]
+    },
+    "technicalLimitations": {
+      "title": "Technical limitations",
+      "text": "Although we aim to maintain proper website functionality, digital services may experience temporary errors, compatibility limitations, and external technical disruptions.",
+      "items": [
+        "temporary interruptions, display issues, or partial unavailability may occur",
+        "proper operation may depend on browser, device, network conditions, and third-party integrations",
+        "the website and its content may be updated, changed, or removed without prior notice"
+      ]
+    },
+    "liability": {
+      "title": "Limitation of liability",
+      "text": "To the maximum extent permitted by law, we are not liable for indirect damages, loss of profit, loss of data, or other consequences arising from the use of the website or reliance on its materials.",
+      "items": [
+        "nothing on the website constitutes legal, financial, or other professional advice",
+        "users are responsible for assessing whether the information is suitable for their own circumstances",
+        "this disclaimer does not exclude liability that cannot be excluded under applicable law"
+      ]
+    },
+    "law": {
+      "title": "Applicable law",
+      "text": "This disclaimer shall be interpreted subject to the applicable laws of the State of Israel and to mandatory legal provisions that remain effective regardless of website wording.",
+      "items": [
+        "if any provision is found unenforceable, the remaining provisions continue to apply",
+        "mandatory consumer protection rules and other non-waivable laws remain in force"
+      ]
+    },
+    "contact": {
+      "title": "Contact",
+      "text": "If you have questions regarding website materials, cooperation terms, or the interpretation of information, you may contact us using the contact details provided on the website.",
+      "items": [
+        "specific projects and obligations are governed by separate arrangements",
+        "in the event of a conflict between the website and a separate agreement, the separate agreement prevails"
+      ]
+    },
+    "legal": {
+      "title": "Legal note",
+      "text": "This page has been prepared as a separate legal notice for a web agency website operating with digital services, automation, and integrations. Its purpose is to reasonably define the limits of responsibility and to prevent website materials from being misunderstood as guarantees of results or professional advice."
+    },
+    "meta": {
+      "title": "Disclaimer | SavonDev",
+      "description": "SavonDev Disclaimer covering the informational nature of the website, no guarantees of results, third-party services, and limitation of liability.",
+      "ogTitle": "Disclaimer | SavonDev",
+      "ogDescription": "Review the SavonDev Disclaimer and the limitations associated with website use.",
+      "ogLocale": "en_US",
+      "twitterTitle": "Disclaimer | SavonDev",
+      "twitterDescription": "SavonDev legal disclaimer for a web agency website serving the Israeli market."
+    },
+    "schema": {
+      "page": {
+        "name": "SavonDev Disclaimer",
+        "description": "Disclaimer page of the SavonDev website.",
+        "about": "Disclaimer"
+      },
+      "organization": {
+        "name": "SavonDev",
+        "description": "Web agency building websites and automation for small businesses in Israel.",
+        "contactType": "customer support",
+        "email": "hello@savondev.com",
+        "telephone": "+972-00-000-0000",
+        "availableLanguages": ["English", "Hebrew", "Russian"]
+      }
+    },
+    "aria": {
+      "page": "Disclaimer page",
+      "contentTitle": "Main Disclaimer content",
+      "sections": "Disclaimer sections",
+      "sectionList": "List of section provisions"
+    }
+  },
+  "aiPolicy": {
+    "eyebrow": "AI and automation",
+    "title": "AI & Automation Disclaimer",
+    "intro": "This page explains how artificial intelligence, automation, chatbots, integrations, and other digital tools may be used on the website and in specific projects. It also outlines the limitations of such technologies and the need for reasonable human review.",
+    "updated": "Last updated: March 2026",
+    "useOfAI": {
+      "title": "Use of AI and automation",
+      "text": "The website, demonstration solutions, or client projects may involve AI tools, automation workflows, chatbots, CRM logic, integrations, and other software-based systems.",
+      "items": [
+        "AI may be used for text generation, prompts, structure, automated replies, or request processing",
+        "automation may be used for lead routing, notifications, classification, and data integration",
+        "the specific technology stack may vary from project to project"
+      ]
+    },
+    "limitations": {
+      "title": "Limitations of AI",
+      "text": "AI systems and automated processes are not error-free and may produce incomplete, inaccurate, outdated, or contextually unsuitable outputs.",
+      "items": [
+        "AI may make mistakes, oversimplify, or misinterpret a request",
+        "automated responses may not reflect all circumstances of a specific situation",
+        "AI-generated outputs should be critically evaluated and, where appropriate, independently verified"
+      ]
+    },
+    "noProfessionalAdvice": {
+      "title": "Not professional advice",
+      "text": "Any AI-generated responses, automated messages, suggestions, or recommendations do not constitute legal, financial, medical, or other professional advice.",
+      "items": [
+        "for important decisions, a qualified professional should be consulted",
+        "AI-generated content should not be used as the sole basis for high-risk decisions",
+        "users remain responsible for assessing whether the information is appropriate for their circumstances"
+      ]
+    },
+    "humanReview": {
+      "title": "Human review and oversight",
+      "text": "In many cases, AI and automation are used as supporting tools rather than fully autonomous decision-making systems.",
+      "items": [
+        "important information may require manual human review",
+        "final decisions on project logic, content, or business implementation may be made manually",
+        "clients are encouraged to verify critical texts, outputs, and data before relying on them"
+      ]
+    },
+    "thirdPartyProviders": {
+      "title": "Third-party AI providers and services",
+      "text": "AI features and automation workflows may depend on third-party platforms, models, APIs, and infrastructure.",
+      "items": [
+        "we do not fully control the policies, stability, or changes of external AI services",
+        "third-party providers may change their rules, models, limits, pricing, and availability",
+        "some functionality may depend on services outside our direct control"
+      ]
+    },
+    "dataHandling": {
+      "title": "Data and processing",
+      "text": "When AI and automation are used, data may be processed within the technical logic of a particular solution and in accordance with the applicable privacy documentation of the project.",
+      "items": [
+        "sensitive data should not be submitted to AI tools without a separate assessment of necessity and risk",
+        "the specific data-processing flow depends on the project architecture and connected services",
+        "details regarding personal data processing are governed by the Privacy Policy and any separate agreements where applicable"
+      ]
+    },
+    "law": {
+      "title": "Applicable law and mandatory rules",
+      "text": "This document should be interpreted in light of the applicable laws of the State of Israel, as well as mandatory rules that may apply to users from other jurisdictions, including the EU.",
+      "items": [
+        "if any provision is found unenforceable, the remaining provisions continue to apply",
+        "mandatory data protection, consumer protection, and transparency requirements remain in force"
+      ]
+    },
+    "contact": {
+      "title": "Contact",
+      "text": "If you have questions about how AI or automation is used in connection with the website or a project, you may contact us using the details provided on the website.",
+      "items": [
+        "please indicate the function, page, or project your question relates to",
+        "where possible, describe the specific output or behavior that raised concern",
+        "for project documentation, separate agreements and specifications take priority"
+      ]
+    },
+    "legal": {
+      "title": "Legal note",
+      "text": "This page has been created to improve transparency regarding the use of AI and automation on the agency website and in digital solutions. It does not replace the Privacy Policy, Terms of Use, or separate client agreements, but complements them by explaining the technical and legal limitations of AI tools."
+    },
+    "meta": {
+      "title": "AI & Automation Disclaimer | SavonDev",
+      "description": "SavonDev AI & Automation Disclaimer explaining how AI, chatbots, automation, and integrations may be used and what limitations and human checks should be considered.",
+      "ogTitle": "AI & Automation Disclaimer | SavonDev",
+      "ogDescription": "Learn how SavonDev uses AI and automation and what limitations should be taken into account.",
+      "ogLocale": "en_US",
+      "twitterTitle": "AI & Automation Disclaimer | SavonDev",
+      "twitterDescription": "SavonDev legal notice on the use of AI, automation, and third-party AI services."
+    },
+    "schema": {
+      "page": {
+        "name": "SavonDev AI & Automation Disclaimer",
+        "description": "AI & Automation Disclaimer page of the SavonDev website.",
+        "about": "AI & Automation Disclaimer"
+      },
+      "organization": {
+        "name": "SavonDev",
+        "description": "Web agency building websites, automation, and AI solutions for small businesses in Israel.",
+        "contactType": "customer support",
+        "email": "hello@savondev.com",
+        "telephone": "+972-00-000-0000",
+        "availableLanguages": ["English", "Hebrew", "Russian"]
+      }
+    },
+    "aria": {
+      "page": "AI & Automation Disclaimer page",
+      "contentTitle": "Main AI & Automation Disclaimer content",
+      "sections": "AI & Automation Disclaimer sections",
+      "sectionList": "List of section provisions"
     }
   }
 }

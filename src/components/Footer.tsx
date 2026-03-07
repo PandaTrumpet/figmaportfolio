@@ -189,7 +189,14 @@ type FooterNavItem = {
 };
 
 type FooterLegalItem = {
-  key: "privacy" | "terms" | "cookies" | "accessibility" | "refunds";
+  key:
+    | "privacy"
+    | "terms"
+    | "cookies"
+    | "accessibility"
+    | "refunds"
+    | "disclaimer"
+    | "ai-policy";
   href: string;
 };
 
@@ -201,6 +208,7 @@ const pages: FooterNavItem[] = [
   { key: "pricing", href: "/pricing" },
   { key: "reviews", href: "/reviews" },
   { key: "contact", href: "/contact" },
+  
 ];
 
 const legal: FooterLegalItem[] = [
@@ -209,6 +217,8 @@ const legal: FooterLegalItem[] = [
   { key: "cookies", href: "/cookies" },
   { key: "accessibility", href: "/accessibility" },
   { key: "refunds", href: "/refund" },
+  { key: "disclaimer", href: "/disclaimer" },
+  { key: "ai-policy", href: "/ai-policy" },
 ];
 
 export function Footer() {
