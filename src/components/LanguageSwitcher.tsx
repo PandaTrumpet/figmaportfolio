@@ -44,6 +44,7 @@ export function LanguageSwitcher() {
             onClick={() => handleChange(lang.code)}
             disabled={isPending}
             className={`
+              cursor-pointer
               relative px-4 py-1.5
               text-[10px] md:text-[11px]
               font-semibold tracking-[0.18em] uppercase

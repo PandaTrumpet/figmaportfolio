@@ -167,6 +167,7 @@ export function FAQItem({ item, index }: { item: FAQItemType; index: number }) {
 
       <motion.div
         className="
+        
           relative rounded-3xl border border-white/10
           bg-gradient-to-b from-[#060A13] via-[#050816] to-[#02030A]
           shadow-[0_18px_70px_rgba(0,0,0,0.8)]
@@ -214,6 +215,7 @@ export function FAQItem({ item, index }: { item: FAQItemType; index: number }) {
           aria-expanded={isOpen}
           aria-controls={panelId}
           className="
+          cursor-pointer 
             relative z-20 w-full
             px-6 md:px-7 py-5 md:py-6
             flex items-center justify-between gap-4 text-left

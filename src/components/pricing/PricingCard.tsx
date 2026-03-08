@@ -3,26 +3,31 @@
 // import { useMemo, useRef, useState } from "react";
 // import { motion, useInView, useReducedMotion } from "motion/react";
 // import { ArrowRight, Check, Star, MessageCircle } from "lucide-react";
-// import { pricingData } from "@/src/data/pricingData";
+
 // import { IconBadge } from "./IconBadge";
-// import Link from "next/link";
-// import { useLocale } from "next-intl";
+// import { useLocale, useTranslations } from "next-intl";
 // import { useRouter } from "next/navigation";
 // import { safeWritePackage } from "@/src/utils/addonsStorage";
+// import type { PricingPackage } from "@/src/data/pricingData";
+
 // const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 // export function PricingCard({
 //   package: pkg,
 //   index,
 // }: {
-//   package: (typeof pricingData.packages)[0];
+//   package: PricingPackage;
 //   index: number;
 // }) {
+//   const t = useTranslations("pricingData");
 //   const reduce = useReducedMotion();
 //   const ref = useRef<HTMLDivElement | null>(null);
 //   const isInView = useInView(ref, { once: true, margin: "-120px" });
-//   const [hovered, setHovered] = useState(false);
-// const locale = useLocale();
+//   const [active, setActive] = useState(false);
+
+//   const locale = useLocale();
+//   const router = useRouter();
+
 //   // icon у тебя string (emoji). Приводим к строке безопасно.
 //   const icon = useMemo(
 //     () => (typeof pkg.icon === "string" ? pkg.icon : "✨"),
@@ -32,36 +37,44 @@
 //   const badgeId = `pricing-badge-${index}`;
 //   const titleId = `pricing-title-${index}`;
 //   const descId = `pricing-desc-${index}`;
-// const router = useRouter();
+//   const featuresId = `pricing-features-${index}`;
+
+//   const handleChoose = () => {
+//     safeWritePackage(pkg.name);
+//     router.push(`/${locale}/contact#contact-form`);
+//   };
+
 //   return (
 //     <motion.article
 //       ref={ref}
 //       aria-labelledby={titleId}
-//       aria-describedby={descId}
-//       onHoverStart={() => setHovered(true)}
-//       onHoverEnd={() => setHovered(false)}
+//       aria-describedby={`${descId} ${featuresId}`}
+//       onHoverStart={() => setActive(true)}
+//       onHoverEnd={() => setActive(false)}
+//       onFocusCapture={() => setActive(true)}
+//       onBlurCapture={() => setActive(false)}
 //       initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 46 }}
 //       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 46 }}
 //       transition={{ duration: 0.65, delay: index * 0.12, ease: EASE }}
 //       className={`relative ${pkg.highlighted ? "lg:-mt-6" : ""}`}
 //     >
-//       {/* deep glow */}
+//       {/* deep glow (decorative) */}
 //       <motion.div
 //         className="absolute -inset-[14px] rounded-[34px] bg-[radial-gradient(circle_at_top,_rgba(58,123,255,0.55),_transparent_70%)] blur-2xl -z-20"
 //         animate={{
-//           opacity: hovered ? 1 : 0.34,
-//           scale: hovered ? 1.08 : 1,
+//           opacity: active ? 1 : 0.34,
+//           scale: active ? 1.08 : 1,
 //         }}
 //         transition={{ duration: 0.35, ease: "easeOut" }}
 //         aria-hidden="true"
 //       />
 
-//       {/* aura */}
+//       {/* aura (decorative) */}
 //       <motion.div
 //         className="absolute inset-0 rounded-[40px] bg-[radial-gradient(circle_at_center,_rgba(76,194,255,0.42),_transparent_65%)] blur-3xl -z-10 pointer-events-none"
 //         animate={{
-//           opacity: hovered ? 0.75 : 0,
-//           scale: hovered ? 1.05 : 0.96,
+//           opacity: active ? 0.75 : 0,
+//           scale: active ? 1.05 : 0.96,
 //         }}
 //         transition={{ duration: 0.35, ease: "easeOut" }}
 //         aria-hidden="true"
@@ -75,9 +88,10 @@
 //           animate={isInView ? { opacity: 1, y: 0 } : {}}
 //           transition={{ duration: 0.55, delay: 0.25, ease: EASE }}
 //           className="absolute -top-5 left-1/2 -translate-x-1/2 z-30"
+//           aria-label={t("card.popularAria")}
 //         >
 //           <div className="flex items-center gap-2 rounded-full border border-white/10 bg-black/40 px-4 py-2 text-xs uppercase tracking-[0.22em] text-[#EAF2FF] backdrop-blur-xl">
-//             <Star className="h-4 w-4 text-[#4CC2FF]" />
+//             <Star className="h-4 w-4 text-[#4CC2FF]" aria-hidden="true" />
 //             <span>{pkg.tagline}</span>
 //           </div>
 //         </motion.div>
@@ -92,6 +106,9 @@
 //           shadow-[0_26px_80px_rgba(0,0,0,0.85)]
 //           backdrop-blur-xl overflow-hidden
 //           flex flex-col
+//           focus-within:outline-none
+//           focus-within:ring-2 focus-within:ring-[#4CC2FF]/70
+//           focus-within:ring-offset-0
 //         "
 //         whileHover={
 //           reduce
@@ -103,15 +120,15 @@
 //         }
 //         transition={{ duration: 0.3, ease: "easeOut" }}
 //       >
-//         {/* Inner glow */}
+//         {/* Inner glow (decorative) */}
 //         <motion.div
 //           className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-[#3A7BFF33] via-[#4CC2FF22] to-[#9B5DFF22] -z-10"
-//           animate={{ opacity: hovered ? 0.9 : 0.35 }}
+//           animate={{ opacity: active ? 0.9 : 0.35 }}
 //           transition={{ duration: 0.28 }}
 //           aria-hidden="true"
 //         />
 
-//         {/* Sheen */}
+//         {/* Sheen (decorative) */}
 //         <motion.div
 //           className="pointer-events-none absolute -inset-10 bg-[linear-gradient(115deg,_transparent_0%,_rgba(255,255,255,0.22)_30%,_transparent_60%)] mix-blend-screen -z-10"
 //           initial={{ x: "-140%" }}
@@ -120,11 +137,11 @@
 //           aria-hidden="true"
 //         />
 
-//         {/* Gradient outline (mask) */}
+//         {/* Gradient outline (decorative) */}
 //         <motion.div
 //           className="pointer-events-none absolute inset-0 rounded-3xl border border-transparent z-10"
 //           animate={{
-//             boxShadow: hovered
+//             boxShadow: active
 //               ? "0 0 0 1px rgba(76,194,255,0.7), 0 0 42px rgba(76,194,255,0.95)"
 //               : "0 0 0 1px rgba(255,255,255,0.06)",
 //           }}
@@ -173,7 +190,7 @@
 //               shrink-0
 //             "
 //             animate={
-//               hovered
+//               active
 //                 ? { scale: 1.06, boxShadow: "0 0 55px rgba(58,123,255,1)" }
 //                 : { scale: 1, boxShadow: "0 0 40px rgba(58,123,255,0.7)" }
 //             }
@@ -183,7 +200,7 @@
 //             <IconBadge icon={icon} />
 //             <motion.div
 //               className="absolute inset-0 bg-gradient-to-br from-transparent via-[#3A7BFF66] to-[#4CC2FF66] -z-10"
-//               animate={{ opacity: hovered ? 0.85 : 0.45 }}
+//               animate={{ opacity: active ? 0.85 : 0.45 }}
 //               transition={{ duration: 0.25 }}
 //               aria-hidden="true"
 //             />
@@ -210,7 +227,7 @@
 //           </div>
 
 //           <p className="mt-2 text-sm text-[#D5DBE6] opacity-80">
-//             Без подписок. Прозрачная стоимость.
+//             {t("card.noSubscription")}
 //           </p>
 //         </div>
 
@@ -228,39 +245,51 @@
 //         </p>
 
 //         {/* Features */}
-//         <div className="relative z-20 space-y-2.5 md:space-y-3 mb-6">
-//           {pkg.features.map((feature, i) => (
-//             <motion.div
-//               key={`${pkg.name}-${i}`}
-//               className="flex items-start gap-3 text-[14px] md:text-[15px] text-[#D5DBE6]"
-//               initial={reduce ? { opacity: 1, x: 0 } : { opacity: 0, x: -18 }}
-//               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -18 }}
-//               transition={{
-//                 duration: 0.5,
-//                 delay: index * 0.08 + i * 0.05 + 0.2,
-//                 ease: EASE,
-//               }}
-//             >
-//               <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#4CC2FF] opacity-90" />
-//               <span className="opacity-90 leading-relaxed">{feature}</span>
-//             </motion.div>
-//           ))}
+//         <div className="relative z-20 mb-6" id={featuresId}>
+//           <p className="sr-only">{t("card.featuresAria")}</p>
+
+//           <div role="list" className="space-y-2.5 md:space-y-3">
+//             {pkg.features.map((feature, i) => (
+//               <motion.div
+//                 key={`${pkg.name}-${i}`}
+//                 role="listitem"
+//                 className="flex items-start gap-3 text-[14px] md:text-[15px] text-[#D5DBE6]"
+//                 initial={reduce ? { opacity: 1, x: 0 } : { opacity: 0, x: -18 }}
+//                 animate={
+//                   isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -18 }
+//                 }
+//                 transition={{
+//                   duration: 0.5,
+//                   delay: index * 0.08 + i * 0.05 + 0.2,
+//                   ease: EASE,
+//                 }}
+//               >
+//                 <Check
+//                   className="mt-0.5 h-4 w-4 shrink-0 text-[#4CC2FF] opacity-90"
+//                   aria-hidden="true"
+//                 />
+//                 <span className="opacity-90 leading-relaxed">{feature}</span>
+//               </motion.div>
+//             ))}
+//           </div>
 //         </div>
 
 //         {/* Add-on */}
 //         <div className="relative z-20 mb-7 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
 //           <div className="flex items-start gap-3">
 //             <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-[radial-gradient(circle_at_top,_rgba(76,194,255,0.35),_transparent_70%)]">
-//               <MessageCircle className="h-5 w-5 text-[#EAF2FF]" />
+//               <MessageCircle
+//                 className="h-5 w-5 text-[#EAF2FF]"
+//                 aria-hidden="true"
+//               />
 //             </div>
 
 //             <div className="min-w-0">
 //               <p className="text-sm font-semibold text-[#F2F4FA]">
-//                 Опция: WhatsApp-бот / AI-ассистент
+//                 {t("card.addon.title")}
 //               </p>
 //               <p className="mt-1 text-xs md:text-sm text-[#C7CEDF] leading-relaxed">
-//                 Первичные вопросы, квалификация лидов и передача в CRM без
-//                 потери заявок.
+//                 {t("card.addon.description")}
 //               </p>
 //             </div>
 //           </div>
@@ -271,39 +300,41 @@
 //         {/* Ideal */}
 //         <div className="relative z-20 mt-auto pt-6 border-t border-white/10">
 //           <p className="text-xs uppercase tracking-[0.22em] text-[#C7CEDF] opacity-75">
-//             Идеально для
+//             {t("card.idealLabel")}
 //           </p>
 //           <p className="mt-2 text-sm text-[#EAF2FF] opacity-90">{pkg.ideal}</p>
 //         </div>
 
+//         {/* CTA button */}
 //         <motion.button
 //           type="button"
-//           onClick={() => {
-//             safeWritePackage(pkg.name); // ✅ сохраняем выбранный пакет
-//             router.push(`/${locale}/contact#contact-form`); // ✅ идём к форме
-//           }}
+//           onClick={handleChoose}
 //           className="
-//     group relative z-20 mt-7 inline-flex w-full items-center justify-center gap-2
-//     overflow-hidden rounded-full
-//     px-10 py-3.5
-//     text-sm md:text-base font-medium
-//     text-[#050816]
-//     shadow-[0_0_40px_rgba(76,194,255,0.55)]
-//     hover:shadow-[0_0_65px_rgba(76,194,255,0.85)]
-//     transition-shadow
-//     cursor-pointer
-//   "
+//             group relative z-20 mt-7 inline-flex w-full items-center justify-center gap-2
+//             overflow-hidden rounded-full
+//             px-10 py-3.5
+//             text-sm md:text-base font-medium
+//             text-[#050816]
+//             shadow-[0_0_40px_rgba(76,194,255,0.55)]
+//             hover:shadow-[0_0_65px_rgba(76,194,255,0.85)]
+//             transition-shadow
+//             cursor-pointer
+//             focus:outline-none
+//             focus-visible:ring-2 focus-visible:ring-[#4CC2FF]/80
+//             focus-visible:ring-offset-0
+//           "
 //           whileHover={reduce ? undefined : { scale: 1.03 }}
 //           whileTap={reduce ? undefined : { scale: 0.97 }}
 //           transition={{ duration: 0.25, ease: "easeOut" }}
+//           aria-label={t("card.chooseAria", { package: pkg.name })}
 //         >
 //           <span className="absolute inset-0 bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]" />
 //           <span
 //             className="
-//       pointer-events-none absolute inset-0
-//       [background:linear-gradient(to_bottom,rgba(255,255,255,0.28),rgba(255,255,255,0.06)_45%,rgba(0,0,0,0.12))]
-//       mix-blend-overlay
-//     "
+//               pointer-events-none absolute inset-0
+//               [background:linear-gradient(to_bottom,rgba(255,255,255,0.28),rgba(255,255,255,0.06)_45%,rgba(0,0,0,0.12))]
+//               mix-blend-overlay
+//             "
 //             aria-hidden="true"
 //           />
 //           <span
@@ -312,15 +343,18 @@
 //           />
 
 //           <span className="relative z-10">{pkg.cta}</span>
-//           <ArrowRight className="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-1" />
+//           <ArrowRight
+//             className="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-1"
+//             aria-hidden="true"
+//           />
 //         </motion.button>
 
-//         {/* corner accent */}
+//         {/* corner accent (decorative) */}
 //         <motion.div
 //           className="pointer-events-none absolute bottom-4 right-4 h-8 w-8 opacity-40 z-20"
 //           animate={{
-//             scale: hovered ? 1.2 : 1,
-//             opacity: hovered ? 0.8 : 0.4,
+//             scale: active ? 1.2 : 1,
+//             opacity: active ? 0.8 : 0.4,
 //           }}
 //           transition={{ duration: 0.25 }}
 //           aria-hidden="true"
@@ -362,7 +396,6 @@ export function PricingCard({
   const locale = useLocale();
   const router = useRouter();
 
-  // icon у тебя string (emoji). Приводим к строке безопасно.
   const icon = useMemo(
     () => (typeof pkg.icon === "string" ? pkg.icon : "✨"),
     [pkg.icon],
@@ -390,7 +423,7 @@ export function PricingCard({
       initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 46 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 46 }}
       transition={{ duration: 0.65, delay: index * 0.12, ease: EASE }}
-      className={`relative ${pkg.highlighted ? "lg:-mt-6" : ""}`}
+      className={`relative h-full ${pkg.highlighted ? "lg:-mt-6" : ""}`}
     >
       {/* deep glow (decorative) */}
       <motion.div
@@ -434,12 +467,11 @@ export function PricingCard({
       {/* Card */}
       <motion.div
         className="
-          relative h-full rounded-3xl border border-white/10
+          relative flex h-full flex-col rounded-3xl border border-white/10
           bg-gradient-to-b from-[#060A13] via-[#050816] to-[#02030A]
           p-7 md:p-8
           shadow-[0_26px_80px_rgba(0,0,0,0.85)]
           backdrop-blur-xl overflow-hidden
-          flex flex-col
           focus-within:outline-none
           focus-within:ring-2 focus-within:ring-[#4CC2FF]/70
           focus-within:ring-offset-0
@@ -609,7 +641,7 @@ export function PricingCard({
         </div>
 
         {/* Add-on */}
-        <div className="relative z-20 mb-7 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
+        {/* <div className="relative z-20 mb-7 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
           <div className="flex items-start gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-[radial-gradient(circle_at_top,_rgba(76,194,255,0.35),_transparent_70%)]">
               <MessageCircle
@@ -629,16 +661,49 @@ export function PricingCard({
           </div>
 
           <div className="mt-4 h-px w-full bg-gradient-to-r from-[#3A7BFF66] via-[#4CC2FF55] to-[#9B5DFF44]" />
-        </div>
+        </div> */}
 
         {/* Ideal */}
-        <div className="relative z-20 mt-auto pt-6 border-t border-white/10">
+        {/* <div className="relative z-20 mt-auto pt-6 border-t border-white/10">
           <p className="text-xs uppercase tracking-[0.22em] text-[#C7CEDF] opacity-75">
             {t("card.idealLabel")}
           </p>
           <p className="mt-2 text-sm text-[#EAF2FF] opacity-90">{pkg.ideal}</p>
-        </div>
+        </div> */}
+        <div className="relative z-20 mt-auto">
+          {/* Add-on */}
+          <div className="mb-7 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
+            <div className="flex items-start gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-[radial-gradient(circle_at_top,_rgba(76,194,255,0.35),_transparent_70%)]">
+                <MessageCircle
+                  className="h-5 w-5 text-[#EAF2FF]"
+                  aria-hidden="true"
+                />
+              </div>
 
+              <div className="min-w-0">
+                <p className="text-sm font-semibold text-[#F2F4FA]">
+                  {t("card.addon.title")}
+                </p>
+                <p className="mt-1 text-xs md:text-sm text-[#C7CEDF] leading-relaxed">
+                  {t("card.addon.description")}
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-4 h-px w-full bg-gradient-to-r from-[#3A7BFF66] via-[#4CC2FF55] to-[#9B5DFF44]" />
+          </div>
+
+          {/* Ideal */}
+          <div className="pt-6 border-t border-white/10">
+            <p className="text-xs uppercase tracking-[0.22em] text-[#C7CEDF] opacity-75">
+              {t("card.idealLabel")}
+            </p>
+            <p className="mt-2 text-sm text-[#EAF2FF] opacity-90">
+              {pkg.ideal}
+            </p>
+          </div>
+        </div>
         {/* CTA button */}
         <motion.button
           type="button"

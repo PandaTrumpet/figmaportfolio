@@ -5,20 +5,20 @@
 // import { PricingCard } from "@/src/components/pricing/PricingCard";
 // import { PageContainer } from "../Layout/PageContainer";
 // import { useTranslations } from "next-intl";
-// // import { TrustSignals } from "@/src/components/pricing/TrustSignals";
+
+// const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 // export function PricingPackagesSection() {
+//   const t = useTranslations("pricingData");
+//   const pricingData = buildPricingData(t);
 
-//    const t = useTranslations("pricingData");
-//     const pricingData = buildPricingData(t);
 //   return (
 //     <section
 //       id="pricing-packages"
-//       className="relative  pt-10 pb-10
-//         md:pt-14 md:pb-14
-//         lg:pt-16 lg:pb-16 overflow-visible"
+//       aria-labelledby="pricing-packages-title"
+//       className="relative pt-10 pb-10 md:pt-14 md:pb-14 lg:pt-16 lg:pb-16 overflow-visible"
 //     >
-//       {/* LOCAL FX (clip only background, not content) */}
+//       {/* LOCAL FX (decorative) */}
 //       <div
 //         className="
 //           pointer-events-none absolute inset-0 -z-10 overflow-hidden
@@ -55,46 +55,44 @@
 //       </div>
 
 //       <PageContainer className="relative z-10 max-w-[1200px]">
-//         {/* Section Header */}
+//         {/* Semantic anchors for SR */}
+//         <div className="sr-only">
+//           <h2 id="pricing-packages-title">{t("packagesSection.title")}</h2>
+//           <p id="pricing-packages-subtitle">{t("packagesSection.subtitle")}</p>
+//         </div>
+
+//         {/* Visual header */}
 //         <motion.div
 //           initial={{ opacity: 0, y: 40 }}
 //           whileInView={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+//           transition={{ duration: 0.8, ease: EASE }}
 //           viewport={{ once: true, margin: "-80px" }}
 //           className="text-center mb-12 md:mb-16"
 //         >
-
-//           <h2
-//             className="text-3xl
-//   md:text-4xl
-//   lg:text-5xl
-//   xl:text-6xl
-//   font-semibold
-//   leading-tight
-//   md:leading-[1.15]  text-slate-50 mb-3"
-//           >
-//             Выберите ваш пакет
+//           <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold leading-tight md:leading-[1.15] text-slate-50 mb-3">
+//             {t("packagesSection.title")}
 //           </h2>
 
 //           <p
-//             className="  mt-4
-//   text-white/75
-//   leading-relaxed md:leading-[1.7]
-//   max-w-[52ch] md:max-w-[60ch] lg:max-w-[66ch]
-//   text-[clamp(0.98rem,0.55vw+0.88rem,1.15rem)] mx-auto "
+//             className="mt-4 text-white/75 leading-relaxed md:leading-[1.7] max-w-[52ch] md:max-w-[60ch] lg:max-w-[66ch] text-[clamp(0.98rem,0.55vw+0.88rem,1.15rem)] mx-auto"
+//             id="pricing-packages-subtitle-visible"
 //           >
-//             Все пакеты включают полный цикл разработки
+//             {t("packagesSection.subtitle")}
 //           </p>
 //         </motion.div>
 
-//         {/* Pricing Grid */}
-//         <div className="grid lg:grid-cols-3 gap-8 lg:gap-10 mb-14 md:mb-16">
+//         {/* Pricing Grid (semantic list) */}
+//         <div
+//           role="list"
+//           aria-label={t("packagesSection.listAria")}
+//           className="grid lg:grid-cols-3 gap-8 lg:gap-10 mb-14 md:mb-16"
+//         >
 //           {pricingData.packages.map((pkg, index) => (
-//             <PricingCard key={pkg.name} package={pkg} index={index} />
+//             <div key={pkg.name} role="listitem">
+//               <PricingCard package={pkg} index={index} />
+//             </div>
 //           ))}
 //         </div>
-
-//         {/* <TrustSignals /> */}
 //       </PageContainer>
 //     </section>
 //   );
@@ -187,10 +185,10 @@ export function PricingPackagesSection() {
         <div
           role="list"
           aria-label={t("packagesSection.listAria")}
-          className="grid lg:grid-cols-3 gap-8 lg:gap-10 mb-14 md:mb-16"
+          className="grid items-stretch lg:grid-cols-3 gap-8 lg:gap-10 mb-14 md:mb-16"
         >
           {pricingData.packages.map((pkg, index) => (
-            <div key={pkg.name} role="listitem">
+            <div key={pkg.name} role="listitem" className="h-full">
               <PricingCard package={pkg} index={index} />
             </div>
           ))}
