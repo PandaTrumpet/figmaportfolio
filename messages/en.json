@@ -2480,6 +2480,194 @@
       "sections": "AI & Automation Disclaimer sections",
       "sectionList": "List of section provisions"
     }
+  },
+  "portfolioPage": {
+    "meta": {
+      "title": "Portfolio | SavonDev Studio",
+      "description": "SavonDev Studio portfolio: websites, landing pages, CRM integrations, booking platforms, and digital solutions for businesses in Israel.",
+      "ogTitle": "SavonDev Studio Portfolio",
+      "ogDescription": "Explore selected SavonDev Studio projects: websites, automation, CRM integrations, platforms, and premium digital solutions.",
+      "ogLocale": "en_US",
+      "twitterTitle": "SavonDev Studio Portfolio",
+      "twitterDescription": "See selected SavonDev Studio projects: web, automation, CRM, and UX solutions for modern businesses."
+    },
+    "aria": {
+      "page": "SavonDev Studio portfolio page",
+      "heroTitle": "Portfolio and selected projects by SavonDev Studio",
+      "projectsTitle": "Portfolio projects grid",
+      "caseStudiesTitle": "Featured case studies and project breakdowns",
+      "ctaTitle": "Call to action to discuss a project"
+    },
+    "schema": {
+      "collection": {
+        "name": "SavonDev Studio Portfolio",
+        "description": "A collection of delivered and demo digital projects including websites, landing pages, platforms, CRM systems, and automation solutions for business."
+      },
+      "website": {
+        "name": "SavonDev Studio"
+      },
+      "organization": {
+        "name": "SavonDev Studio"
+      },
+      "breadcrumb": {
+        "home": "Home",
+        "portfolio": "Portfolio"
+      }
+    }
+  },
+  "portfolioData": {
+    "filters": {
+      "all": "All"
+    },
+    "taxonomy": {
+      "industries": {
+        "medicine": "Medicine",
+        "legal": "Legal Services",
+        "realEstate": "Real Estate",
+        "education": "Education",
+        "creative": "Creative",
+        "retail": "Retail",
+        "personalBrand": "Personal Brand",
+        "services": "Services",
+        "finance": "Finance"
+      },
+      "types": {
+        "website": "Website",
+        "landingPage": "Landing Page",
+        "platform": "Platform",
+        "booking": "Booking",
+        "crmAutomation": "CRM + Automation",
+        "consulting": "Consulting",
+        "leadGeneration": "Lead Generation",
+        "portfolio": "Portfolio",
+        "webApp": "Web App"
+      }
+    },
+    "projects": {
+      "clinic": {
+        "title": "Clinic Booking Demo",
+        "client": "Clinic / Medical Service",
+        "description": "Online doctor booking with CRM lead delivery and inquiry tracking.",
+        "caseStudy": {
+          "challenge": "In clinics, leads often get lost: calls, WhatsApp, and forms all end up in different places. A clear and fast booking flow was needed without putting extra pressure on staff.",
+          "solution": "We created a demo booking platform where the patient selects a service and time slot, and the request is automatically sent to the CRM. The administrator sees all inquiries and statuses in one place.",
+          "results": [
+            "Booking without calls and chaotic messaging",
+            "Lead centralization in CRM",
+            "Transparent status for every inquiry",
+            "Optimized for mobile users"
+          ]
+        }
+      },
+      "legal": {
+        "title": "Real Estate Legal Services Demo",
+        "client": "Real Estate Law Firm",
+        "description": "Premium landing page for legal support in real estate transactions in Israel.",
+        "caseStudy": {
+          "challenge": "Property buyers, especially foreign investors, often do not fully understand the legal risks of a transaction. Law firms need a clear digital channel to explain risks, demonstrate expertise, and attract high-budget clients.",
+          "solution": "We developed a premium landing page for a law firm specializing in real estate transactions in Israel. The site explains key legal risks, demonstrates legal expertise, and invites users to book a consultation. It includes multilingual support (EN / HE / RU), a legal fee calculator, and a convenient consultation form.",
+          "results": [
+            "Clear presentation of legal risks for investors",
+            "Focused on high-budget real estate transactions",
+            "Multilingual interface for foreign clients",
+            "Optimized for lead generation and consultations"
+          ]
+        }
+      },
+      "musicteacher": {
+        "title": "MusicTeacher4You",
+        "client": "Music Education Platform",
+        "description": "A platform for finding teachers, booking lessons, and communicating online.",
+        "caseStudy": {
+          "challenge": "The task was to unite students and teachers in one system: search, scheduling, booking, and communication — without spreadsheets or manual coordination.",
+          "solution": "We designed a product with user roles, filters, slot calendars, booking, built-in chat, and video calls. The focus was on a clear UX and a strong mobile experience.",
+          "results": [
+            "Unified flow: search → booking → lesson",
+            "Less manual work for teachers",
+            "Transparent history of lessons and bookings",
+            "Convenient on phone and tablet"
+          ]
+        }
+      },
+      "hm": {
+        "title": "HM Production",
+        "client": "Creative Studio",
+        "description": "Service showcase website for photo, video, web, and design with a trust-first approach.",
+        "caseStudy": {
+          "challenge": "The goal was to present the studio’s services without overload: style, work examples, and a quick way to get in touch — without lengthy explanations.",
+          "solution": "We built a concise website with a strong visual presentation, clear service structure, and portfolio focus. The goal was a strong first impression and a simple CTA.",
+          "results": [
+            "Clear positioning within 1–2 screens",
+            "Portfolio as the main trust driver",
+            "Fast contact without pressure",
+            "Suitable for an international audience"
+          ]
+        }
+      },
+      "brandroom": {
+        "title": "BrandRoom",
+        "client": "Online Brand Showroom",
+        "description": "An online showroom for designer brands with a visual-first presentation and inquiry flow."
+      },
+      "nina": {
+        "title": "Nina Ruban — Opera Singer",
+        "client": "Personal Brand",
+        "description": "A personal artist website with multilingual support and a professional presentation."
+      },
+      "nanny": {
+        "title": "Nanny.Services",
+        "client": "Nanny Search Service",
+        "description": "A nanny search and booking service with profiles and order management."
+      },
+      "cryptoplace": {
+        "title": "CryptoPlace",
+        "client": "Financial Service",
+        "description": "A web app for fast cryptocurrency price monitoring."
+      }
+    }
+  },
+  "portfolioHero": {
+    "eyebrow": "Portfolio",
+    "title": "Selected Projects",
+    "description": "Examples of solutions we created for real businesses. Every project is the result of dialogue, real goals, and a practical approach."
+  },
+  "projectsGridSection": {
+    "title": "Portfolio projects grid",
+    "counterLabel": "Projects shown:",
+    "counterAria": "Projects shown: {count}",
+    "listAria": "Portfolio projects list",
+    "empty": "No projects found"
+  },
+  "projectCard": {
+    "openProject": "View project",
+    "openProjectAria": "Open project {title} in a new tab",
+    "featured": "Featured",
+    "imageAlt": "Project preview for {title}, client {client}",
+    "tagsAria": "Categories and project type for {title}"
+  },
+  "featuredCaseStudiesSection": {
+    "title": "Case studies that best show our approach",
+    "description": "Clear and concise: what the business needed, what we built, and what impact it creates in real-world use.",
+    "listAria": "List of featured case studies"
+  },
+  "caseStudyBlock": {
+    "resultTitle": "Result",
+    "challengeTitle": "Challenge",
+    "solutionTitle": "Solution",
+    "cta": "Discuss a similar project",
+    "ctaAria": "Go to the contact form to discuss a project similar to {title}",
+    "imageAlt": "Case study image for {title}, client {client}",
+    "detailImageAlt": "Additional image {index} for case study {title}",
+    "galleryAria": "Additional gallery for case study {title}",
+    "resultsListAria": "Results of case study {title}",
+    "tagsAria": "Categories and types for case study {title}"
+  },
+  "portfolioCTA": {
+    "badge": "Fast start • Clear plan • No unnecessary bureaucracy",
+    "title": "Let’s build a project that brings inquiries",
+    "description": "We’ll quickly discuss the task, propose a structure, and show how it can work as one system: website, WhatsApp, and automation together.",
+    "cta": "Discuss your project",
+    "ctaAria": "Go to the contact form to discuss your project"
   }
 }
   
