@@ -8,12 +8,14 @@ import { ImageWithFallback } from "@/src/components/figma/ImageWithFallback";
 
 import Link from "next/link";
 import { useLocale } from "next-intl";
+import { StaticImageData } from "next/image";
 interface Project {
   id: string;
   title: string;
   client: string;
   description: string;
-  image: string;
+  imageLittle: string | StaticImageData;
+  imageBig?: string | StaticImageData;
   industry: string[];
   type: string[];
   link?: string;
@@ -137,7 +139,7 @@ export function CaseStudyBlock({
               <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/20">
                 <div className="aspect-[16/9]">
                   <ImageWithFallback
-                    src={project.image}
+                    src={project.imageBig || project.imageLittle}
                     alt={project.title}
                     className="w-full h-full object-cover"
                   />

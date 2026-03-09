@@ -6,12 +6,14 @@ import { useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
 import { ExternalLink, Star } from "lucide-react";
 import { ImageWithFallback } from "@/src/components/figma/ImageWithFallback";
+import { StaticImageData } from "next/image";
 interface Project {
   id: string;
   title: string;
   client: string;
   description: string;
-  image: string;
+  imageLittle: string | StaticImageData;
+  imageBig?: string | StaticImageData;
   industry: string[];
   type: string[];
   link?: string;
@@ -103,7 +105,7 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
         {/* media */}
         <div className="aspect-[4/3] overflow-hidden relative">
           <ImageWithFallback
-            src={project.image}
+            src={project.imageLittle}
             alt={project.title}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.08]"
           />

@@ -4,13 +4,15 @@
 
 import { ProjectCard } from "./ProjectCard";
 import { PageContainer } from "../Layout/PageContainer";
+import { StaticImageData } from "next/image";
 
 interface Project {
   id: string;
   title: string;
   client: string;
   description: string;
-  image: string;
+  imageLittle: string | StaticImageData;
+  imageBig?: string | StaticImageData;
   industry: string[];
   type: string[];
   link?: string;
