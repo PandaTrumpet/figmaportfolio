@@ -141,7 +141,7 @@ export default async function LocaleLayout({
 
   const organizationSchema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "LocalBusiness",
     "@id": `${baseUrl}/#organization`,
     name: "SavonDev Studio",
     url: baseUrl,
@@ -163,9 +163,13 @@ export default async function LocaleLayout({
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": `${baseUrl}/#website`,
+    "@id": "https://savondev.com/#business",
     url: baseUrl,
     name: "SavonDev Studio",
+      "areaServed": {
+    "@type": "Country",
+    "name": "Israel"
+  },
     inLanguage: locale,
     publisher: {
       "@id": `${baseUrl}/#organization`,
