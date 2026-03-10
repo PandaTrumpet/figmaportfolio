@@ -166,7 +166,7 @@ import { useTranslations } from "next-intl";
 import { buildPricingData } from "@/src/data/pricingData";
 import { PageContainer } from "../Layout/PageContainer";
 import Image from "next/image";
-
+import hero from '../../../public/PricingHero.avif'
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 export function PricingHero() {
@@ -197,11 +197,12 @@ export function PricingHero() {
       <div className="pointer-events-none absolute inset-0 overflow-hidden z-0">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1762831063004-bbd3ea38ba3a?q=80&w=1170&auto=format&fit=crop"
-            alt=""
+            // src="https://images.unsplash.com/photo-1762831063004-bbd3ea38ba3a?q=80&w=1170&auto=format&fit=crop"
+            src={hero}
+            alt="Pricing page hero background"
             fill
             priority
-            sizes="100vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1400px) 100vw, 1400px"
             className="object-cover opacity-55 saturate-[0.85]"
           />
         </div>

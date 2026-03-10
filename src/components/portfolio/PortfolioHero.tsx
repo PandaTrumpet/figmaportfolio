@@ -122,7 +122,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { PageContainer } from "../Layout/PageContainer";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-
+import hero from '../../../public/PortfolioHero.avif'
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 export function PortfolioHero() {
@@ -147,11 +147,11 @@ export function PortfolioHero() {
       >
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1546809059-7b1cdd47eae6?q=80&w=1074&auto=format&fit=crop"
-            alt=""
+            src={hero}
+            alt="Portfolio page hero background"
             fill
             priority
-            sizes="100vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1400px) 100vw, 1400px"
             className="object-cover opacity-55 saturate-[0.85]"
           />
         </div>

@@ -294,7 +294,7 @@ export function Hero() {
         <div className="absolute inset-0">
           <Image
             src={hero}
-            alt=""
+            alt="Home page hero background"
             fill
             priority
             sizes="(max-width: 768px) 100vw, (max-width: 1400px) 100vw, 1400px"

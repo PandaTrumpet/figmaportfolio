@@ -189,7 +189,7 @@ import { motion, useReducedMotion } from "motion/react";
 import type { LucideIcon } from "lucide-react";
 import { PageContainer } from "../Layout/PageContainer";
 import Image from "next/image";
-
+import hero from '../../../public/ReviewsHero.avif'
 type HeroData = {
   badge: string;
   title: string;
@@ -237,11 +237,11 @@ export function ReviewsHero({ data }: { data: HeroData }) {
       >
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1672380135241-c024f7fbfa13?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
+            src={hero}
+            alt="Reviews page hero background"
             fill
             priority
-            sizes="100vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1400px) 100vw, 1400px"
             className="object-cover opacity-55 saturate-[0.85]"
           />
         </div>

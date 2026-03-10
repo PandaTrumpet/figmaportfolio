@@ -237,11 +237,13 @@
 
 
 // src/data/aboutData.ts
+import { StaticImageData } from 'next/image';
+import aboutHero from '../../public/AboutHero.jpg' 
 export interface AboutData {
   hero: {
     title: string;
     subtitle: string;
-    image: string;
+    image: string | StaticImageData;
     stats: {
       label: string;
       value: string;
@@ -302,8 +304,7 @@ export function buildAboutData(t: TFn): AboutData {
     hero: {
       title: t("data.hero.title"),
       subtitle: t("data.hero.subtitle"),
-      image:
-        "https://images.unsplash.com/photo-1519205196298-7fc29cb73b3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMHN0dWRpbyUyMHdvcmtzcGFjZXxlbnwxfHx8fDE3NjUyMDYxMTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      image: aboutHero,
       stats: [
         { label: t("data.hero.stats.0.label"), value: t("data.hero.stats.0.value") },
         { label: t("data.hero.stats.1.label"), value: t("data.hero.stats.1.value") },

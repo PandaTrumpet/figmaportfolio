@@ -13,12 +13,14 @@ import {
 } from "motion/react";
 import { useLocale, useTranslations } from "next-intl";
 
-import { ImageWithFallback } from "@/src/components/figma/ImageWithFallback";
+// import { ImageWithFallback } from "@/src/components/figma/ImageWithFallback";
+import Image from "next/image";
 import { PageContainer } from "../Layout/PageContainer";
-
+import { StaticImageData } from "next/image";
+import aboutHero from "../../../public/AboutHero.jpg"; 
 type HeroStat = { value: string; label: string };
 type HeroData = {
-  image: string;
+  image: string | StaticImageData;
   title: string;
   subtitle: string;
   stats: HeroStat[];
@@ -73,12 +75,13 @@ export function AboutHero({ data }: { data: HeroData }) {
         aria-hidden="true"
       >
         <motion.div className="absolute inset-0" style={{ y: y1 }}>
-          <ImageWithFallback
-            src={data.image}
-            alt={t("imageAlt")}
-            className="absolute inset-0 w-full h-full object-cover scale-125"
-            // подсказка браузеру — визуальный приоритет (без изменения логики загрузки)
-            fetchPriority="high"
+          <Image
+            src={aboutHero}
+            alt="About page hero background"
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, (max-width: 1400px) 100vw, 1400px"
+            className="object-cover opacity-55 saturate-[0.85]"
           />
         </motion.div>
 

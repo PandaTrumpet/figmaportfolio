@@ -111,7 +111,7 @@ import Image from "next/image";
 import { PageContainer } from "../Layout/PageContainer";
 import { useTranslations } from "next-intl";
 import { useId } from "react";
-
+import hero from '../../../public/ServiceHero.jpg'
 export default function ServicesHero() {
   const t = useTranslations("services");
   const reduce = useReducedMotion();
@@ -140,11 +140,11 @@ export default function ServicesHero() {
         {/* background image (decorative) */}
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHdlYnNpdGV8ZW58MHx8fHwxNzMzODUyNDAwfDA&ixlib=rb-4.1.0&q=80&w=1920"
-            alt=""
+            src={hero}
+            alt="Home page hero background"
             fill
             priority
-            sizes="100vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1400px) 100vw, 1400px"
             className="object-cover opacity-55 saturate-[0.85]"
           />
         </div>

@@ -126,12 +126,12 @@
 
 "use client";
 
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import {  motion, useReducedMotion } from "motion/react";
 import { PageContainer } from "../Layout/PageContainer";
 import Image from "next/image";
-import { useState } from "react";
-import { GlobalLoaderInline } from "@/src/components/loader/GlobalLoaderInline";
-
+// import { useState } from "react";
+// import { GlobalLoaderInline } from "@/src/components/loader/GlobalLoaderInline";
+import hero from '../../../public/ContactHero.avif'
 type HeroData = {
   badge: string;
   title: string;
@@ -142,7 +142,7 @@ const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 export function ContactHero({ data }: { data: HeroData }) {
   const reduce = useReducedMotion();
-  const [bgReady, setBgReady] = useState(false);
+  // const [bgReady, setBgReady] = useState(false);
 
   return (
     <div
@@ -155,7 +155,7 @@ export function ContactHero({ data }: { data: HeroData }) {
         text-slate-100
       "
     >
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {!bgReady && (
           <motion.div
             aria-hidden="true"
@@ -168,7 +168,7 @@ export function ContactHero({ data }: { data: HeroData }) {
             <GlobalLoaderInline open />
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
 
       <div
         aria-hidden="true"
@@ -176,14 +176,14 @@ export function ContactHero({ data }: { data: HeroData }) {
       >
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1593300806914-e1884ba37524?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
+            src={hero}
+            alt="Home page hero background"
             fill
             priority
-            sizes="100vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1400px) 100vw, 1400px"
             className="object-cover opacity-55 saturate-[0.85]"
-            onLoadingComplete={() => setBgReady(true)}
-            onError={() => setBgReady(true)}
+            // onLoadingComplete={() => setBgReady(true)}
+            // onError={() => setBgReady(true)}
           />
         </div>
 

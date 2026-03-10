@@ -7,7 +7,7 @@ import { ChevronDown } from "lucide-react";
 import { PageContainer } from "../Layout/PageContainer";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
-
+import hero from '../../../public/ProcessHero.avif'
 type HeroData = {
   badge: string;
   title: string;
@@ -60,11 +60,11 @@ export function ProcessHero({
       >
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1758691736804-4e88c52ad58b?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
+            src={hero}
+            alt="Process page hero background"
             fill
             priority
-            sizes="100vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1400px) 100vw, 1400px"
             className="object-cover opacity-55 saturate-[0.85]"
           />
         </div>
