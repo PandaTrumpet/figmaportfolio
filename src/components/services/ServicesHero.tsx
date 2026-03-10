@@ -111,7 +111,7 @@ import Image from "next/image";
 import { PageContainer } from "../Layout/PageContainer";
 import { useTranslations } from "next-intl";
 import { useId } from "react";
-import hero from '../../../public/ServiceHero.jpg'
+import hero from '../../../public/ServiceHero.avif'
 export default function ServicesHero() {
   const t = useTranslations("services");
   const reduce = useReducedMotion();
