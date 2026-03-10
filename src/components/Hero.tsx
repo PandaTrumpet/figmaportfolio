@@ -273,7 +273,7 @@ export function Hero() {
             priority
             sizes="100vw"
             className="object-cover opacity-55 saturate-[0.85]"
-            onLoadingComplete={() => setBgReady(true)}
+            onLoad={() => setBgReady(true)}
             onError={() => setBgReady(true)}
           />
         </div>

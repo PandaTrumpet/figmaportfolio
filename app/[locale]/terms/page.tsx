@@ -14,9 +14,8 @@ export default function TermsPage() {
   const t = useTranslations("terms");
 
   const baseUrl = "https://savondev.com";
-  const localizedUrl =
-    locale === "en" ? `${baseUrl}/terms` : `${baseUrl}/${locale}/terms`;
 
+ const localizedUrl = `${baseUrl}/${locale}/terms`;
   return (
     <>
       <Head>
@@ -28,6 +27,13 @@ export default function TermsPage() {
         <meta property="og:type" content="article" />
         <meta property="og:locale" content={t("meta.ogLocale")} />
         <meta property="og:url" content={localizedUrl} />
+
+        <meta property="og:image" content={`${baseUrl}/opengraph-image`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+  
+        <meta name="twitter:image" content={`${baseUrl}/twitter-image`} />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={t("meta.twitterTitle")} />

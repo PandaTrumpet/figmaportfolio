@@ -148,9 +148,8 @@ export default function ProcessPage() {
   const data = buildProcessData(t);
 
   const baseUrl = "https://savondev.com";
-  const localizedProcessUrl =
-    locale === "en" ? `${baseUrl}/process` : `${baseUrl}/${locale}/process`;
 
+  const localizedProcessUrl = `${baseUrl}/${locale}/process`;
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   const { scrollYProgress } = useScroll({
@@ -171,6 +170,13 @@ export default function ProcessPage() {
         <meta property="og:type" content="website" />
         <meta property="og:locale" content={t("meta.ogLocale")} />
         <meta property="og:url" content={localizedProcessUrl} />
+
+      
+        <meta property="og:image" content={`${baseUrl}/opengraph-image`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        <meta name="twitter:image" content={`${baseUrl}/twitter-image`} />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={t("meta.twitterTitle")} />

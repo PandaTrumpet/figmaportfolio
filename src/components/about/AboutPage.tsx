@@ -137,8 +137,7 @@ export default function AboutPage() {
   const baseUrl = "https://savondev.com";
   
   const locale = useLocale();
-  const localizedAboutUrl =
-    locale === "en" ? `${baseUrl}/about` : `${baseUrl}/${locale}/about`;
+  const localizedAboutUrl = `${baseUrl}/${locale}/about`;
   const isRTL = locale === "he";
   const t = useTranslations("about");
 
@@ -155,7 +154,14 @@ export default function AboutPage() {
         <meta property="og:type" content="website" />
         <meta property="og:locale" content={t("meta.ogLocale")} />
 
+        <meta property="og:image" content={`${baseUrl}/opengraph-image`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={`${baseUrl}/twitter-image`} />
+
+       
         <meta name="twitter:title" content={t("meta.twitterTitle")} />
         <meta
           name="twitter:description"

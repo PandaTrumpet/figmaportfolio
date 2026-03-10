@@ -230,9 +230,8 @@ export default function PricingPage() {
   const t = useTranslations("pricing");
 
   const baseUrl = "https://savondev.com";
-  const localizedPricingUrl =
-    locale === "en" ? `${baseUrl}/pricing` : `${baseUrl}/${locale}/pricing`;
 
+  const localizedPricingUrl = `${baseUrl}/${locale}/pricing`;
   return (
     <>
       <Head>
@@ -245,6 +244,13 @@ export default function PricingPage() {
         <meta property="og:locale" content={t("meta.ogLocale")} />
         <meta property="og:url" content={localizedPricingUrl} />
 
+       
+        <meta property="og:image" content={`${baseUrl}/opengraph-image`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+
+        <meta name="twitter:image" content={`${baseUrl}/twitter-image`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={t("meta.twitterTitle")} />
         <meta

@@ -74,9 +74,8 @@ export default function PortfolioPage() {
   );
 
   const baseUrl = "https://savondev.com";
-  const localizedPortfolioUrl =
-    locale === "en" ? `${baseUrl}/portfolio` : `${baseUrl}/${locale}/portfolio`;
 
+  const localizedPortfolioUrl = `${baseUrl}/${locale}/portfolio`;
   return (
     <>
       <Head>
@@ -95,6 +94,13 @@ export default function PortfolioPage() {
         <meta property="og:locale" content={t("portfolioPage.meta.ogLocale")} />
         <meta property="og:url" content={localizedPortfolioUrl} />
 
+ 
+        <meta property="og:image" content={`${baseUrl}/opengraph-image`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+
+        <meta name="twitter:image" content={`${baseUrl}/twitter-image`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"

@@ -152,8 +152,7 @@ export default function CookiesPage() {
 
   const baseUrl = "https://savondev.com";
 
-  const localizedUrl =
-    locale === "en" ? `${baseUrl}/cookies` : `${baseUrl}/${locale}/cookies`;
+    const localizedUrl = `${baseUrl}/${locale}/cookies`;
 
   return (
     <>
@@ -166,7 +165,13 @@ export default function CookiesPage() {
         <meta property="og:type" content="article" />
         <meta property="og:locale" content={t("meta.ogLocale")} />
         <meta property="og:url" content={localizedUrl} />
+      
+        <meta property="og:image" content={`${baseUrl}/opengraph-image`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
+       
+        <meta name="twitter:image" content={`${baseUrl}/twitter-image`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={t("meta.twitterTitle")} />
         <meta

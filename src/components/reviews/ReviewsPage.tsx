@@ -140,9 +140,8 @@ export default function ReviewsPage() {
   const data = buildReviewsData(t);
 
   const baseUrl = "https://savondev.com";
-  const localizedReviewsUrl =
-    locale === "en" ? `${baseUrl}/reviews` : `${baseUrl}/${locale}/reviews`;
-
+ 
+ const localizedReviewsUrl = `${baseUrl}/${locale}/reviews`;
   return (
     <>
       <Head>
@@ -154,6 +153,14 @@ export default function ReviewsPage() {
         <meta property="og:type" content="website" />
         <meta property="og:locale" content={t("meta.ogLocale")} />
         <meta property="og:url" content={localizedReviewsUrl} />
+
+        
+        <meta property="og:image" content={`${baseUrl}/opengraph-image`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+    
+        <meta name="twitter:image" content={`${baseUrl}/twitter-image`} />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={t("meta.twitterTitle")} />
