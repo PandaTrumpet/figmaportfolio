@@ -226,7 +226,7 @@
 
 "use client";
 
-import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { useEffect, useId, useMemo, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
@@ -237,7 +237,7 @@ import { PageContainer } from "./Layout/PageContainer";
 import hero from "../../public/HomeHero.avif";
 
 export function Hero() {
-  // const [scrollY, setScrollY] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
 
   const reduce = useReducedMotion();
   const t = useTranslations("hero");
@@ -247,42 +247,18 @@ export function Hero() {
   const descId = useId();
 
   const isRTL = locale === "he";
-const heroRef = useRef<HTMLDivElement | null>(null);
-  // useEffect(() => {
-  //   // const handleScroll = () => setScrollY(window.scrollY);
-  //   // window.addEventListener("scroll", handleScroll, { passive: true });
-  //   // return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const contactHref = useMemo(
     () => `/${locale}/contact#contact-form`,
     [locale],
   );
-useEffect(() => {
-  if (reduce) return;
 
-  let ticking = false;
-
-  const update = () => {
-    if (!heroRef.current) return;
-
-    const y = window.scrollY * 0.15;
-    heroRef.current.style.transform = `translateY(${y}px)`;
-
-    ticking = false;
-  };
-
-  const onScroll = () => {
-    if (!ticking) {
-      requestAnimationFrame(update);
-      ticking = true;
-    }
-  };
-
-  window.addEventListener("scroll", onScroll, { passive: true });
-
-  return () => window.removeEventListener("scroll", onScroll);
-}, [reduce]);
   return (
     <section
       id="hero"
@@ -336,15 +312,14 @@ useEffect(() => {
             initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            // style={
-            //   reduce
-            //     ? undefined
-            //     : {
-            //         transform: `translateY(${scrollY * 0.15}px)`,
-            //         willChange: "transform",
-            //       }
-            // }
-            ref={heroRef}
+            style={
+              reduce
+                ? undefined
+                : {
+                    transform: `translateY(${scrollY * 0.15}px)`,
+                    willChange: "transform",
+                  }
+            }
             className="flex flex-col items-center"
           >
             {/* Title */}
