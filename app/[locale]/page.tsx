@@ -332,9 +332,7 @@ export default function Home() {
           <WhyUsSection />
         </section>
 
-        {/* <section aria-labelledby="home-case-title">
-          <CasePreview />
-        </section> */}
+   
 
         <section aria-labelledby="home-process-title">
           <ProcessSection />
