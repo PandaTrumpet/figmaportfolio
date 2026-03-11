@@ -1,3 +1,5 @@
+// // Рабочий основной вариант
+
 // "use client";
 
 // import Head from "next/head";
@@ -19,9 +21,8 @@
 //   const isRTL = locale === "he";
 //   const t = useTranslations("home");
 
-// const baseUrl = "https://savondev.com";
-
-// const localizedHomeUrl = `${baseUrl}/${locale}`;
+//   const baseUrl = "https://savondev.com";
+//   const localizedHomeUrl = `${baseUrl}/${locale}`;
 
 //   return (
 //     <>
@@ -54,7 +55,7 @@
 //           dangerouslySetInnerHTML={{
 //             __html: JSON.stringify({
 //               "@context": "https://schema.org",
-//           "@type": ["Organization","ProfessionalService"],
+//               "@type": ["Organization", "ProfessionalService"],
 //               name: t("schema.organization.name"),
 //               description: t("schema.organization.description"),
 //               url: localizedHomeUrl,
@@ -109,22 +110,25 @@
 //       >
 //         <div
 //           aria-hidden="true"
-//           className="pointer-events-none absolute inset-0 -z-10"
+//           className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
 //         >
 //           <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#050814_0%,#050818_35%,#020410_100%)]" />
 
+//           {/* Mobile: один облегчённый glow
+//               Desktop+: полный премиальный эффект */}
 //           <div
-//             className="absolute -top-60 right-[-20%] h-[520px] w-[520px] rounded-full blur-3xl opacity-60
-//                        bg-[radial-gradient(circle,rgba(76,194,255,0.85),transparent_60%)]"
+//             className="absolute -top-20 right-[-10%] h-[220px] w-[220px] rounded-full blur-2xl opacity-45
+//                        bg-[radial-gradient(circle,rgba(76,194,255,0.82),transparent_60%)]
+//                        md:-top-60 md:right-[-20%] md:h-[520px] md:w-[520px] md:blur-3xl md:opacity-60"
 //           />
 
 //           <div
-//             className="absolute top-[35%] left-[-20%] h-[620px] w-[620px] rounded-full blur-3xl opacity-50
+//             className="hidden md:block absolute top-[35%] left-[-20%] h-[620px] w-[620px] rounded-full blur-3xl opacity-50
 //                        bg-[radial-gradient(circle,rgba(58,123,255,0.75),transparent_60%)]"
 //           />
 
 //           <div
-//             className="absolute inset-0 opacity-[0.10]"
+//             className="hidden md:block absolute inset-0 opacity-[0.10]"
 //             style={{
 //               backgroundImage:
 //                 "linear-gradient(rgba(51,65,85,0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(51,65,85,0.25) 1px, transparent 1px)",
@@ -154,10 +158,6 @@
 //           <WhyUsSection />
 //         </section>
 
-//         {/* <section aria-labelledby="home-case-title">
-//           <CasePreview />
-//         </section> */}
-
 //         <section aria-labelledby="home-process-title">
 //           <ProcessSection />
 //         </section>
@@ -178,11 +178,11 @@
 
 import Head from "next/head";
 import { useLocale, useTranslations } from "next-intl";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
-// import { CasePreview } from "@/src/components/CasePreview";
 import { FinalCTA } from "@/src/components/FinalCTA";
 import { FocusSection } from "@/src/components/FocusSection";
+import { GlobalLoader } from "@/src/components/GlobalLoader";
 import { Hero } from "@/src/components/Hero";
 import { ProcessSection } from "@/src/components/ProcessSection";
 import { TestimonialsSection } from "@/src/components/TestimonialsSection";
@@ -191,12 +191,25 @@ import { WhyUsSection } from "@/src/components/WhyUsSection";
 export default function Home() {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
+  const [isHeroBgLoaded, setIsHeroBgLoaded] = useState(false);
+  const [isPageReady, setIsPageReady] = useState(false);
+
   const locale = useLocale();
   const isRTL = locale === "he";
   const t = useTranslations("home");
 
   const baseUrl = "https://savondev.com";
   const localizedHomeUrl = `${baseUrl}/${locale}`;
+
+  useEffect(() => {
+    if (!isHeroBgLoaded) return;
+
+    const timer = window.setTimeout(() => {
+      setIsPageReady(true);
+    }, 180);
+
+    return () => window.clearTimeout(timer);
+  }, [isHeroBgLoaded]);
 
   return (
     <>
@@ -216,8 +229,6 @@ export default function Home() {
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={`${baseUrl}/twitter-image`} />
-
-        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={t("meta.twitterTitle")} />
         <meta
           name="twitter:description"
@@ -276,10 +287,14 @@ export default function Home() {
         />
       </Head>
 
+      <GlobalLoader open={!isPageReady} />
+
       <main
+        id="main"
         ref={containerRef}
         dir={isRTL ? "rtl" : "ltr"}
         aria-label={t("aria.page")}
+        aria-busy={!isPageReady}
         className="relative min-h-screen overflow-x-clip bg-[#020410] text-slate-100"
       >
         <div
@@ -288,8 +303,6 @@ export default function Home() {
         >
           <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#050814_0%,#050818_35%,#020410_100%)]" />
 
-          {/* Mobile: один облегчённый glow
-              Desktop+: полный премиальный эффект */}
           <div
             className="absolute -top-20 right-[-10%] h-[220px] w-[220px] rounded-full blur-2xl opacity-45
                        bg-[radial-gradient(circle,rgba(76,194,255,0.82),transparent_60%)]
@@ -321,30 +334,32 @@ export default function Home() {
         </div>
 
         <section aria-labelledby="home-hero-title">
-          <Hero />
+          <Hero onBackgroundLoaded={() => setIsHeroBgLoaded(true)} />
         </section>
 
-        <section aria-labelledby="home-focus-title">
-          <FocusSection />
-        </section>
+        {isPageReady && (
+          <>
+            <section aria-labelledby="home-focus-title">
+              <FocusSection />
+            </section>
 
-        <section aria-labelledby="home-whyus-title">
-          <WhyUsSection />
-        </section>
+            <section aria-labelledby="home-whyus-title">
+              <WhyUsSection />
+            </section>
 
-   
+            <section aria-labelledby="home-process-title" id="process">
+              <ProcessSection />
+            </section>
 
-        <section aria-labelledby="home-process-title">
-          <ProcessSection />
-        </section>
+            <section aria-labelledby="home-testimonials-title">
+              <TestimonialsSection />
+            </section>
 
-        <section aria-labelledby="home-testimonials-title">
-          <TestimonialsSection />
-        </section>
-
-        <section aria-labelledby="home-finalcta-title">
-          <FinalCTA />
-        </section>
+            <section aria-labelledby="home-finalcta-title">
+              <FinalCTA />
+            </section>
+          </>
+        )}
       </main>
     </>
   );
