@@ -277,7 +277,7 @@ export default function ServicesHero() {
           />
         </div>
 
-        <div className="absolute inset-0 bg-gradient-to-b from-[#050814]/30 via-[#020410]/78 to-[#020410]" />
+        {/* <div className="absolute inset-0 bg-gradient-to-b from-[#050814]/30 via-[#020410]/78 to-[#020410]" /> */}
 
         <div className="absolute inset-0 opacity-70">
           <div className="absolute -top-40 -left-36 h-80 w-80 bg-[radial-gradient(circle_at_center,_#3A7BFF55,_transparent_70%)] blur-3xl md:h-96 md:w-96" />

@@ -81,7 +81,7 @@ export function AboutHero({ data }: { data: HeroData }) {
           />
         </motion.div>
 
-        <div className="absolute inset-0 bg-gradient-to-b from-[#050814]/30 via-[#020410]/80 to-[#020410]" />
+        {/* <div className="absolute inset-0 bg-gradient-to-b from-[#050814]/30 via-[#020410]/80 to-[#020410]" /> */}
 
         <div className="pointer-events-none absolute inset-0 opacity-70">
           <div className="absolute -top-44 -left-40 h-96 w-96 bg-[radial-gradient(circle_at_center,_#3A7BFF55,_transparent_70%)] blur-3xl" />

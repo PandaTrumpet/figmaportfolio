@@ -176,7 +176,7 @@ export function ContactHero({ data }: { data: HeroData }) {
           />
         </div>
 
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(5,8,20,0.68)_0%,rgba(5,8,20,0.38)_35%,rgba(2,4,16,0.88)_100%)]" />
+        {/* <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(5,8,20,0.68)_0%,rgba(5,8,20,0.38)_35%,rgba(2,4,16,0.88)_100%)]" /> */}
 
         <div className="absolute inset-0 opacity-70">
           <div className="absolute -top-16 -left-12 h-48 w-48 bg-[radial-gradient(circle_at_center,_#3A7BFF44,_transparent_72%)] blur-2xl md:-top-44 md:-left-44 md:h-[520px] md:w-[520px] md:blur-3xl" />
