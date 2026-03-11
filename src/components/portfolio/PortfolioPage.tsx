@@ -399,7 +399,7 @@ export default function PortfolioPage() {
 
     const timer = window.setTimeout(() => {
       setIsPageReady(true);
-    }, 180);
+    }, 280);
 
     return () => window.clearTimeout(timer);
   }, [isHeroBgLoaded]);

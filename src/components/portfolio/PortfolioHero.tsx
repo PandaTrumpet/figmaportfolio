@@ -312,7 +312,7 @@ export function PortfolioHero({ onBackgroundLoaded }: PortfolioHeroProps) {
             priority
             sizes="100vw"
             className="object-cover opacity-55 saturate-[0.85]"
-            onLoadingComplete={handleBackgroundLoaded}
+            onLoad={handleBackgroundLoaded}
           />
         </div>
 

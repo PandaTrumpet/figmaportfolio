@@ -503,12 +503,12 @@ export function Hero({ onBackgroundLoaded }: HeroProps) {
         <div className="absolute inset-0">
           <Image
             src={hero}
-            alt=""
+            alt=" Home page hero background"
             fill
             priority
             sizes="100vw"
             className="object-cover opacity-55 saturate-[0.85]"
-            onLoadingComplete={handleBackgroundLoaded}
+            onLoad={handleBackgroundLoaded}
           />
         </div>
 

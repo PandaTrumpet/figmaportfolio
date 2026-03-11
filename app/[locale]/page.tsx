@@ -206,7 +206,7 @@ export default function Home() {
 
     const timer = window.setTimeout(() => {
       setIsPageReady(true);
-    }, 180);
+    }, 280);
 
     return () => window.clearTimeout(timer);
   }, [isHeroBgLoaded]);
