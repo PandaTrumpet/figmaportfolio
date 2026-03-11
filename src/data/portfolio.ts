@@ -201,15 +201,15 @@
 import { StaticImageData } from "next/image";
 import { TranslationValues } from "next-intl";
 
-import foto1 from "../../public/portfolio/clinic_mobile.png";
-import fotoClinic from "../../public/portfolio/clinic.png";
-import foto2 from "../../public/portfolio/law_mobile.png";
-import fotoLaw from "../../public/portfolio/law.png";
-import foto3 from "../../public/portfolio/teacher_mobile.png";
-import foto4 from "../../public/portfolio/hm_mobile.png";
-import fotoTeacher from "../../public/portfolio/teacher.png";
-import brand from "../../public/portfolio/brand.png";
-import nina from "../../public/portfolio/nina.png";
+import foto1 from "../../public/portfolio/clinic_mobile.avif";
+import fotoClinic from "../../public/portfolio/clinic.avif";
+import foto2 from "../../public/portfolio/law_mobile.avif";
+import fotoLaw from "../../public/portfolio/law.avif";
+import foto3 from "../../public/portfolio/teacher_mobile.avif";
+import foto4 from "../../public/portfolio/hm_mobile.avif";
+import fotoTeacher from "../../public/portfolio/teacher.avif";
+import brand from "../../public/portfolio/brand.avif";
+import nina from "../../public/portfolio/nina.avif";
 
 type TFunction = (key: string, values?: TranslationValues) => string;
 
