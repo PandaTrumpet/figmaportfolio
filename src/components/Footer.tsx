@@ -259,18 +259,22 @@ export function Footer() {
             <Link
               href="/"
               aria-label={t("aria.homeLink")}
-              className="mb-5 inline-flex items-center gap-3"
+              className="group mb-5 inline-flex items-center gap-3"
             >
               <div
                 aria-hidden="true"
                 className="
-                  relative h-10 w-10 rounded-2xl
-                  border border-cyan-400/40 bg-[#0A0F1E]/70 backdrop-blur-xl
-                  shadow-[0_0_40px_rgba(76,194,255,0.22)]
+                  relative h-9 w-9 rounded-xl
+                  bg-linear-to-tr from-[#3A7BFF] via-[#4CC2FF] to-[#8B5CF6]
+                  shadow-[0_0_30px_rgba(76,194,255,0.65)]
+                  transition-transform duration-300
+                  group-hover:rotate-6 group-hover:scale-105
                 "
               >
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-300/25 via-transparent to-indigo-400/20" />
-                <div className="absolute inset-0 rounded-2xl ring-1 ring-white/5" />
+                <span className="absolute inset-0.5 rounded-[0.65rem] bg-slate-950/80 backdrop-blur-md" />
+                <span className="relative z-10 flex h-full w-full items-center justify-center text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-100/80">
+                  SD
+                </span>
               </div>
 
               <span className="text-2xl tracking-tight">
@@ -302,7 +306,7 @@ export function Footer() {
                 </a>
 
                 <a
-                  href="tel:+972501234567"
+                  href="tel:+972557720977"
                   className="group inline-flex items-center gap-2 text-slate-100/85 transition-colors hover:text-slate-100"
                   aria-label={t("aria.phoneLink")}
                 >
@@ -310,7 +314,7 @@ export function Footer() {
                     aria-hidden="true"
                     className="h-5 w-5 text-cyan-200/85"
                   />
-                  <span>+972 50 123 4567</span>
+                  <span>+972557720977</span>
                   <ArrowRight
                     aria-hidden="true"
                     className="h-4 w-4 opacity-60 transition-transform group-hover:translate-x-1"

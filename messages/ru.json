@@ -388,7 +388,7 @@
         "url": "https://savondev.com",
         "contactType": "sales",
         "email": "dsavontrumpet@gmail.com",
-        "telephone": "+97231234567",
+        "telephone": "+972557720977",
         "availableLanguages": ["English", "Hebrew", "Russian"]
       },
       "website": {
@@ -1736,7 +1736,7 @@
         },
         "phone": {
           "label": "Телефон",
-          "placeholder": "+972 50 123 4567"
+          "placeholder": "+972557720977"
         },
         "package": {
           "label": "Выберите пакет",
@@ -1770,11 +1770,11 @@
     "contacts": {
       "whatsapp": {
         "label": "WhatsApp",
-        "value": "+972 50 123 4567"
+        "value": "+972557720977"
       },
       "phone": {
         "label": "Телефон",
-        "value": "+972 3 123 4567"
+        "value": "+972557720977"
       },
       "email": {
         "label": "Email"
@@ -1946,8 +1946,8 @@
         "name": "SavonDev",
         "description": "Веб-агентство, создающее сайты и автоматизацию для малого бизнеса в Израиле.",
         "contactType": "customer support",
-        "email": "hello@savondev.com",
-        "telephone": "+972-00-000-0000",
+        "email": "dsavontrumpet@gmail.com",
+        "telephone": "+972557720977",
         "availableLanguages": ["English", "Hebrew", "Russian"]
       }
     },
@@ -2057,8 +2057,8 @@
         "name": "SavonDev",
         "description": "Веб-агентство, создающее сайты и автоматизацию для малого бизнеса в Израиле.",
         "contactType": "customer support",
-        "email": "hello@savondev.com",
-        "telephone": "+972-00-000-0000",
+        "email": "dsavontrumpet@gmail.com",
+        "telephone": "+972557720977",
         "availableLanguages": ["English", "Hebrew", "Russian"]
       }
     },
@@ -2171,8 +2171,8 @@
         "name": "SavonDev",
         "description": "Веб-агентство, создающее сайты и автоматизацию для малого бизнеса в Израиле.",
         "contactType": "accessibility support",
-        "email": "hello@savondev.com",
-        "telephone": "+972-00-000-0000",
+        "email": "dsavontrumpet@gmail.com",
+        "telephone": "+972557720977",
         "availableLanguages": ["English", "Hebrew", "Russian"]
       }
     },
@@ -2281,8 +2281,8 @@
         "name": "SavonDev",
         "description": "Веб-агентство, создающее сайты и автоматизацию для малого бизнеса в Израиле.",
         "contactType": "customer support",
-        "email": "hello@savondev.com",
-        "telephone": "+972-00-000-0000",
+        "email": "dsavontrumpet@gmail.com",
+        "telephone": "+972557720977",
         "availableLanguages": ["English", "Hebrew", "Russian"]
       }
     },
@@ -2379,8 +2379,8 @@
         "name": "SavonDev",
         "description": "Веб-агентство, создающее сайты и автоматизацию для малого бизнеса в Израиле.",
         "contactType": "customer support",
-        "email": "hello@savondev.com",
-        "telephone": "+972-00-000-0000",
+        "email": "dsavontrumpet@gmail.com",
+        "telephone": "+972557720977",
         "availableLanguages": ["English", "Hebrew", "Russian"]
       }
     },
@@ -2490,8 +2490,8 @@
         "name": "SavonDev",
         "description": "Веб-агентство, создающее сайты и автоматизацию для малого бизнеса в Израиле.",
         "contactType": "customer support",
-        "email": "hello@savondev.com",
-        "telephone": "+972-00-000-0000",
+        "email": "dsavontrumpet@gmail.com",
+        "telephone": "+972557720977",
         "availableLanguages": ["English", "Hebrew", "Russian"]
       }
     },
@@ -2601,8 +2601,8 @@
         "name": "SavonDev",
         "description": "Веб-агентство, создающее сайты, automation и AI-решения для малого бизнеса в Израиле.",
         "contactType": "customer support",
-        "email": "hello@savondev.com",
-        "telephone": "+972-00-000-0000",
+        "email": "dsavontrumpet@gmail.com",
+        "telephone": "+972557720977",
         "availableLanguages": ["English", "Hebrew", "Russian"]
       }
     },

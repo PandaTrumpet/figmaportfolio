@@ -373,7 +373,7 @@
         "url": "https://savondev.com",
         "contactType": "sales",
         "email": "dsavontrumpet@gmail.com",
-        "telephone": "+97231234567",
+        "telephone": "+972557720977",
         "availableLanguages": ["English", "Hebrew", "Russian"]
       },
       "website": {
@@ -1586,7 +1586,7 @@
         },
         "phone": {
           "label": "טלפון",
-          "placeholder": "+972 50 123 4567"
+          "placeholder": "+972557720977"
         },
         "package": {
           "label": "בחרו חבילה",
@@ -1620,11 +1620,11 @@
     "contacts": {
       "whatsapp": {
         "label": "WhatsApp",
-        "value": "+972 50 123 4567"
+        "value": "+972557720977"
       },
       "phone": {
         "label": "טלפון",
-        "value": "+972 3 123 4567"
+        "value": "+972557720977"
       },
       "email": {
         "label": "אימייל"
@@ -1796,8 +1796,8 @@
         "name": "SavonDev",
         "description": "סוכנות ווב הבונה אתרים ואוטומציות לעסקים קטנים בישראל.",
         "contactType": "customer support",
-        "email": "hello@savondev.com",
-        "telephone": "+972-00-000-0000",
+        "email": "dsavontrumpet@gmail.com",
+        "telephone": "+972557720977",
         "availableLanguages": ["English", "Hebrew", "Russian"]
       }
     },
@@ -1907,8 +1907,8 @@
         "name": "SavonDev",
         "description": "סוכנות ווב הבונה אתרים ואוטומציות לעסקים קטנים בישראל.",
         "contactType": "customer support",
-        "email": "hello@savondev.com",
-        "telephone": "+972-00-000-0000",
+        "email": "dsavontrumpet@gmail.com",
+        "telephone": "+972557720977",
         "availableLanguages": ["English", "Hebrew", "Russian"]
       }
     },
@@ -2021,8 +2021,8 @@
         "name": "SavonDev",
         "description": "סוכנות ווב הבונה אתרים ואוטומציות לעסקים קטנים בישראל.",
         "contactType": "accessibility support",
-        "email": "hello@savondev.com",
-        "telephone": "+972-00-000-0000",
+        "email": "dsavontrumpet@gmail.com",
+        "telephone": "+972557720977",
         "availableLanguages": ["English", "Hebrew", "Russian"]
       }
     },
@@ -2131,8 +2131,8 @@
         "name": "SavonDev",
         "description": "סוכנות ווב הבונה אתרים ואוטומציות לעסקים קטנים בישראל.",
         "contactType": "customer support",
-        "email": "hello@savondev.com",
-        "telephone": "+972-00-000-0000",
+        "email": "dsavontrumpet@gmail.com",
+        "telephone": "+972557720977",
         "availableLanguages": ["English", "Hebrew", "Russian"]
       }
     },
@@ -2229,8 +2229,8 @@
         "name": "SavonDev",
         "description": "סוכנות ווב הבונה אתרים ואוטומציות לעסקים קטנים בישראל.",
         "contactType": "customer support",
-        "email": "hello@savondev.com",
-        "telephone": "+972-00-000-0000",
+        "email": "dsavontrumpet@gmail.com",
+        "telephone": "+972557720977",
         "availableLanguages": ["English", "Hebrew", "Russian"]
       }
     },
@@ -2340,8 +2340,8 @@
         "name": "SavonDev",
         "description": "סוכנות ווב הבונה אתרים ואוטומציות לעסקים קטנים בישראל.",
         "contactType": "customer support",
-        "email": "hello@savondev.com",
-        "telephone": "+972-00-000-0000",
+        "email": "dsavontrumpet@gmail.com",
+        "telephone": "+972557720977",
         "availableLanguages": ["English", "Hebrew", "Russian"]
       }
     },
@@ -2451,8 +2451,8 @@
         "name": "SavonDev",
         "description": "סוכנות ווב הבונה אתרים, אוטומציה ופתרונות AI לעסקים קטנים בישראל.",
         "contactType": "customer support",
-        "email": "hello@savondev.com",
-        "telephone": "+972-00-000-0000",
+        "email": "dsavontrumpet@gmail.com",
+        "telephone": "+972557720977",
         "availableLanguages": ["English", "Hebrew", "Russian"]
       }
     },

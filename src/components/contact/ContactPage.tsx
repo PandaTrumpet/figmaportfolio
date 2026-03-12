@@ -719,7 +719,7 @@ export default function ContactPage() {
                   name: "Israel",
                 },
                 email: "dsavontrumpet@gmail.com",
-                telephone: "+97231234567",
+                telephone: "+972557720977",
                 address: {
                   "@type": "PostalAddress",
                   streetAddress: "Rothschild Blvd 42",

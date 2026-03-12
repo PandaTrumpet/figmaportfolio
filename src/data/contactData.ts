@@ -309,13 +309,13 @@ export const buildContactData = (t: TFunction): ContactData => ({
       icon: "💬",
       label: t("contacts.whatsapp.label"),
       value: t("contacts.whatsapp.value"),
-      link: "https://wa.me/972501234567",
+      link: "https://wa.me/972557720977",
     },
     {
       icon: "📞",
       label: t("contacts.phone.label"),
       value: t("contacts.phone.value"),
-      link: "tel:+97231234567",
+      link: "tel:+972557720977",
     },
     {
       icon: "✉️",
@@ -357,7 +357,6 @@ export const buildContactData = (t: TFunction): ContactData => ({
         value: t("cta.stats.contact.value"),
       },
     ],
- 
   },
 });
 
