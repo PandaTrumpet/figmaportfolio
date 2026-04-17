@@ -78,7 +78,7 @@ export default function RefundPage() {
               description: t("schema.organization.description"),
               url: baseUrl,
               areaServed: {
-                "@type": "Country",
+                "@type": "Countrys",
                 name: "Israel",
               },
               address: {
