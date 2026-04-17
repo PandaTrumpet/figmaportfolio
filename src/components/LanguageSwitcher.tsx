@@ -20,7 +20,10 @@
 //     if (newLocale === locale) return;
 
 //     startTransition(() => {
-//       router.replace(pathname, { locale: newLocale });
+//       router.replace(pathname, {
+//         locale: newLocale,
+//         scroll: false,
+//       });
 //     });
 //   };
 
@@ -57,7 +60,6 @@
 //               }
 //             `}
 //           >
-//             {/* ACTIVE BACKGROUND */}
 //             {isActive && (
 //               <span
 //                 className="
@@ -112,11 +114,9 @@ export function LanguageSwitcher() {
   return (
     <div
       className="
-        relative flex items-center gap-1
-        rounded-full
-        bg-white/5 backdrop-blur-xl
-        border border-white/10
-        p-1
+        relative inline-flex items-center gap-1
+        rounded-full border border-white/10
+        bg-white/5 p-1 backdrop-blur-xl
         shadow-[0_0_20px_rgba(76,194,255,0.25)]
       "
     >
@@ -126,15 +126,15 @@ export function LanguageSwitcher() {
         return (
           <button
             key={lang.code}
+            type="button"
             onClick={() => handleChange(lang.code)}
             disabled={isPending}
             className={`
               cursor-pointer
-              relative px-4 py-1.5
-              text-[10px] md:text-[11px]
-              font-semibold tracking-[0.18em] uppercase
-              rounded-full
+              relative rounded-full px-3 py-1.5
+              text-[10px] font-semibold uppercase tracking-[0.12em]
               transition-all duration-300
+              sm:px-3.5
               ${
                 isActive
                   ? "text-[#050816]"
@@ -146,12 +146,8 @@ export function LanguageSwitcher() {
               <span
                 className="
                   absolute inset-0 rounded-full
-                  bg-gradient-to-r
-                  from-[#3A7BFF]
-                  via-[#4CC2FF]
-                  to-[#9B5DFF]
+                  bg-gradient-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#9B5DFF]
                   shadow-[0_0_25px_rgba(76,194,255,0.6)]
-                  animate-pulse
                 "
               />
             )}
