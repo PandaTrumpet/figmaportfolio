@@ -974,7 +974,7 @@
       },
       "premium": {
         "tagline": "Business system",
-        "price": "₪15,900",
+        "price": "₪14,900",
         "period": "one-time",
         "description": "A full digital system: website, CRM and process automation built for business growth.",
         "ideal": "Companies that need processes and scalability",
@@ -1084,7 +1084,7 @@
       "items": {
         "a1": {
           "name": "WhatsApp Bot (Lead Qualifier)",
-          "price": "₪1,900",
+          "price": "₪2,200",
           "description": "A WhatsApp bot that asks initial questions and sends lead details directly to your CRM.",
           "features": {
             "f1": "Initial question flows",
@@ -1129,7 +1129,7 @@
         },
         "a5": {
           "name": "AI Bot (FAQ / Support)",
-          "price": "₪2,900",
+          "price": "₪3,400",
           "description": "An AI bot that answers common questions and supports clients without a manager.",
           "features": {
             "f1": "FAQ answers",

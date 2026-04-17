@@ -289,8 +289,8 @@ export const buildContactData = (t: TFunction): ContactData => ({
         type: "multiselect",
         options: [
           t("form.fields.additionalServices.options.whatsappBot"),
-          t("form.fields.additionalServices.options.crmSetup"),
-          t("form.fields.additionalServices.options.automationPack"),
+          // t("form.fields.additionalServices.options.crmSetup"),
+          // t("form.fields.additionalServices.options.automationPack"),
           t("form.fields.additionalServices.options.bookingSystem"),
           t("form.fields.additionalServices.options.aiBot"),
           t("form.fields.additionalServices.options.maintenance"),
