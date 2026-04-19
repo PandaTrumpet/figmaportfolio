@@ -2689,6 +2689,7 @@
   },
   "cookie": {
     "title": "Cookies",
+    "reject": "Reject all",
     "text": "We use cookies to improve your experience, analyze traffic, and personalize content. You can accept all cookies or keep only essential ones. Read more in our",
     "policy": "Privacy Policy",
     "essential": "Only essential",
