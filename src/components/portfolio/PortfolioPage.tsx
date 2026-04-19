@@ -546,12 +546,11 @@ export default function PortfolioPage() {
 
         {isPageReady && (
           <>
-            <section aria-labelledby="portfolio-projects-title">
-              <ProjectsGridSection projects={data.projects} />
-            </section>
-
             <section aria-labelledby="portfolio-case-studies-title">
               <FeaturedCaseStudiesSection projects={featuredProjects} />
+            </section>
+            <section aria-labelledby="portfolio-projects-title">
+              <ProjectsGridSection projects={data.projects} />
             </section>
 
             <section aria-labelledby="portfolio-cta-title">

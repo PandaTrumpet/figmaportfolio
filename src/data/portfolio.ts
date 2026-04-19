@@ -158,6 +158,7 @@ export function buildPortfolioData(t: TFunction) {
       title: t("portfolioData.projects.musicteacher.title"),
       client: t("portfolioData.projects.musicteacher.client"),
       description: t("portfolioData.projects.musicteacher.description"),
+      video: "/video/music.mp4",
       imageLittle: foto3,
       imageBig: fotoTeacher,
       industry: [t("portfolioData.taxonomy.industries.education")],
@@ -185,6 +186,7 @@ export function buildPortfolioData(t: TFunction) {
       title: t("portfolioData.projects.hm.title"),
       client: t("portfolioData.projects.hm.client"),
       description: t("portfolioData.projects.hm.description"),
+      video: "/video/hm.mp4",
       imageLittle: foto4,
       industry: [t("portfolioData.taxonomy.industries.creative")],
       type: [
