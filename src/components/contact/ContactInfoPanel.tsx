@@ -67,14 +67,14 @@ export function ContactInfoPanel({
         ))}
       </div>
 
-      <div className="mt-8 rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-md">
+      {/* <div className="mt-8 rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-md">
         <h4 className="text-lg font-medium text-[#F2F4FA]">{office.title}</h4>
         <address className="mt-3 not-italic text-sm leading-relaxed text-[#C7CEDF] md:text-base">
           <div>{office.address}</div>
           <div>{office.city}</div>
           <div className="mt-2">{office.hours}</div>
         </address>
-      </div>
+      </div> */}
     </div>
   );
 }
