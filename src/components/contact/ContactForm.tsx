@@ -48,9 +48,18 @@ export function ContactForm({
         </p>
       </div>
 
-      <motion.div
+      {/* <motion.div
         className="
     relative overflow-hidden
+    rounded-2xl md:rounded-3xl
+    border-0 md:border md:border-white/10
+    bg-transparent md:bg-gradient-to-b md:from-[#060A13] md:via-[#050816] md:to-[#02030A]
+    shadow-none md:shadow-[0_26px_90px_rgba(0,0,0,0.9)]
+    backdrop-blur-none md:backdrop-blur-xl
+  " */}
+      <motion.div
+        className="
+    relative mx-auto w-full overflow-hidden
     rounded-2xl md:rounded-3xl
     border-0 md:border md:border-white/10
     bg-transparent md:bg-gradient-to-b md:from-[#060A13] md:via-[#050816] md:to-[#02030A]
@@ -326,7 +335,8 @@ function FormSelect({
         {label}
       </label>
 
-      <div className="relative">
+      {/* <div className="relative"> */}
+      <div className="relative mx-auto w-full max-w-[680px]">
         <select
           id={selectId}
           name={name}

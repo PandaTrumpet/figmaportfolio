@@ -82,7 +82,8 @@ export function ContactMain({
       </div>
 
       <PageContainer className="relative z-10">
-        <div className="grid items-start gap-12 lg:grid-cols-[1.5fr,1fr] lg:gap-20">
+        {/* <div className="grid items-start gap-12 lg:grid-cols-[1.5fr,1fr] lg:gap-20"> */}
+        <div className="flex flex-col items-center gap-12 lg:grid lg:grid-cols-[1.5fr,1fr] lg:items-start lg:gap-20">
           <motion.div
             initial={{ opacity: 0, y: 60 }}
             animate={forceReveal ? { opacity: 1, y: 0 } : undefined}
