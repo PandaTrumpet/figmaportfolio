@@ -573,63 +573,7 @@ export function Navigation() {
               </span>
             </Link>
 
-            {/* <div className="hidden min-w-0 flex-1 items-center justify-end gap-5 xl:flex 2xl:gap-7">
-              <div className="flex min-w-0 items-center gap-4 2xl:gap-6">
-                {navLinks.map((link) => {
-                  const isActive = isLinkActive(link);
 
-                  return (
-                    <Link
-                      key={link.key}
-                      href={link.href}
-                      onClick={(e) => {
-                        if (
-                          link.key === "home" &&
-                          pathname === "/" &&
-                          link.scrollTo
-                        ) {
-                          e.preventDefault();
-                          scrollToSection(link.scrollTo);
-                        } else {
-                          closeMobileMenu();
-                        }
-                      }}
-                      aria-current={isActive ? "page" : undefined}
-                      className={`
-                        relative group whitespace-nowrap
-                        text-[10px] 2xl:text-[11px]
-                        uppercase tracking-[0.14em] 2xl:tracking-[0.18em]
-                        transition-all duration-300
-                        ${
-                          isActive
-                            ? "text-cyan-200 opacity-100"
-                            : "text-slate-300/80 hover:text-cyan-200 hover:opacity-100"
-                        }
-                        hover:scale-[1.03]
-                        hover:drop-shadow-[0_0_12px_rgba(76,194,255,0.6)]
-                      `}
-                    >
-                      {t(`links.${link.key}`)}
-
-                      <span
-                        aria-hidden="true"
-                        className={`
-                          absolute -bottom-1 left-0 h-0.5 w-full origin-left rounded-full
-                          bg-linear-to-r from-[#3A7BFF] via-[#4CC2FF] to-[#8B5CF6]
-                          shadow-[0_0_12px_rgba(76,194,255,0.7)]
-                          transition-transform duration-500 ease-out
-                          ${isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}
-                        `}
-                      />
-                    </Link>
-                  );
-                })}
-              </div>
-
-              <div className="shrink-0">
-                <LanguageSwitcher />
-              </div>
-            </div> */}
             <div className="hidden xl:grid xl:flex-1 xl:grid-cols-[1fr_auto_1fr] xl:items-center">
               <div />
 

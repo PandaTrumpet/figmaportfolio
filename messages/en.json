@@ -2573,22 +2573,23 @@
             "Optimized for lead generation and consultations"
           ]
         }
-      },"realEstate": {
-  "title": "Elite Realty Platform",
-  "client": "ELITE REALTY — Real Estate Agency (Israel)",
-  "description": "Premium digital platform for property search in Israel with automated lead generation and CRM integration.",
-  "caseStudy": {
-    "challenge": "In the Israeli real estate market, leads come from multiple channels: WhatsApp, phone calls, and website forms. As a result, potential clients are often lost, communication is fragmented, and the property matching process becomes inefficient.",
-    "solution": "We developed the ELITE REALTY platform: users select property parameters (city, budget, property type) and submit a request, which is automatically sent to the CRM. Agents receive structured leads and can track each client's status in real time.",
-    "results": [
-      "Centralized lead management in one system",
-      "Faster client response time",
-      "Transparent sales pipeline",
-      "Mobile-friendly property search experience",
-      "Higher conversion rate through simplified UX"
-    ]
-  }
-},
+      },
+      "realEstate": {
+        "title": "Elite Realty Platform",
+        "client": "ELITE REALTY — Real Estate Agency (Israel)",
+        "description": "Premium digital platform for property search in Israel with automated lead generation and CRM integration.",
+        "caseStudy": {
+          "challenge": "In the Israeli real estate market, leads come from multiple channels: WhatsApp, phone calls, and website forms. As a result, potential clients are often lost, communication is fragmented, and the property matching process becomes inefficient.",
+          "solution": "We developed the ELITE REALTY platform: users select property parameters (city, budget, property type) and submit a request, which is automatically sent to the CRM. Agents receive structured leads and can track each client's status in real time.",
+          "results": [
+            "Centralized lead management in one system",
+            "Faster client response time",
+            "Transparent sales pipeline",
+            "Mobile-friendly property search experience",
+            "Higher conversion rate through simplified UX"
+          ]
+        }
+      },
       "musicteacher": {
         "title": "MusicTeacher4You",
         "client": "Music Education Platform",
@@ -2666,9 +2667,8 @@
     "listAria": "List of featured case studies"
   },
   "caseStudyBlock": {
-  
- "videoAria": "Video overview of {title} for {client}",
-  "videoFallback": "Your browser does not support the video tag.",
+    "videoAria": "Video overview of {title} for {client}",
+    "videoFallback": "Your browser does not support the video tag.",
     "resultTitle": "Result",
     "challengeTitle": "Challenge",
     "solutionTitle": "Solution",
@@ -2686,6 +2686,13 @@
     "description": "We’ll quickly discuss the task, propose a structure, and show how it can work as one system: website, WhatsApp, and automation together.",
     "cta": "Discuss your project",
     "ctaAria": "Go to the contact form to discuss your project"
+  },
+  "cookie": {
+    "title": "Cookies",
+    "text": "We use cookies to improve your experience, analyze traffic, and personalize content. You can accept all cookies or keep only essential ones. Read more in our",
+    "policy": "Privacy Policy",
+    "essential": "Only essential",
+    "accept": "Accept all"
   }
 }
   

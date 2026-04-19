@@ -8,6 +8,7 @@ import { notFound } from "next/navigation";
 import { Footer } from "@/src/components/Footer";
 import { Navigation } from "@/src/components/Navigation";
 import { HyperPrecisionCursor } from "@/src/components/HyperPrecisionCursor";
+import { CookieBanner } from "@/src/components/CookieBanner";
 
 const locales = ["en", "he", "ru"] as const;
 type Locale = (typeof locales)[number];
@@ -129,6 +130,7 @@ export default async function LocaleLayout({
         <HyperPrecisionCursor />
         <Navigation />
         {children}
+        <CookieBanner />
         <Footer />
       </div>
     </NextIntlClientProvider>
