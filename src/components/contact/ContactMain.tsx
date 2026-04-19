@@ -101,11 +101,11 @@ export function ContactMain({
 
             <div
               className="
-                relative overflow-hidden rounded-3xl border border-white/10
-                bg-gradient-to-b from-white/8 via-white/5 to-transparent
-                p-6 shadow-[0_24px_70px_rgba(0,0,0,0.82)] backdrop-blur-md
-                md:p-8 lg:backdrop-blur-xl
-              "
+    relative mx-auto w-full overflow-hidden rounded-3xl border border-white/10
+    bg-gradient-to-b from-white/8 via-white/5 to-transparent
+    p-3 sm:p-4 md:p-8 shadow-[0_24px_70px_rgba(0,0,0,0.82)] backdrop-blur-md
+    lg:backdrop-blur-xl
+  "
             >
               <div
                 aria-hidden="true"

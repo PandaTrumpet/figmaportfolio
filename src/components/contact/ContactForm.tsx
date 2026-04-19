@@ -49,7 +49,14 @@ export function ContactForm({
       </div>
 
       <motion.div
-        className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-[#060A13] via-[#050816] to-[#02030A] shadow-[0_26px_90px_rgba(0,0,0,0.9)] backdrop-blur-xl"
+        className="
+    relative overflow-hidden
+    rounded-2xl md:rounded-3xl
+    border-0 md:border md:border-white/10
+    bg-transparent md:bg-gradient-to-b md:from-[#060A13] md:via-[#050816] md:to-[#02030A]
+    shadow-none md:shadow-[0_26px_90px_rgba(0,0,0,0.9)]
+    backdrop-blur-none md:backdrop-blur-xl
+  "
         initial={false}
         whileHover={reduce ? undefined : { y: -10 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
@@ -106,7 +113,11 @@ export function ContactForm({
           }}
         />
 
-        <form onSubmit={onSubmit} className="relative z-20 p-6 md:p-10 lg:p-12">
+        {/* <form onSubmit={onSubmit} className="relative z-20 p-6 md:p-10 lg:p-12"> */}
+        <form
+          onSubmit={onSubmit}
+          className="relative z-20 p-4 sm:p-5 md:p-10 lg:p-12"
+        >
           {isSubmitted ? (
             <motion.div
               role="status"

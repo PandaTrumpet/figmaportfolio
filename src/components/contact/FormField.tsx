@@ -42,7 +42,7 @@ export function FormField({
           onChange={onChange}
           placeholder={placeholder}
           required={required}
-          className="w-full rounded-2xl border border-white/10 bg-white/5 px-5 py-3.5 text-[#F2F4FA] placeholder-white/25 outline-none transition-all backdrop-blur-sm focus:border-[#4CC2FF66] focus:shadow-[0_0_0_1px_rgba(76,194,255,0.35),_0_0_40px_rgba(76,194,255,0.25)]"
+          className="w-full min-w-0 rounded-[18px] border border-white/10 bg-white/5 px-4 py-3 text-[16px] text-[#F2F4FA] placeholder:text-white/25 outline-none transition-all backdrop-blur-sm focus:border-[#4CC2FF66] focus:shadow-[0_0_0_1px_rgba(76,194,255,0.35),_0_0_28px_rgba(76,194,255,0.18)] md:rounded-2xl md:px-5 md:py-3.5"
         />
 
         {/* subtle glow (on focus via group-within) */}
