@@ -54,32 +54,62 @@ export default function ContactPage() {
 
   const data = buildContactData(t);
 
-  useEffect(() => {
-    const addons = [...safeReadAddons()];
-    const selectedPackage = safeReadPackage();
+  // useEffect(() => {
+  //   const addons = [...safeReadAddons()];
+  //   const selectedPackage = safeReadPackage();
 
-    setFormData((prev) => {
-      const nextAddons = addons.length ? addons : prev.additionalServices;
-      const nextPackage = selectedPackage || prev.package;
+  //   setFormData((prev) => {
+  //     const nextAddons = addons.length ? addons : prev.additionalServices;
+  //     const nextPackage = selectedPackage || prev.package;
 
-      const sameAddons =
-        nextAddons.length === prev.additionalServices.length &&
-        nextAddons.every(
-          (value, index) => value === prev.additionalServices[index],
-        );
+  //     const sameAddons =
+  //       nextAddons.length === prev.additionalServices.length &&
+  //       nextAddons.every(
+  //         (value, index) => value === prev.additionalServices[index],
+  //       );
 
-      if (sameAddons && nextPackage === prev.package) {
-        return prev;
-      }
+  //     if (sameAddons && nextPackage === prev.package) {
+  //       return prev;
+  //     }
 
-      return {
-        ...prev,
-        additionalServices: [...nextAddons],
-        package: nextPackage,
-      };
-    });
-  }, []);
+  //     return {
+  //       ...prev,
+  //       additionalServices: [...nextAddons],
+  //       package: nextPackage,
+  //     };
+  //   });
+  // }, []);
 
+
+useEffect(() => {
+  const storedAddons = [...safeReadAddons()];
+  const selectedPackage = safeReadPackage();
+  const allowedOptions = data.form.fields.additionalServices.options;
+
+  const allowedIds = allowedOptions.map((option) => option.id);
+
+  setFormData((prev) => {
+    const nextAddons = allowedIds.filter((id) => storedAddons.includes(id));
+    const nextPackage = selectedPackage || prev.package;
+
+    const sameAddons =
+      nextAddons.length === prev.additionalServices.length &&
+      nextAddons.every(
+        (value, index) => value === prev.additionalServices[index],
+      );
+
+    if (sameAddons && nextPackage === prev.package) {
+      return prev;
+    }
+
+    return {
+      ...prev,
+      additionalServices: nextAddons,
+      package: nextPackage,
+    };
+  });
+}, [data.form.fields.additionalServices.options]);
+  
   useEffect(() => {
     if (!isHeroBgLoaded) return;
 

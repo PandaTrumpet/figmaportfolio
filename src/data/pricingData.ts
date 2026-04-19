@@ -415,6 +415,7 @@ export interface PricingPackage {
 }
 
 export interface AddOn {
+    id: string; // ✅ добавь
   name: string;
   price: string;
   description: string;
@@ -659,6 +660,7 @@ export function buildPricingData(t: TFunction): PricingData {
       subtitle: t("addons.subtitle"),
       items: [
         {
+          id: "whatsapp-bot", // ✅
           name: t("addons.items.a1.name"),
           price: t("addons.items.a1.price"),
           description: t("addons.items.a1.description"),
@@ -696,6 +698,7 @@ export function buildPricingData(t: TFunction): PricingData {
         //   icon: "⚙️",
         // },
         {
+          id: "booking-system",
           name: t("addons.items.a4.name"),
           price: t("addons.items.a4.price"),
           description: t("addons.items.a4.description"),
@@ -708,6 +711,7 @@ export function buildPricingData(t: TFunction): PricingData {
           icon: "📅",
         },
         {
+          id: "ai-bot",
           name: t("addons.items.a5.name"),
           price: t("addons.items.a5.price"),
           description: t("addons.items.a5.description"),
@@ -720,6 +724,7 @@ export function buildPricingData(t: TFunction): PricingData {
           icon: "🤖",
         },
         {
+          id: "maintenance",
           name: t("addons.items.a6.name"),
           price: t("addons.items.a6.price"),
           description: t("addons.items.a6.description"),

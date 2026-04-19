@@ -399,10 +399,10 @@ function FormCheckboxChips({
 }: {
   label: string;
   name: string;
-  values: string[];
-  options: string[];
+  values: string[]; // теперь это массив id
+  options: { id: string; label: string }[];
   hint?: string;
-  onToggle: (value: string) => void;
+  onToggle: (id: string) => void;
 }) {
   const hintId = hint ? `${name}-hint` : undefined;
 
@@ -414,12 +414,12 @@ function FormCheckboxChips({
 
       <div className="grid grid-cols-1 gap-3 md:gap-3.5 sm:grid-cols-2 lg:grid-cols-3">
         {options.map((opt) => {
-          const checked = values.includes(opt);
-          const id = `${name}-${opt.replace(/\s+/g, "-").toLowerCase()}`;
+          const checked = values.includes(opt.id);
+          const id = `${name}-${opt.id}`;
 
           return (
             <label
-              key={opt}
+              key={opt.id}
               htmlFor={id}
               className={`
                 group relative cursor-pointer select-none rounded-2xl border
@@ -435,9 +435,9 @@ function FormCheckboxChips({
                 id={id}
                 type="checkbox"
                 name={name}
-                value={opt}
+                value={opt.id}
                 checked={checked}
-                onChange={() => onToggle(opt)}
+                onChange={() => onToggle(opt.id)}
                 className="sr-only"
               />
 
@@ -458,7 +458,7 @@ function FormCheckboxChips({
 
                 <div className="min-w-0">
                   <span className="block text-sm leading-snug text-[#F2F4FA] md:text-[0.95rem]">
-                    {opt}
+                    {opt.label}
                   </span>
                 </div>
               </div>

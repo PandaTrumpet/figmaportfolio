@@ -278,12 +278,16 @@ export function AddOnCard({ addon, index }: { addon: AddOn; index: number }) {
     getAddonsServerSnapshot,
   );
 
-  const isAdded = selectedAddons.includes(addon.name);
+  // const isAdded = selectedAddons.includes(addon.name);
 
-  const handleToggle = () => {
-    toggleAddon(addon.name);
-  };
+  // const handleToggle = () => {
+  //   toggleAddon(addon.name);
+  // };
+const isAdded = selectedAddons.includes(addon.id);
 
+const handleToggle = () => {
+  toggleAddon(addon.id);
+};
   const titleId = useMemo(() => `addon-title-${index}`, [index]);
   const descId = useMemo(() => `addon-desc-${index}`, [index]);
 

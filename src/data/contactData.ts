@@ -167,6 +167,9 @@
 // };
 
 // export type ContactFormConfig = ContactData["form"];
+
+
+
 import type { TranslationValues } from "next-intl";
 
 export interface ContactInfo {
@@ -203,7 +206,10 @@ export interface ContactData {
         label: string;
         hint?: string;
         type: string;
-        options: string[];
+        options: {
+          id: string;
+          label: string;
+        }[];
       };
       message: { label: string; placeholder: string; type: string };
     };
@@ -235,8 +241,6 @@ export interface ContactData {
       label: string;
       value: string;
     }[];
-   
-  
   };
 }
 
@@ -288,12 +292,22 @@ export const buildContactData = (t: TFunction): ContactData => ({
         hint: t("form.fields.additionalServices.hint"),
         type: "multiselect",
         options: [
-          t("form.fields.additionalServices.options.whatsappBot"),
-          // t("form.fields.additionalServices.options.crmSetup"),
-          // t("form.fields.additionalServices.options.automationPack"),
-          t("form.fields.additionalServices.options.bookingSystem"),
-          t("form.fields.additionalServices.options.aiBot"),
-          t("form.fields.additionalServices.options.maintenance"),
+          {
+            id: "whatsapp-bot",
+            label: t("form.fields.additionalServices.options.whatsappBot"),
+          },
+          {
+            id: "booking-system",
+            label: t("form.fields.additionalServices.options.bookingSystem"),
+          },
+          {
+            id: "ai-bot",
+            label: t("form.fields.additionalServices.options.aiBot"),
+          },
+          {
+            id: "maintenance",
+            label: t("form.fields.additionalServices.options.maintenance"),
+          },
         ],
       },
       message: {
