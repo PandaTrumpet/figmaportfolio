@@ -160,7 +160,8 @@ export function ContactForm({
               ) : null}
             </motion.div>
           ) : (
-            <div className="space-y-6">
+            // <div className="space-y-6">
+            <div className="mx-auto w-full space-y-6">
               <div className="grid gap-6 md:grid-cols-2">
                 <FormField
                   label={form.fields.name.label}
@@ -336,7 +337,8 @@ function FormSelect({
       </label>
 
       {/* <div className="relative"> */}
-      <div className="relative mx-auto w-full max-w-[680px]">
+      {/* <div className="relative mx-auto w-full max-w-[680px]">  */}
+      <div className="relative mx-auto w-full max-w-[680px] px-0">
         <select
           id={selectId}
           name={name}

@@ -93,7 +93,7 @@ export function ContactMain({
               ease: EASE,
             }}
             viewport={{ once: true, margin: "-120px" }}
-            className="relative"
+            className="relative w-full"
           >
             <div
               aria-hidden="true"
