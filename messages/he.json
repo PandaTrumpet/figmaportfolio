@@ -1662,56 +1662,137 @@
       }
     }
   },
-  "contact": {
-    "form": {
-      "successSecondary": "בדקו את האימייל שלכם — אענה בהקדם.",
-      "submitLoading": "שולח…",
-      "trustLine": "בלי מכירות אגרסיביות. קודם אבין את הצורך ואציע את הפתרון המתאים: דף נחיתה, אתר עם CRM או אוטומציה.",
-      "title": "שלחו פנייה",
-      "subtitle": "ספרו לנו על הפרויקט שלכם ואנחנו נכין עבורכם הצעה",
-      "fields": {
-        "name": {
-          "label": "השם שלכם",
-          "placeholder": "איוון כהן"
-        },
-        "email": {
-          "label": "אימייל",
-          "placeholder": "ivan@company.co.il"
-        },
-        "phone": {
-          "label": "טלפון",
-          "placeholder": "+972557720977"
-        },
-        "package": {
-          "label": "בחרו חבילה",
-          "placeholder": "Starter / Growth / Premium",
-          "options": {
-            "starter": "Starter",
-            "growth": "Growth",
-            "premium": "Premium"
-          }
-        },
-        "additionalServices": {
-          "label": "שירותים נוספים",
-          "hint": "ניתן לבחור כמה אפשרויות.",
-          "options": {
-            "whatsappBot": "בוט WhatsApp (סינון לידים)",
-            "crmSetup": "הקמת CRM ותהליכי מכירה",
-            "automationPack": "חבילת אוטומציות",
-            "bookingSystem": "מערכת הזמנות ולוח זמנים",
-            "aiBot": "בוט AI (שאלות נפוצות / תמיכה)",
-            "maintenance": "תחזוקה חודשית"
-          }
-        },
-        "message": {
-          "label": "ספרו על הפרויקט",
-          "placeholder": "תארו את המטרות, הצרכים ולוחות הזמנים..."
-        }
+ "contact": {
+  "meta": {
+    "title": "צור קשר | SavonDev Studio",
+    "description": "צרו קשר עם SavonDev Studio כדי לדון באתר, אוטומציה, CRM, בוט WhatsApp או פתרון AI לעסק שלכם בישראל.",
+    "ogTitle": "צור קשר | SavonDev Studio",
+    "ogDescription": "בואו נדבר על האתר שלכם, אוטומציה ופתרונות דיגיטליים לעסקים בישראל.",
+    "ogLocale": "he_IL",
+    "twitterTitle": "צור קשר | SavonDev Studio",
+    "twitterDescription": "צרו קשר עם SavonDev Studio לגבי אתרים, CRM, אוטומציה ובוטים ל-WhatsApp."
+  },
+  "aria": {
+    "page": "עמוד יצירת קשר של SavonDev Studio",
+    "heroTitle": "יצירת קשר עם SavonDev Studio",
+    "mainTitle": "טופס ופרטי יצירת קשר",
+    "ctaTitle": "קריאה אחרונה לפעולה"
+  },
+  "schema": {
+    "pageName": "צור קשר SavonDev Studio",
+    "pageDescription": "עמוד יצירת קשר של SavonDev Studio עבור פניות בנושא אתרים, אוטומציה, CRM ובוטים ל-WhatsApp בישראל.",
+    "pageUrl": "https://savondev.com/contact",
+    "inLanguage": "he",
+    "faq": {
+      "q1": {
+        "q": "תוך כמה זמן אתם עונים לפניות?",
+        "a": "בדרך כלל תקבלו מענה ראשוני תוך 24 שעות בימי עסקים."
       },
-      "button": "שלח פנייה",
-      "successMessage": "תודה! נחזור אליכם תוך 24 שעות."
+      "q2": {
+        "q": "אפשר לפנות רק עבור אוטומציה בלי בניית אתר?",
+        "a": "כן, אפשר להזמין בנפרד הטמעת CRM, אוטומציה ל-WhatsApp, בוט AI או כלים דיגיטליים נוספים."
+      },
+      "q3": {
+        "q": "האם אתם עובדים עם עסקים בישראל?",
+        "a": "כן, SavonDev Studio מתמקדת בשוק הישראלי ועוזרת לעסקים קטנים להטמיע פתרונות דיגיטליים מודרניים."
+      }
     }
   },
+  "hero": {
+    "title": "בואו ניצור משהו גדול יחד",
+    "subtitle": "מוכנים להתחיל פרויקט? כתבו לנו ונחזור אליכם תוך 24 שעות.",
+    "badge": "צרו קשר"
+  },
+  "form": {
+    "successSecondary": "בדקו את האימייל שלכם — אענה להודעה בהקדם.",
+    "submitLoading": "שולח...",
+    "trustLine": "בלי מכירות אגרסיביות. קודם אבין את הצורך שלכם ואציע את הפתרון המתאים: דף נחיתה, אתר עם CRM או אוטומציה.",
+    "title": "שלחו בקשה",
+    "subtitle": "ספרו לנו על הפרויקט שלכם ונכין עבורכם הצעה",
+    "fields": {
+      "name": {
+        "label": "השם שלכם",
+        "placeholder": "איוון כהן"
+      },
+      "email": {
+        "label": "אימייל",
+        "placeholder": "ivan@company.co.il"
+      },
+      "phone": {
+        "label": "טלפון",
+        "placeholder": "+972557720977"
+      },
+      "package": {
+        "label": "בחרו חבילה",
+        "placeholder": "Starter / Growth / Premium",
+        "options": {
+          "starter": "Starter",
+          "growth": "Growth",
+          "premium": "Premium"
+        }
+      },
+      "additionalServices": {
+        "label": "שירותים נוספים",
+        "hint": "ניתן לבחור כמה אפשרויות.",
+        "options": {
+          "whatsappBot": "בוט WhatsApp (סינון לידים)",
+          "crmSetup": "הטמעת CRM ומשפך מכירות",
+          "automationPack": "חבילת אוטומציות",
+          "bookingSystem": "מערכת הזמנות ולוח שנה",
+          "aiBot": "בוט AI (שאלות נפוצות / תמיכה)",
+          "maintenance": "תחזוקה חודשית"
+        }
+      },
+      "message": {
+        "label": "ספרו לנו על הפרויקט",
+        "placeholder": "תארו את המטרות, הצרכים ולוחות הזמנים שלכם..."
+      }
+    },
+    "button": "שליחת בקשה",
+    "successMessage": "תודה! נחזור אליכם תוך 24 שעות."
+  },
+  "contacts": {
+    "whatsapp": {
+      "label": "WhatsApp",
+      "value": "+972557720977"
+    },
+    "phone": {
+      "label": "טלפון",
+      "value": "+972557720977"
+    },
+    "email": {
+      "label": "אימייל"
+    }
+  },
+  "office": {
+    "panelTitle": "יצירת קשר מהירה",
+    "panelSubtitle": "שלחו הודעה ב-WhatsApp או מייל — תקבלו תשובה מהירה וממוקדת.",
+    "title": "המשרד שלנו",
+    "address": "שדרות רוטשילד 42",
+    "city": "תל אביב, ישראל",
+    "hours": "א׳–ה׳: 9:00 - 18:00"
+  },
+  "cta": {
+    "buttonLabel": "שלחו הודעה ב-WhatsApp",
+    "buttonHref": "https://wa.me/972501234567",
+    "title": "יש לכם שאלה לגבי אתר או אוטומציה?",
+    "subtitle": "כתבו לנו — נדבר בקצרה על הצורך שלכם ונבדוק האם מתאים לכם אתר, אוטומציה או בוט WhatsApp. ללא התחייבות.",
+    "stats": {
+      "firstReply": {
+        "label": "תגובה ראשונה",
+        "value": "תוך יום"
+      },
+      "call": {
+        "label": "שיחת ייעוץ חינם",
+        "value": "20–30 דקות"
+      },
+      "contact": {
+        "label": "קשר ישיר",
+        "value": "אישי"
+      }
+    }
+  }
+},
   "navigation": {
     "skipToContent": "דלג לתוכן הראשי",
     "cta": "להתחיל פרויקט",
