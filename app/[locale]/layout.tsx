@@ -127,7 +127,7 @@ export default async function LocaleLayout({
           aria-hidden="true"
         />
 
-        <HyperPrecisionCursor />
+        {/* <HyperPrecisionCursor /> */}
         <Navigation />
         {children}
         <CookieBanner />
